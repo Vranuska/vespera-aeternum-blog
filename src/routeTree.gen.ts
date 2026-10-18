@@ -11,8 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AtlasRouteImport } from './routes/atlas'
-import { Route as BestiarioRouteImport } from './routes/bestiario'
 import { Route as BibliotecaRouteImport } from './routes/biblioteca'
+import { Route as BestiarioIndexRouteImport } from './routes/bestiario.index'
+import { Route as BestiarioSlugRouteImport } from './routes/bestiario.$slug'
 import { Route as DiariosIndexRouteImport } from './routes/diarios.index'
 import { Route as DiariosIdRouteImport } from './routes/diarios.$id'
 
@@ -26,14 +27,19 @@ const AtlasRoute = AtlasRouteImport.update({
   path: '/atlas',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BestiarioRoute = BestiarioRouteImport.update({
-  id: '/bestiario',
-  path: '/bestiario',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BibliotecaRoute = BibliotecaRouteImport.update({
   id: '/biblioteca',
   path: '/biblioteca',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BestiarioIndexRoute = BestiarioIndexRouteImport.update({
+  id: '/bestiario/',
+  path: '/bestiario/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BestiarioSlugRoute = BestiarioSlugRouteImport.update({
+  id: '/bestiario/$slug',
+  path: '/bestiario/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DiariosIndexRoute = DiariosIndexRouteImport.update({
@@ -50,51 +56,68 @@ const DiariosIdRoute = DiariosIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
-  '/bestiario': typeof BestiarioRoute
   '/biblioteca': typeof BibliotecaRoute
+  '/bestiario/$slug': typeof BestiarioSlugRoute
   '/diarios/$id': typeof DiariosIdRoute
+  '/bestiario/': typeof BestiarioIndexRoute
   '/diarios/': typeof DiariosIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
-  '/bestiario': typeof BestiarioRoute
   '/biblioteca': typeof BibliotecaRoute
+  '/bestiario/$slug': typeof BestiarioSlugRoute
   '/diarios/$id': typeof DiariosIdRoute
+  '/bestiario': typeof BestiarioIndexRoute
   '/diarios': typeof DiariosIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
-  '/bestiario': typeof BestiarioRoute
   '/biblioteca': typeof BibliotecaRoute
+  '/bestiario/$slug': typeof BestiarioSlugRoute
   '/diarios/$id': typeof DiariosIdRoute
+  '/bestiario/': typeof BestiarioIndexRoute
   '/diarios/': typeof DiariosIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/atlas' | '/bestiario' | '/biblioteca' | '/diarios/$id' | '/diarios/'
+    | '/'
+    | '/atlas'
+    | '/biblioteca'
+    | '/bestiario/$slug'
+    | '/diarios/$id'
+    | '/bestiario/'
+    | '/diarios/'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/atlas' | '/bestiario' | '/biblioteca' | '/diarios/$id' | '/diarios'
+    | '/'
+    | '/atlas'
+    | '/biblioteca'
+    | '/bestiario/$slug'
+    | '/diarios/$id'
+    | '/bestiario'
+    | '/diarios'
   id:
     | '__root__'
     | '/'
     | '/atlas'
-    | '/bestiario'
     | '/biblioteca'
+    | '/bestiario/$slug'
     | '/diarios/$id'
+    | '/bestiario/'
     | '/diarios/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AtlasRoute: typeof AtlasRoute
-  BestiarioRoute: typeof BestiarioRoute
   BibliotecaRoute: typeof BibliotecaRoute
+  BestiarioSlugRoute: typeof BestiarioSlugRoute
   DiariosIdRoute: typeof DiariosIdRoute
+  BestiarioIndexRoute: typeof BestiarioIndexRoute
   DiariosIndexRoute: typeof DiariosIndexRoute
 }
 
@@ -114,18 +137,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AtlasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bestiario': {
-      id: '/bestiario'
-      path: '/bestiario'
-      fullPath: '/bestiario'
-      preLoaderRoute: typeof BestiarioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/biblioteca': {
       id: '/biblioteca'
       path: '/biblioteca'
       fullPath: '/biblioteca'
       preLoaderRoute: typeof BibliotecaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bestiario/': {
+      id: '/bestiario/'
+      path: '/bestiario'
+      fullPath: '/bestiario/'
+      preLoaderRoute: typeof BestiarioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bestiario/$slug': {
+      id: '/bestiario/$slug'
+      path: '/bestiario/$slug'
+      fullPath: '/bestiario/$slug'
+      preLoaderRoute: typeof BestiarioSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/diarios/': {
@@ -148,9 +178,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AtlasRoute: AtlasRoute,
-  BestiarioRoute: BestiarioRoute,
   BibliotecaRoute: BibliotecaRoute,
+  BestiarioSlugRoute: BestiarioSlugRoute,
   DiariosIdRoute: DiariosIdRoute,
+  BestiarioIndexRoute: BestiarioIndexRoute,
   DiariosIndexRoute: DiariosIndexRoute,
 }
 export const routeTree = rootRouteImport

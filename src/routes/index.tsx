@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import hero from "@/assets/vespera-hero.jpg";
-import { worksQuery, readingMinutes, CHARACTER_MATCHERS } from "@/lib/works";
+import { worksQuery, readingMinutes } from "@/lib/works";
+import { CHARACTERS } from "@/data/characters";
 import { Ornament, StarSigil } from "@/components/vespera/Ornament";
 import { WorkCard } from "@/components/vespera/WorkCard";
 
@@ -22,9 +23,10 @@ function Portal() {
   const { data: works } = useSuspenseQuery(worksQuery);
   const latest = works[0];
   const selected = [...works].sort((a, b) => b.words - a.words).slice(0, 3);
-  const characters = CHARACTER_MATCHERS.map((c) => ({
+  const characters = CHARACTERS.map((c) => ({
     name: c.name,
-    count: works.filter((w) => w.characters.includes(c.name)).length,
+    slug: c.slug,
+    count: works.filter((w) => w.characters.includes(c.slug)).length,
   })).filter((c) => c.count > 0);
 
   return (
@@ -92,7 +94,7 @@ function Portal() {
         <ul className="mt-10 grid grid-cols-2 gap-px bg-border md:grid-cols-4">
           {characters.map((c) => (
             <li key={c.name} className="bg-background">
-              <Link to="/biblioteca" search={{ personagem: c.name }} className="group block p-6 transition-colors hover:bg-plum">
+              <Link to="/bestiario/$slug" params={{ slug: c.slug }} className="group block p-6 transition-colors hover:bg-plum">
                 <span className="font-display text-2xl text-parchment group-hover:text-rose">{c.name}</span>
                 <span className="label-archive mt-2 block text-sage">{c.count} {c.count === 1 ? "obra" : "obras"}</span>
               </Link>

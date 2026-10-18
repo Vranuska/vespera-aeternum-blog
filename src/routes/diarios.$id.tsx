@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
+import { Signature, SHEET, sheetStyle } from "@/components/vespera/Signature";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { worksQuery, readingMinutes } from "@/lib/works";
@@ -54,7 +55,9 @@ function Reader() {
   const newer = works[i - 1];
   const older = works[i + 1];
   const progress = useProgress();
-  const related = works.filter((x) => x.id !== w.id && x.characters.some((c) => w.characters.includes(c))).slice(0, 3);
+  const related = works.filter((x) => x.id !== w.id && x.characters.some((c) => c !== "vespera" && w.characters.includes(c))).slice(0, 3);
+  const style = sheetStyle(w.genres);
+  const sheet = SHEET[style];
   // Citação destacada: frase curta e marcante do próprio texto
   const pullIdx = w.paragraphs.length > 8 ? Math.floor(w.paragraphs.length / 2) : -1;
   const pull = pullIdx >= 0 ? w.paragraphs.slice(pullIdx).find((p) => p.length > 40 && p.length < 180) : undefined;
@@ -70,26 +73,29 @@ function Reader() {
       </div>
 
       <header className="mx-auto max-w-3xl px-5 pb-12 pt-16 text-center">
-        <p className="label-archive text-gold">{w.type} · {readingMinutes(w)} min de leitura</p>
+        <p className="label-archive text-gold">{w.genres.join(" · ")} · {readingMinutes(w)} min de leitura</p>
         <h1 className="mt-6 font-display text-5xl font-light leading-[0.95] text-parchment md:text-7xl">{w.title}</h1>
         <p className="mt-6 text-lg italic text-rose">{w.date}</p>
         {w.place && <p className="label-archive mt-2 text-sage">{w.place}</p>}
         <Ornament className="mt-10" />
       </header>
 
-      <div className="mx-auto max-w-[46rem] px-3 sm:px-5">
-        <div className="page-parchment px-6 py-12 sm:px-14 sm:py-16">
-          <div className="space-y-5 text-[1.16rem] leading-[1.75] sm:text-[1.22rem]">
+      <div className="bg-plum/50 px-2 py-10 sm:px-6 sm:py-16">
+        <div className="manuscript mx-auto w-full max-w-[44rem] px-6 py-12 sm:px-16 sm:py-20" style={{ ["--sheet" as string]: sheet.tone }}>
+          <div className="mb-10 flex items-center justify-center gap-4 opacity-60" aria-hidden="true">
+            <span className="h-px w-16 bg-current" /><span className="text-xl">{sheet.ornament}</span><span className="h-px w-16 bg-current" />
+          </div>
+          <div className="space-y-[1.15em] font-serif text-[1.14rem] leading-[1.85] sm:text-[1.24rem]">
             {w.paragraphs.map((p, k) => (
               <div key={k}>
                 {k === pullAt && (
-                  <blockquote className="my-10 border-y border-blood/40 py-8 text-center font-display text-3xl italic leading-snug text-wine">
+                  <blockquote className="my-10 border-y border-ink-wine/30 py-8 text-center font-display text-3xl italic leading-snug text-ink-wine">
                     “{p}”
                   </blockquote>
                 )}
                 {k !== pullAt && (
-                  /^[*·~—\-]{1,}\s*$|^\*\s*\*\s*\*$/.test(p.trim()) ? (
-                    <p className="py-4 text-center text-gold" aria-hidden="true">❦</p>
+                  /^[*·~—✧\-]{1,}\s*$|^\*\s*\*\s*\*$/.test(p.trim()) ? (
+                    <p className="py-4 text-center text-ink-sepia opacity-70" aria-hidden="true">{sheet.separator}</p>
                   ) : (
                     <p className={k === 0 ? "dropcap flow-root" : ""}>{p}</p>
                   )
@@ -97,9 +103,7 @@ function Reader() {
               </div>
             ))}
           </div>
-          <div className="mt-14 text-right">
-            <p className="font-display text-4xl italic text-blood">— Vespera</p>
-          </div>
+          <Signature style={style} />
         </div>
       </div>
 
