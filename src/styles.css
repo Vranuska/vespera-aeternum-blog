@@ -39,11 +39,13 @@
   --color-gold: var(--gold);
   --color-plum: var(--plum);
   --color-ink: var(--ink);
+  --color-header: color-mix(in oklab, var(--wine) 45%, var(--obsidian));
 
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-serif: "EB Garamond", Georgia, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
   --font-signature: "Mrs Saint Delafield", "Snell Roundhand", cursive;
+  --font-handwritten: "Great Vibes", "Mrs Saint Delafield", cursive;
   --color-paper: var(--paper);
   --color-paper-ink: var(--paper-ink);
   --color-ink-wine: var(--ink-wine);
@@ -64,8 +66,20 @@
   --plum: oklch(0.24 0.025 320);       /* #261C29 */
   --ink: oklch(0.22 0.02 30);
   /* Papel e tintas do leitor */
-  --paper: oklch(0.93 0.035 85);
-  --paper-ink: oklch(0.24 0.025 45);
+  --paper: oklch(0.965 0.018 95);
+  --paper-confession: oklch(0.956 0.022 90);
+  --paper-letter: oklch(0.975 0.013 95);
+  --paper-tale: oklch(0.96 0.021 92);
+  --paper-memory: oklch(0.962 0.022 93);
+  --paper-rule: color-mix(in oklab, var(--ink-sepia) 15%, transparent);
+  --initial-ink: var(--blood);
+  --paper-edge: var(--rose);
+  --paper-shadow: var(--obsidian);
+  --paper-light: var(--paper-letter);
+  --paper-fiber: color-mix(in oklab, var(--ink-sepia) 3%, transparent);
+  --shadow-manuscript: 0 24px 60px -24px color-mix(in oklab, var(--paper-shadow) 85%, transparent), 0 0 0 1px color-mix(in oklab, var(--paper-edge) 45%, transparent);
+  --paper-ink: oklch(0.2 0.015 40);
+  --paper-warm: oklch(0.925 0.04 85);
   --ink-wine: oklch(0.36 0.09 15);
   --ink-sepia: oklch(0.42 0.06 55);
   --ink-black: oklch(0.2 0.01 40);
@@ -159,13 +173,93 @@ html.reduce-motion *, html.reduce-motion *::before, html.reduce-motion *::after 
 }
 
 @utility font-signature { font-family: var(--font-signature); }
-/* Folha de manuscrito: papel marfim, fibras sutis, bordas levemente gastas */
-@utility manuscript {
-  --sheet: var(--paper);
-  background-color: var(--sheet);
-  color: var(--paper-ink);
-  background-image:
-    radial-gradient(ellipse 120% 90% at 50% 40%, transparent 60%, color-mix(in oklab, var(--gold) 22%, transparent) 100%),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='0.9 0.035' numOctaves='2' seed='7'/><feColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.25 0 0 0 0 0.12 0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23f)'/></svg>");
-  box-shadow: 0 40px 80px -30px oklch(0 0 0 / 0.8), 0 0 0 1px color-mix(in oklab, var(--gold) 30%, transparent), inset 0 0 60px color-mix(in oklab, var(--gold) 12%, transparent);
+@utility font-handwritten { font-family: var(--font-handwritten); }
+/* Capitular iluminada: integrada ao fluxo do primeiro parágrafo */
+@utility reader-dropcap {
+  &::first-letter {
+    font-family: "UnifrakturMaguntia", var(--font-display);
+    float: left;
+    font-size: 3.7em;
+    line-height: 0.9;
+    margin: 0.075em 0.14em 0 0;
+    padding: 0 0.035em 0.025em;
+    color: var(--initial-ink);
+  }
 }
+.reader-surround {
+  --reader-background: color-mix(in oklab, var(--wine) 58%, var(--obsidian));
+  --reader-paper: color-mix(in oklab, var(--paper-warm) 94%, var(--gold));
+  --reader-wear: color-mix(in oklab, var(--ink-sepia) 11%, transparent);
+  --reader-stain: color-mix(in oklab, var(--gold) 8%, transparent);
+  --reader-fiber: color-mix(in oklab, var(--ink-sepia) 2%, transparent);
+  --reader-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.46 .72' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  background: var(--reader-background);
+  padding: 3rem 0.75rem;
+}
+.manuscript {
+  position: relative;
+  width: 100%;
+  max-width: 46rem;
+  margin-inline: auto;
+  padding: 3.5rem 2rem;
+  color: var(--paper-ink);
+  background-color: var(--reader-paper);
+  background-image:
+    radial-gradient(ellipse 65% 18% at 3% 16%, var(--reader-stain), transparent 75%),
+    radial-gradient(ellipse 45% 22% at 98% 57%, var(--reader-stain), transparent 80%),
+    radial-gradient(ellipse 80% 15% at 24% 100%, var(--reader-stain), transparent 75%),
+    linear-gradient(90deg, var(--reader-wear), transparent 4%, transparent 96%, var(--reader-wear)),
+    repeating-linear-gradient(3deg, transparent 0 5px, var(--reader-fiber) 5px 6px),
+    repeating-linear-gradient(93deg, transparent 0 9px, var(--reader-fiber) 9px 10px);
+  border-radius: 3px 5px 4px 6px / 6px 3px 5px 4px;
+  box-shadow: var(--shadow-manuscript);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image: var(--reader-grain);
+    background-size: 256px 256px;
+    opacity: 0.065;
+    mix-blend-mode: multiply;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0.9rem;
+    pointer-events: none;
+    border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent);
+  }
+  @media (min-width: 640px) {
+    padding: 5rem 5rem 4.5rem;
+    &::before { inset: 1.25rem; }
+  }
+}
+.manuscript-confissao { --sheet: color-mix(in oklab, var(--paper-warm) 93%, var(--paper-confession)); }
+.manuscript-carta { --sheet: color-mix(in oklab, var(--paper-warm) 80%, var(--paper-letter)); }
+.manuscript-diario { --sheet: color-mix(in oklab, var(--paper-warm) 87%, var(--paper)); }
+.manuscript-conto { --sheet: color-mix(in oklab, var(--paper-warm) 92%, var(--paper-tale)); }
+.manuscript-memoria { --sheet: color-mix(in oklab, var(--paper-warm) 90%, var(--paper-memory)); }
+.manuscript-prose {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.85;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  & p { white-space: pre-line; }
+  & p + p { margin-top: 1.15em; }
+  &::after { content: ""; display: block; clear: both; }
+  @media (min-width: 640px) { font-size: 1.25rem; }
+}
+.manuscript-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--ink-sepia);
+  margin-bottom: 2.5rem;
+  & span { height: 1px; width: 3rem; background: color-mix(in oklab, var(--gold) 45%, transparent); }
+}
+.manuscript-divider { text-align: center; padding-block: 1rem; color: var(--ink-sepia); }
+@media (min-width: 640px) { .reader-surround { padding: 4rem 1.5rem; } }
