@@ -3,6 +3,15 @@
  * Lugares: apenas os nomeados nos manuscritos. As POSIÇÕES no mapa são
  * ilustrativas (os textos não dão geografia). Conexões marcadas como
  * "inferida" não são canônicas. Estrutura pronta para o editor (Etapa 3).
+ *
+ * Nota editorial (cânone da autora): o Entre é o princípio primordial que
+ * permite a coisas opostas existir distintas e coexistir; Vespera, a Dama do
+ * Entre, é a presença consciente desse princípio desde a Criação, e o tempo
+ * se dobra aos seus pés. Referências de construção: Umbra — Werewolf: The
+ * Apocalypse; Sonhar — Changeling: The Dreaming; tradições mágicas e
+ * paradigmas — Mage: The Ascension (referência para magos, NÃO um plano ou
+ * território a cartografar). Não inventar geografia, regiões, leis, tribos,
+ * cortes, habitantes ou conexões ainda não descritos.
  */
 
 export type Status = "confirmado" | "provisório";
@@ -38,9 +47,17 @@ export const MAPS: Record<string, AtlasMap> = {
     terrain: "cosmos",
     places: [
       { id: "entre", name: "O Entre", kind: "plano", x: 500, y: 350, status: "confirmado", map: "entre",
-        description: "Domínio que não pertence à jurisdição celestial. É ali que Vespera mora — e de onde lhe vem o título de senhora do Entre.",
+        description: "Não é apenas uma dimensão ou um corredor: é o princípio primordial que permite a coisas opostas existir distintas e coexistir sem que uma destrua a outra — vida e morte, Sonhar e mundo desperto, Céu e Inferno, Umbra e realidade física. Vespera, a Dama do Entre, é a presença consciente desse princípio desde a Criação, e o tempo se dobra aos seus pés: ela regula continuidade e intervalos para que o tempo não seja arbitrário. É ali que ela mora — e de onde lhe vem o título.",
         history: ["Por estar fora da lei do Céu, Vespera pôde testemunhar o Pacto das Portas sem se submeter a ele."],
         characters: ["vespera"], works: ["recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu-v2", "azrakhel-o-demonio-que-veio-me-matar-v1"] },
+      { id: "umbra", name: "A Umbra", kind: "plano", x: 830, y: 540, status: "confirmado",
+        description: "O domínio espiritual que espelha a realidade física. Vespera é responsável pela Umbra — sobretudo pela distinção e pela relação entre ela e o mundo material, um dos pares que pertencem à natureza do Entre.",
+        characters: ["vespera"],
+        secrets: ["Cartografia interna ainda não estabelecida pela autora — este espaço permanece aberto e não deve ser preenchido por suposição."] },
+      { id: "sonhar", name: "O Sonhar", kind: "plano", x: 170, y: 120, status: "confirmado",
+        description: "O domínio do sonho, cuja distinção e relação com o mundo desperto pertencem à natureza do Entre — um dos pares que Vespera mantém distintos e coexistindo.",
+        characters: ["vespera"],
+        secrets: ["Cartografia interna ainda não estabelecida pela autora — este espaço permanece aberto e não deve ser preenchido por suposição."] },
       { id: "firmamentos", name: "Os Firmamentos", kind: "plano", x: 500, y: 110, status: "confirmado", map: "firmamentos",
         description: "As grandes regiões celestiais, cada uma com territórios, habitantes e atribuições próprios. Pelo menos sete, numeradas.",
         characters: ["ithariel", "aurelian", "neria", "iriel"], works: ["recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu-v2", "ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1"] },

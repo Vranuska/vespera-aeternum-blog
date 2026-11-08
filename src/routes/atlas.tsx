@@ -16,7 +16,7 @@ export const Route = createFileRoute("/atlas")({
   head: () => ({
     meta: [
       { title: "Atlas do Impossível — Vespera Aeternum" },
-      { name: "description", content: "Mapa interativo da cosmologia de Vespera: o Entre, os Firmamentos, os domínios infernais e o mundo dos mortais." },
+      { name: "description", content: "Mapa interativo da cosmologia de Vespera: o Entre, a Umbra, o Sonhar, os Firmamentos, os domínios infernais e o mundo dos mortais." },
       { property: "og:title", content: "Atlas do Impossível — Vespera Aeternum" },
       { property: "og:description", content: "Explore os planos e lugares por onde Vespera atravessa." },
       { property: "og:type", content: "website" },
