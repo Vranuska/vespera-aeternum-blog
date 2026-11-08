@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Ornament } from "./Ornament";
+import { Monogram } from "./Monogram";
 
 const NAV = [
   { to: "/biblioteca", label: "Bibliotheca Noctis" },
@@ -30,10 +31,11 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { reduced, toggle } = useReducedMotion();
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-        <Link to="/" className="font-display text-xl tracking-[0.3em] text-parchment" onClick={() => setOpen(false)}>
-          VESPERA<span className="text-gold"> · </span>AETERNUM
+    <header className="sticky top-0 z-40 border-b border-gold/40 bg-header backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3">
+        <Link to="/" className="flex items-center gap-3 font-display text-lg tracking-[0.3em] text-parchment sm:text-xl" onClick={() => setOpen(false)}>
+          <Monogram className="h-10 w-10 shrink-0 text-gold" />
+          <span>VESPERA<span className="text-gold"> · </span>AETERNUM</span>
         </Link>
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
           {NAV.map((n) => (
