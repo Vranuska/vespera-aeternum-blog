@@ -7,6 +7,8 @@ import { Ornament } from "@/components/vespera/Ornament";
 import { Monogram } from "@/components/vespera/Monogram";
 import { Manuscript } from "@/components/vespera/Manuscript";
 import { WorkRow } from "@/components/vespera/WorkCard";
+import { Constellation } from "@/components/vespera/Constellation";
+import { editorialQuery } from "@/lib/editorial";
 
 const FEATURED_TITLE = "O lugar onde a água ferve";
 
@@ -21,7 +23,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  loader: ({ context }) => context.queryClient.ensureQueryData(worksQuery),
+  loader: ({ context }) => Promise.all([context.queryClient.ensureQueryData(worksQuery), context.queryClient.ensureQueryData(editorialQuery)]),
   component: Portal,
 });
 
@@ -40,6 +42,7 @@ const SIDE: SideLink[] = [
 
 function Portal() {
   const { data: works } = useSuspenseQuery(worksQuery);
+  const { data: editorial } = useSuspenseQuery(editorialQuery);
   const featured = works.find((w) => w.title === FEATURED_TITLE) ?? works[0];
   const others = works.filter((w) => w.id !== featured?.id).slice(0, 6);
 
@@ -89,6 +92,8 @@ function Portal() {
             <Link to="/diarios/$id" params={{ id: featured.id }} className="label-archive text-gold hover:text-parchment">Abrir no leitor →</Link>
             <Link to="/biblioteca" className="label-archive text-rose hover:text-parchment">Entrar na Bibliotheca →</Link>
           </div>
+
+          <Constellation index={editorial} works={works} />
 
           <section className="mx-auto mt-16 max-w-[46rem]">
             <h2 className="font-display text-3xl italic text-parchment">Outros manuscritos</h2>
