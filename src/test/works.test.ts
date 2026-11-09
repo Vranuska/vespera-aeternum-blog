@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { normalize, parseEntries, bookWorks, loadWorks, ownedImage, readerNavigation } from "@/lib/works";
+import editorial from "@/data/editorial-fallback.json";
 
 const raw = (id: string, title: string) => ({ id, title, date: "Sem data", paragraphs: ["Texto original sem alterações."], characters: [] });
 describe("Arquivo e ordem editorial", () => {
@@ -52,7 +53,9 @@ describe("Arquivo e ordem editorial", () => {
   });
   it("usa cópia fiel de segurança em erro remoto", async () => {
     const works = await loadWorks(async () => { throw new Error("offline"); });
-    expect(works).toHaveLength(31);
+    expect(works).toHaveLength(46);
+    const chapterIds = editorial.editorial_reading_order.chapters.map((chapter) => chapter.entry_id);
+    expect(chapterIds.every((id) => works.some((work) => work.id === id))).toBe(true);
     expect(works[0]?.id).toBe("2026-10-15-a-colher-que-me-venceu");
     expect(works.every(w => w.source === "fallback")).toBe(true);
   });
