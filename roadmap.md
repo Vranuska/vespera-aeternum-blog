@@ -14,4 +14,4 @@
 - [x] Seção "Constelação de memórias" na página inicial: anéis lentos, frase central, eras 1886–1944 + "Fora da cronologia", agrupamento por mês, links ao leitor
 - [x] Ordem de leitura = 15 capítulos do Volume I, na sequência do arquivo-fonte; demais obras seguem por título, sem capítulo
 - [x] Testes (22), desktop/celular, animações reduzidas, sem rolagem lateral
-- [ ] Limitação: a cópia local de segurança dos manuscritos tem 31 obras; se o arquivo remoto falhar, as 15 do Volume I somem da constelação (ignoradas com aviso) até a cópia ser atualizada
+- [x] Cópia offline sincronizada com os 46 manuscritos do arquivo literário; teste confirma que os 15 capítulos do Volume I continuam disponíveis quando o remoto falha.
