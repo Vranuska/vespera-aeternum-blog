@@ -12,3 +12,5 @@
 - Works are read live from GitHub `Vranuska/vespera-aeternum/entries.json` via `src/lib/works.ts` (single source, no content duplication).
 - Editorial metadata lives in `src/data/` (catalog = genres/collection/themes keyed by work id, characters = Bestiary sheets, atlas = maps/places); it never copies manuscript text beyond literal quotes, so it can move to the admin DB in phase 3.
 - Reader sheet look varies by genre via `src/components/vespera/Signature.tsx` (visual only; manuscript content untouched).
+
+- Universe chronology and approved reading order come only from the literary repo's `editorial/indice-romance-mosaico.json` via `src/lib/editorial.ts` (minimal fallback in `src/data/editorial-fallback.json`); never derive it from publication dates.
