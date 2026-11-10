@@ -19,4 +19,5 @@ export const EDITORIAL_ORDER: readonly string[] = [
   "2026-11-01-o-couro-do-avental",
   "2026-11-02-as-notas-que-ficaram-de-fora",
   "2026-11-03-a-balanca-de-dois-pratos",
+  "2026-11-09-a-rua-que-cabia-na-margem",
 ];
