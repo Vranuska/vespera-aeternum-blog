@@ -30,6 +30,7 @@ export function PlaceGlyph({ kind, size = 18 }: { kind: Kind; size?: number }) {
     ponte: <path d={`M${-s} ${s * 0.3}Q0 ${-s} ${s} ${s * 0.3}M${-s} ${s * 0.3}H${s}`} fill="none" />,
     estrela: <path d={`M0 ${-s}L${s * 0.25} ${-s * 0.25}L${s} 0L${s * 0.25} ${s * 0.25}L0 ${s}L${-s * 0.25} ${s * 0.25}L${-s} 0L${-s * 0.25} ${-s * 0.25}Z`} fill="none" />,
     portal: <><ellipse rx={s * 0.6} ry={s} fill="none" /><ellipse rx={s * 0.3} ry={s * 0.6} fill="none" /></>,
+    passagem: <path d={`M${-s} ${s}V${-s}H${s}V${s}M${-s} ${-s * 0.2}H${s}`} fill="none" />,
   };
   return <g stroke="currentColor" strokeWidth={1.4} fill="currentColor">{p[kind] ?? p["plano"]}</g>;
 }

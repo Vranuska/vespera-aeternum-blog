@@ -104,12 +104,20 @@ function PlacePanel({ place, near, title, onClose, onEnter, onPick }: { place: P
         <button onClick={onClose} aria-label="Fechar painel" className="text-sage hover:text-parchment"><X size={18} /></button>
       </div>
       <h2 className="mt-3 font-display text-4xl leading-tight text-parchment">{place.name}</h2>
+      {place.image && (
+        <figure className="mt-5 overflow-hidden border border-gold/30 bg-background/60">
+          <img src={place.image.src} alt={place.image.alt} loading="lazy" className="block max-h-72 w-full object-cover" />
+          {place.image.caption && <figcaption className="border-t border-border px-3 py-2 text-sm italic text-sage">{place.image.caption}</figcaption>}
+        </figure>
+      )}
       <div className="mt-5 flex justify-center border border-gold/30 bg-background/60 py-8 text-gold" aria-hidden="true">
         <svg viewBox="-40 -40 80 80" width={120} height={120}><circle r={36} fill="none" stroke="currentColor" strokeOpacity={0.4} /><circle r={30} fill="none" stroke="currentColor" strokeOpacity={0.2} strokeDasharray="2 4" /><PlaceGlyph kind={place.kind} size={36} /></svg>
       </div>
       <p className="mt-5 text-[1.05rem] leading-relaxed text-parchment/90">{place.description}</p>
       {place.map && <button onClick={onEnter} className="label-archive mt-5 w-full border border-gold bg-wine px-4 py-3 text-parchment hover:bg-blood">Explorar esta região →</button>}
       {place.history?.length ? <Section t="História">{place.history.map((h) => <p key={h}>{h}</p>)}</Section> : null}
+      {place.laws?.length ? <Section t="Leis e limites">{place.laws.map((law) => <p key={law}>{law}</p>)}</Section> : null}
+      {place.inhabitants?.length ? <Section t="Habitantes e presenças"><ul className="list-inside list-disc space-y-1">{place.inhabitants.map((person) => <li key={person}>{person}</li>)}</ul></Section> : null}
       {place.characters?.length ? (
         <Section t="Personagens">
           <div className="flex flex-wrap gap-2">{place.characters.map((s) => { const c = characterBySlug(s); return c ? <Link key={s} to="/bestiario/$slug" params={{ slug: s }} className="label-archive border border-border px-2 py-1 text-rose hover:text-parchment">{c.name}</Link> : null; })}</div>

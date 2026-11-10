@@ -1,349 +1,362 @@
 {
- "schema_version": 1,
- "updated_at": "2026-11-08",
- "editorial_reading_order": {
-  "volume_id": "volume-i-ciclo-das-inacabadas",
-  "volume_title": "Volume I — Ciclo das Inacabadas",
-  "chapters": [
-   {
-    "number": 1,
-    "entry_id": "2026-10-21-o-inventario-das-coisas-que-ainda-funcionam",
-    "title": "O inventário das coisas que ainda funcionam"
-   },
-   {
-    "number": 2,
-    "entry_id": "2026-10-22-o-recibo-que-nao-tinha-data",
-    "title": "O recibo que não tinha data"
-   },
-   {
-    "number": 3,
-    "entry_id": "2026-10-23-a-prova-de-impressao",
-    "title": "A prova de impressão"
-   },
-   {
-    "number": 4,
-    "entry_id": "2026-10-24-a-mulher-que-se-lembrava-de-duas-mortes",
-    "title": "A mulher que se lembrava de duas mortes"
-   },
-   {
-    "number": 5,
-    "entry_id": "2026-10-25-o-homem-que-nunca-tirava-as-luvas",
-    "title": "O homem que nunca tirava as luvas"
-   },
-   {
-    "number": 6,
-    "entry_id": "2026-10-26-a-costura-invisivel",
-    "title": "A costura invisível"
-   },
-   {
-    "number": 7,
-    "entry_id": "2026-10-27-a-mulher-que-guardou-o-negativo",
-    "title": "A mulher que guardou o negativo"
-   },
-   {
-    "number": 8,
-    "entry_id": "2026-10-28-o-lugar-onde-a-agua-ferve",
-    "title": "O lugar onde a água ferve"
-   },
-   {
-    "number": 9,
-    "entry_id": "2026-10-29-o-avesso-da-moldura",
-    "title": "O avesso da moldura"
-   },
-   {
-    "number": 10,
-    "entry_id": "2026-10-30-o-bolso-de-dentro",
-    "title": "O bolso de dentro"
-   },
-   {
-    "number": 11,
-    "entry_id": "2026-10-31-a-tinta-do-lado-de-fora",
-    "title": "A tinta do lado de fora"
-   },
-   {
-    "number": 12,
-    "entry_id": "2026-10-31-a-carta-que-chegou-sem-pedir-licenca",
-    "title": "A carta que chegou sem pedir licença"
-   },
-   {
-    "number": 13,
-    "entry_id": "2026-11-01-o-couro-do-avental",
-    "title": "O couro do avental"
-   },
-   {
-    "number": 14,
-    "entry_id": "2026-11-02-as-notas-que-ficaram-de-fora",
-    "title": "As notas que ficaram de fora"
-   },
-   {
-    "number": 15,
-    "entry_id": "2026-11-03-a-balanca-de-dois-pratos",
-    "title": "A balança de dois pratos"
-   }
+  "schema_version": 1,
+  "updated_at": "2026-11-10",
+  "editorial_reading_order": {
+    "volume_id": "volume-i-ciclo-das-inacabadas",
+    "volume_title": "Volume I — Ciclo das Inacabadas",
+    "status": "em desenvolvimento",
+    "chapters": [
+      {
+        "number": 1,
+        "entry_id": "2026-10-21-o-inventario-das-coisas-que-ainda-funcionam",
+        "title": "O inventário das coisas que ainda funcionam"
+      },
+      {
+        "number": 2,
+        "entry_id": "2026-10-22-o-recibo-que-nao-tinha-data",
+        "title": "O recibo que não tinha data"
+      },
+      {
+        "number": 3,
+        "entry_id": "2026-10-23-a-prova-de-impressao",
+        "title": "A prova de impressão"
+      },
+      {
+        "number": 4,
+        "entry_id": "2026-10-24-a-mulher-que-se-lembrava-de-duas-mortes",
+        "title": "A mulher que se lembrava de duas mortes"
+      },
+      {
+        "number": 5,
+        "entry_id": "2026-10-25-o-homem-que-nunca-tirava-as-luvas",
+        "title": "O homem que nunca tirava as luvas"
+      },
+      {
+        "number": 6,
+        "entry_id": "2026-10-26-a-costura-invisivel",
+        "title": "A costura invisível"
+      },
+      {
+        "number": 7,
+        "entry_id": "2026-10-27-a-mulher-que-guardou-o-negativo",
+        "title": "A mulher que guardou o negativo"
+      },
+      {
+        "number": 8,
+        "entry_id": "2026-10-28-o-lugar-onde-a-agua-ferve",
+        "title": "O lugar onde a água ferve"
+      },
+      {
+        "number": 9,
+        "entry_id": "2026-10-29-o-avesso-da-moldura",
+        "title": "O avesso da moldura"
+      },
+      {
+        "number": 10,
+        "entry_id": "2026-10-30-o-bolso-de-dentro",
+        "title": "O bolso de dentro"
+      },
+      {
+        "number": 11,
+        "entry_id": "2026-10-31-a-tinta-do-lado-de-fora",
+        "title": "A tinta do lado de fora"
+      },
+      {
+        "number": 12,
+        "entry_id": "2026-10-31-a-carta-que-chegou-sem-pedir-licenca",
+        "title": "A carta que chegou sem pedir licença"
+      },
+      {
+        "number": 13,
+        "entry_id": "2026-11-01-o-couro-do-avental",
+        "title": "O couro do avental"
+      },
+      {
+        "number": 14,
+        "entry_id": "2026-11-02-as-notas-que-ficaram-de-fora",
+        "title": "As notas que ficaram de fora"
+      },
+      {
+        "number": 15,
+        "entry_id": "2026-11-03-a-balanca-de-dois-pratos",
+        "title": "A balança de dois pratos"
+      },
+      {
+        "number": 16,
+        "entry_id": "2026-11-09-a-rua-que-cabia-na-margem",
+        "title": "A rua que cabia na margem"
+      }
+    ]
+  },
+  "universe_chronology": [
+    {
+      "entry_id": "2026-10-26-a-costura-invisivel",
+      "title": "A costura invisível",
+      "time": "1886-06-18",
+      "label": "18 de junho de 1886 · oficina de Artur Vale",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-21-o-inventario-das-coisas-que-ainda-funcionam",
+      "title": "O inventário das coisas que ainda funcionam",
+      "time": "1891-11",
+      "label": "Novembro de 1891 · desaparecimento do sino",
+      "precision": "month"
+    },
+    {
+      "entry_id": "2026-10-22-o-recibo-que-nao-tinha-data",
+      "title": "O recibo que não tinha data",
+      "time": "1891-11",
+      "label": "Novembro de 1891 · dia seguinte ao desaparecimento",
+      "precision": "month"
+    },
+    {
+      "entry_id": "2026-10-28-o-lugar-onde-a-agua-ferve",
+      "title": "O lugar onde a água ferve",
+      "time": "1891-11",
+      "label": "Última semana de novembro de 1891 · Leonor repara o fogão e escreve ao irmão",
+      "precision": "week"
+    },
+    {
+      "entry_id": "2026-11-03-a-balanca-de-dois-pratos",
+      "title": "A balança de dois pratos",
+      "time": "1898-12-22",
+      "label": "22 de dezembro de 1898 · Eulália compra o exemplar anotado de Só que conservará até a livraria de 1926",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-25-o-homem-que-nunca-tirava-as-luvas",
+      "title": "O homem que nunca tirava as luvas",
+      "time": "1926-11-18",
+      "label": "18 de novembro de 1926 · livraria de Eulália",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-23-a-prova-de-impressao",
+      "title": "A prova de impressão",
+      "time": "1943-11-17",
+      "label": "17 de novembro de 1943 · tipografia de Lídia",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-30-o-bolso-de-dentro",
+      "title": "O bolso de dentro",
+      "time": "1943-11-18",
+      "label": "18–19 de novembro de 1943 · Nuno conserva a segunda prova e imprime etiquetas para Celeste",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-24-a-mulher-que-se-lembrava-de-duas-mortes",
+      "title": "A mulher que se lembrava de duas mortes",
+      "time": "1943-12",
+      "label": "Primeira semana de dezembro de 1943",
+      "precision": "week"
+    },
+    {
+      "entry_id": "2026-11-02-as-notas-que-ficaram-de-fora",
+      "title": "As notas que ficaram de fora",
+      "time": "1943-12-10",
+      "label": "10–13 de dezembro de 1943 · Lídia imprime programas após a chegada do sino",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-27-a-mulher-que-guardou-o-negativo",
+      "title": "A mulher que guardou o negativo",
+      "time": "1944-01-12",
+      "label": "12 de janeiro de 1944 · Elisa fotografa as duas certidões",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-29-o-avesso-da-moldura",
+      "title": "O avesso da moldura",
+      "time": "1944-01-14",
+      "label": "14 de janeiro de 1944 · Beatriz e Adelaide decidem o destino das duas provas de Rui",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-31-a-tinta-do-lado-de-fora",
+      "title": "A tinta do lado de fora",
+      "time": "1944-01-21",
+      "label": "21–22 de janeiro de 1944 · Rui ganha o primeiro pagamento pelo letreiro e envia a carta à tia",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-10-31-a-carta-que-chegou-sem-pedir-licenca",
+      "title": "A carta que chegou sem pedir licença",
+      "time": "1944-01-25",
+      "label": "25–26 de janeiro de 1944 · carta recebida e resposta enviada",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-11-01-o-couro-do-avental",
+      "title": "O couro do avental",
+      "time": "1944-01-29",
+      "label": "29 de janeiro de 1944 · após a colocação da tabuleta de Palmira e o envio da carta de Rui",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-11-09-a-rua-que-cabia-na-margem",
+      "title": "A rua que cabia na margem",
+      "time": "1997-09-16",
+      "label": "16 de setembro de 1997 · Micaela registra a existência parcial do Pasaje de la Calandria, em Buenos Aires",
+      "precision": "day"
+    }
+  ],
+  "unplaced_archive": [
+    {
+      "entry_id": "2026-10-15-a-colher-que-me-venceu",
+      "title": "A colher que me venceu",
+      "publication_label": "15 de outubro de 2026"
+    },
+    {
+      "entry_id": "2026-10-14-2359",
+      "title": "Diante do espelho",
+      "publication_label": "14 de outubro de 2026 · 23h59"
+    },
+    {
+      "entry_id": "2026-10-14-1906",
+      "title": "Sobre a inveja dos mortais",
+      "publication_label": "14 de outubro de 2026 · 19h06"
+    },
+    {
+      "entry_id": "2026-10-14-1142",
+      "title": "O sapato vermelho",
+      "publication_label": "14 de outubro de 2026 · 11h42"
+    },
+    {
+      "entry_id": "2026-10-14-0317",
+      "title": "A última pergunta de uma estrela",
+      "publication_label": "14 de outubro de 2026 · 03h17"
+    },
+    {
+      "entry_id": "arquivo-o-demonio-errado-v1",
+      "title": "O demônio errado — versão original",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "arquivo-o-demonio-errado-v2",
+      "title": "O demônio errado — edição Recanto das Letras",
+      "publication_label": "14 de outubro de 2026 · edição publicada"
+    },
+    {
+      "entry_id": "arquivo-santa-paciencia-padre-tomas-v1",
+      "title": "A santa paciência do padre Tomás",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "arquivo-retorno-onze-meses-v1",
+      "title": "O retorno depois de onze meses",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "arquivo-cha-padre-tomas-v1",
+      "title": "Sobre o chá de padre Tomás",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "azrakhel-o-demonio-que-veio-me-matar-v1",
+      "title": "O demônio que veio me matar e ficou para o jantar",
+      "publication_label": "Dos arquivos da Casa · data incerta"
+    },
+    {
+      "entry_id": "bestiario-eithne-v1",
+      "title": "A mulher que chorava antes dos mortos",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu",
+      "title": "Sobre a primeira vez que fui expulsa do Céu — versão 1.0",
+      "publication_label": "Dos arquivos pessoais de Vespera · manuscrito original"
+    },
+    {
+      "entry_id": "recuperado-a-mulher-que-colecionava-despedidas",
+      "title": "A mulher que colecionava despedidas",
+      "publication_label": "14 de outubro de 2026 · 02h13"
+    },
+    {
+      "entry_id": "recuperado-uma-questao-de-etiqueta",
+      "title": "Uma questão de etiqueta",
+      "publication_label": "14 de outubro de 2026 · 06h06"
+    },
+    {
+      "entry_id": "recuperado-a-segunda-vida-do-sapato-vermelho",
+      "title": "A segunda vida do sapato vermelho",
+      "publication_label": "14 de outubro de 2026 · 11h42"
+    },
+    {
+      "entry_id": "recuperado-carta-ao-homem-que-nao-me-amou",
+      "title": "Carta ao homem que não me amou",
+      "publication_label": "14 de outubro de 2026 · 18h19"
+    },
+    {
+      "entry_id": "recuperado-o-espelho-pediu-desculpas",
+      "title": "O espelho pediu desculpas",
+      "publication_label": "14 de outubro de 2026 · 23h59"
+    },
+    {
+      "entry_id": "recuperado-a-escolha-de-contar-minha-historia",
+      "title": "A escolha de contar minha história",
+      "publication_label": "14 de outubro · uma hora que não consta em nenhum calendário"
+    },
+    {
+      "entry_id": "recuperado-uma-casa-e-um-lar",
+      "title": "Uma casa e um lar",
+      "publication_label": "Fragmento sem data"
+    },
+    {
+      "entry_id": "recuperado-sobre-a-beleza-e-o-porao",
+      "title": "Sobre a beleza e o porão",
+      "publication_label": "Fragmento sem data"
+    },
+    {
+      "entry_id": "recuperado-uma-xicara-de-cha",
+      "title": "Uma xícara de chá",
+      "publication_label": "Fragmento sem data"
+    },
+    {
+      "entry_id": "recuperado-o-tapete-e-a-avo-de-azrakhel",
+      "title": "O tapete e a avó de Azrakhel",
+      "publication_label": "Fragmento sem data"
+    },
+    {
+      "entry_id": "recuperado-helena-e-o-marido-mortal",
+      "title": "Helena e o marido mortal",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "recuperado-a-taberna-infernal",
+      "title": "A taberna infernal",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "recuperado-dos-inconvenientes-de-possuir-uma-cauda",
+      "title": "Dos inconvenientes de possuir uma cauda",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "aldeia-o-vestido-vermelho-e-as-penas-do-bispo",
+      "title": "O vestido vermelho e as penas do bispo",
+      "publication_label": "Memórias de Vespera · um domingo sem data"
+    },
+    {
+      "entry_id": "recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu-v2",
+      "title": "Sobre a primeira vez que fui expulsa do Céu — versão 2.0",
+      "publication_label": "Dos arquivos pessoais de Vespera · versão expandida"
+    },
+    {
+      "entry_id": "aldeia-o-arcanjo-que-chegou-tarde-para-um-milagre-v1",
+      "title": "O arcanjo que chegou tarde para um milagre",
+      "publication_label": "Memórias de Vespera · novembro de ano incerto"
+    },
+    {
+      "entry_id": "ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1",
+      "title": "A primeira vez que Ithariel me chamou de insuportável",
+      "publication_label": "Memórias de Vespera · sem data"
+    },
+    {
+      "entry_id": "2026-10-21-a-saida-que-nao-era-minha",
+      "title": "A saída que não era minha",
+      "publication_label": "21 de outubro de 2026"
+    }
   ]
- },
- "universe_chronology": [
-  {
-   "entry_id": "2026-10-26-a-costura-invisivel",
-   "title": "A costura invisível",
-   "time": "1886-06-18",
-   "label": "18 de junho de 1886 · oficina de Artur Vale",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-21-o-inventario-das-coisas-que-ainda-funcionam",
-   "title": "O inventário das coisas que ainda funcionam",
-   "time": "1891-11",
-   "label": "Novembro de 1891 · desaparecimento do sino",
-   "precision": "month"
-  },
-  {
-   "entry_id": "2026-10-22-o-recibo-que-nao-tinha-data",
-   "title": "O recibo que não tinha data",
-   "time": "1891-11",
-   "label": "Novembro de 1891 · dia seguinte ao desaparecimento",
-   "precision": "month"
-  },
-  {
-   "entry_id": "2026-10-28-o-lugar-onde-a-agua-ferve",
-   "title": "O lugar onde a água ferve",
-   "time": "1891-11",
-   "label": "Última semana de novembro de 1891 · Leonor repara o fogão e escreve ao irmão",
-   "precision": "week"
-  },
-  {
-   "entry_id": "2026-11-03-a-balanca-de-dois-pratos",
-   "title": "A balança de dois pratos",
-   "time": "1898-12-22",
-   "label": "22 de dezembro de 1898 · Eulália compra o exemplar anotado de Só que conservará até a livraria de 1926",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-25-o-homem-que-nunca-tirava-as-luvas",
-   "title": "O homem que nunca tirava as luvas",
-   "time": "1926-11-18",
-   "label": "18 de novembro de 1926 · livraria de Eulália",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-23-a-prova-de-impressao",
-   "title": "A prova de impressão",
-   "time": "1943-11-17",
-   "label": "17 de novembro de 1943 · tipografia de Lídia",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-30-o-bolso-de-dentro",
-   "title": "O bolso de dentro",
-   "time": "1943-11-18",
-   "label": "18–19 de novembro de 1943 · Nuno conserva a segunda prova e imprime etiquetas para Celeste",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-24-a-mulher-que-se-lembrava-de-duas-mortes",
-   "title": "A mulher que se lembrava de duas mortes",
-   "time": "1943-12",
-   "label": "Primeira semana de dezembro de 1943",
-   "precision": "week"
-  },
-  {
-   "entry_id": "2026-11-02-as-notas-que-ficaram-de-fora",
-   "title": "As notas que ficaram de fora",
-   "time": "1943-12-10",
-   "label": "10–13 de dezembro de 1943 · Lídia imprime programas após a chegada do sino",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-27-a-mulher-que-guardou-o-negativo",
-   "title": "A mulher que guardou o negativo",
-   "time": "1944-01-12",
-   "label": "12 de janeiro de 1944 · Elisa fotografa as duas certidões",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-29-o-avesso-da-moldura",
-   "title": "O avesso da moldura",
-   "time": "1944-01-14",
-   "label": "14 de janeiro de 1944 · Beatriz e Adelaide decidem o destino das duas provas de Rui",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-31-a-tinta-do-lado-de-fora",
-   "title": "A tinta do lado de fora",
-   "time": "1944-01-21",
-   "label": "21–22 de janeiro de 1944 · Rui ganha o primeiro pagamento pelo letreiro e envia a carta à tia",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-10-31-a-carta-que-chegou-sem-pedir-licenca",
-   "title": "A carta que chegou sem pedir licença",
-   "time": "1944-01-25",
-   "label": "25–26 de janeiro de 1944 · carta recebida e resposta enviada",
-   "precision": "day"
-  },
-  {
-   "entry_id": "2026-11-01-o-couro-do-avental",
-   "title": "O couro do avental",
-   "time": "1944-01-29",
-   "label": "29 de janeiro de 1944 · após a colocação da tabuleta de Palmira e o envio da carta de Rui",
-   "precision": "day"
-  }
- ],
- "unplaced_archive": [
-  {
-   "entry_id": "2026-10-15-a-colher-que-me-venceu",
-   "title": "A colher que me venceu",
-   "publication_label": "15 de outubro de 2026"
-  },
-  {
-   "entry_id": "2026-10-14-2359",
-   "title": "Diante do espelho",
-   "publication_label": "14 de outubro de 2026 · 23h59"
-  },
-  {
-   "entry_id": "2026-10-14-1906",
-   "title": "Sobre a inveja dos mortais",
-   "publication_label": "14 de outubro de 2026 · 19h06"
-  },
-  {
-   "entry_id": "2026-10-14-1142",
-   "title": "O sapato vermelho",
-   "publication_label": "14 de outubro de 2026 · 11h42"
-  },
-  {
-   "entry_id": "2026-10-14-0317",
-   "title": "A última pergunta de uma estrela",
-   "publication_label": "14 de outubro de 2026 · 03h17"
-  },
-  {
-   "entry_id": "arquivo-o-demonio-errado-v1",
-   "title": "O demônio errado — versão original",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "arquivo-o-demonio-errado-v2",
-   "title": "O demônio errado — edição Recanto das Letras",
-   "publication_label": "14 de outubro de 2026 · edição publicada"
-  },
-  {
-   "entry_id": "arquivo-santa-paciencia-padre-tomas-v1",
-   "title": "A santa paciência do padre Tomás",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "arquivo-retorno-onze-meses-v1",
-   "title": "O retorno depois de onze meses",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "arquivo-cha-padre-tomas-v1",
-   "title": "Sobre o chá de padre Tomás",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "azrakhel-o-demonio-que-veio-me-matar-v1",
-   "title": "O demônio que veio me matar e ficou para o jantar",
-   "publication_label": "Dos arquivos da Casa · data incerta"
-  },
-  {
-   "entry_id": "bestiario-eithne-v1",
-   "title": "A mulher que chorava antes dos mortos",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu",
-   "title": "Sobre a primeira vez que fui expulsa do Céu — versão 1.0",
-   "publication_label": "Dos arquivos pessoais de Vespera · manuscrito original"
-  },
-  {
-   "entry_id": "recuperado-a-mulher-que-colecionava-despedidas",
-   "title": "A mulher que colecionava despedidas",
-   "publication_label": "14 de outubro de 2026 · 02h13"
-  },
-  {
-   "entry_id": "recuperado-uma-questao-de-etiqueta",
-   "title": "Uma questão de etiqueta",
-   "publication_label": "14 de outubro de 2026 · 06h06"
-  },
-  {
-   "entry_id": "recuperado-a-segunda-vida-do-sapato-vermelho",
-   "title": "A segunda vida do sapato vermelho",
-   "publication_label": "14 de outubro de 2026 · 11h42"
-  },
-  {
-   "entry_id": "recuperado-carta-ao-homem-que-nao-me-amou",
-   "title": "Carta ao homem que não me amou",
-   "publication_label": "14 de outubro de 2026 · 18h19"
-  },
-  {
-   "entry_id": "recuperado-o-espelho-pediu-desculpas",
-   "title": "O espelho pediu desculpas",
-   "publication_label": "14 de outubro de 2026 · 23h59"
-  },
-  {
-   "entry_id": "recuperado-a-escolha-de-contar-minha-historia",
-   "title": "A escolha de contar minha história",
-   "publication_label": "14 de outubro · uma hora que não consta em nenhum calendário"
-  },
-  {
-   "entry_id": "recuperado-uma-casa-e-um-lar",
-   "title": "Uma casa e um lar",
-   "publication_label": "Fragmento sem data"
-  },
-  {
-   "entry_id": "recuperado-sobre-a-beleza-e-o-porao",
-   "title": "Sobre a beleza e o porão",
-   "publication_label": "Fragmento sem data"
-  },
-  {
-   "entry_id": "recuperado-uma-xicara-de-cha",
-   "title": "Uma xícara de chá",
-   "publication_label": "Fragmento sem data"
-  },
-  {
-   "entry_id": "recuperado-o-tapete-e-a-avo-de-azrakhel",
-   "title": "O tapete e a avó de Azrakhel",
-   "publication_label": "Fragmento sem data"
-  },
-  {
-   "entry_id": "recuperado-helena-e-o-marido-mortal",
-   "title": "Helena e o marido mortal",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "recuperado-a-taberna-infernal",
-   "title": "A taberna infernal",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "recuperado-dos-inconvenientes-de-possuir-uma-cauda",
-   "title": "Dos inconvenientes de possuir uma cauda",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "aldeia-o-vestido-vermelho-e-as-penas-do-bispo",
-   "title": "O vestido vermelho e as penas do bispo",
-   "publication_label": "Memórias de Vespera · um domingo sem data"
-  },
-  {
-   "entry_id": "recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu-v2",
-   "title": "Sobre a primeira vez que fui expulsa do Céu — versão 2.0",
-   "publication_label": "Dos arquivos pessoais de Vespera · versão expandida"
-  },
-  {
-   "entry_id": "aldeia-o-arcanjo-que-chegou-tarde-para-um-milagre-v1",
-   "title": "O arcanjo que chegou tarde para um milagre",
-   "publication_label": "Memórias de Vespera · novembro de ano incerto"
-  },
-  {
-   "entry_id": "ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1",
-   "title": "A primeira vez que Ithariel me chamou de insuportável",
-   "publication_label": "Memórias de Vespera · sem data"
-  },
-  {
-   "entry_id": "2026-10-21-a-saida-que-nao-era-minha",
-   "title": "A saída que não era minha",
-   "publication_label": "21 de outubro de 2026"
-  }
- ]
 }

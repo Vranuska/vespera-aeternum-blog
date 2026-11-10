@@ -9,9 +9,12 @@ const OUTER = "MEMORIA · TEMPUS · CINIS · LUX · ANIMA · SILENTIUM · NOX ·
 const INNER = "o que se perde · o que se guarda · o que retorna · ";
 
 export function Constellation({ index, works }: { index: EditorialIndex; works: Work[] }) {
-  const { eras, missing } = useMemo(
-    () => buildEras(index, new Set(works.map((w) => w.id))),
-    [index, works],
+  const knownIds = useMemo(() => new Set(works.map((work) => work.id)), [works]);
+  const { eras, missing } = useMemo(() => buildEras(index, knownIds), [index, knownIds]);
+  const workById = useMemo(() => new Map(works.map((work) => [work.id, work] as const)), [works]);
+  const chapters = useMemo(
+    () => index.chapters.filter((chapter) => knownIds.has(chapter.entry_id)),
+    [index, knownIds],
   );
   const [selected, setSelected] = useState<string | null>(null);
   useEffect(() => {
@@ -23,7 +26,7 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
     eras.find((e) => e.key === k)?.months.reduce((n, m) => n + m.entries.length, 0) ?? 0;
 
   return (
-    <section aria-labelledby="constelacao-titulo" className="mx-auto mt-16 max-w-[46rem]">
+    <section id="constelacao" aria-labelledby="constelacao-titulo" className="mx-auto mt-16 max-w-[46rem] px-4 sm:px-0">
       <h2
         id="constelacao-titulo"
         className="text-center font-display text-3xl italic text-parchment"
@@ -171,6 +174,31 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
           </div>
         )}
       </div>
+      <details className="mt-8 border border-gold/30 bg-header">
+        <summary className="cursor-pointer px-5 py-4 font-display text-xl text-parchment">
+          Volume I — Ciclo das Inacabadas
+          <span className="label-archive ml-3 text-gold">{chapters.length} capítulos · ordem editorial</span>
+        </summary>
+        <div className="border-t border-border px-5 py-4">
+          <p className="mb-4 text-sm italic text-sage">
+            Esta é a sequência de leitura do romance-mosaico. A constelação acima mostra outra coisa: a cronologia do universo, que não precisa seguir a ordem em que os manuscritos são lidos.
+          </p>
+          <ol className="grid gap-x-6 sm:grid-cols-2">
+            {chapters.map((chapter) => {
+              const work = workById.get(chapter.entry_id);
+              if (!work) return null;
+              return (
+                <li key={chapter.entry_id} className="border-b border-border/50 py-3">
+                  <Link to="/diarios/$id" params={{ id: chapter.entry_id }} className="block hover:text-rose">
+                    <span className="label-archive text-gold">Capítulo {chapter.number}</span>
+                    <span className="mt-1 block font-display text-lg text-parchment">{work.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </details>
       <p className="mt-4 text-center">
         <Link to="/diarios" className="label-archive text-rose hover:text-parchment">
           Índice completo dos diários →

@@ -18,7 +18,7 @@ export type Status = "confirmado" | "provisório";
 export type Kind =
   | "plano" | "casa" | "salão" | "jardim" | "palácio" | "biblioteca" | "tribunal"
   | "mar" | "corte" | "taberna" | "aldeia" | "cidade" | "lago" | "estação" | "igreja"
-  | "torre" | "ponte" | "estrela" | "quarto" | "portal";
+  | "torre" | "ponte" | "estrela" | "quarto" | "portal" | "passagem";
 
 export type Place = {
   id: string;
@@ -28,7 +28,10 @@ export type Place = {
   y: number; // 0–700
   status: Status;
   description: string;
+  image?: { src: string; alt: string; caption?: string };
   history?: string[];
+  laws?: string[];
+  inhabitants?: string[];
   characters?: string[];
   works?: string[];
   secrets?: string[];
@@ -170,6 +173,20 @@ export const MAPS: Record<string, AtlasMap> = {
       { id: "porto", name: "Uma cidade portuária", kind: "cidade", x: 180, y: 540, status: "confirmado",
         description: "Helena vendia flores e foi casada trinta e dois anos com um homem que roncava como um animal moribundo.",
         works: ["recuperado-helena-e-o-marido-mortal"] },
+      { id: "pasaje-calandria", name: "Pasaje de la Calandria", kind: "passagem", x: 520, y: 565, status: "provisório",
+        description: "Passagem estreita de Barracas, Buenos Aires. Plantas de 1934 e 1948 registram seu traçado; em 1956 ele já aparece interrompido. Em 1997, Micaela Funes confirma o corredor interno do nº 48 e o pátio de Elena Roldán. A porta baixa no muro permanece fechada; a saída não foi verificada.",
+        history: [
+          "1934 — primeira referência cartográfica conhecida ao Pasaje de la Calandria.",
+          "1948 — a planta mostra a passagem entre dois quarteirões, com entrada pelo número 48 e saída junto ao pátio.",
+          "1956 — o traçado aparece reduzido a uma linha interrompida; levantamentos posteriores deixam de mencioná-lo.",
+          "16 de setembro de 1997 — Micaela Funes verifica o corredor interno, o pátio e a porta baixa no muro, com o testemunho de Elena Roldán."
+        ],
+        laws: ["Limite cartográfico: a documentação termina na porta baixa do muro. Nenhuma continuação além dela foi verificada."],
+        inhabitants: ["Elena Roldán — moradora do nº 48; antiga telefonista."],
+        characters: ["vespera"],
+        works: ["2026-11-09-a-rua-que-cabia-na-margem"],
+        secrets: ["Vespera foi vista junto à porta e advertiu Micaela a não confundir o limite conhecido com o vazio.", "Nenhuma relação com a Umbra ou o Sonhar está estabelecida."]
+      },
       { id: "lago", name: "O lago de Eithne", kind: "lago", x: 200, y: 170, status: "confirmado",
         description: "Uma casa de pedra numa margem, a casa de uma família na outra. Cebolas que sobrevivem ao frio.",
         characters: ["eithne"], works: ["bestiario-eithne-v1"] },
