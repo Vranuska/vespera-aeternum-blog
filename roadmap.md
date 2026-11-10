@@ -9,9 +9,17 @@
 - [x] Empacotar projeto em ZIP para a usuária + explicar repositório novo com sincronização
 - [ ] Etapa 3 (aguarda): editor admin de gêneros e mapas — precisa de login/Cloud
 
-## Constelação de memórias e ordem aprovada (09/11)
-- [x] Índice editorial lido de `editorial/indice-romance-mosaico.json` (validação + cópia mínima local)
-- [x] Seção "Constelação de memórias" na página inicial: anéis lentos, frase central, eras 1886–1944 + "Fora da cronologia", agrupamento por mês, links ao leitor
-- [x] Ordem de leitura = 15 capítulos do Volume I, na sequência do arquivo-fonte; demais obras seguem por título, sem capítulo
-- [x] Testes (22), desktop/celular, animações reduzidas, sem rolagem lateral
-- [x] Cópia offline sincronizada com os 46 manuscritos do arquivo literário; teste confirma que os 15 capítulos do Volume I continuam disponíveis quando o remoto falha.
+## Portal Reforged e Arquivo de Eras (10/11/2026)
+- [x] Preservar o hero aprovado: imagem, monograma, paleta vinho/pergaminho, manuscrito recente, obras selecionadas e personagens.
+- [x] Reintegrar a Constelação de memórias à página inicial, com anéis lentos, frase central, eras e agrupamento por mês.
+- [x] Expor a ordem editorial do Volume I separadamente da cronologia do universo: 16 capítulos.
+- [x] Atualizar a cópia de segurança do índice editorial para 16 itens cronológicos e 31 obras fora da cronologia.
+- [x] Registrar o Pasaje de la Calandria no Atlas como localização provisória, com história, habitante e limite cartográfico.
+- [ ] Produzir imagem própria do Pasaje e fichas completas de Micaela Funes e Elena Roldán; não inventar o que existe além da porta.
+- [ ] Revalidar build, testes, responsividade e animações reduzidas após a integração.
+- [ ] Preparar publicação estática compatível com GitHub Pages; este repositório ainda não contém workflow de publicação e usa build SSR/Nitro.
+
+## Pendências de arquitetura
+- As 47 obras continuam sendo lidas de `entries.json` no repositório literário; esta aplicação não possui cópia local dos manuscritos.
+- O Bestiário ainda precisa de fichas completas para os personagens humanos do Ciclo das Inacabadas.
+- Sonhar e Umbra permanecem sem cartografia interna até que os manuscritos estabeleçam suas características.

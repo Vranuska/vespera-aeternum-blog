@@ -14,3 +14,7 @@
 - Reader sheet look varies by genre via `src/components/vespera/Signature.tsx` (visual only; manuscript content untouched).
 
 - Universe chronology and approved reading order come only from the literary repo's `editorial/indice-romance-mosaico.json` via `src/lib/editorial.ts` (minimal fallback in `src/data/editorial-fallback.json`); never derive it from publication dates.
+
+- The homepage must preserve the approved Reforged portal and mount `Constellation`: rotating rings, the central phrase, era/month navigation, and a separate editorial reading-order list. The universe chronology and reading order are distinct.
+- Keep `src/data/editorial-fallback.json` synchronized with the canonical `editorial/indice-romance-mosaico.json`; it is a minimal offline index, not a replacement for the manuscript archive.
+- Atlas places support optional imagery, history, laws/limits, inhabitants, Bestiary links, works, secrets, and verified connections. Mark incomplete cartography as provisional; never infer a portal or a connection from silence.
