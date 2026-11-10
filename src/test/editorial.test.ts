@@ -31,6 +31,7 @@ describe("Índice editorial", () => {
       "1926",
       "1943",
       "1944",
+      "1997",
       OUTSIDE,
     ]);
     const e1943 = eras.find((e) => e.key === "1943")!;
@@ -61,9 +62,9 @@ describe("Índice editorial", () => {
 });
 
 describe("Ordem de leitura aprovada", () => {
-  it("espelha exatamente os 15 capítulos do índice", () => {
+  it("espelha exatamente os 16 capítulos do índice", () => {
     expect(EDITORIAL_ORDER).toEqual(index.chapters.map((c) => c.entry_id));
-    expect(EDITORIAL_ORDER).toHaveLength(15);
+    expect(EDITORIAL_ORDER).toHaveLength(16);
   });
   it("modo livro segue a ordem aprovada e mantém as demais obras acessíveis", () => {
     const raw = (id: string, title: string) => ({
