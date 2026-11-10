@@ -1,11 +1,46 @@
 import { queryOptions } from "@tanstack/react-query";
 import { WORK_META } from "@/data/catalog";
 import { CHARACTERS } from "@/data/characters";
+import fallbackEntries from "@/data/entries-fallback.json";
+import { EDITORIAL_ORDER } from "@/data/reading-order";
 
 export const ENTRIES_URL =
   "https://raw.githubusercontent.com/Vranuska/vespera-aeternum/HEAD/entries.json";
 
-type RawEntry = { id: string; date: string; title: string; place?: string; paragraphs: string[] };
+export type RawEntry = {
+  id: string; date: string; title: string; place?: string; paragraphs: string[];
+  genres?: string[]; collection?: string; themes?: string[]; characters?: string[];
+  series?: { id: string; title: string; position?: number };
+  standalone?: boolean; author?: string;
+  image?: { src: string; alt: string; rights: "author-owned" };
+};
+
+export function parseEntries(input: unknown): RawEntry[] {
+  if (!Array.isArray(input) || !input.length) throw new Error("Arquivo vazio ou inválido");
+  const ids = new Set<string>();
+  for (const item of input) {
+    if (!item || typeof item !== "object" || typeof item.id !== "string" || !item.id.trim() ||
+      typeof item.title !== "string" || !item.title.trim() || typeof item.date !== "string" ||
+      !Array.isArray(item.paragraphs) || !item.paragraphs.length || !item.paragraphs.every((p: unknown) => typeof p === "string") ||
+      (item.place !== undefined && typeof item.place !== "string") || ids.has(item.id)) throw new Error("Estrutura inválida do arquivo");
+    ids.add(item.id);
+    for (const key of ["genres", "themes", "characters"]) {
+      if (item[key] !== undefined && (!Array.isArray(item[key]) || !item[key].every((v: unknown) => typeof v === "string"))) throw new Error("Metadados inválidos");
+    }
+    for (const key of ["author", "collection"]) if (item[key] !== undefined && typeof item[key] !== "string") throw new Error("Metadados inválidos");
+    if (item.standalone !== undefined && typeof item.standalone !== "boolean") throw new Error("Metadados inválidos");
+    if (item.series !== undefined && (!item.series || typeof item.series.id !== "string" || typeof item.series.title !== "string" || (item.series.position !== undefined && (!Number.isFinite(item.series.position) || item.series.position < 0)))) throw new Error("Série inválida");
+    if (item.image !== undefined && (!item.image || typeof item.image.src !== "string" || typeof item.image.alt !== "string" || item.image.rights !== "author-owned")) throw new Error("Imagem sem autoria declarada");
+  }
+  return input as RawEntry[];
+}
+
+export function ownedImage(image: RawEntry["image"]): RawEntry["image"] {
+  if (!image || image.rights !== "author-owned" || !image.alt.trim()) return undefined;
+  // Bundled/local assets, or the author's own archive. No arbitrary third-party URLs.
+  if (/^\/(?!\/)/.test(image.src) || /^https:\/\/raw\.githubusercontent\.com\/Vranuska\/vespera-aeternum\//.test(image.src)) return image;
+  return undefined;
+}
 
 export type Work = {
   id: string;
@@ -22,9 +57,14 @@ export type Work = {
   dated: boolean;
   excerpt: string;
   words: number;
+  source: "github" | "fallback";
+  series?: RawEntry["series"];
+  standalone?: boolean | undefined;
+  author?: string | undefined;
+  image?: RawEntry["image"];
 };
 
-export function normalize(raw: RawEntry[]): Work[] {
+export function normalize(raw: RawEntry[], source: Work["source"] = "github"): Work[] {
   return raw.map((e, i) => {
     const text = e.paragraphs.join(" ");
     const meta = WORK_META[e.id];
@@ -35,11 +75,16 @@ export function normalize(raw: RawEntry[]): Work[] {
       date: e.date,
       place: e.place,
       paragraphs: e.paragraphs,
-      genres: meta?.genres ?? ["a classificar"],
-      collection: meta?.collection ?? "Não catalogada",
-      themes: meta?.themes ?? [],
-      characters: meta?.characters ?? CHARACTERS.filter((c) => c.pattern.test(text)).map((c) => c.slug),
-      classified: !!meta,
+      genres: e.genres ?? meta?.genres ?? ["a classificar"],
+      collection: e.collection ?? meta?.collection ?? "Não catalogada",
+      themes: e.themes ?? meta?.themes ?? [],
+      characters: e.characters ?? meta?.characters ?? CHARACTERS.filter((c) => c.pattern.test(text)).map((c) => c.slug),
+      classified: !!meta || e.genres !== undefined,
+      source,
+      series: e.series ?? meta?.series,
+      standalone: e.standalone ?? meta?.standalone,
+      author: e.author ?? meta?.author,
+      image: ownedImage(e.image ?? meta?.image),
       dated: /\d{4}/.test(e.date),
       excerpt: e.paragraphs.find((p) => p.length > 60) ?? e.paragraphs[0] ?? "",
       words: text.split(/\s+/).filter(Boolean).length,
@@ -47,15 +92,49 @@ export function normalize(raw: RawEntry[]): Work[] {
   });
 }
 
+export async function loadWorks(fetcher: typeof fetch = fetch): Promise<Work[]> {
+  try {
+    const res = await fetcher(ENTRIES_URL, { signal: AbortSignal.timeout(8000) });
+    if (!res.ok) throw new Error(`Arquivo indisponível (${res.status})`);
+    return normalize(parseEntries(await res.json()));
+  } catch {
+    return normalize(parseEntries(fallbackEntries), "fallback");
+  }
+}
+
+/** Approved order first; otherwise a neutral title index, never fabricated chapters. */
+export function bookWorks(works: Work[], approved: readonly string[] = EDITORIAL_ORDER): Work[] {
+  const rank = new Map(approved.map((id, i) => [id, i]));
+  return [...works].sort((a, b) => {
+    const ar = rank.get(a.id), br = rank.get(b.id);
+    if (ar !== undefined || br !== undefined) return (ar ?? Infinity) - (br ?? Infinity);
+    const group = (a.series?.title ?? a.title).localeCompare(b.series?.title ?? b.title, "pt-BR");
+    if (group) return group;
+    if (a.series && b.series && a.series.id === b.series.id) {
+      const delta = (a.series.position ?? Infinity) - (b.series.position ?? Infinity);
+      if (delta && !Number.isNaN(delta)) return delta;
+    }
+    return a.title.localeCompare(b.title, "pt-BR") || a.id.localeCompare(b.id);
+  });
+}
+
 export const worksQuery = queryOptions({
   queryKey: ["works"],
-  queryFn: async (): Promise<Work[]> => {
-    const res = await fetch(ENTRIES_URL);
-    if (!res.ok) throw new Error(`Arquivo indisponível (${res.status})`);
-    return normalize((await res.json()) as RawEntry[]);
-  },
+  queryFn: () => loadWorks(),
   staleTime: 5 * 60_000,
 });
+
+/** Reader positions are navigation state, never chapter or manuscript metadata. */
+export function readerNavigation(works: Work[], id: string, mode?: "livro") {
+  const sequence = mode === "livro" ? bookWorks(works) : works;
+  const position = sequence.findIndex((work) => work.id === id);
+  return {
+    position,
+    total: sequence.length,
+    previous: position < 0 ? undefined : sequence[position + (mode === "livro" ? -1 : 1)],
+    next: position < 0 ? undefined : sequence[position + (mode === "livro" ? 1 : -1)],
+  };
+}
 
 export type LibraryFilters = {
   q?: string | undefined;
