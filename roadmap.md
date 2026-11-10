@@ -1,25 +1,35 @@
-# Roadmap — Etapa 2
+# Roadmap — Vespera Aeternum Blog
 
-- [x] Catálogo: gêneros múltiplos, coleções, temas por obra (sugestões da leitura)
-- [x] Biblioteca: filtros multisseleção (gênero, personagem, lugar, tema, coleção, data)
-- [x] Bestiário: fichas a partir dos textos + página por personagem
-- [x] Atlas do Impossível: cosmologia, mapas navegáveis, painel, trilha
-- [x] Leitor: folha de papel envelhecido sobre fundo escuro, capitular, assinatura cursiva "Vespera"
-- [x] Variações por gênero: tinta/símbolo da assinatura, tom do papel, ornamentos (só visual)
-- [x] Empacotar projeto em ZIP para a usuária + explicar repositório novo com sincronização
-- [ ] Etapa 3 (aguarda): editor admin de gêneros e mapas — precisa de login/Cloud
+## Base da aplicação
+- [x] Biblioteca com filtros por gênero, personagem, lugar, tema, coleção e data.
+- [x] Bestiário com fichas individuais e ligações com os manuscritos.
+- [x] Atlas navegável com cosmologia, mapas, painel de lugar e trilha.
+- [x] Leitor em papel envelhecido, capitular, assinatura e variações visuais por gênero.
+- [x] Navegação anterior/próximo do modo livro, separada da cronologia do universo.
 
-## Portal Reforged e Arquivo de Eras (10/11/2026)
-- [x] Preservar o hero aprovado: imagem, monograma, paleta vinho/pergaminho, manuscrito recente, obras selecionadas e personagens.
-- [x] Reintegrar a Constelação de memórias à página inicial, com anéis lentos, frase central, eras e agrupamento por mês.
-- [x] Expor a ordem editorial do Volume I separadamente da cronologia do universo: 16 capítulos.
-- [x] Atualizar a cópia de segurança do índice editorial para 16 itens cronológicos e 31 obras fora da cronologia.
-- [x] Registrar o Pasaje de la Calandria no Atlas como localização provisória, com história, habitante e limite cartográfico.
-- [ ] Produzir imagem própria do Pasaje e fichas completas de Micaela Funes e Elena Roldán; não inventar o que existe além da porta.
-- [ ] Revalidar build, testes, responsividade e animações reduzidas após a integração.
-- [ ] Preparar publicação estática compatível com GitHub Pages; este repositório ainda não contém workflow de publicação e usa build SSR/Nitro.
+## Portal Reforged — 10/11/2026
+- [x] Restaurar a composição aprovada no commit 5a038b8: cabeçalho vinho, monograma botânico dourado, índice lateral e manuscrito protagonista desde o início.
+- [x] Remover o hero fotográfico de tela inteira e manter a prancha apenas como imagem pequena e emoldurada.
+- [x] Manter outros manuscritos em linhas de leitura, sem grade de cards protagonista.
+- [x] Preservar a Constelação de memórias como seção secundária depois do manuscrito e da lista.
+- [x] Separar ordem editorial do Volume I (16 capítulos) da cronologia do universo.
+- [x] Cópia offline com 47 manuscritos, sem IDs duplicados.
+- [x] Cópia offline do índice editorial: 16 capítulos, 16 itens cronológicos e 31 obras fora da cronologia.
 
-## Pendências de arquitetura
-- As 47 obras continuam sendo lidas de `entries.json` no repositório literário; esta aplicação não possui cópia local dos manuscritos.
-- O Bestiário ainda precisa de fichas completas para os personagens humanos do Ciclo das Inacabadas.
-- Sonhar e Umbra permanecem sem cartografia interna até que os manuscritos estabeleçam suas características.
+## Atlas e cânone
+- [x] Registrar O Entre como princípio que permite a coexistência dos opostos e a presença consciente de Vespera desde a Criação.
+- [x] Registrar a responsabilidade de Vespera pela distinção e relação entre Umbra e realidade física.
+- [x] Reconhecer o Sonhar como domínio distinto do mundo desperto, sem inventar sua cartografia.
+- [x] Registrar o Pasaje de la Calandria, em Barracas, Buenos Aires, com estado provisório e traçado parcial.
+- [ ] Produzir imagem própria do Pasaje e aprofundar as fichas de Micaela Funes e Elena Roldán quando houver material narrativo suficiente.
+- [ ] Desenvolver cartografia interna da Umbra e do Sonhar somente a partir de manuscritos que estabeleçam regiões, leis e habitantes.
+
+## Validação e publicação
+- [x] 22 testes aprovados no workspace Lovable em 10/11/2026.
+- [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
+- [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
+- [ ] Executar e confirmar build de produção (não concluído nesta etapa).
+- [ ] Confirmar que o commit restaurado no Lovable está sincronizado ao GitHub main.
+- [ ] Publicar a versão validada e confirmar separadamente a resposta HTTP/visual do endereço público.
+- [ ] Completar fichas de personagens humanos do Ciclo das Inacabadas sem inventar biografia ou habilidades.
+- [ ] Etapa 3: editor administrativo de gêneros e mapas, dependente de autenticação/Cloud.
