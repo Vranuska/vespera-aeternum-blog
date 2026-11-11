@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalize, parseEntries, bookWorks, loadWorks, ownedImage, readerNavigation } from "@/lib/works";
+import { normalize, parseEntries, bookWorks, loadWorks, ownedImage, readerNavigation, relatedWorks } from "@/lib/works";
 import editorial from "@/data/editorial-fallback.json";
 import { COLLECTIONS, GENRES, THEMES } from "@/data/catalog";
 
@@ -17,6 +17,16 @@ describe("Arquivo e ordem editorial", () => {
     expect(GENRES).toContain("arquivo-das-eras");
     expect(COLLECTIONS).toContain("Arquivo das Eras");
     expect(THEMES).toEqual(expect.arrayContaining(["trabalho portuário", "partida", "registro"]));
+  });
+  it("preserva referências explícitas entre obras e rejeita IDs relacionados ausentes", () => {
+    const works = normalize([
+      { ...raw("a", "A"), related_entries: ["b"] },
+      raw("b", "B"),
+      { ...raw("c", "C"), characters: ["vespera"] },
+    ]);
+    expect(relatedWorks(works, "a").map((work) => work.id)).toEqual(["b"]);
+    expect(relatedWorks(works, "b").map((work) => work.id)).toContain("a");
+    expect(() => parseEntries([{ ...raw("x", "X"), related_entries: ["missing"] }])).toThrow();
   });
   it("separa ordem editorial da cronologia sem mutar o arquivo", () => {
     const works = normalize([raw("z", "Zulu"), raw("a", "Alfa")]);
