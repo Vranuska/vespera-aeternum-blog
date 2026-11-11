@@ -27,6 +27,7 @@
 - [x] Registrar a responsabilidade de Vespera pela distinção e relação entre Umbra e realidade física.
 - [x] Reconhecer o Sonhar como domínio distinto do mundo desperto, sem inventar sua cartografia.
 - [x] Registrar o Pasaje de la Calandria, em Barracas, Buenos Aires, com estado provisório e traçado parcial.
+- [x] Integrar ao Atlas React as imagens, a história, as leis, os habitantes e as referências cruzadas do `atlas.json`, sem alterar a geometria ilustrativa nem completar mapas ainda desconhecidos.
 - [ ] Produzir imagem própria do Pasaje e aprofundar as fichas de Micaela Funes e Elena Roldán quando houver material narrativo suficiente.
 - [ ] Desenvolver cartografia interna da Umbra e do Sonhar somente a partir de manuscritos que estabeleçam regiões, leis e habitantes.
 
