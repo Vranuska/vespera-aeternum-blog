@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { normalize, parseEntries, bookWorks, loadWorks, ownedImage, readerNavigation } from "@/lib/works";
 import editorial from "@/data/editorial-fallback.json";
+import { COLLECTIONS, GENRES, THEMES } from "@/data/catalog";
 
 const raw = (id: string, title: string) => ({ id, title, date: "Sem data", paragraphs: ["Texto original sem alterações."], characters: [] });
 describe("Arquivo e ordem editorial", () => {
@@ -11,6 +12,11 @@ describe("Arquivo e ordem editorial", () => {
     expect(work?.characters).toEqual([]);
     expect(work?.series).toBeUndefined();
     expect(work?.standalone).toBeUndefined();
+  });
+  it("expõe a coleção Arquivo das Eras nos filtros da Bibliotheca", () => {
+    expect(GENRES).toContain("arquivo-das-eras");
+    expect(COLLECTIONS).toContain("Arquivo das Eras");
+    expect(THEMES).toEqual(expect.arrayContaining(["trabalho portuário", "partida", "registro"]));
   });
   it("separa ordem editorial da cronologia sem mutar o arquivo", () => {
     const works = normalize([raw("z", "Zulu"), raw("a", "Alfa")]);
@@ -53,10 +59,13 @@ describe("Arquivo e ordem editorial", () => {
   });
   it("usa cópia fiel de segurança em erro remoto", async () => {
     const works = await loadWorks(async () => { throw new Error("offline"); });
-    expect(works).toHaveLength(47);
+    expect(works).toHaveLength(48);
     const chapterIds = editorial.editorial_reading_order.chapters.map((chapter) => chapter.entry_id);
     expect(chapterIds.every((id) => works.some((work) => work.id === id))).toBe(true);
     expect(works[0]?.id).toBe("2026-11-09-a-rua-que-cabia-na-margem");
+    const unplacedIds = editorial.unplaced_archive.map((item) => item.entry_id);
+    expect(unplacedIds).toContain("2026-11-10-a-mare-nao-assina-recibos");
+    expect(unplacedIds.every((id) => works.some((work) => work.id === id))).toBe(true);
     expect(works.every(w => w.source === "fallback")).toBe(true);
   });
   it("não sobrepõe arquivo remoto válido com cópia local", async () => {
