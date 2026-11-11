@@ -45,6 +45,24 @@ describe("Atlas — cosmologia do Entre", () => {
     );
   });
 
+  it("apresenta as sete pranchas canônicas sem criar imagem para o Pasaje", () => {
+    const illustrated = [
+      ["mortais", "lago"],
+      ["mortais", "aldeia"],
+      ["firmamentos", "setimo"],
+      ["firmamentos", "jardins-manha"],
+      ["firmamentos", "terceiro"],
+      ["infernos", "taberna"],
+      ["infernos", "corte-cinzas"],
+    ] as const;
+    for (const [mapId, placeId] of illustrated) {
+      expect(enrichAtlasPlace(mapId, findPlace(mapId, placeId)!).image?.src)
+        .toMatch(/^https:\/\/raw\.githubusercontent\.com\//);
+    }
+    expect(enrichAtlasPlace("mortais", findPlace("mortais", "pasaje-calandria")!).image)
+      .toBeUndefined();
+  });
+
   it("mantém as referências de contos ligadas a manuscritos existentes", () => {
     const ids = new Set(entries.map((entry) => entry.id));
     const references = canonicalAtlas.places
