@@ -71,6 +71,8 @@ export function parseEditorial(
 }
 
 export async function loadEditorial(fetcher: typeof fetch = fetch): Promise<EditorialIndex> {
+  // Use the synchronized editorial snapshot during static prerender; refresh remotely in the browser.
+  if (import.meta.env.SSR) return parseEditorial(fallbackIndex, "fallback");
   try {
     const res = await fetcher(EDITORIAL_URL, { signal: AbortSignal.timeout(8000) });
     if (!res.ok) throw new Error(`Índice indisponível (${res.status})`);
