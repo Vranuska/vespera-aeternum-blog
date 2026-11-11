@@ -99,6 +99,10 @@ export function normalize(raw: RawEntry[], source: Work["source"] = "github"): W
 }
 
 export async function loadWorks(fetcher: typeof fetch = fetch): Promise<Work[]> {
+  // Static prerender must be deterministic and must not wait on remote GitHub requests.
+  // The bundled snapshot is synchronized from the canonical archive before deployment;
+  // the browser still refreshes from GitHub after hydration.
+  if (import.meta.env.SSR) return normalize(parseEntries(fallbackEntries), "fallback");
   try {
     const res = await fetcher(ENTRIES_URL, { signal: AbortSignal.timeout(8000) });
     if (!res.ok) throw new Error(`Arquivo indisponível (${res.status})`);
