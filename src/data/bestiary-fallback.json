@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-08",
+  "title": "O Bestiário",
+  "introduction": "Um inventário de presenças, não de monstros. Cada ficha separa o que foi testemunhado, o que foi dito por terceiros e aquilo que ainda não sabemos.",
+  "editorial_principle": "Nenhuma habilidade, origem ou regra será acrescentada apenas para preencher uma ficha. O silêncio dos manuscritos também faz parte do arquivo.",
+  "entries": [
+    {
+      "id": "eithne",
+      "name": "Eithne",
+      "epithet": "A mulher que chorava antes dos mortos",
+      "kind": "bean sí — mulher dos montes feéricos; chamada banshee pelos mortais",
+      "classification": "Presença feérica vinculada a uma linhagem, a um lugar e a promessas antigas",
+      "status": "canon",
+      "status_label": "Ficha canônica · Livro Primeiro",
+      "summary": "Eithne não provocava a morte nem a anunciava como sentença. Seu lamento chegava antes da partida daqueles cuja vida acompanhava. Durante décadas, uma família inteira ouviu — e temeu — a voz da mulher que jamais fora convidada a atravessar sua porta.",
+      "first_record": {
+        "title": "A mulher que chorava antes dos mortos",
+        "entry_id": "bestiario-eithne-v1",
+        "manuscript": "arquivo/bestiario/a-mulher-que-chorava-antes-dos-mortos-v1.md"
+      },
+      "main_image": {
+        "src": "assets/bestiario/eithne-retrato.svg",
+        "alt": "Eithne à margem de um lago, diante de uma casa de pedra e de um pequeno canteiro de cebolas.",
+        "caption": "Eithne, junto ao lago. Reconstrução simbólica a partir do testemunho de Vespera."
+      },
+      "biography": [
+        "Eithne apresentou-se a Vespera como uma bean sí, uma mulher dos montes feéricos. A palavra banshee, usada pelos mortais, já havia acumulado tantos equívocos que ela a pronunciava com irritação.",
+        "Morava numa casa de pedra à beira de um lago. Cultivava cebolas que considerava ruins e remendava as próprias roupas. Do outro lado da água vivia uma família de sete pessoas: um pescador, uma mulher que fazia pão, quatro filhos e uma avó que escondia moedas debaixo do colchão.",
+        "Eithne observava aquela família sem ser parente ou amiga. Ao longo de quarenta e dois anos, Vespera acompanhou seus lamentos. Eithne chorava por pessoas, por uma criança, por um homem que morreria longe de casa e, certa vez, durante três noites, por um cavalo de quem gostava.",
+        "Quando o último ramo daquela família partiu, Eithne permaneceu sem a linhagem que acompanhava. Disse estar perdendo a voz. Passaram-se cento e treze dias sem lamento. No inverno seguinte, desapareceu sem grito, tempestade ou despedida.",
+        "Muito depois, Vespera encontrou um descendente daquela família plantando cebolas perto do lago. Ele não conhecia Eithne nem sabia por que sentia vontade de cultivar exatamente aquelas plantas."
+      ],
+      "abilities": [
+        {
+          "title": "Lamento premonitório",
+          "description": "Percebia a proximidade da morte de pessoas pertencentes à família que acompanhava e lamentava antes que a partida acontecesse. O relato não estabelece quanto tempo antes o pressentimento surgia."
+        },
+        {
+          "title": "Vínculo de linhagem e lugar",
+          "description": "Sua existência estava ligada a linhagens, lugares e promessas antigas. Quando a família se dispersou e seus descendentes foram viver onde jamais ouviriam sua voz, o vínculo perdeu força."
+        },
+        {
+          "title": "Lamento por aqueles de quem gostava",
+          "description": "O testemunho inclui um cavalo por quem Eithne chorou durante três noites. Ela própria explicou que lamentava os animais de quem gostava."
+        }
+      ],
+      "known_limits": [
+        "Seu lamento não causava a morte. Eithne negou expressamente que seu grito matasse.",
+        "Não há registro de que pudesse impedir, adiar ou reverter uma morte.",
+        "A perda da linhagem acompanhada foi seguida por cento e treze dias de silêncio e pela perda da voz; o manuscrito não afirma que todas as banshees obedeçam à mesma regra.",
+        "Origem, idade exata, nome da linhagem e localização geográfica do lago permanecem desconhecidos."
+      ],
+      "chronology": [
+        {
+          "moment": "O encontro",
+          "date": "Data e lugar histórico não identificados",
+          "place": "Casa de pedra à margem do lago",
+          "detail": "Vespera conhece Eithne e descobre que ela cultiva cebolas para ter alguma coisa de que cuidar."
+        },
+        {
+          "moment": "Quarenta e dois anos",
+          "date": "Período relativo, sem datas absolutas",
+          "place": "Lago e casa da família",
+          "detail": "Vespera acompanha os lamentos pelos membros da família que vivia do outro lado da água."
+        },
+        {
+          "moment": "A casa vazia",
+          "date": "Depois da partida do último descendente",
+          "place": "Margem do lago",
+          "detail": "Eithne percebe que os descendentes vivem longe demais para ouvir seu lamento. Sua voz começa a desaparecer."
+        },
+        {
+          "moment": "Cento e treze dias de silêncio",
+          "date": "Período relativo",
+          "place": "Casa de pedra",
+          "detail": "Eithne conta os dias sem lamentar ninguém e admite estar perdendo a voz."
+        },
+        {
+          "moment": "O desaparecimento",
+          "date": "Inverno seguinte",
+          "place": "Casa de pedra e jardim",
+          "detail": "Eithne desaparece. Não há grito nem tempestade; permanecem a casa vazia e algumas cebolas."
+        },
+        {
+          "moment": "A plantação herdada",
+          "date": "Muitos anos depois",
+          "place": "Próximo ao lago",
+          "detail": "Um descendente sem conhecimento da história planta cebolas, repetindo um gesto que não sabe de onde veio."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "assets/bestiario/eithne-lamento.svg",
+          "alt": "Eithne sentada à margem do lago sob a lua, com linhas suaves que representam o lamento atravessando a água.",
+          "caption": "O lamento sobre a água",
+          "date": "Durante os quarenta e dois anos de testemunho",
+          "place": "Margem do lago",
+          "note": "Não era um grito. Vespera o comparou ao som de uma taça tocada por um dedo molhado."
+        },
+        {
+          "src": "assets/bestiario/eithne-jardim.svg",
+          "alt": "Um pequeno canteiro de cebolas diante de uma casa de pedra, com mãos trabalhando a terra.",
+          "caption": "O jardim de cebolas",
+          "date": "Anos sem data determinada",
+          "place": "Casa de pedra de Eithne",
+          "note": "Eithne dizia não cultivar as cebolas para comer, mas para ter alguma coisa de que cuidar."
+        }
+      ],
+      "quotations": [
+        {
+          "text": "Dizem que meu grito mata.",
+          "context": "Eithne corrige a crença dos mortais sobre as banshees."
+        },
+        {
+          "text": "Não seja idiota, Vespera. Se eu pudesse matar gritando, já teria silenciado metade dos homens daquela aldeia.",
+          "context": "Uma resposta sobre o suposto poder mortal de sua voz."
+        },
+        {
+          "text": "Apenas daqueles de quem gosto.",
+          "context": "Resposta de Eithne ao ser perguntada se também lamentava a morte dos animais."
+        },
+        {
+          "text": "Evidentemente. Você acha que apenas os mortais têm medo?",
+          "context": "Eithne admite que o próprio desaparecimento a assusta."
+        }
+      ],
+      "connections": [
+        {
+          "name": "Vespera",
+          "detail": "Testemunha por quarenta e dois anos; não consegue salvar Eithne, mas recusa deixar que sua ausência passe despercebida."
+        },
+        {
+          "name": "A família do outro lado do lago",
+          "detail": "Sete pessoas, sem nomes registrados, cuja linhagem e permanência dão sentido ao vínculo de Eithne."
+        },
+        {
+          "name": "O descendente que planta cebolas",
+          "detail": "Não conhece Eithne, mas repete involuntariamente um gesto associado a ela."
+        }
+      ]
+    }
+  ],
+  "mentions": [
+    {
+      "name": "Ithariel",
+      "classification": "Arcanjo · Guardião dos Registros Velados",
+      "status": "Menção em manuscrito; ficha própria ainda não aberta",
+      "entry_id": "ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1"
+    },
+    {
+      "name": "Aurelian",
+      "classification": "Serafim",
+      "status": "Menção em manuscrito; ficha própria ainda não aberta",
+      "entry_id": "recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu-v2"
+    },
+    {
+      "name": "Azrakhel",
+      "classification": "Demônio · Devastador de Reinos",
+      "status": "Menção em manuscrito; ficha própria ainda não aberta",
+      "entry_id": "azrakhel-o-demonio-que-veio-me-matar-v1"
+    },
+    {
+      "name": "Malpherion",
+      "classification": "Demônio",
+      "status": "Menção em manuscrito; ficha própria ainda não aberta",
+      "entry_id": "arquivo-o-demonio-errado-v1"
+    }
+  ]
+}
