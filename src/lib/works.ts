@@ -192,6 +192,18 @@ export function relatedWorks(works: Work[], id: string, limit = 3): Work[] {
     .slice(0, limit);
 }
 
+export type ManuscriptAttribution =
+  | { type: "author"; name: string }
+  | { type: "vespera" }
+  | { type: "none" };
+
+/** A Vespera signature is used only for her presence or explicit authorship. */
+export function manuscriptAttribution(work: Pick<Work, "author" | "characters">): ManuscriptAttribution {
+  if (work.author && work.author !== "Vespera") return { type: "author", name: work.author };
+  if (work.author === "Vespera" || work.characters.includes("vespera")) return { type: "vespera" };
+  return { type: "none" };
+}
+
 export function readingMinutes(w: Work) {
   return Math.max(1, Math.round(w.words / 220));
 }
