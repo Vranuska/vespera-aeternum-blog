@@ -28,6 +28,7 @@
 - Manter src/data/entries-fallback.json sincronizado com o arquivo canônico entries.json (48 obras em 11/11/2026); a cópia local só é usada quando a leitura remota falha.
 - Manter src/data/editorial-fallback.json sincronizado com editorial/indice-romance-mosaico.json (16 capítulos, 16 itens cronológicos e 32 fora da cronologia em 11/11/2026).
 - O catálogo de filtros deve incluir todos os gêneros, coleções e temas declarados no arquivo canônico; novas coleções precisam ser navegáveis na Bibliotheca.
+- `related_entries` é vínculo editorial explícito: os IDs devem existir em `entries.json`, o leitor respeita relações nos dois sentidos e a semelhança de personagens é apenas um complemento.
 - O Atlas distingue documentado, menção e provisório. Não inventar geografia, leis, habitantes, habilidades ou portais; uma conexão inferida deve permanecer identificada como inferida.
 - A Umbra é responsabilidade de Vespera na distinção/relação com a realidade física; o Sonhar é domínio reconhecido. As geografias internas continuam em aberto.
 
