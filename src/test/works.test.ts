@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { normalize, parseEntries, bookWorks, loadWorks, ownedImage, readerNavigation, relatedWorks } from "@/lib/works";
+import { normalize, parseEntries, bookWorks, loadWorks, ownedImage, readerNavigation, relatedWorks, manuscriptAttribution } from "@/lib/works";
 import editorial from "@/data/editorial-fallback.json";
 import { COLLECTIONS, GENRES, THEMES } from "@/data/catalog";
 
@@ -12,6 +12,18 @@ describe("Arquivo e ordem editorial", () => {
     expect(work?.characters).toEqual([]);
     expect(work?.series).toBeUndefined();
     expect(work?.standalone).toBeUndefined();
+  });
+  it("não atribui à Vespera uma narrativa independente sem autoria declarada", () => {
+    const works = normalize([
+      { ...raw("autoria", "Autoria"), author: "Vespera Aeternum" },
+      raw("independente", "Independente"),
+      { ...raw("memoria", "Memória"), characters: ["vespera"] },
+      { ...raw("autora", "Autora"), author: "Vespera" },
+    ]);
+    expect(manuscriptAttribution(works[0]!)).toEqual({ type: "author", name: "Vespera Aeternum" });
+    expect(manuscriptAttribution(works[1]!)).toEqual({ type: "none" });
+    expect(manuscriptAttribution(works[2]!)).toEqual({ type: "vespera" });
+    expect(manuscriptAttribution(works[3]!)).toEqual({ type: "vespera" });
   });
   it("expõe a coleção Arquivo das Eras nos filtros da Bibliotheca", () => {
     expect(GENRES).toContain("arquivo-das-eras");
