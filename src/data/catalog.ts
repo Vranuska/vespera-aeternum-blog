@@ -19,6 +19,7 @@ export const GENRES = [
   "fantasia histórica",
   "ficção literária",
   "ficção histórica",
+  "arquivo-das-eras",
 ] as const;
 
 export const COLLECTIONS = [
@@ -29,6 +30,7 @@ export const COLLECTIONS = [
   "Dos arquivos pessoais de Vespera",
   "Fragmentos da Casa",
   "Ciclo das Inacabadas",
+  "Arquivo das Eras",
 ] as const;
 
 export const THEMES = [
@@ -88,6 +90,9 @@ export const THEMES = [
   "escolhas económicas",
   "intertextualidade literária",
   "cartografia",
+  "trabalho portuário",
+  "partida",
+  "registro",
 ] as const;
 
 export type WorkMeta = { genres: string[]; collection: string; themes: string[]; characters: string[] };
