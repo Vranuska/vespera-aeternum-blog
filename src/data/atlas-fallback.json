@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-09",
+  "title": "Atlas dos Domínios",
+  "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
+  "map_image": {
+    "src": "assets/atlas/atlas-esferas.svg",
+    "alt": "Mapa simbólico de seis domínios ligados por linhas finas: Terra, Firmamentos, Infernos, Entre, Sonhar e Umbra."
+  },
+  "realms": [
+    {
+      "id": "terra",
+      "name": "Terra",
+      "category": "Mundo mortal",
+      "symbol": "T",
+      "status": "documentado",
+      "status_label": "Lugares testemunhados",
+      "description": "O plano dos mortais aparece em oficinas, casas, aldeias, ruas, igrejas e margens de água. Seus lugares são registrados pelos gestos e objetos de quem vive neles.",
+      "note": "As localizações sem cidade ou país identificados permanecem assim; não serão posicionadas num mapa geográfico por suposição."
+    },
+    {
+      "id": "firmamentos",
+      "name": "Firmamentos Celestiais",
+      "category": "Domínios celestiais",
+      "symbol": "✧",
+      "status": "parcial",
+      "status_label": "Dois firmamentos identificados",
+      "description": "Os manuscritos distinguem o Terceiro e o Sétimo Firmamento. Não são tratados como um único território. O arquivo conhece uma biblioteca, um palácio e os Jardins da Primeira Manhã, mas nem todas as relações espaciais estão estabelecidas.",
+      "note": "A Biblioteca dos Registros Velados pertence ao Sétimo Firmamento. O Palácio das Setecentas Janelas aparece no relato situado no Terceiro Firmamento."
+    },
+    {
+      "id": "infernos",
+      "name": "Domínios Infernais",
+      "category": "Cortes e territórios infernais",
+      "symbol": "♨",
+      "status": "parcial",
+      "status_label": "Registros de passagem",
+      "description": "Há testemunhos de uma taberna infernal e da Corte das Cinzas. Os textos não estabelecem que sejam o mesmo lugar, nem identificam a posição de cada um entre os círculos.",
+      "note": "Não se atribuem números, hierarquias ou fronteiras aos círculos sem um manuscrito que os sustente."
+    },
+    {
+      "id": "entre",
+      "name": "O Entre",
+      "category": "Domínio de passagem",
+      "symbol": "⋈",
+      "status": "parcial",
+      "status_label": "Princípio estabelecido · geografia em aberto",
+      "description": "O Entre não é apenas um domínio de passagem: é o princípio que permite que realidades opostas permaneçam distintas e coexistam. Vespera, presente desde a Criação, é a sua presença consciente e a Dama do Entre. O tempo se curva diante dela; ela regula sua continuidade e seus intervalos.",
+      "note": "Vespera sustenta a distinção e a relação entre vida e morte, Sonhar e mundo desperto, Céu e Inferno, Umbra e realidade física. A geografia interna, as portas e as leis próprias do Entre ainda não estão completamente descritas."
+    },
+    {
+      "id": "sonhar",
+      "name": "O Sonhar",
+      "category": "Domínio a cartografar",
+      "symbol": "☾",
+      "status": "parcial",
+      "status_label": "Domínio reconhecido · cartografia em aberto",
+      "description": "O Sonhar é um domínio distinto do mundo desperto, associado à referência Changeling: The Dreaming. Sua existência integra a cosmologia; suas regiões, leis, habitantes e caminhos ainda não foram cartografados.",
+      "note": "A natureza de Vespera abrange a distinção entre Sonhar e mundo desperto. Isso não estabelece, por si só, que ela governe cada corte ou criatura feérica."
+    },
+    {
+      "id": "umbra",
+      "name": "Umbra",
+      "category": "Domínio a cartografar",
+      "symbol": "◐",
+      "status": "parcial",
+      "status_label": "Responsabilidade de Vespera · cartografia em aberto",
+      "description": "Vespera é responsável pela Umbra, especialmente pela distinção e pela relação entre esse domínio espiritual e a realidade física. A existência da fronteira está estabelecida; a geografia interna da Umbra ainda não.",
+      "note": "Werewolf: The Apocalypse é a referência de construção indicada pela autora. Não importar automaticamente todas as regiões, hierarquias ou regras do jogo; registrar apenas o que o cânone de Vespera Aeternum estabelecer."
+    }
+  ],
+  "places": [
+    {
+      "id": "casa-de-pedra-do-lago",
+      "realm_id": "terra",
+      "name": "A casa de pedra à margem do lago",
+      "subregion": "Localização geográfica não identificada",
+      "status": "documentado",
+      "status_label": "Lugar testemunhado",
+      "image": "assets/bestiario/eithne-retrato.svg",
+      "image_alt": "Casa de pedra junto a um lago, com a figura de Eithne e um pequeno jardim.",
+      "history": [
+        "Eithne morava numa casa de pedra à beira de um lago. Do outro lado da água vivia uma família de sete pessoas, acompanhada por ela durante décadas.",
+        "Depois que o último descendente partiu, a casa da família ficou vazia. A casa de Eithne permaneceu até seu desaparecimento, no inverno seguinte aos cento e treze dias de silêncio.",
+        "Muitos anos depois, um descendente construiu uma cabana nas proximidades e plantou cebolas sem saber de onde vinha o desejo."
+      ],
+      "laws": [
+        "O lamento de Eithne anunciava uma morte; não a provocava.",
+        "O vínculo descrito dependia de linhagem, lugar e promessas antigas.",
+        "A localização exata do lago e as regras gerais desse vínculo não foram estabelecidas."
+      ],
+      "inhabitants": [
+        "Eithne, bean sí que habitava a casa de pedra.",
+        "A família de sete pessoas que vivia do outro lado do lago; os nomes não foram registrados.",
+        "Um descendente sem nome que, muitos anos depois, plantou cebolas perto da margem."
+      ],
+      "connections": [
+        {
+          "label": "Ficha de Eithne no Bestiário",
+          "route": "bestiario/eithne"
+        },
+        {
+          "label": "A mulher que chorava antes dos mortos",
+          "route": "conto:bestiario-eithne-v1"
+        }
+      ],
+      "source_entry_ids": [
+        "bestiario-eithne-v1"
+      ]
+    },
+    {
+      "id": "aldeia-de-padre-tomas",
+      "realm_id": "terra",
+      "name": "A aldeia de padre Tomás",
+      "subregion": "Aldeia sem nome · novembro de ano incerto",
+      "status": "documentado",
+      "status_label": "Lugar testemunhado",
+      "image": "assets/atlas/aldeia-tomas.svg",
+      "image_alt": "Aldeia pequena com igreja e torre de sino junto a um rio sob chuva.",
+      "history": [
+        "A aldeia possui uma igreja, sacristia, torre de sino, ponte e rua do moinho. O nome e a localização geográfica não foram informados.",
+        "Num novembro de ano incerto, uma tempestade fez o rio subir e inundar as casas mais baixas. O sino tocou antes de a correnteza alcançar a rua do moinho, dando a seis famílias tempo para fugir.",
+        "A escada da torre havia cedido no mês anterior e a subida estava interditada quando Ithariel chegou para investigar o toque."
+      ],
+      "laws": [
+        "A torre estava interditada por risco estrutural; não há prova de que o sino tenha tocado por ação sobrenatural.",
+        "O texto preserva a possibilidade de um gesto humano, sem revelar imediatamente quem subiu à torre."
+      ],
+      "inhabitants": [
+        "Padre Tomás, responsável pela paróquia.",
+        "Mateus, menino de doze anos que ajudou a reparar os danos.",
+        "Dona Beatriz e os moradores que atravessaram a enchente.",
+        "Ithariel, visitante celestial que investigou o toque do sino."
+      ],
+      "connections": [
+        {
+          "label": "O arcanjo que chegou tarde para um milagre",
+          "route": "conto:aldeia-o-arcanjo-que-chegou-tarde-para-um-milagre-v1"
+        },
+        {
+          "label": "O vestido vermelho e as penas do bispo",
+          "route": "conto:aldeia-o-vestido-vermelho-e-as-penas-do-bispo"
+        },
+        {
+          "label": "O demônio errado",
+          "route": "conto:arquivo-o-demonio-errado-v1"
+        }
+      ],
+      "source_entry_ids": [
+        "aldeia-o-arcanjo-que-chegou-tarde-para-um-milagre-v1",
+        "aldeia-o-vestido-vermelho-e-as-penas-do-bispo",
+        "arquivo-o-demonio-errado-v1"
+      ]
+    },
+    {
+      "id": "biblioteca-dos-registros-velados",
+      "realm_id": "firmamentos",
+      "name": "Biblioteca dos Registros Velados",
+      "subregion": "Sétimo Firmamento",
+      "status": "documentado",
+      "status_label": "Lugar descrito",
+      "image": "assets/atlas/biblioteca-registros.svg",
+      "image_alt": "Biblioteca de arcos altos sobre um mar de nuvens prateadas, com livros e um pequeno pássaro de páginas.",
+      "history": [
+        "A biblioteca pertence ao Sétimo Firmamento. Suas galerias se estendem sobre um mar de nuvens prateadas.",
+        "Guarda livros escritos em línguas ainda não inventadas, tratados sobre civilizações futuras e cartas de amor entre deuses e criaturas que os detestavam.",
+        "Vespera conheceu ali Ithariel, Guardião dos Registros Velados. Durante uma tempestade de arrependimentos, um pequeno espírito com asas de páginas em branco ficou preso entre duas galerias."
+      ],
+      "laws": [
+        "Um dos volumes reservados estava protegido por sete selos.",
+        "A biblioteca possui protocolos para incidentes estruturais e para a contenção de espíritos que escapam dos Jardins da Primeira Manhã.",
+        "O alcance completo da autoridade de Ithariel não está descrito."
+      ],
+      "inhabitants": [
+        "Ithariel, arcanjo e Guardião dos Registros Velados.",
+        "Vespera, visitante da biblioteca.",
+        "Pequenos espíritos feitos de possibilidades abandonadas; um deles tinha a forma de um pássaro com asas de páginas em branco."
+      ],
+      "connections": [
+        {
+          "label": "A primeira vez que Ithariel me chamou de insuportável",
+          "route": "conto:ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1"
+        },
+        {
+          "label": "Jardins da Primeira Manhã",
+          "route": "atlas/lugar/jardins-da-primeira-manha"
+        }
+      ],
+      "source_entry_ids": [
+        "ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1"
+      ]
+    },
+    {
+      "id": "jardins-da-primeira-manha",
+      "realm_id": "firmamentos",
+      "name": "Jardins da Primeira Manhã",
+      "subregion": "Localização exata não estabelecida",
+      "status": "menção",
+      "status_label": "Menção registrada",
+      "image": "assets/atlas/jardins-primeira-manha.svg",
+      "image_alt": "Jardim luminoso com pequenas criaturas aladas feitas de folhas e páginas em branco.",
+      "history": [
+        "Os Jardins da Primeira Manhã são citados como o lugar de onde escapou um grupo de pequenos espíritos.",
+        "Essas criaturas são descritas como possibilidades abandonadas: crianças que jamais nasceriam, canções que ninguém comporia e gestos de bondade interrompidos antes de acontecer."
+      ],
+      "laws": [
+        "O manuscrito não descreve a geografia, a administração ou as regras de acesso aos jardins.",
+        "A natureza dos espíritos é conhecida apenas pela descrição feita por Vespera."
+      ],
+      "inhabitants": [
+        "Pequenos espíritos de possibilidades abandonadas."
+      ],
+      "connections": [
+        {
+          "label": "Biblioteca dos Registros Velados",
+          "route": "atlas/lugar/biblioteca-dos-registros-velados"
+        },
+        {
+          "label": "A primeira vez que Ithariel me chamou de insuportável",
+          "route": "conto:ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1"
+        }
+      ],
+      "source_entry_ids": [
+        "ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1"
+      ]
+    },
+    {
+      "id": "palacio-das-setecentas-janelas",
+      "realm_id": "firmamentos",
+      "name": "Palácio das Setecentas Janelas",
+      "subregion": "Terceiro Firmamento",
+      "status": "documentado",
+      "status_label": "Lugar descrito",
+      "image": "assets/atlas/palacio-setecentas-janelas.svg",
+      "image_alt": "Palácio de arcos altos, com janelas que mostram diferentes amanheceres.",
+      "history": [
+        "O palácio possui setecentas janelas; cada uma mostra um nascer do sol diferente. Algumas revelam oceanos que ainda não existem, cidades mortas e mundos que jamais chegarão a nascer.",
+        "Foi o cenário da renovação do Pacto das Portas, acordo que estabelecia condições de passagem entre determinados domínios.",
+        "Durante o jantar havia noventa e nove convidados e cem lugares preparados. O último lugar, sem nome, guardava uma pena negra."
+      ],
+      "laws": [
+        "O Pacto das Portas regula a passagem entre determinados domínios.",
+        "O Entre não pertence à jurisdição celestial e pode testemunhar o acordo sem se submeter a ele.",
+        "A assembleia do Terceiro Firmamento não representa, necessariamente, todos os firmamentos."
+      ],
+      "inhabitants": [
+        "Aurelian, serafim e anfitrião do jantar.",
+        "Néria, jovem servidora do salão.",
+        "Maelith, integrante da assembleia.",
+        "Iriel, guardião apagado dos registros, cuja história permanece moralmente ambígua.",
+        "Vespera, convidada e testemunha do Pacto das Portas."
+      ],
+      "connections": [
+        {
+          "label": "Sobre a primeira vez que fui expulsa do Céu — versão 2.0",
+          "route": "conto:recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu-v2"
+        },
+        {
+          "label": "O Entre",
+          "route": "atlas/entre"
+        }
+      ],
+      "source_entry_ids": [
+        "recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu-v2"
+      ]
+    },
+    {
+      "id": "taberna-infernal",
+      "realm_id": "infernos",
+      "name": "A taberna infernal",
+      "subregion": "Círculo não identificado",
+      "status": "menção",
+      "status_label": "Memória de trabalho",
+      "image": "assets/atlas/taberna-infernal.svg",
+      "image_alt": "Interior simbólico de uma taberna sob luz vermelha, com balcão de madeira e uma janela escura.",
+      "history": [
+        "Vespera afirma ter trabalhado durante dezessete anos numa taberna infernal, servindo vinho, recolhendo moedas e ouvindo as histórias de um velho demônio.",
+        "O demônio dizia ter participado da primeira guerra celestial. Vespera sabia que mentia sobre metade dos acontecimentos e corrigiu sua versão quando ele finalmente perguntou o que ela sabia."
+      ],
+      "laws": [
+        "O texto não identifica o círculo, a cidade, o proprietário ou as regras de funcionamento da taberna.",
+        "A existência do estabelecimento não autoriza localizar a Corte das Cinzas no mesmo território."
+      ],
+      "inhabitants": [
+        "Vespera, que trabalhou como atendente durante dezessete anos.",
+        "Um velho demônio sem nome, contador de histórias pouco confiáveis.",
+        "O irmão do velho demônio, fonte de uma das correções de Vespera."
+      ],
+      "connections": [
+        {
+          "label": "A taberna infernal",
+          "route": "conto:recuperado-a-taberna-infernal"
+        }
+      ],
+      "source_entry_ids": [
+        "recuperado-a-taberna-infernal"
+      ]
+    },
+    {
+      "id": "corte-das-cinzas",
+      "realm_id": "infernos",
+      "name": "Corte das Cinzas",
+      "subregion": "Círculo e localização não identificados",
+      "status": "menção",
+      "status_label": "Registro parcial",
+      "image": "assets/atlas/corte-das-cinzas.svg",
+      "image_alt": "Selo simbólico da Corte das Cinzas; não é uma representação arquitetônica literal.",
+      "history": [
+        "Vespera recorda ter estado na corte de um duque infernal enquanto assumia a forma de uma súcubo.",
+        "O duque falava de sua ascendência e perguntava de que círculo Vespera vinha. Ela não respondeu com um nome de lugar."
+      ],
+      "laws": [
+        "Não há descrição suficiente para estabelecer hierarquia, leis, fronteiras ou número do círculo.",
+        "O título do duque não permite deduzir a organização política da corte."
+      ],
+      "inhabitants": [
+        "Um duque infernal sem nome.",
+        "Vespera, na forma de uma súcubo."
+      ],
+      "connections": [
+        {
+          "label": "Dos inconvenientes de possuir uma cauda",
+          "route": "conto:recuperado-dos-inconvenientes-de-possuir-uma-cauda"
+        }
+      ],
+      "source_entry_ids": [
+        "recuperado-dos-inconvenientes-de-possuir-uma-cauda"
+      ]
+    },
+    {
+      "id": "pasaje-de-la-calandria",
+      "realm_id": "terra",
+      "name": "Pasaje de la Calandria",
+      "subregion": "Barracas, Buenos Aires, Argentina · traçado parcial",
+      "status": "menção",
+      "status_label": "Traçado parcial · saída não verificada",
+      "history": [
+        "O Pasaje de la Calandria aparece em plantas de 1934, 1948 e 1956, desaparecendo dos levantamentos posteriores.",
+        "Micaela Funes confirmou, com o testemunho de Elena Roldán, a existência de um corredor interno que preserva parte do antigo percurso. A passagem perdeu o uso público quando um dos terrenos foi incorporado a um depósito.",
+        "Uma porta no fundo do pátio permanece fechada. Micaela não confirmou o que existe além dela; Vespera foi vista junto à entrada, sem revelar a natureza do espaço."
+      ],
+      "laws": [
+        "O corredor físico e seu uso histórico foram testemunhados; o traçado completo não está confirmado.",
+        "A porta do fundo deve permanecer fechada até que outro manuscrito estabeleça as condições de acesso.",
+        "Não classificar o espaço além da porta como Umbra, Sonhar ou Entre por inferência."
+      ],
+      "inhabitants": [
+        "Elena Roldán, antiga telefonista e moradora junto ao corredor.",
+        "Micaela Funes, cartógrafa que registrou o traçado parcial.",
+        "Vespera, vista junto à porta do fundo."
+      ],
+      "connections": [
+        {
+          "label": "A rua que cabia na margem",
+          "route": "conto:2026-11-09-a-rua-que-cabia-na-margem"
+        }
+      ],
+      "source_entry_ids": [
+        "2026-11-09-a-rua-que-cabia-na-margem"
+      ]
+    }
+  ]
+}
