@@ -1,25 +1,11 @@
-import "./lib/error-capture";
+import handler, { createServerEntry } from "@tanstack/react-start/server-entry";
 
+import "./lib/error-capture";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
-type ServerEntry = {
-  fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
-};
-
-let serverEntryPromise: Promise<ServerEntry> | undefined;
-
-async function getServerEntry(): Promise<ServerEntry> {
-  if (!serverEntryPromise) {
-    serverEntryPromise = import("@tanstack/react-start/server-entry").then(
-      (m) => (m.default ?? m) as ServerEntry,
-    );
-  }
-  return serverEntryPromise;
-}
-
-// h3 swallows in-handler throws into a normal 500 Response with body
-// {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
+// h3 can turn an in-handler throw into a normal 500 JSON Response. Preserve the
+// captured cause and replace only that catastrophic SSR response with our page.
 async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
   if (response.status < 500) return response;
   const contentType = response.headers.get("content-type") ?? "";
@@ -44,11 +30,12 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
-export default {
-  async fetch(request: Request, env: unknown, ctx: unknown) {
+// TanStack Start 1.168+ expects the ServerEntry fetch(request, opts) contract.
+// createServerEntry supplies the request context required by response helpers.
+export default createServerEntry({
+  async fetch(request, opts) {
     try {
-      const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
+      const response = await handler.fetch(request, opts);
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);
@@ -58,4 +45,4 @@ export default {
       });
     }
   },
-};
+});
