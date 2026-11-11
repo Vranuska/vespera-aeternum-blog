@@ -63,6 +63,9 @@ describe("Arquivo e ordem editorial", () => {
     expect(readerNavigation(works, "ausente", "livro").previous).toBeUndefined();
     expect(readerNavigation(works, "ausente", "livro").next).toBeUndefined();
   });
+  it("aceita série nula como ausência de série no arquivo canônico", () => {
+    expect(parseEntries([{ ...raw("sem-serie", "Sem série"), series: null }])).toHaveLength(1);
+  });
   it("rejeita estrutura inválida e IDs duplicados", () => {
     expect(() => parseEntries([{ id: "x" }])).toThrow();
     expect(() => parseEntries([raw("x", "A"), raw("x", "B")])).toThrow();
