@@ -26,6 +26,7 @@
 
 ## Integridade de dados e do Atlas
 - Manter `src/data/bestiary-fallback.json` sincronizado com `bestiario.json` do repositório literário; apenas registros abertos em `entries` recebem dossiê completo, enquanto `mentions` permanecem menções.
+- Manter `src/data/atlas-fallback.json` sincronizado com `atlas.json`; `src/lib/atlas-canon.ts` enriquece a geometria ilustrativa do React com imagens, história, leis, habitantes e referências, sem inventar rotas ou mapas internos.
 - Manter src/data/entries-fallback.json sincronizado com o arquivo canônico entries.json (48 obras em 11/11/2026); a cópia local só é usada quando a leitura remota falha.
 - Manter src/data/editorial-fallback.json sincronizado com editorial/indice-romance-mosaico.json (16 capítulos, 16 itens cronológicos e 32 fora da cronologia em 11/11/2026).
 - O catálogo de filtros deve incluir todos os gêneros, coleções e temas declarados no arquivo canônico; novas coleções precisam ser navegáveis na Bibliotheca.
