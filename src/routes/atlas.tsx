@@ -5,7 +5,7 @@ import { worksQuery } from "@/lib/works";
 import { MAPS, ROOT_MAP, type Place } from "@/data/atlas";
 import { characterBySlug } from "@/data/characters";
 import { AtlasCanvas, PlaceGlyph } from "@/components/vespera/AtlasCanvas";
-import { enrichAtlasPlace } from "@/lib/atlas-canon";
+import { atlasPlaceLocation, enrichAtlasPlace } from "@/lib/atlas-canon";
 
 type Search = { mapa?: string | undefined; local?: string | undefined };
 
@@ -149,9 +149,7 @@ function PlacePanel({ place, near, title, onClose, onEnter, onPick }: { place: P
 
 type AtlasReferenceItem = NonNullable<Place["references"]>[number];
 
-const ATLAS_TARGETS: Record<string, { mapa: string; local: string }> = {
-  "jardins-da-primeira-manha": { mapa: "firmamentos", local: "jardins-manha" },
-};
+
 
 function AtlasReferenceLink({ reference }: { reference: AtlasReferenceItem }) {
   const className = "label-archive text-rose underline underline-offset-4 hover:text-parchment";
@@ -167,7 +165,7 @@ function AtlasReferenceLink({ reference }: { reference: AtlasReferenceItem }) {
     return <Link to="/atlas" search={{ mapa: "entre" }} className={className}>{reference.label}</Link>;
   }
   if (route.startsWith("atlas/lugar/")) {
-    const target = ATLAS_TARGETS[route.slice("atlas/lugar/".length)];
+    const target = atlasPlaceLocation(route.slice("atlas/lugar/".length));
     if (target) return <Link to="/atlas" search={target} className={className}>{reference.label}</Link>;
   }
   return <span className="text-parchment/80">{reference.label}</span>;
