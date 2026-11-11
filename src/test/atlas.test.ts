@@ -1,5 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { MAPS, ROOT_MAP, findPlace } from "@/data/atlas";
+import { enrichAtlasPlace } from "@/lib/atlas-canon";
+import canonicalAtlas from "@/data/atlas-fallback.json";
+import entries from "@/data/entries-fallback.json";
 
 describe("Atlas — cosmologia do Entre", () => {
   it("registra Umbra e Sonhar como domínios confirmados e selecionáveis na raiz", () => {
@@ -18,6 +21,39 @@ describe("Atlas — cosmologia do Entre", () => {
     expect(findPlace(ROOT_MAP, "sonhar")?.map).toBeUndefined();
     expect(MAPS["umbra"]).toBeUndefined();
     expect(MAPS["sonhar"]).toBeUndefined();
+  });
+
+  it("enriquece lugares com imagens, história e referências do Atlas canônico", () => {
+    const lake = enrichAtlasPlace("mortais", findPlace("mortais", "lago")!);
+    expect(lake.image?.src).toBe(
+      "https://raw.githubusercontent.com/Vranuska/vespera-aeternum/main/assets/bestiario/eithne-retrato.svg",
+    );
+    expect(lake.history).toContain(
+      "Eithne morava numa casa de pedra à beira de um lago. Do outro lado da água vivia uma família de sete pessoas, acompanhada por ela durante décadas.",
+    );
+    expect(lake.references?.map((item) => item.route)).toEqual(
+      expect.arrayContaining(["bestiario/eithne", "conto:bestiario-eithne-v1"]),
+    );
+
+    const pasaje = enrichAtlasPlace("mortais", findPlace("mortais", "pasaje-calandria")!);
+    expect(pasaje.image).toBeUndefined();
+    expect(pasaje.references?.map((item) => item.route)).toContain(
+      "conto:2026-11-09-a-rua-que-cabia-na-margem",
+    );
+    expect(pasaje.laws).toContain(
+      "A porta do fundo deve permanecer fechada até que outro manuscrito estabeleça as condições de acesso.",
+    );
+  });
+
+  it("mantém as referências de contos ligadas a manuscritos existentes", () => {
+    const ids = new Set(entries.map((entry) => entry.id));
+    const references = canonicalAtlas.places
+      .flatMap((place) => place.connections)
+      .map((connection) => connection.route)
+      .filter((route) => route.startsWith("conto:"))
+      .map((route) => route.slice("conto:".length));
+    expect(references.every((id) => ids.has(id))).toBe(true);
+    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(7);
   });
 
   it("não cartografa Mage: The Ascension como plano ou território", () => {
