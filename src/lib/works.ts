@@ -9,7 +9,7 @@ export const ENTRIES_URL =
 
 export type RawEntry = {
   id: string; date: string; title: string; place?: string; paragraphs: string[];
-  genres?: string[]; collection?: string; themes?: string[]; characters?: string[];
+  genres?: string[]; collection?: string; themes?: string[]; characters?: string[]; related_entries?: string[];
   series?: { id: string; title: string; position?: number };
   standalone?: boolean; author?: string;
   image?: { src: string; alt: string; rights: "author-owned" };
@@ -27,10 +27,14 @@ export function parseEntries(input: unknown): RawEntry[] {
     for (const key of ["genres", "themes", "characters"]) {
       if (item[key] !== undefined && (!Array.isArray(item[key]) || !item[key].every((v: unknown) => typeof v === "string"))) throw new Error("Metadados inválidos");
     }
+    if (item.related_entries !== undefined && (!Array.isArray(item.related_entries) || !item.related_entries.every((v: unknown) => typeof v === "string" && v.trim()))) throw new Error("Referências relacionadas inválidas");
     for (const key of ["author", "collection"]) if (item[key] !== undefined && typeof item[key] !== "string") throw new Error("Metadados inválidos");
     if (item.standalone !== undefined && typeof item.standalone !== "boolean") throw new Error("Metadados inválidos");
     if (item.series !== undefined && (!item.series || typeof item.series.id !== "string" || typeof item.series.title !== "string" || (item.series.position !== undefined && (!Number.isFinite(item.series.position) || item.series.position < 0)))) throw new Error("Série inválida");
     if (item.image !== undefined && (!item.image || typeof item.image.src !== "string" || typeof item.image.alt !== "string" || item.image.rights !== "author-owned")) throw new Error("Imagem sem autoria declarada");
+  }
+  for (const item of input) {
+    if (item.related_entries?.some((id: string) => !ids.has(id))) throw new Error("Referência relacionada ausente");
   }
   return input as RawEntry[];
 }
@@ -52,7 +56,8 @@ export type Work = {
   genres: string[]; // sugestão editorial (catálogo)
   collection: string;
   themes: string[];
-  characters: string[]; // slugs do Bestiário
+  characters: string[]; // slugs do Bestiário ou nomes declarados no manuscrito
+  relatedEntries: string[]; // referências explícitas a outros manuscritos
   classified: boolean; // false = obra nova, ainda não catalogada
   dated: boolean;
   excerpt: string;
@@ -79,6 +84,7 @@ export function normalize(raw: RawEntry[], source: Work["source"] = "github"): W
       collection: e.collection ?? meta?.collection ?? "Não catalogada",
       themes: e.themes ?? meta?.themes ?? [],
       characters: e.characters ?? meta?.characters ?? CHARACTERS.filter((c) => c.pattern.test(text)).map((c) => c.slug),
+      relatedEntries: e.related_entries ?? [],
       classified: !!meta || e.genres !== undefined,
       source,
       series: e.series ?? meta?.series,
@@ -165,6 +171,21 @@ export function filterWorks(works: Work[], f: LibraryFilters): Work[] {
   if (f.ordem === "antiga") out = [...out].sort((a, b) => b.order - a.order);
   else if (f.ordem === "titulo") out = [...out].sort((a, b) => a.title.localeCompare(b.title, "pt"));
   return out;
+}
+
+/** Explicit editorial links take precedence; reverse links are honored as well. */
+export function relatedWorks(works: Work[], id: string, limit = 3): Work[] {
+  const current = works.find((work) => work.id === id);
+  if (!current) return [];
+  const explicit = (candidate: Work) =>
+    current.relatedEntries.includes(candidate.id) || candidate.relatedEntries.includes(current.id);
+  return works
+    .filter((candidate) =>
+      candidate.id !== id &&
+      (explicit(candidate) || candidate.characters.some((c) => c !== "vespera" && current.characters.includes(c))),
+    )
+    .sort((a, b) => Number(explicit(b)) - Number(explicit(a)))
+    .slice(0, limit);
 }
 
 export function readingMinutes(w: Work) {
