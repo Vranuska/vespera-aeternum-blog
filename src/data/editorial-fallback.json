@@ -685,12 +685,14 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Deploy do GitHub Pages concluído pelo pipeline em 11/11/2026 (deploy #153, commit fe6d435); verificação HTTP/visual direta do endereço público ainda pendente.",
+      "status": "Código integrado no repositório Lovable; deploy público da aplicação ainda não confirmado. Em 11/11/2026, o workflow de build do app permaneceu preso na etapa de prerender, enquanto o Pages executou builds Jekyll da branch. A URL pública ainda precisa ser verificada após a publicação correta.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
         "eras e agrupamento por mês",
-        "ordem editorial do Volume I em lista expansível, separada da cronologia"
+        "ordem editorial do Volume I em lista expansível, separada da cronologia",
+        "vínculos editoriais explícitos no leitor, com relações recíprocas entre A rua que cabia na margem e A maré não assina recibos",
+        "prerender com snapshots locais sincronizados; atualização remota no navegador"
       ],
       "reading_order_chapters": 16,
       "chronology_items": 16,
