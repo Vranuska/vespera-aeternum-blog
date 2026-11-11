@@ -34,6 +34,7 @@ export type Place = {
   inhabitants?: string[];
   characters?: string[];
   works?: string[];
+  references?: { label: string; route: string }[];
   secrets?: string[];
   map?: string; // id do mapa de detalhe
 };
