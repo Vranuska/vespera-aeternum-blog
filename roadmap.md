@@ -32,7 +32,7 @@
 - [ ] Desenvolver cartografia interna da Umbra e do Sonhar somente a partir de manuscritos que estabeleçam regiões, leis e habitantes.
 
 ## Validação e publicação
-- [x] 22 testes aprovados no workspace Lovable em 10/11/2026.
+- [x] 30 testes de regressão aprovados no GitHub Actions em 11/11/2026, incluindo validação dos snapshots canônicos do Bestiário e do Atlas.
 - [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
 - [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
 - [ ] Executar e confirmar build de produção (não concluído nesta etapa).
