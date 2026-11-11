@@ -13,8 +13,10 @@
 - [x] Manter outros manuscritos em linhas de leitura, sem grade de cards protagonista.
 - [x] Preservar a Constelação de memórias como seção secundária depois do manuscrito e da lista.
 - [x] Separar ordem editorial do Volume I (16 capítulos) da cronologia do universo.
-- [x] Cópia offline com 47 manuscritos, sem IDs duplicados.
-- [x] Cópia offline do índice editorial: 16 capítulos, 16 itens cronológicos e 31 obras fora da cronologia.
+- [x] Cópia offline com 48 manuscritos, sem IDs duplicados.
+- [x] Cópia offline do índice editorial: 16 capítulos, 16 itens cronológicos e 32 obras fora da cronologia.
+- [x] Coleção Arquivo das Eras, gênero e temas de A maré não assina recibos disponíveis nos filtros da Bibliotheca.
+- [x] Acesso direto da navegação lateral à Constelação e à coleção Arquivo das Eras.
 
 ## Atlas e cânone
 - [x] Registrar O Entre como princípio que permite a coexistência dos opostos e a presença consciente de Vespera desde a Criação.
