@@ -23,6 +23,7 @@
 - [x] Integrar o dossiê canônico de Eithne ao portal React, preservando o registro de outras presenças como menção até haver material suficiente para uma ficha completa.
 
 ## Atlas e cânone
+- [x] Resolver referências `atlas/lugar/*` pelo mapeamento canônico de marcadores, tornando navegáveis as ligações recíprocas entre a Biblioteca dos Registros Velados e os Jardins da Primeira Manhã.
 - [x] Registrar O Entre como princípio que permite a coexistência dos opostos e a presença consciente de Vespera desde a Criação.
 - [x] Registrar a responsabilidade de Vespera pela distinção e relação entre Umbra e realidade física.
 - [x] Reconhecer o Sonhar como domínio distinto do mundo desperto, sem inventar sua cartografia.
@@ -32,6 +33,7 @@
 - [ ] Desenvolver cartografia interna da Umbra e do Sonhar somente a partir de manuscritos que estabeleçam regiões, leis e habitantes.
 
 ## Validação e publicação
+- [x] Sincronizar os snapshots offline de entradas e índice editorial com os arquivos canônicos e exigir igualdade exata antes do prerender.
 - [x] 30 testes de regressão aprovados no GitHub Actions em 11/11/2026, incluindo validação dos snapshots canônicos do Bestiário e do Atlas.
 - [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
 - [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
