@@ -17,6 +17,7 @@
 - [x] Cópia offline do índice editorial: 16 capítulos, 16 itens cronológicos e 32 obras fora da cronologia.
 - [x] Coleção Arquivo das Eras, gênero e temas de A maré não assina recibos disponíveis nos filtros da Bibliotheca.
 - [x] Acesso direto da navegação lateral à Constelação e à coleção Arquivo das Eras.
+- [x] Leitor reconhece `related_entries`, prioriza vínculos editoriais explícitos e preserva a autonomia das narrativas relacionadas.
 
 ## Atlas e cânone
 - [x] Registrar O Entre como princípio que permite a coexistência dos opostos e a presença consciente de Vespera desde a Criação.
