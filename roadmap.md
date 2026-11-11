@@ -19,6 +19,7 @@
 - [x] Acesso direto da navegação lateral à Constelação e à coleção Arquivo das Eras.
 - [x] Leitor reconhece `related_entries`, prioriza vínculos editoriais explícitos e preserva a autonomia das narrativas relacionadas.
 - [x] Prerender usa snapshots sincronizados para evitar requisições remotas repetidas durante a compilação.
+- [x] Cartão e leitor integral respeitam a mesma regra de autoria; narrativas independentes não recebem assinatura de Vespera por padrão.
 
 ## Atlas e cânone
 - [x] Registrar O Entre como princípio que permite a coexistência dos opostos e a presença consciente de Vespera desde a Criação.
