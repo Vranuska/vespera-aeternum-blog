@@ -27,11 +27,12 @@ export const Route = createFileRoute("/")({
   component: Portal,
 });
 
-type SideLink = { label: string; to: string; search?: Record<string, unknown> };
+type SideLink = { label: string; to: string; search?: Record<string, unknown>; href?: string };
 const SIDE: SideLink[] = [
   { label: "Diários", to: "/diarios" },
   { label: "Ordem de leitura", to: "/diarios", search: { modo: "livro" } },
-  { label: "Cronologia", to: "/biblioteca", search: { ordem: "antiga" } },
+  { label: "Constelação", to: "/", href: "#constelacao" },
+  { label: "Arquivo das Eras", to: "/biblioteca", search: { colecao: "Arquivo das Eras" } },
   { label: "Personagens", to: "/bestiario" },
   { label: "Lugares", to: "/atlas" },
   { label: "Objetos", to: "/biblioteca" },
@@ -57,9 +58,15 @@ function Portal() {
           <ul className="mt-3 grid grid-cols-2 gap-x-4 sm:grid-cols-3 lg:grid-cols-1">
             {SIDE.map((s) => (
               <li key={s.label}>
-                <Link to={s.to} search={s.search as never} className="block border-b border-border/60 py-2.5 font-display text-lg text-parchment transition-colors hover:text-rose">
-                  <span className="mr-2 text-gold" aria-hidden="true">❧</span>{s.label}
-                </Link>
+                {s.href ? (
+                  <a href={s.href} className="block border-b border-border/60 py-2.5 font-display text-lg text-parchment transition-colors hover:text-rose">
+                    <span className="mr-2 text-gold" aria-hidden="true">❧</span>{s.label}
+                  </a>
+                ) : (
+                  <Link to={s.to} search={s.search as never} className="block border-b border-border/60 py-2.5 font-display text-lg text-parchment transition-colors hover:text-rose">
+                    <span className="mr-2 text-gold" aria-hidden="true">❧</span>{s.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
