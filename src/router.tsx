@@ -8,6 +8,8 @@ export const getRouter = () => {
   const router = createRouter({
     routeTree,
     context: { queryClient },
+    // GitHub Pages hosts this app below /vespera-aeternum/, not at the domain root.
+    basepath: import.meta.env.BASE_URL.replace(/\/$/, ""),
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
   });
