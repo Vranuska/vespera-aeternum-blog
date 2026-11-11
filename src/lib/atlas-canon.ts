@@ -14,6 +14,14 @@ const CANONICAL_IDS: Record<string, string> = {
   "mortais:pasaje-calandria": "pasaje-de-la-calandria",
 };
 
+/** Resolve uma referência canônica de lugar para o marcador navegável no mapa React. */
+export function atlasPlaceLocation(canonicalId: string): { mapa: string; local: string } | undefined {
+  const match = Object.entries(CANONICAL_IDS).find(([, id]) => id === canonicalId);
+  if (!match) return undefined;
+  const [mapa, local] = match[0].split(":");
+  return mapa && local ? { mapa, local } : undefined;
+}
+
 const assetUrl = (path: string) => RAW_ARCHIVE + path.replace(/^\/+/, "");
 
 function mergeUnique(first?: string[], second?: string[]) {
