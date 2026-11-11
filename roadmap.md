@@ -2,7 +2,7 @@
 
 ## Base da aplicação
 - [x] Biblioteca com filtros por gênero, personagem, lugar, tema, coleção e data.
-- [x] Bestiário com fichas individuais e ligações com os manuscritos.
+- [x] Bestiário com fichas individuais e ligações com os manuscritos; dossiês canônicos exibem imagem principal, galeria, cronologia, biografia, aptidões, limites e citações.
 - [x] Atlas navegável com cosmologia, mapas, painel de lugar e trilha.
 - [x] Leitor em papel envelhecido, capitular, assinatura e variações visuais por gênero.
 - [x] Navegação anterior/próximo do modo livro, separada da cronologia do universo.
@@ -20,6 +20,7 @@
 - [x] Leitor reconhece `related_entries`, prioriza vínculos editoriais explícitos e preserva a autonomia das narrativas relacionadas.
 - [x] Prerender usa snapshots sincronizados para evitar requisições remotas repetidas durante a compilação.
 - [x] Cartão e leitor integral respeitam a mesma regra de autoria; narrativas independentes não recebem assinatura de Vespera por padrão.
+- [x] Integrar o dossiê canônico de Eithne ao portal React, preservando o registro de outras presenças como menção até haver material suficiente para uma ficha completa.
 
 ## Atlas e cânone
 - [x] Registrar O Entre como princípio que permite a coexistência dos opostos e a presença consciente de Vespera desde a Criação.
