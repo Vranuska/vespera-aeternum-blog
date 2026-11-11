@@ -472,7 +472,8 @@
       "material reutilizado sem apagar a origem; o nome próprio à porta e a contabilidade dos trabalhos pequenos",
       "o espaço não preenchido nos programas, música imperfeita e provas corrigidas sem apagamento",
       "livros avaliados pelo peso, margens manuscritas e exemplares que acompanham um leitor entre oficinas e livrarias",
-      "mapas incompletos, passagens sem saída confirmada e a diferença entre limite e ausência"
+      "mapas incompletos, passagens sem saída confirmada e a diferença entre limite e ausência",
+      "recibos de carga e mapas incompletos: registros que atestam uma parcela dos acontecimentos sem pretender conter a verdade inteira"
     ],
     "open_threads": [
       {
@@ -616,6 +617,15 @@
         ],
         "note": "Micaela Funes trabalha no arquivo cartográfico de Barracas. Elena Roldán, antiga telefonista, vive junto ao Pasaje de la Calandria e conserva a memória do uso da passagem. A relação entre ambas começa com a verificação de um traçado antigo; a confiança ainda é recente.",
         "planned_use": "Uma futura aparição deve partir de uma necessidade própria de Micaela ou Elena, não apenas da vontade de reabrir a porta."
+      },
+      {
+        "id": "registros-na-margem",
+        "seeded_in": [
+          "2026-11-09-a-rua-que-cabia-na-margem",
+          "2026-11-10-a-mare-nao-assina-recibos"
+        ],
+        "note": "Micaela registra uma passagem cujo traçado não pode confirmar; Nao registra o estado de uma amarração e recusa uma quitação falsa. São vidas, épocas e lugares independentes. A ligação é documental e temática, não uma relação causal nem prova de que as personagens se conheçam.",
+        "planned_use": "Manter as duas obras como narrativas autônomas ligadas pelo limite dos registros. Só aproximar personagens ou objetos se um manuscrito futuro justificar essa relação."
       }
     ]
   },
