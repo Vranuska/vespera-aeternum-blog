@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-rout
 import { Signature, SHEET, sheetStyle } from "@/components/vespera/Signature";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { worksQuery, readingMinutes, relatedWorks } from "@/lib/works";
+import { worksQuery, readingMinutes, relatedWorks, manuscriptAttribution } from "@/lib/works";
 import { Ornament } from "@/components/vespera/Ornament";
 
 export const Route = createFileRoute("/diarios/$id")({
@@ -57,6 +57,7 @@ function Reader() {
   const progress = useProgress();
   const related = relatedWorks(works, id);
   const style = sheetStyle(w.genres);
+  const attribution = manuscriptAttribution(w);
   const sheet = SHEET[style];
   // Citação destacada: frase curta e marcante do próprio texto
   const pullIdx = w.paragraphs.length > 8 ? Math.floor(w.paragraphs.length / 2) : -1;
@@ -103,7 +104,7 @@ function Reader() {
               </div>
             ))}
           </div>
-          <Signature style={style} />
+          {attribution.type === "author" ? <p className="mt-14 text-right font-handwritten text-4xl text-ink-black">{attribution.name}</p> : attribution.type === "vespera" ? <Signature style={style} /> : <div className="manuscript-ornament mt-14" aria-hidden="true"><span />{sheet.separator}<span /></div>}
         </div>
       </div>
 
