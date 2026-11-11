@@ -10,7 +10,7 @@ export const ENTRIES_URL =
 export type RawEntry = {
   id: string; date: string; title: string; place?: string; paragraphs: string[];
   genres?: string[]; collection?: string; themes?: string[]; characters?: string[]; related_entries?: string[];
-  series?: { id: string; title: string; position?: number };
+  series?: { id: string; title: string; position?: number } | null;
   standalone?: boolean; author?: string;
   image?: { src: string; alt: string; rights: "author-owned" };
 };
@@ -30,7 +30,7 @@ export function parseEntries(input: unknown): RawEntry[] {
     if (item.related_entries !== undefined && (!Array.isArray(item.related_entries) || !item.related_entries.every((v: unknown) => typeof v === "string" && v.trim()))) throw new Error("Referências relacionadas inválidas");
     for (const key of ["author", "collection"]) if (item[key] !== undefined && typeof item[key] !== "string") throw new Error("Metadados inválidos");
     if (item.standalone !== undefined && typeof item.standalone !== "boolean") throw new Error("Metadados inválidos");
-    if (item.series !== undefined && (!item.series || typeof item.series.id !== "string" || typeof item.series.title !== "string" || (item.series.position !== undefined && (!Number.isFinite(item.series.position) || item.series.position < 0)))) throw new Error("Série inválida");
+    if (item.series !== undefined && item.series !== null && (!item.series || typeof item.series.id !== "string" || typeof item.series.title !== "string" || (item.series.position !== undefined && (!Number.isFinite(item.series.position) || item.series.position < 0)))) throw new Error("Série inválida");
     if (item.image !== undefined && (!item.image || typeof item.image.src !== "string" || typeof item.image.alt !== "string" || item.image.rights !== "author-owned")) throw new Error("Imagem sem autoria declarada");
   }
   for (const item of input) {
