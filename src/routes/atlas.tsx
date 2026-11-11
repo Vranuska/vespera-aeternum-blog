@@ -5,6 +5,7 @@ import { worksQuery } from "@/lib/works";
 import { MAPS, ROOT_MAP, type Place } from "@/data/atlas";
 import { characterBySlug } from "@/data/characters";
 import { AtlasCanvas, PlaceGlyph } from "@/components/vespera/AtlasCanvas";
+import { enrichAtlasPlace } from "@/lib/atlas-canon";
 
 type Search = { mapa?: string | undefined; local?: string | undefined };
 
@@ -43,7 +44,8 @@ function Atlas() {
   const mapId = search.mapa && MAPS[search.mapa] ? search.mapa : ROOT_MAP;
   const map = MAPS[mapId]!;
   const crumbs = trail(mapId);
-  const place = map.places.find((p) => p.id === search.local);
+  const rawPlace = map.places.find((p) => p.id === search.local);
+  const place = rawPlace ? enrichAtlasPlace(mapId, rawPlace) : undefined;
   const go = (s: Search) => navigate({ search: s });
   const title = (id: string) => works.find((w) => w.id === id)?.title;
   const near = place ? map.links.filter((l) => l.from === place.id || l.to === place.id).map((l) => map.places.find((p) => p.id === (l.from === place.id ? l.to : l.from))!).filter(Boolean) : [];
@@ -110,9 +112,11 @@ function PlacePanel({ place, near, title, onClose, onEnter, onPick }: { place: P
           {place.image.caption && <figcaption className="border-t border-border px-3 py-2 text-sm italic text-sage">{place.image.caption}</figcaption>}
         </figure>
       )}
-      <div className="mt-5 flex justify-center border border-gold/30 bg-background/60 py-8 text-gold" aria-hidden="true">
-        <svg viewBox="-40 -40 80 80" width={120} height={120}><circle r={36} fill="none" stroke="currentColor" strokeOpacity={0.4} /><circle r={30} fill="none" stroke="currentColor" strokeOpacity={0.2} strokeDasharray="2 4" /><PlaceGlyph kind={place.kind} size={36} /></svg>
-      </div>
+      {!place.image && (
+        <div className="mt-5 flex justify-center border border-gold/30 bg-background/60 py-8 text-gold" aria-hidden="true">
+          <svg viewBox="-40 -40 80 80" width={120} height={120}><circle r={36} fill="none" stroke="currentColor" strokeOpacity={0.4} /><circle r={30} fill="none" stroke="currentColor" strokeOpacity={0.2} strokeDasharray="2 4" /><PlaceGlyph kind={place.kind} size={36} /></svg>
+        </div>
+      )}
       <p className="mt-5 text-[1.05rem] leading-relaxed text-parchment/90">{place.description}</p>
       {place.map && <button onClick={onEnter} className="label-archive mt-5 w-full border border-gold bg-wine px-4 py-3 text-parchment hover:bg-blood">Explorar esta região →</button>}
       {place.history?.length ? <Section t="História">{place.history.map((h) => <p key={h}>{h}</p>)}</Section> : null}
@@ -128,10 +132,45 @@ function PlacePanel({ place, near, title, onClose, onEnter, onPick }: { place: P
           <ul className="space-y-1">{place.works.map((id) => title(id) && <li key={id}><Link to="/diarios/$id" params={{ id }} className="italic text-parchment hover:text-rose">{title(id)}</Link></li>)}</ul>
         </Section>
       ) : null}
-      {near.length ? <Section t="Conexões"><div className="flex flex-wrap gap-2">{near.map((p) => <button key={p.id} onClick={() => onPick(p)} className="label-archive border border-border px-2 py-1 text-gold">{p.name}</button>)}</div></Section> : null}
+      {place.references?.length ? (
+        <Section t="Referências cruzadas">
+          <ul className="space-y-2">
+            {place.references.map((reference) => (
+              <li key={reference.route}><AtlasReferenceLink reference={reference} /></li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
+      {near.length ? <Section t="Conexões no mapa"><div className="flex flex-wrap gap-2">{near.map((p) => <button key={p.id} onClick={() => onPick(p)} className="label-archive border border-border px-2 py-1 text-gold">{p.name}</button>)}</div></Section> : null}
       {place.secrets?.length ? <Section t="Segredos e rumores">{place.secrets.map((s) => <p key={s} className="italic text-rose">{s}</p>)}</Section> : null}
     </div>
   );
+}
+
+type AtlasReferenceItem = NonNullable<Place["references"]>[number];
+
+const ATLAS_TARGETS: Record<string, { mapa: string; local: string }> = {
+  "jardins-da-primeira-manha": { mapa: "firmamentos", local: "jardins-manha" },
+};
+
+function AtlasReferenceLink({ reference }: { reference: AtlasReferenceItem }) {
+  const className = "label-archive text-rose underline underline-offset-4 hover:text-parchment";
+  const route = reference.route;
+
+  if (route.startsWith("conto:")) {
+    return <Link to="/diarios/$id" params={{ id: route.slice("conto:".length) }} className={className}>{reference.label}</Link>;
+  }
+  if (route.startsWith("bestiario/")) {
+    return <Link to="/bestiario/$slug" params={{ slug: route.slice("bestiario/".length) }} className={className}>{reference.label}</Link>;
+  }
+  if (route === "atlas/entre") {
+    return <Link to="/atlas" search={{ mapa: "entre" }} className={className}>{reference.label}</Link>;
+  }
+  if (route.startsWith("atlas/lugar/")) {
+    const target = ATLAS_TARGETS[route.slice("atlas/lugar/".length)];
+    if (target) return <Link to="/atlas" search={target} className={className}>{reference.label}</Link>;
+  }
+  return <span className="text-parchment/80">{reference.label}</span>;
 }
 
 function Section({ t, children }: { t: string; children: React.ReactNode }) {
