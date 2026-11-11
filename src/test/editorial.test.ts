@@ -15,7 +15,7 @@ describe("Índice editorial", () => {
     const mare = "2026-11-10-a-mare-nao-assina-recibos";
     const rua = "2026-11-09-a-rua-que-cabia-na-margem";
     expect(index.chapters.some((chapter) => chapter.entry_id === mare)).toBe(false);
-    expect(index.unplaced.some((entry) => entry.id === mare)).toBe(true);
+    expect(index.unplaced.some((entry) => entry.entry_id === mare)).toBe(true);
     const arc = fallback.continuity_notes.secondary_arcs.find((item) => item.id === "registros-na-margem");
     expect(arc?.seeded_in).toEqual([rua, mare]);
   });
