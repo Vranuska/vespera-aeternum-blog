@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-rout
 import { Signature, SHEET, sheetStyle } from "@/components/vespera/Signature";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { worksQuery, readingMinutes } from "@/lib/works";
+import { worksQuery, readingMinutes, relatedWorks } from "@/lib/works";
 import { Ornament } from "@/components/vespera/Ornament";
 
 export const Route = createFileRoute("/diarios/$id")({
@@ -55,7 +55,7 @@ function Reader() {
   const newer = works[i - 1];
   const older = works[i + 1];
   const progress = useProgress();
-  const related = works.filter((x) => x.id !== w.id && x.characters.some((c) => c !== "vespera" && w.characters.includes(c))).slice(0, 3);
+  const related = relatedWorks(works, id);
   const style = sheetStyle(w.genres);
   const sheet = SHEET[style];
   // Citação destacada: frase curta e marcante do próprio texto
