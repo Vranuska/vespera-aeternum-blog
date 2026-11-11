@@ -1,9 +1,10 @@
-import type { Work } from "@/lib/works";
+import { manuscriptAttribution, type Work } from "@/lib/works";
 import { Signature, SHEET, sheetStyle } from "./Signature";
 
 export function Manuscript({ work }: { work: Work }) {
   const style = sheetStyle(work.genres);
   const sheet = SHEET[style];
+  const attribution = manuscriptAttribution(work);
   const first = work.paragraphs.findIndex((p) => /[\p{L}\p{N}]/u.test(p));
   return (
     <div className="reader-surround">
@@ -15,7 +16,7 @@ export function Manuscript({ work }: { work: Work }) {
             ? <p key={k} className="manuscript-divider">{p}</p>
             : <p key={k} className={k === first ? "reader-dropcap" : undefined}>{p}</p>)}
         </div>
-        {work.author && work.author !== "Vespera" ? <p className="mt-14 text-right font-handwritten text-4xl text-ink-black">{work.author}</p> : work.characters.includes("vespera") ? <Signature style={style} /> : <div className="manuscript-ornament mt-14" aria-hidden="true"><span />{sheet.separator}<span /></div>}
+        {attribution.type === "author" ? <p className="mt-14 text-right font-handwritten text-4xl text-ink-black">{attribution.name}</p> : attribution.type === "vespera" ? <Signature style={style} /> : <div className="manuscript-ornament mt-14" aria-hidden="true"><span />{sheet.separator}<span /></div>}
       </div>
     </div>
   );
