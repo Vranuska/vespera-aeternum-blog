@@ -663,6 +663,18 @@
         "status": "integrado no leitor estático em 2026-11-08",
         "reason": "Atlas navegável com domínios, lugares, imagens, história, leis, habitantes e conexões; Sonhar e Umbra permanecem deliberadamente sem cartografia.",
         "completed_at": "2026-11-08"
+      },
+      {
+        "name": "Bestiário React · dossiês canônicos",
+        "status": "integrado no código em 11/11/2026; publicação pública ainda sujeita à verificação do deploy",
+        "reason": "O portal React passou a ler um snapshot do bestiario.json canônico. Eithne apresenta imagem principal, galeria de aparições, história, aptidões testemunhadas, limites, cronologia, citações, relações e ligação ao manuscrito. Ithariel, Aurelian, Azrakhel e Malpherion continuam como menções até que haja material suficiente para fichas próprias.",
+        "completed_at": "2026-11-11"
+      },
+      {
+        "name": "Atlas React · pranchas e referências cruzadas",
+        "status": "integrado no código em 11/11/2026; imagem própria do Pasaje pendente",
+        "reason": "O painel React passou a usar as imagens e os registros canônicos dos oito lugares de atlas.json, incluindo história, leis, habitantes, obras-fonte e referências navegáveis. Sete lugares possuem imagem canônica; o Pasaje de la Calandria permanece sem imagem e com traçado provisório. Sonhar e Umbra continuam sem mapas internos.",
+        "completed_at": "2026-11-11"
       }
     ],
     "routes": {
@@ -685,14 +697,15 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Código integrado no repositório Lovable; deploy público da aplicação ainda não confirmado. Em 11/11/2026, o workflow de build do app permaneceu preso na etapa de prerender, enquanto o Pages executou builds Jekyll da branch. A URL pública ainda precisa ser verificada após a publicação correta.",
+      "status": "Código integrado no repositório da aplicação. Em 11/11/2026, os snapshots canônicos e a suíte de regressão passaram. A primeira tentativa de prerender revelou incompatibilidade na entrada SSR (`server.fetch is not a function`); `src/server.ts` foi corrigido para `createServerEntry` e `handler.fetch(request, opts)`. O novo build está em execução; a URL pública ainda não foi verificada.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
         "eras e agrupamento por mês",
         "ordem editorial do Volume I em lista expansível, separada da cronologia",
         "vínculos editoriais explícitos no leitor, com relações recíprocas entre A rua que cabia na margem e A maré não assina recibos",
-        "prerender com snapshots locais sincronizados; atualização remota no navegador"
+        "prerender com snapshots locais sincronizados; atualização remota no navegador",
+        "Dossiê canônico de Eithne integrado ao portal React: prancha principal, galeria, biografia, aptidões, limites, cronologia, citações e relações; menções não são promovidas a fichas sem material suficiente."
       ],
       "reading_order_chapters": 16,
       "chronology_items": 16,
@@ -700,11 +713,14 @@
     },
     "react_atlas": {
       "route": "src/routes/atlas.tsx",
-      "source": "src/data/atlas.ts",
-      "status": "estrutura de imagem, história, leis/limites e habitantes integrada; imagem própria do Pasaje pendente",
+      "source": "atlas.json → src/data/atlas-fallback.json → src/lib/atlas-canon.ts + src/data/atlas.ts → src/routes/atlas.tsx",
+      "status": "Imagens canônicas, história, leis, habitantes e referências cruzadas de atlas.json integradas ao painel React; as referências atlas/lugar/* são resolvidas para marcadores pelo mapeamento canônico. A geometria permanece ilustrativa e a imagem própria do Pasaje segue pendente.",
       "place_id": "pasaje-calandria",
       "linked_entry": "2026-11-09-a-rua-que-cabia-na-margem",
-      "cartographic_status": "provisório; a porta do fundo e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação"
+      "cartographic_status": "provisório; a porta do fundo e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação",
+      "features": [
+        "Referências atlas/lugar/* resolvidas pelo mapeamento canônico para marcadores navegáveis, incluindo a ligação recíproca entre a Biblioteca dos Registros Velados e os Jardins da Primeira Manhã."
+      ]
     }
   }
 }
