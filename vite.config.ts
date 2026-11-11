@@ -10,17 +10,23 @@ export default defineConfig({
   tanstackStart: {
     // Keep the existing SSR error wrapper used by Lovable.
     server: { entry: "server" },
-    // Generate the public archive as static HTML for GitHub Pages.
-    // Link crawling discovers the individual diary/manuscript routes from the indexes.
+    // Start prerendering at the actual router base path. Link crawling then
+    // discovers the archive indexes and their individual manuscript routes.
     prerender: {
       enabled: true,
       autoSubfolderIndex: true,
-      autoStaticPathsDiscovery: true,
+      autoStaticPathsDiscovery: false,
       crawlLinks: true,
       concurrency: 4,
       retryCount: 2,
       retryDelay: 1000,
       failOnError: true,
     },
+    pages: [
+      {
+        path: "/vespera-aeternum/",
+        prerender: { enabled: true },
+      },
+    ],
   },
 });
