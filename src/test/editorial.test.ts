@@ -42,7 +42,8 @@ describe("Índice editorial", () => {
     const { eras } = buildEras(index, allIds);
     const outside = eras.find((e) => e.key === OUTSIDE)!.months[0]!.entries.map((e) => e.id);
     expect(outside).toEqual(index.unplaced.map((u) => u.entry_id));
-    expect(outside).toHaveLength(31);
+    expect(outside).toHaveLength(32);
+    expect(outside).toContain("2026-11-10-a-mare-nao-assina-recibos");
   });
   it("ignora IDs ausentes em entries.json e os reporta", () => {
     const known = new Set([...allIds].filter((id) => id !== "2026-10-26-a-costura-invisivel"));
