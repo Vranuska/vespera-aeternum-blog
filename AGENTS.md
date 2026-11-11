@@ -32,6 +32,7 @@
 - O catálogo de filtros deve incluir todos os gêneros, coleções e temas declarados no arquivo canônico; novas coleções precisam ser navegáveis na Bibliotheca.
 - `related_entries` é vínculo editorial explícito: os IDs devem existir em `entries.json`, o leitor respeita relações nos dois sentidos e a semelhança de personagens é apenas um complemento.
 - O prerender estático usa snapshots locais sincronizados; o navegador atualiza os dados a partir do repositório canônico após a hidratação. Não introduzir espera de rede por manuscrito durante o build.
+- `src/server.ts` deve delegar a `handler.fetch(request, opts)` de `@tanstack/react-start/server-entry` dentro de `createServerEntry`; não usar a assinatura antiga `(request, env, ctx)` nem importação dinâmica do handler. O prerender depende do contrato `ServerEntry` do TanStack Start 1.168+.
 - O Atlas distingue documentado, menção e provisório. Não inventar geografia, leis, habitantes, habilidades ou portais; uma conexão inferida deve permanecer identificada como inferida.
 - A Umbra é responsabilidade de Vespera na distinção/relação com a realidade física; o Sonhar é domínio reconhecido. As geografias internas continuam em aberto.
 
