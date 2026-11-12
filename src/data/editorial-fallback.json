@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-11",
+  "updated_at": "2026-11-12",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -697,7 +697,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Código integrado no repositório da aplicação. Em 11/11/2026, os snapshots canônicos e a suíte de regressão passaram. A primeira tentativa de prerender revelou incompatibilidade na entrada SSR (`server.fetch is not a function`); `src/server.ts` foi corrigido para `createServerEntry` e `handler.fetch(request, opts)`. O novo build está em execução; a URL pública ainda não foi verificada.",
+      "status": "Em 12/11/2026, a execução 43150491630 validou os snapshots e os 42 testes, mas o prerender voltou a registrar `server.fetch is not a function` e foi cancelado no limite de 20 minutos. Em seguida, `src/server.ts` foi simplificado para exportar diretamente o handler padrão do TanStack Start; aguardam-se nova validação do prerender e confirmação do deploy. A URL pública ainda não foi verificada.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
