@@ -697,7 +697,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 12/11/2026, a entrada SSR customizada foi removida para que TanStack Start use o handler embutido. A Constelação foi promovida ao primeiro plano do portal React e passou a permitir navegação ano → mês → dia quando a precisão do registro permite; datas de semana ou mês permanecem aproximadas, sem dias inventados. A ordem editorial do Volume I continua separada da cronologia do universo. A última execução registrada passou pelas validações de snapshots e 42 testes, mas o prerender ainda precisa ser confirmado. A fonte do GitHub Pages continua configurada para Build with Jekyll; a URL pública ainda não foi verificada.",
+      "status": "Em 12/11/2026, a entrada SSR customizada foi removida para que TanStack Start use o handler embutido. A Constelação foi promovida ao primeiro plano do portal React e passou a permitir navegação ano → mês → dia quando a precisão do registro permite; datas de semana ou mês permanecem aproximadas, sem dias inventados. A ordem editorial do Volume I continua separada da cronologia do universo. A última execução registrada passou pelas validações de snapshots e 42 testes, mas o prerender ainda precisa ser confirmado. A fonte do GitHub Pages continua configurada para Build with Jekyll; a URL pública ainda não foi verificada. Dois testes específicos para agrupamento temporal e registros sem cronologia foram adicionados à suíte; sua execução ainda está pendente.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
