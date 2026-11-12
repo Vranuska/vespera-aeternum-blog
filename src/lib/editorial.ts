@@ -133,7 +133,7 @@ export function buildEras(index: EditorialIndex, knownIds: Set<string>) {
           entries: [],
         }),
       );
-    m.entries.push({ id: c.entry_id, title: c.title, label: c.label, time: c.time, precision: c.precision });
+    m.entries.push({ id: c.entry_id, title: c.title, label: c.label, time: c.time, ...(c.precision ? { precision: c.precision } : {}) });
   }
   const outside: EraEntry[] = [];
   for (const u of index.unplaced) {

@@ -2,10 +2,12 @@ import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-rout
 import { Signature, SHEET, sheetStyle } from "@/components/vespera/Signature";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
-import { worksQuery, readingMinutes, relatedWorks, manuscriptAttribution } from "@/lib/works";
+import { worksQuery, readingMinutes, relatedWorks, manuscriptAttribution, readerNavigation } from "@/lib/works";
+import { BookNavigation } from "@/components/vespera/BookNavigation";
 import { Ornament } from "@/components/vespera/Ornament";
 
 export const Route = createFileRoute("/diarios/$id")({
+  validateSearch: (s: Record<string, unknown>): { modo?: "livro" | undefined } => ({ modo: s["modo"] === "livro" ? "livro" : undefined }),
   loader: async ({ context, params }) => {
     const works = await context.queryClient.ensureQueryData(worksQuery);
     const w = works.find((x) => x.id === params.id);
@@ -49,6 +51,9 @@ function useProgress() {
 function Reader() {
   const { id } = Route.useParams();
   const { data: works } = useSuspenseQuery(worksQuery);
+  const { modo } = Route.useSearch();
+  const book = modo === "livro";
+  const bookNav = readerNavigation(works, id, "livro");
   const router = useRouter();
   const i = works.findIndex((w) => w.id === id);
   const w = works[i]!; // loader garante existência (notFound)
@@ -64,13 +69,13 @@ function Reader() {
   const pull = pullIdx >= 0 ? w.paragraphs.slice(pullIdx).find((p) => p.length > 40 && p.length < 180) : undefined;
   const pullAt = pull ? w.paragraphs.indexOf(pull) : -1;
 
-  const back = () => (window.history.length > 1 ? router.history.back() : router.navigate({ to: "/biblioteca" }));
+  const back = () => (book ? router.navigate({ to: "/diarios", search: { modo: "livro" } }) : window.history.length > 1 ? router.history.back() : router.navigate({ to: "/biblioteca" }));
 
   return (
     <article>
       <div className="fixed left-0 top-0 z-50 h-0.5 bg-gold" style={{ width: `${progress * 100}%` }} role="progressbar" aria-label="Progresso de leitura" aria-valuenow={Math.round(progress * 100)} aria-valuemin={0} aria-valuemax={100} />
       <div className="mx-auto max-w-3xl px-5 pt-10">
-        <button onClick={back} className="label-archive text-sage hover:text-gold">← Retornar à biblioteca</button>
+        <button onClick={back} className="label-archive text-sage hover:text-gold">{book ? "← Retornar ao índice do livro" : "← Retornar à biblioteca"}</button>
       </div>
 
       <header className="mx-auto max-w-3xl px-5 pb-12 pt-16 text-center">
@@ -80,6 +85,8 @@ function Reader() {
         {w.place && <p className="label-archive mt-2 text-sage">{w.place}</p>}
         <Ornament className="mt-10" />
       </header>
+
+      {book && bookNav.position >= 0 && <div className="mx-auto mb-10 max-w-3xl px-5"><BookNavigation navigation={bookNav} location="início" /></div>}
 
       <div className="bg-plum/50 px-2 py-10 sm:px-6 sm:py-16">
         <div className="manuscript mx-auto w-full max-w-[44rem] px-6 py-12 sm:px-16 sm:py-20" style={{ ["--sheet" as string]: sheet.tone }}>
@@ -108,6 +115,7 @@ function Reader() {
         </div>
       </div>
 
+      {book && bookNav.position >= 0 ? <div className="mx-auto mt-16 max-w-3xl px-5"><BookNavigation navigation={bookNav} location="fim" /></div> : (
       <nav className="mx-auto mt-16 grid max-w-5xl gap-px bg-border px-0 sm:grid-cols-2" aria-label="Navegação entre obras">
         {older ? (
           <Link to="/diarios/$id" params={{ id: older.id }} className="group bg-background p-8">
@@ -122,6 +130,7 @@ function Reader() {
           </Link>
         ) : <span className="bg-background" />}
       </nav>
+      )}
 
       {related.length > 0 && (
         <section className="mx-auto mt-20 max-w-5xl px-5">

@@ -95,7 +95,13 @@ export const THEMES = [
   "registro",
 ] as const;
 
-export type WorkMeta = { genres: string[]; collection: string; themes: string[]; characters: string[] };
+export type WorkMeta = {
+  genres: string[]; collection: string; themes: string[]; characters: string[];
+  series?: { id: string; title: string; position?: number };
+  standalone?: boolean;
+  author?: string;
+  image?: { src: string; alt: string; rights: "author-owned" };
+};
 
 const D = "Diários de Vespera", M = "Memórias de Vespera", F = "Fragmentos da Casa";
 

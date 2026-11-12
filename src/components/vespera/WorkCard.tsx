@@ -32,16 +32,18 @@ export function WorkCard({ work, index }: { work: Work; index?: number }) {
   );
 }
 
-export function WorkRow({ work }: { work: Work }) {
+export function WorkRow({ work, book = false }: { work: Work; book?: boolean }) {
   return (
     <Link
       to="/diarios/$id"
       params={{ id: work.id }}
+      search={{ modo: book ? "livro" : undefined }}
       className="group grid grid-cols-1 gap-1 border-b border-border py-5 sm:grid-cols-[1fr_auto] sm:items-baseline sm:gap-6"
     >
       <div>
         <span className="font-display text-2xl text-parchment group-hover:text-rose">{work.title}</span>
         <span className="ml-3 text-sm italic text-sage">{work.date}</span>
+        {work.series && <span className="mt-1 block text-sm italic text-rose">{work.series.title}</span>}
       </div>
       <span className="label-archive text-gold">{work.genres.join(" · ")} · {readingMinutes(work)} min</span>
     </Link>

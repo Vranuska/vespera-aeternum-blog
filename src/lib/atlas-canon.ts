@@ -22,12 +22,22 @@ export function atlasPlaceLocation(canonicalId: string): { mapa: string; local: 
   return mapa && local ? { mapa, local } : undefined;
 }
 
+type CanonPlace = {
+  id: string; name: string; image?: string; image_alt?: string; status_label?: string; subregion?: string;
+  history?: string[]; laws?: string[]; inhabitants?: string[]; source_entry_ids?: string[];
+  connections: { label: string; route: string }[];
+};
+
 const assetUrl = (path: string) => RAW_ARCHIVE + path.replace(/^\/+/, "");
 
 function mergeUnique(first?: string[], second?: string[]) {
   const values = [...(first ?? [])];
   for (const value of second ?? []) if (!values.includes(value)) values.push(value);
   return values.length ? values : undefined;
+}
+
+function optional<K extends string>(key: K, value: string[] | undefined) {
+  return (value ? { [key]: value } : {}) as Partial<Record<K, string[]>>;
 }
 
 /**
@@ -37,7 +47,7 @@ function mergeUnique(first?: string[], second?: string[]) {
  */
 export function enrichAtlasPlace(mapId: string, place: Place): Place {
   const canonicalId = CANONICAL_IDS[mapId + ":" + place.id];
-  const source = canonicalAtlas.places.find((item) => item.id === canonicalId);
+  const source = (canonicalAtlas.places as unknown as CanonPlace[]).find((item) => item.id === canonicalId);
   if (!source) return place;
 
   const image = place.image ?? (source.image
@@ -51,10 +61,10 @@ export function enrichAtlasPlace(mapId: string, place: Place): Place {
   return {
     ...place,
     ...(image ? { image } : {}),
-    history: mergeUnique(place.history, source.history),
-    laws: mergeUnique(place.laws, source.laws),
-    inhabitants: mergeUnique(place.inhabitants, source.inhabitants),
-    works: mergeUnique(place.works, source.source_entry_ids),
+    ...optional("history", mergeUnique(place.history, source.history)),
+    ...optional("laws", mergeUnique(place.laws, source.laws)),
+    ...optional("inhabitants", mergeUnique(place.inhabitants, source.inhabitants)),
+    ...optional("works", mergeUnique(place.works, source.source_entry_ids)),
     references: source.connections.map((connection) => ({
       label: connection.label,
       route: connection.route,
