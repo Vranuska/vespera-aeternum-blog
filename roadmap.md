@@ -11,12 +11,13 @@
 - [x] Restaurar a composição aprovada no commit 5a038b8: cabeçalho vinho, monograma botânico dourado, índice lateral e manuscrito protagonista desde o início.
 - [x] Remover o hero fotográfico de tela inteira e manter a prancha apenas como imagem pequena e emoldurada.
 - [x] Manter outros manuscritos em linhas de leitura, sem grade de cards protagonista.
-- [x] Preservar a Constelação de memórias como seção secundária depois do manuscrito e da lista.
+- [x] Promover a Constelação de memórias à entrada principal do portal, mantendo o manuscrito em destaque e a lista de leitura.
 - [x] Separar ordem editorial do Volume I (16 capítulos) da cronologia do universo.
 - [x] Cópia offline com 48 manuscritos, sem IDs duplicados.
 - [x] Cópia offline do índice editorial: 16 capítulos, 16 itens cronológicos e 32 obras fora da cronologia.
 - [x] Coleção Arquivo das Eras, gênero e temas de A maré não assina recibos disponíveis nos filtros da Bibliotheca.
 - [x] Acesso direto da navegação lateral à Constelação e à coleção Arquivo das Eras.
+- [x] Navegação temporal por ano, mês e dia; datas de semana ou mês preservam sua precisão sem receber dias inventados.
 - [x] Leitor reconhece `related_entries`, prioriza vínculos editoriais explícitos e preserva a autonomia das narrativas relacionadas.
 - [x] Prerender usa snapshots sincronizados para evitar requisições remotas repetidas durante a compilação.
 - [x] Cartão e leitor integral respeitam a mesma regra de autoria; narrativas independentes não recebem assinatura de Vespera por padrão.
@@ -39,10 +40,10 @@
 - [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
 - [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
 - [x] Remover a entrada SSR customizada (`src/server.ts`) e a configuração explícita `server.entry`; o portal volta a usar a entrada embutida do TanStack Start, que já trata contexto de requisição e erros de SSR.
-- [ ] Revalidar os 43 testes após a correção da ordem de publicação e confirmar o prerender.
+- [ ] Revalidar a suíte após as alterações de publicação e navegação temporal, e confirmar o prerender.
 - [ ] Confirmar que o prerender conclui com a entrada padrão do TanStack Start e que o deploy do GitHub Pages publica o artefato React.
 - [ ] Alterar a fonte do GitHub Pages em Settings → Pages → Build and deployment → Source para `GitHub Actions`. A execução de sistema 43210164860 ainda executou `Build with Jekyll` a partir de `main`, portanto o endereço público continua usando a publicação por branch, não o artefato React deste workflow.
-- [ ] Confirmar que o commit restaurado no Lovable está sincronizado ao GitHub main.
+- [ ] Reconciliar o commit informado pelo projeto Lovable com o histórico de `main`; o SHA reportado pelo projeto não foi encontrado no repositório conectado.
 - [ ] Publicar a versão validada e confirmar separadamente a resposta HTTP/visual do endereço público.
 - [ ] Completar fichas de personagens humanos do Ciclo das Inacabadas sem inventar biografia ou habilidades.
 - [ ] Etapa 3: editor administrativo de gêneros e mapas, dependente de autenticação/Cloud.
