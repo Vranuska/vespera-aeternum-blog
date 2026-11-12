@@ -37,8 +37,8 @@
 - [x] 30 testes de regressão aprovados no GitHub Actions em 11/11/2026, incluindo validação dos snapshots canônicos do Bestiário e do Atlas.
 - [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
 - [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
-- [x] Corrigir `src/server.ts` para o contrato `createServerEntry` / `handler.fetch(request, opts)` do TanStack Start 1.168+, identificado como causa de `server.fetch is not a function` no prerender.
-- [ ] Confirmar que o prerender conclui com a nova entrada SSR e que o deploy do GitHub Pages publica o artefato React.
+- [x] Simplificar `src/server.ts` para exportar diretamente a entrada padrão do TanStack Start; a camada customizada anterior ainda deixava o prerender sem um `server.fetch` funcional.
+- [ ] Confirmar que o prerender conclui com a entrada padrão do TanStack Start e que o deploy do GitHub Pages publica o artefato React.
 - [ ] Confirmar que o commit restaurado no Lovable está sincronizado ao GitHub main.
 - [ ] Publicar a versão validada e confirmar separadamente a resposta HTTP/visual do endereço público.
 - [ ] Completar fichas de personagens humanos do Ciclo das Inacabadas sem inventar biografia ou habilidades.
