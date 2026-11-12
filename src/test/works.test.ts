@@ -13,6 +13,19 @@ describe("Arquivo e ordem editorial", () => {
     expect(work?.series).toBeUndefined();
     expect(work?.standalone).toBeUndefined();
   });
+  it("ordena a lista diária pela data explícita de publicação, sem confundi-la com a cronologia do universo", () => {
+    const works = normalize([
+      { ...raw("sem-data", "Sem data"), date: "Memórias de Vespera · sem data" },
+      { ...raw("outubro", "Outubro"), date: "31 de outubro de 2026" },
+      { ...raw("novembro-primeiro", "Novembro"), date: "1º de novembro de 2026" },
+      { ...raw("novembro-dez", "Mais recente"), date: "10 de novembro de 2026 · Otaru" },
+      { ...raw("outubro-quatorze", "Arquivo"), date: "14 de outubro de 2026 · 23h59" },
+    ]);
+    expect(works.map((work) => work.id)).toEqual([
+      "novembro-dez", "novembro-primeiro", "outubro", "outubro-quatorze", "sem-data",
+    ]);
+    expect(works.map((work) => work.order)).toEqual([0, 1, 2, 3, 4]);
+  });
   it("não atribui à Vespera uma narrativa independente sem autoria declarada", () => {
     const works = normalize([
       { ...raw("autoria", "Autoria"), author: "Vespera Aeternum" },
@@ -87,7 +100,8 @@ describe("Arquivo e ordem editorial", () => {
     expect(works).toHaveLength(48);
     const chapterIds = editorial.editorial_reading_order.chapters.map((chapter) => chapter.entry_id);
     expect(chapterIds.every((id) => works.some((work) => work.id === id))).toBe(true);
-    expect(works[0]?.id).toBe("2026-11-09-a-rua-que-cabia-na-margem");
+    expect(works[0]?.id).toBe("2026-11-10-a-mare-nao-assina-recibos");
+    expect(works[1]?.id).toBe("2026-11-09-a-rua-que-cabia-na-margem");
     const unplacedIds = editorial.unplaced_archive.map((item) => item.entry_id);
     expect(unplacedIds).toContain("2026-11-10-a-mare-nao-assina-recibos");
     expect(unplacedIds.every((id) => works.some((work) => work.id === id))).toBe(true);
