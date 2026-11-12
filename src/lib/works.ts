@@ -15,6 +15,35 @@ export type RawEntry = {
   image?: { src: string; alt: string; rights: "author-owned" };
 };
 
+
+const PT_MONTHS = new Map([
+  ["janeiro", 0], ["fevereiro", 1], ["março", 2], ["abril", 3],
+  ["maio", 4], ["junho", 5], ["julho", 6], ["agosto", 7],
+  ["setembro", 8], ["outubro", 9], ["novembro", 10], ["dezembro", 11],
+]);
+
+/** Reads only the explicit publication date at the start of the archive label. */
+function publicationDay(label: string): number | null {
+  const match = label.match(/^\\s*(\\d{1,2})(?:º|°)?\\s+de\\s+([a-zç]+)\\s+de\\s+(\\d{4})/i);
+  if (!match) return null;
+  const month = PT_MONTHS.get(match[2]!.toLocaleLowerCase("pt-BR"));
+  if (month === undefined) return null;
+  return Date.UTC(Number(match[3]), month, Number(match[1]));
+}
+
+/** Publication order is independent of the story's in-universe chronology. */
+function newestFirst(raw: RawEntry[]): RawEntry[] {
+  return raw
+    .map((entry, index) => ({ entry, index, day: publicationDay(entry.date) }))
+    .sort((a, b) => {
+      if (a.day === null && b.day === null) return a.index - b.index;
+      if (a.day === null) return 1;
+      if (b.day === null) return -1;
+      return b.day - a.day || a.index - b.index;
+    })
+    .map(({ entry }) => entry);
+}
+
 export function parseEntries(input: unknown): RawEntry[] {
   if (!Array.isArray(input) || !input.length) throw new Error("Arquivo vazio ou inválido");
   const ids = new Set<string>();
@@ -48,7 +77,7 @@ export function ownedImage(image: RawEntry["image"]): RawEntry["image"] {
 
 export type Work = {
   id: string;
-  order: number; // posição no arquivo original (0 = mais recente)
+  order: number; // posição na ordem de publicação (0 = mais recente)
   title: string;
   date: string;
   place?: string | undefined;
@@ -70,7 +99,7 @@ export type Work = {
 };
 
 export function normalize(raw: RawEntry[], source: Work["source"] = "github"): Work[] {
-  return raw.map((e, i) => {
+  return newestFirst(raw).map((e, i) => {
     const text = e.paragraphs.join(" ");
     const meta = WORK_META[e.id];
     return {
