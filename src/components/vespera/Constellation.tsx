@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Monogram } from "./Monogram";
-import { buildEras, type EditorialIndex } from "@/lib/editorial";
+import { buildEras, OUTSIDE, type EditorialIndex } from "@/lib/editorial";
 import type { Work } from "@/lib/works";
 
 const PHRASE = "Tudo aquilo que foi esquecido ainda existe em algum lugar de mim";
@@ -17,11 +17,17 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
     [index, knownIds],
   );
   const [selected, setSelected] = useState<string | null>(null);
+  const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
+  const selectEra = (key: string | null) => {
+    setSelected(key);
+    setSelectedMonth(null);
+  };
   useEffect(() => {
     if (missing.length)
       console.warn("[constelação] IDs do índice ausentes em entries.json:", missing);
   }, [missing]);
   const era = eras.find((e) => e.key === selected);
+  const month = era?.months.find((m) => m.key === selectedMonth);
   const count = (k: string) =>
     eras.find((e) => e.key === k)?.months.reduce((n, m) => n + m.entries.length, 0) ?? 0;
 
@@ -33,8 +39,11 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
       >
         Constelação de memórias
       </h2>
-      <p className="label-archive mt-2 text-center text-sage">
-        Cronologia do universo · índice editorial da autora
+      <p className="mx-auto mt-3 max-w-2xl text-center font-display text-lg italic leading-relaxed text-parchment/85">
+        Não organizei estas lembranças para que fossem lidas em linha reta. Algumas chegam antes de outras; algumas ainda não encontraram um ano.
+      </p>
+      <p className="label-archive mt-3 text-center text-sage">
+        Escolha um ano, depois um mês. A ordem de leitura permanece separada da cronologia.
       </p>
 
       <div className="relative mx-auto mt-8 aspect-square w-full max-w-[26rem]">
@@ -112,7 +121,7 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
             <button
               key={e.key}
               type="button"
-              onClick={() => setSelected(active ? null : e.key)}
+              onClick={() => selectEra(active ? null : e.key)}
               aria-pressed={active}
               aria-label={`${e.label}: ${count(e.key)} manuscritos`}
               style={{ left: `${x}%`, top: `${y}%` }}
@@ -121,8 +130,11 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
               <span
                 className={`block h-3 w-3 rounded-full border border-gold shadow-[0_0_10px_var(--color-gold)] ${active ? "bg-parchment" : "bg-gold animate-flicker"}`}
               />
-              <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-1 -translate-x-1/2 whitespace-nowrap border border-gold/40 bg-header px-2 py-1 font-display text-sm italic text-parchment opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
-                {e.label}
+              <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-1 -translate-x-1/2 whitespace-nowrap border border-gold/40 bg-header px-3 py-2 text-center font-display text-sm italic text-parchment opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+                <span className="block">{e.label}</span>
+                <span className="label-archive mt-1 block text-[0.55rem] tracking-normal text-sage">
+                  {count(e.key)} registros · {e.key === OUTSIDE ? "sem posição" : `${e.months.length} ${e.months.length === 1 ? "mês" : "meses"}`}
+                </span>
               </span>
             </button>
           );
@@ -138,7 +150,7 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
           <button
             key={e.key}
             type="button"
-            onClick={() => setSelected(e.key === selected ? null : e.key)}
+            onClick={() => selectEra(e.key === selected ? null : e.key)}
             aria-pressed={e.key === selected}
             aria-controls="constelacao-era"
             className={`label-archive min-h-11 border px-3 py-2 transition-colors focus-visible:outline-2 focus-visible:outline-gold ${e.key === selected ? "border-gold bg-header text-gold" : "border-border text-rose hover:text-parchment"}`}
@@ -149,15 +161,25 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
       </div>
 
       <div id="constelacao-era" aria-live="polite" className="mt-6">
+        {!era && (
+          <p className="mx-auto max-w-xl text-center font-display text-lg italic text-sage">
+            Escolha uma era para abrir os meses e os registros que sobreviveram a ela.
+          </p>
+        )}
         {era && (
           <div className="frame-gold bg-header p-5">
-            <h3 className="font-display text-2xl text-parchment">{era.label}</h3>
-            {era.months.map((m) => (
-              <div key={m.key} className="mt-4">
-                <p className="label-archive border-b border-border pb-1 text-gold">{m.label}</p>
-                <ul className="mt-2">
-                  {m.entries.map((en) => (
-                    <li key={en.id} className="border-b border-border/50 py-2">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 className="font-display text-2xl text-parchment">{era.label}</h3>
+              <span className="label-archive text-gold">{count(era.key)} registros preservados</span>
+            </div>
+            {era.key === OUTSIDE ? (
+              <div className="mt-4">
+                <p className="text-sm italic text-sage">
+                  Obras ainda não situadas na cronologia do universo. Permanecem acessíveis sem receber uma data inventada.
+                </p>
+                <ul className="mt-3">
+                  {era.months.flatMap((m) => m.entries).map((en) => (
+                    <li key={en.id} className="border-b border-border/50 py-3">
                       <Link
                         to="/diarios/$id"
                         params={{ id: en.id }}
@@ -170,7 +192,62 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
                   ))}
                 </ul>
               </div>
-            ))}
+            ) : (
+              <>
+                <p className="mt-3 text-sm italic text-sage">
+                  Selecione um mês. Quando o arquivo conhece apenas uma semana ou um mês, a incerteza permanece visível.
+                </p>
+                <div role="group" aria-label={`Meses de ${era.label}`} className="mt-4 flex flex-wrap gap-2">
+                  {era.months.map((m) => (
+                    <button
+                      key={m.key}
+                      type="button"
+                      onClick={() => setSelectedMonth(m.key === selectedMonth ? null : m.key)}
+                      aria-pressed={selectedMonth === m.key}
+                      className={`label-archive min-h-11 border px-3 py-2 transition-colors focus-visible:outline-2 focus-visible:outline-gold ${selectedMonth === m.key ? "border-gold bg-wine text-parchment" : "border-border text-rose hover:text-parchment"}`}
+                    >
+                      {m.label} <span className="text-sage">({m.entries.length})</span>
+                    </button>
+                  ))}
+                </div>
+                {month ? (
+                  <div className="mt-5">
+                    <p className="label-archive border-b border-border pb-2 text-gold">{month.label}</p>
+                    <ul className="mt-2">
+                      {month.entries.map((en) => {
+                        const day = en.time?.match(/^\\d{4}-\\d{2}-(\\d{2})$/)?.[1];
+                        const precisionLabel = day
+                          ? `Dia ${day}`
+                          : en.precision === "week"
+                            ? "Semana"
+                            : en.precision === "month"
+                              ? "Mês"
+                              : "Data parcial";
+                        return (
+                          <li key={en.id} className="border-b border-border/50 py-3">
+                            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                              <span className="label-archive text-gold">{precisionLabel}</span>
+                              <Link
+                                to="/diarios/$id"
+                                params={{ id: en.id }}
+                                className="font-display text-lg text-parchment hover:text-rose"
+                              >
+                                {en.title}
+                              </Link>
+                            </div>
+                            <p className="mt-1 text-sm italic text-sage">{en.label}</p>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                ) : (
+                  <p className="mt-4 font-display text-lg italic text-sage">
+                    O mês ainda não foi escolhido.
+                  </p>
+                )}
+              </>
+            )}
           </div>
         )}
       </div>
