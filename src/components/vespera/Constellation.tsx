@@ -215,7 +215,7 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
                     <p className="label-archive border-b border-border pb-2 text-gold">{month.label}</p>
                     <ul className="mt-2">
                       {month.entries.map((en) => {
-                        const day = en.time?.match(/^\\d{4}-\\d{2}-(\\d{2})$/)?.[1];
+                        const day = en.time?.match(/^\d{4}-\d{2}-(\d{2})$/)?.[1];
                         const precisionLabel = day
                           ? `Dia ${day}`
                           : en.precision === "week"
