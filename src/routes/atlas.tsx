@@ -52,8 +52,11 @@ function Atlas() {
 
   return (
     <div className="mx-auto max-w-7xl px-5 py-14">
-      <p className="label-archive text-gold">Cartografia ficcional · protótipo</p>
+      <p className="label-archive text-gold">Cartografia dos domínios · registro em aberto</p>
       <h1 className="mt-3 font-display text-5xl font-light text-parchment md:text-7xl">Atlas do <em className="text-rose">Impossível</em></h1>
+      <p className="mt-4 max-w-2xl font-display text-xl italic leading-relaxed text-parchment/80">
+        Alguns lugares foram atravessados; outros, apenas nomeados. O mapa conserva a diferença.
+      </p>
 
       <nav aria-label="Trilha de localização" className="mt-8 flex flex-wrap items-center gap-2 label-archive">
         {crumbs.length > 1 && (
@@ -73,7 +76,7 @@ function Atlas() {
         <div>
           <AtlasCanvas map={map} selected={place?.id} onSelect={(p) => go({ mapa: search.mapa, local: p.id })} />
           <p className="mt-3 text-sm italic text-sage">
-            {map.subtitle}. Posições ilustrativas — os manuscritos não descrevem a geografia. Contornos tracejados indicam lugares ou conexões provisórios.
+            {map.subtitle}. As posições são simbólicas; linhas interrompidas assinalam relações ainda não confirmadas. O arquivo não preenche o que os manuscritos deixam em aberto.
           </p>
         </div>
 
@@ -93,7 +96,7 @@ function Atlas() {
           )}
         </aside>
       </div>
-      <p className="mt-10 label-archive text-sage">Editor de mundos, regiões e marcadores: previsto para a Etapa 3, com o painel administrativo.</p>
+      <p className="mt-10 text-center font-display text-lg italic text-sage">O Sonhar e a Umbra permanecem no mapa. Suas geografias internas, não.</p>
     </div>
   );
 }
