@@ -76,9 +76,6 @@ function Portal() {
 
       {featured && (
         <article>
-          <div className="mb-16">
-            <Constellation index={editorial} works={works} />
-          </div>
           <header className="text-center">
             <p className="label-archive text-gold">Manuscrito em destaque · {featured.genres.join(" · ")}</p>
             <h1 className="mt-4 font-display text-[clamp(2.4rem,6vw,4.6rem)] font-light leading-[0.95] text-parchment">{featured.title}</h1>
@@ -108,6 +105,9 @@ function Portal() {
             <div className="mt-4">{others.map((w) => <WorkRow key={w.id} work={w} />)}</div>
           </section>
 
+          <div className="mt-16">
+            <Constellation index={editorial} works={works} />
+          </div>
         </article>
       )}
     </div>
