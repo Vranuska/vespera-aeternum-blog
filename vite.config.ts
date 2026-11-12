@@ -8,8 +8,7 @@ export default defineConfig({
     base: "/vespera-aeternum/",
   },
   tanstackStart: {
-    // Keep the existing SSR error wrapper used by Lovable.
-    server: { entry: "server" },
+    // No custom server entry: use TanStack Start's built-in handler for prerender and SSR.
     // Start prerendering at the actual router base path. Link crawling then
     // discovers the archive indexes and their individual manuscript routes.
     prerender: {
