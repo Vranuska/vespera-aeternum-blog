@@ -697,7 +697,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 12/11/2026, a entrada SSR customizada foi removida para que TanStack Start use o handler embutido. A execução 43210165517 já passou pelas validações de snapshots e pelos 42 testes, mas ainda não concluiu o prerender. O leitor React também passou a ordenar os diários pela data explícita de publicação, da mais recente para a mais antiga, mantendo obras sem data no fim e sem confundir publicação com cronologia do universo. A execução de Pages 43210164860 ainda usa `Build with Jekyll` a partir de `main`; a fonte do GitHub Pages precisa ser alterada para `GitHub Actions` em Settings → Pages. A URL pública ainda não foi verificada.",
+      "status": "Em 12/11/2026, a entrada SSR customizada foi removida para que TanStack Start use o handler embutido. A Constelação foi promovida ao primeiro plano do portal React e passou a permitir navegação ano → mês → dia quando a precisão do registro permite; datas de semana ou mês permanecem aproximadas, sem dias inventados. A ordem editorial do Volume I continua separada da cronologia do universo. A última execução registrada passou pelas validações de snapshots e 42 testes, mas o prerender ainda precisa ser confirmado. A fonte do GitHub Pages continua configurada para Build with Jekyll; a URL pública ainda não foi verificada.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
@@ -706,7 +706,9 @@
         "vínculos editoriais explícitos no leitor, com relações recíprocas entre A rua que cabia na margem e A maré não assina recibos",
         "prerender com snapshots locais sincronizados; atualização remota no navegador",
         "Dossiê canônico de Eithne integrado ao portal React: prancha principal, galeria, biografia, aptidões, limites, cronologia, citações e relações; menções não são promovidas a fichas sem material suficiente.",
-        "ordem de publicação nos diários, separada da cronologia do universo"
+        "ordem de publicação nos diários, separada da cronologia do universo",
+        "Constelação promovida à entrada principal do portal, antes do manuscrito em destaque.",
+        "Navegação temporal por ano, mês e dia, preservando a precisão original dos registros e mantendo obras sem cronologia em seção separada."
       ],
       "reading_order_chapters": 16,
       "chronology_items": 16,
