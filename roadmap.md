@@ -11,7 +11,7 @@
 - [x] Restaurar a composição aprovada no commit 5a038b8: cabeçalho vinho, monograma botânico dourado, índice lateral e manuscrito protagonista desde o início.
 - [x] Remover o hero fotográfico de tela inteira e manter a prancha apenas como imagem pequena e emoldurada.
 - [x] Manter outros manuscritos em linhas de leitura, sem grade de cards protagonista.
-- [x] Promover a Constelação de memórias à entrada principal do portal, mantendo o manuscrito em destaque e a lista de leitura.
+- [x] Integrar a Constelação de memórias como seção navegável do portal, depois do manuscrito em destaque e da lista de leitura.
 - [x] Separar ordem editorial do Volume I (16 capítulos) da cronologia do universo.
 - [x] Cópia offline com 48 manuscritos, sem IDs duplicados.
 - [x] Cópia offline do índice editorial: 16 capítulos, 16 itens cronológicos e 32 obras fora da cronologia.
