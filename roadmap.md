@@ -34,11 +34,12 @@
 
 ## Validação e publicação
 - [x] Sincronizar os snapshots offline de entradas e índice editorial com os arquivos canônicos e exigir igualdade exata antes do prerender.
-- [x] 30 testes de regressão aprovados no GitHub Actions em 11/11/2026, incluindo validação dos snapshots canônicos do Bestiário e do Atlas.
+- [x] 42 testes de regressão aprovados no GitHub Actions em 12/11/2026, incluindo arquivo, continuidade, atribuição e snapshots canônicos do Bestiário e do Atlas.
 - [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
 - [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
 - [x] Remover a entrada SSR customizada (`src/server.ts`) e a configuração explícita `server.entry`; o portal volta a usar a entrada embutida do TanStack Start, que já trata contexto de requisição e erros de SSR.
 - [ ] Confirmar que o prerender conclui com a entrada padrão do TanStack Start e que o deploy do GitHub Pages publica o artefato React.
+- [ ] Alterar a fonte do GitHub Pages em Settings → Pages → Build and deployment → Source para `GitHub Actions`. A execução de sistema 43210164860 ainda executou `Build with Jekyll` a partir de `main`, portanto o endereço público continua usando a publicação por branch, não o artefato React deste workflow.
 - [ ] Confirmar que o commit restaurado no Lovable está sincronizado ao GitHub main.
 - [ ] Publicar a versão validada e confirmar separadamente a resposta HTTP/visual do endereço público.
 - [ ] Completar fichas de personagens humanos do Ciclo das Inacabadas sem inventar biografia ou habilidades.
