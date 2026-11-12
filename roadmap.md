@@ -37,7 +37,7 @@
 - [x] 30 testes de regressão aprovados no GitHub Actions em 11/11/2026, incluindo validação dos snapshots canônicos do Bestiário e do Atlas.
 - [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
 - [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
-- [x] Simplificar `src/server.ts` para exportar diretamente a entrada padrão do TanStack Start; a camada customizada anterior ainda deixava o prerender sem um `server.fetch` funcional.
+- [x] Remover a entrada SSR customizada (`src/server.ts`) e a configuração explícita `server.entry`; o portal volta a usar a entrada embutida do TanStack Start, que já trata contexto de requisição e erros de SSR.
 - [ ] Confirmar que o prerender conclui com a entrada padrão do TanStack Start e que o deploy do GitHub Pages publica o artefato React.
 - [ ] Confirmar que o commit restaurado no Lovable está sincronizado ao GitHub main.
 - [ ] Publicar a versão validada e confirmar separadamente a resposta HTTP/visual do endereço público.
