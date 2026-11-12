@@ -20,6 +20,7 @@
 - [x] Leitor reconhece `related_entries`, prioriza vínculos editoriais explícitos e preserva a autonomia das narrativas relacionadas.
 - [x] Prerender usa snapshots sincronizados para evitar requisições remotas repetidas durante a compilação.
 - [x] Cartão e leitor integral respeitam a mesma regra de autoria; narrativas independentes não recebem assinatura de Vespera por padrão.
+- [x] Diários e lista de manuscritos ordenados pela data explícita de publicação; obras sem data mantêm sua ordem de arquivo e a cronologia do universo continua separada.
 - [x] Integrar o dossiê canônico de Eithne ao portal React, preservando o registro de outras presenças como menção até haver material suficiente para uma ficha completa.
 
 ## Atlas e cânone
@@ -38,6 +39,7 @@
 - [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
 - [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
 - [x] Remover a entrada SSR customizada (`src/server.ts`) e a configuração explícita `server.entry`; o portal volta a usar a entrada embutida do TanStack Start, que já trata contexto de requisição e erros de SSR.
+- [ ] Revalidar os 43 testes após a correção da ordem de publicação e confirmar o prerender.
 - [ ] Confirmar que o prerender conclui com a entrada padrão do TanStack Start e que o deploy do GitHub Pages publica o artefato React.
 - [ ] Alterar a fonte do GitHub Pages em Settings → Pages → Build and deployment → Source para `GitHub Actions`. A execução de sistema 43210164860 ainda executou `Build with Jekyll` a partir de `main`, portanto o endereço público continua usando a publicação por branch, não o artefato React deste workflow.
 - [ ] Confirmar que o commit restaurado no Lovable está sincronizado ao GitHub main.
