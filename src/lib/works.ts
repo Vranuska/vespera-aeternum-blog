@@ -24,7 +24,7 @@ const PT_MONTHS = new Map([
 
 /** Reads only the explicit publication date at the start of the archive label. */
 function publicationDay(label: string): number | null {
-  const match = label.match(/^\\s*(\\d{1,2})(?:º|°)?\\s+de\\s+([a-zç]+)\\s+de\\s+(\\d{4})/i);
+  const match = label.match(/^\s*(\d{1,2})(?:º|°)?\s+de\s+([a-zç]+)\s+de\s+(\d{4})/i);
   if (!match) return null;
   const month = PT_MONTHS.get(match[2]!.toLocaleLowerCase("pt-BR"));
   if (month === undefined) return null;
