@@ -697,7 +697,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 12/11/2026, a simplificação de `src/server.ts` para exportar o handler padrão não liberou o prerender: a execução 43209244334 permaneceu na etapa de build. A entrada SSR customizada e sua configuração explícita foram então removidas para que TanStack Start use o handler embutido. A nova execução ainda precisa confirmar prerender e deploy; a URL pública permanece sem verificação.",
+      "status": "Em 12/11/2026, a entrada SSR customizada foi removida para que TanStack Start use o handler embutido. A execução 43210165517 já passou pelas validações de snapshots e pelos 42 testes, mas ainda não concluiu o prerender. O leitor React também passou a ordenar os diários pela data explícita de publicação, da mais recente para a mais antiga, mantendo obras sem data no fim e sem confundir publicação com cronologia do universo. A execução de Pages 43210164860 ainda usa `Build with Jekyll` a partir de `main`; a fonte do GitHub Pages precisa ser alterada para `GitHub Actions` em Settings → Pages. A URL pública ainda não foi verificada.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
@@ -705,7 +705,8 @@
         "ordem editorial do Volume I em lista expansível, separada da cronologia",
         "vínculos editoriais explícitos no leitor, com relações recíprocas entre A rua que cabia na margem e A maré não assina recibos",
         "prerender com snapshots locais sincronizados; atualização remota no navegador",
-        "Dossiê canônico de Eithne integrado ao portal React: prancha principal, galeria, biografia, aptidões, limites, cronologia, citações e relações; menções não são promovidas a fichas sem material suficiente."
+        "Dossiê canônico de Eithne integrado ao portal React: prancha principal, galeria, biografia, aptidões, limites, cronologia, citações e relações; menções não são promovidas a fichas sem material suficiente.",
+        "ordem de publicação nos diários, separada da cronologia do universo"
       ],
       "reading_order_chapters": 16,
       "chronology_items": 16,
