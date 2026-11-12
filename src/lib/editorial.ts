@@ -103,7 +103,7 @@ const MONTHS = [
   "dezembro",
 ];
 
-export type EraEntry = { id: string; title: string; label: string };
+export type EraEntry = { id: string; title: string; label: string; time?: string; precision?: string };
 export type Era = {
   key: string;
   label: string;
@@ -133,7 +133,7 @@ export function buildEras(index: EditorialIndex, knownIds: Set<string>) {
           entries: [],
         }),
       );
-    m.entries.push({ id: c.entry_id, title: c.title, label: c.label });
+    m.entries.push({ id: c.entry_id, title: c.title, label: c.label, time: c.time, precision: c.precision });
   }
   const outside: EraEntry[] = [];
   for (const u of index.unplaced) {
