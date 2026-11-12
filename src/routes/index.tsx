@@ -29,10 +29,10 @@ export const Route = createFileRoute("/")({
 
 type SideLink = { label: string; to: string; search?: Record<string, unknown>; href?: string };
 const SIDE: SideLink[] = [
-  { label: "Diários", to: "/diarios" },
-  { label: "Ordem de leitura", to: "/diarios", search: { modo: "livro" } },
   { label: "Constelação", to: "/", href: "#constelacao" },
   { label: "Arquivo das Eras", to: "/biblioteca", search: { colecao: "Arquivo das Eras" } },
+  { label: "Diários", to: "/diarios" },
+  { label: "Ordem de leitura", to: "/diarios", search: { modo: "livro" } },
   { label: "Personagens", to: "/bestiario" },
   { label: "Lugares", to: "/atlas" },
   { label: "Objetos", to: "/biblioteca" },
@@ -76,6 +76,9 @@ function Portal() {
 
       {featured && (
         <article>
+          <div className="mb-16">
+            <Constellation index={editorial} works={works} />
+          </div>
           <header className="text-center">
             <p className="label-archive text-gold">Manuscrito em destaque · {featured.genres.join(" · ")}</p>
             <h1 className="mt-4 font-display text-[clamp(2.4rem,6vw,4.6rem)] font-light leading-[0.95] text-parchment">{featured.title}</h1>
@@ -105,7 +108,6 @@ function Portal() {
             <div className="mt-4">{others.map((w) => <WorkRow key={w.id} work={w} />)}</div>
           </section>
 
-          <div className="mt-16"><Constellation index={editorial} works={works} /></div>
         </article>
       )}
     </div>
