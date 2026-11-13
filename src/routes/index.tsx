@@ -29,14 +29,14 @@ export const Route = createFileRoute("/")({
 
 type SideLink = { label: string; to: string; search?: Record<string, unknown>; href?: string };
 const SIDE: SideLink[] = [
+  { label: "Diários", to: "/diarios" },
+  { label: "Ordem de leitura", to: "/diarios", search: { modo: "livro" } },
   { label: "Constelação", to: "/", href: "#constelacao" },
   { label: "Arquivo das Eras", to: "/biblioteca", search: { colecao: "Arquivo das Eras" } },
-  { label: "Diários", to: "/diarios" },
   { label: "Contos", to: "/biblioteca", search: { generos: ["conto"] } },
   { label: "Crônicas", to: "/biblioteca", search: { generos: ["crônica"] } },
   { label: "Poemas", to: "/biblioteca", search: { generos: ["poema"] } },
   { label: "Cartas", to: "/biblioteca", search: { generos: ["carta"] } },
-  { label: "Ordem de leitura", to: "/diarios", search: { modo: "livro" } },
   { label: "Cronologia", to: "/biblioteca", search: { ordem: "antiga" } },
   { label: "Lugares", to: "/atlas" },
   { label: "Bestiário", to: "/bestiario" },
@@ -77,10 +77,6 @@ function Portal() {
       </aside>
 
       <main className="min-w-0">
-        <div className="mb-16">
-          <Constellation index={editorial} works={works} />
-        </div>
-
         {featured && (
           <article>
           <header className="text-center">
@@ -114,6 +110,10 @@ function Portal() {
 
           </article>
         )}
+
+        <div className="mt-16">
+          <Constellation index={editorial} works={works} />
+        </div>
       </main>
     </div>
   );
