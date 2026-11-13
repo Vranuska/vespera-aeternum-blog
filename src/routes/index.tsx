@@ -29,17 +29,18 @@ export const Route = createFileRoute("/")({
 
 type SideLink = { label: string; to: string; search?: Record<string, unknown>; href?: string };
 const SIDE: SideLink[] = [
-  { label: "Diários", to: "/diarios" },
-  { label: "Ordem de leitura", to: "/diarios", search: { modo: "livro" } },
   { label: "Constelação", to: "/", href: "#constelacao" },
   { label: "Arquivo das Eras", to: "/biblioteca", search: { colecao: "Arquivo das Eras" } },
-  { label: "Cronologia", to: "/biblioteca", search: { ordem: "antiga" } },
-  { label: "Personagens", to: "/bestiario" },
-  { label: "Lugares", to: "/atlas" },
-  { label: "Objetos", to: "/biblioteca" },
+  { label: "Diários", to: "/diarios" },
+  { label: "Contos", to: "/biblioteca", search: { generos: ["conto"] } },
+  { label: "Crônicas", to: "/biblioteca", search: { generos: ["crônica"] } },
+  { label: "Poemas", to: "/biblioteca", search: { generos: ["poema"] } },
   { label: "Cartas", to: "/biblioteca", search: { generos: ["carta"] } },
-  { label: "Mapas", to: "/atlas" },
+  { label: "Ordem de leitura", to: "/diarios", search: { modo: "livro" } },
+  { label: "Cronologia", to: "/biblioteca", search: { ordem: "antiga" } },
+  { label: "Lugares", to: "/atlas" },
   { label: "Bestiário", to: "/bestiario" },
+  { label: "Bibliotheca", to: "/biblioteca" },
 ];
 
 function Portal() {
@@ -75,8 +76,13 @@ function Portal() {
         </nav>
       </aside>
 
-      {featured && (
-        <article>
+      <main className="min-w-0">
+        <div className="mb-16">
+          <Constellation index={editorial} works={works} />
+        </div>
+
+        {featured && (
+          <article>
           <header className="text-center">
             <p className="label-archive text-gold">Manuscrito em destaque · {featured.genres.join(" · ")}</p>
             <h1 className="mt-4 font-display text-[clamp(2.4rem,6vw,4.6rem)] font-light leading-[0.95] text-parchment">{featured.title}</h1>
@@ -106,9 +112,9 @@ function Portal() {
             <div className="mt-4">{others.map((w) => <WorkRow key={w.id} work={w} />)}</div>
           </section>
 
-          <div className="mt-16"><Constellation index={editorial} works={works} /></div>
-        </article>
-      )}
+          </article>
+        )}
+      </main>
     </div>
   );
 }
