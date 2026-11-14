@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-09",
+  "updated_at": "2026-11-14",
   "title": "Atlas dos Domínios",
   "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
   "map_image": {
@@ -333,7 +333,7 @@
       "name": "Pasaje de la Calandria",
       "subregion": "Barracas, Buenos Aires, Argentina · traçado parcial",
       "status": "menção",
-      "status_label": "Traçado parcial · saída não verificada",
+      "status_label": "Reconstituição ilustrativa · saída não verificada",
       "history": [
         "O Pasaje de la Calandria aparece em plantas de 1934, 1948 e 1956, desaparecendo dos levantamentos posteriores.",
         "Micaela Funes confirmou, com o testemunho de Elena Roldán, a existência de um corredor interno que preserva parte do antigo percurso. A passagem perdeu o uso público quando um dos terrenos foi incorporado a um depósito.",
@@ -357,7 +357,9 @@
       ],
       "source_entry_ids": [
         "2026-11-09-a-rua-que-cabia-na-margem"
-      ]
+      ],
+      "image": "assets/atlas/pasaje-calandria.svg",
+      "image_alt": "Reconstituição ilustrativa do corredor de entrada pelo número 48, do pátio com árvore e da porta baixa que permanece fechada ao fundo."
     }
   ]
 }
