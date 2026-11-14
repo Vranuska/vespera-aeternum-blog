@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-12",
+  "updated_at": "2026-11-14",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -672,9 +672,9 @@
       },
       {
         "name": "Atlas React · pranchas e referências cruzadas",
-        "status": "integrado no código em 11/11/2026; imagem própria do Pasaje pendente",
-        "reason": "O painel React passou a usar as imagens e os registros canônicos dos oito lugares de atlas.json, incluindo história, leis, habitantes, obras-fonte e referências navegáveis. Sete lugares possuem imagem canônica; o Pasaje de la Calandria permanece sem imagem e com traçado provisório. Sonhar e Umbra continuam sem mapas internos.",
-        "completed_at": "2026-11-11"
+        "status": "integrado no código em 14/11/2026; os oito lugares canônicos possuem imagem ou reconstituição identificada.",
+        "reason": "O painel React usa as imagens e os registros canônicos dos oito lugares de atlas.json, incluindo história, leis, habitantes, obras-fonte e referências navegáveis. O Pasaje de la Calandria recebeu uma reconstituição ilustrativa baseada no manuscrito; a porta permanece fechada e não se atribui natureza ao espaço além dela. Sonhar e Umbra continuam sem mapas internos.",
+        "completed_at": "2026-11-14"
       }
     ],
     "routes": {
@@ -697,7 +697,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 12/11/2026, a entrada SSR customizada foi removida para que TanStack Start use o handler embutido. A Constelação foi promovida ao primeiro plano do portal React e passou a permitir navegação ano → mês → dia quando a precisão do registro permite; datas de semana ou mês permanecem aproximadas, sem dias inventados. A ordem editorial do Volume I continua separada da cronologia do universo. A última execução registrada passou pelas validações de snapshots e 42 testes, mas o prerender ainda precisa ser confirmado. A fonte do GitHub Pages continua configurada para Build with Jekyll; a URL pública ainda não foi verificada. Dois testes específicos para agrupamento temporal e registros sem cronologia foram adicionados à suíte; sua execução ainda está pendente.",
+      "status": "Em 14/11/2026, o código de src/routes/index.tsx preserva a composição Reforged: o manuscrito em destaque e a lista de outros manuscritos antecedem a Constelação. A Constelação funciona como instrumento de navegação temporal (era → mês → registro), sem substituir a leitura convencional; a ordem editorial do Volume I permanece independente da cronologia. O workflow 43512103928 concluiu com sucesso a validação dos snapshots, os testes, o prerender e o deploy em 13/11/2026. A resposta HTTP e a inspeção visual independente do domínio público ainda não foram confirmadas.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
@@ -707,8 +707,8 @@
         "prerender com snapshots locais sincronizados; atualização remota no navegador",
         "Dossiê canônico de Eithne integrado ao portal React: prancha principal, galeria, biografia, aptidões, limites, cronologia, citações e relações; menções não são promovidas a fichas sem material suficiente.",
         "ordem de publicação nos diários, separada da cronologia do universo",
-        "Constelação promovida à entrada principal do portal, antes do manuscrito em destaque.",
-        "Navegação temporal por ano, mês e dia, preservando a precisão original dos registros e mantendo obras sem cronologia em seção separada."
+        "Navegação temporal por ano, mês e dia, preservando a precisão original dos registros e mantendo obras sem cronologia em seção separada.",
+        "Manuscrito em destaque e lista de outros manuscritos antecedem a Constelação, conforme a composição Reforged aprovada."
       ],
       "reading_order_chapters": 16,
       "chronology_items": 16,
@@ -717,12 +717,13 @@
     "react_atlas": {
       "route": "src/routes/atlas.tsx",
       "source": "atlas.json → src/data/atlas-fallback.json → src/lib/atlas-canon.ts + src/data/atlas.ts → src/routes/atlas.tsx",
-      "status": "Imagens canônicas, história, leis, habitantes e referências cruzadas de atlas.json integradas ao painel React; as referências atlas/lugar/* são resolvidas para marcadores pelo mapeamento canônico. A geometria permanece ilustrativa e a imagem própria do Pasaje segue pendente.",
+      "status": "O painel React usa os registros canônicos de atlas.json para imagens, história, leis, habitantes e referências cruzadas. O Pasaje de la Calandria recebeu prancha ilustrativa identificada como reconstituição; a geometria continua simbólica e a porta do fundo, a saída e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação.",
       "place_id": "pasaje-calandria",
       "linked_entry": "2026-11-09-a-rua-que-cabia-na-margem",
       "cartographic_status": "provisório; a porta do fundo e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação",
       "features": [
-        "Referências atlas/lugar/* resolvidas pelo mapeamento canônico para marcadores navegáveis, incluindo a ligação recíproca entre a Biblioteca dos Registros Velados e os Jardins da Primeira Manhã."
+        "Referências atlas/lugar/* resolvidas pelo mapeamento canônico para marcadores navegáveis, incluindo a ligação recíproca entre a Biblioteca dos Registros Velados e os Jardins da Primeira Manhã.",
+        "Prancha do Pasaje de la Calandria em assets/atlas/pasaje-calandria.svg: reconstituição ilustrativa do corredor e do pátio a partir do manuscrito; não representa o que existe além da porta."
       ]
     }
   }
