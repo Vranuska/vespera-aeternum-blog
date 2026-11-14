@@ -697,7 +697,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 14/11/2026, o código de src/routes/index.tsx preserva a composição Reforged: o manuscrito em destaque e a lista de outros manuscritos antecedem a Constelação. A Constelação funciona como instrumento de navegação temporal (era → mês → registro), sem substituir a leitura convencional; a ordem editorial do Volume I permanece independente da cronologia. O workflow 43512103928 concluiu com sucesso a validação dos snapshots, os testes, o prerender e o deploy em 13/11/2026. A resposta HTTP e a inspeção visual independente do domínio público ainda não foram confirmadas.",
+      "status": "Em 14/11/2026, o código de src/routes/index.tsx preserva a composição Reforged: o manuscrito em destaque e a lista de outros manuscritos antecedem a Constelação. A Constelação é a navegação temporal do arquivo (era → mês → registro), sem substituir a leitura convencional; a ordem editorial do Volume I permanece independente da cronologia. O workflow React concluiu validação dos snapshots, testes, prerender e deploy do artefato. Entretanto, o workflow dinâmico de GitHub Pages também executou Build with Jekyll a partir da branch main; portanto, a publicação ativa pode não corresponder ao artefato React. A inspeção HTTP e visual independente permanece pendente. A fonte de Pages precisa ser confirmada e, se ainda estiver em Deploy from a branch, alterada para GitHub Actions.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
