@@ -36,7 +36,9 @@ describe("Atlas — cosmologia do Entre", () => {
     );
 
     const pasaje = enrichAtlasPlace("mortais", findPlace("mortais", "pasaje-calandria")!);
-    expect(pasaje.image).toBeUndefined();
+    expect(pasaje.image?.src).toBe("https://raw.githubusercontent.com/Vranuska/vespera-aeternum/main/assets/atlas/pasaje-calandria.svg");
+    expect(pasaje.image?.alt).toContain("corredor");
+    expect(pasaje.image?.caption).toContain("Reconstituição ilustrativa");
     expect(pasaje.references?.map((item) => item.route)).toContain(
       "conto:2026-11-09-a-rua-que-cabia-na-margem",
     );
@@ -45,7 +47,7 @@ describe("Atlas — cosmologia do Entre", () => {
     );
   });
 
-  it("apresenta as sete pranchas canônicas sem criar imagem para o Pasaje", () => {
+  it("apresenta as oito pranchas canônicas, incluindo a reconstituição do Pasaje", () => {
     const illustrated = [
       ["mortais", "lago"],
       ["mortais", "aldeia"],
@@ -54,13 +56,14 @@ describe("Atlas — cosmologia do Entre", () => {
       ["firmamentos", "terceiro"],
       ["infernos", "taberna"],
       ["infernos", "corte-cinzas"],
+      ["mortais", "pasaje-calandria"],
     ] as const;
     for (const [mapId, placeId] of illustrated) {
       expect(enrichAtlasPlace(mapId, findPlace(mapId, placeId)!).image?.src)
         .toMatch(/^https:\/\/raw\.githubusercontent\.com\//);
     }
-    expect(enrichAtlasPlace("mortais", findPlace("mortais", "pasaje-calandria")!).image)
-      .toBeUndefined();
+    expect(enrichAtlasPlace("mortais", findPlace("mortais", "pasaje-calandria")!).image?.caption)
+      .toContain("Reconstituição ilustrativa");
   });
 
   it("mantém as referências de contos ligadas a manuscritos existentes", () => {
@@ -71,7 +74,7 @@ describe("Atlas — cosmologia do Entre", () => {
       .filter((route) => route.startsWith("conto:"))
       .map((route) => route.slice("conto:".length));
     expect(references.every((id) => ids.has(id))).toBe(true);
-    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(7);
+    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(8);
   });
 
   it("não cartografa Mage: The Ascension como plano ou território", () => {
