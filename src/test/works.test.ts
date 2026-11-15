@@ -41,7 +41,7 @@ describe("Arquivo e ordem editorial", () => {
   it("expõe a coleção Arquivo das Eras nos filtros da Bibliotheca", () => {
     expect(GENRES).toContain("arquivo-das-eras");
     expect(COLLECTIONS).toContain("Arquivo das Eras");
-    expect(THEMES).toEqual(expect.arrayContaining(["trabalho portuário", "partida", "registro"]));
+    expect(THEMES).toEqual(expect.arrayContaining(["trabalho portuário", "partida", "registro", "distância"]));
   });
   it("preserva referências explícitas entre obras e rejeita IDs relacionados ausentes", () => {
     const works = normalize([
