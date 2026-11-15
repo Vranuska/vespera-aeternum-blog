@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-14",
+  "updated_at": "2026-11-15",
   "title": "Atlas dos Domínios",
   "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
   "map_image": {
@@ -360,6 +360,40 @@
       ],
       "image": "assets/atlas/pasaje-calandria.svg",
       "image_alt": "Reconstituição ilustrativa do corredor de entrada pelo número 48, do pátio com árvore e da porta baixa que permanece fechada ao fundo."
+    },
+    {
+      "id": "otaru-porto-de-otaru",
+      "realm_id": "terra",
+      "name": "Zona portuária de Otaru",
+      "subregion": "Otaru, Hokkaido, Japão · cais e armazém exatos não identificados",
+      "status": "documentado",
+      "status_label": "Lugar testemunhado · localização aproximada",
+      "image": "assets/atlas/otaru-porto-1921.svg",
+      "image_alt": "Prancha ilustrativa de Otaru em 1921: armazéns junto à margem, um navio ancorado e uma barcaça de carga; não representa um cais específico.",
+      "history": [
+        "Em novembro de 1921, a narrativa acompanha Nao Sakamoto, funcionária de armazém, entre o cais, os armazéns e uma barcaça de carga. O texto nomeia Otaru, mas não identifica o cais, o armazém ou o ponto exato da amarração.",
+        "No início do século XX, Otaru era um importante porto comercial do norte do Japão. Parte das mercadorias era transferida entre navios ancorados na baía e os armazéns da margem por meio de barcaças.",
+        "Em 1921, as obras de aterro que deram origem ao canal ainda estavam em andamento. O projeto iniciado em 1914 foi concluído em 1923 e criou uma via de água de aproximadamente quarenta metros de largura, oferecendo espaço adicional de atracação às barcaças."
+      ],
+      "laws": [
+        "Nenhuma lei sobrenatural, passagem entre domínios ou ocorrência extraordinária é estabelecida para este lugar.",
+        "A narrativa não permite localizar o acidente num cais específico nem situar a barcaça num trecho exato do canal; a posição no mapa permanece simbólica."
+      ],
+      "inhabitants": [
+        "Nao Sakamoto — funcionária de armazém portuário.",
+        "Sōta — irmão de Nao, trabalhador jovem que deseja embarcar no Kōei.",
+        "Kuroda — encarregado responsável pelo relatório da carga.",
+        "Hideo — colega de cais."
+      ],
+      "connections": [
+        {
+          "label": "A maré não assina recibos",
+          "route": "conto:2026-11-10-a-mare-nao-assina-recibos"
+        }
+      ],
+      "source_entry_ids": [
+        "2026-11-10-a-mare-nao-assina-recibos"
+      ]
     }
   ]
 }
