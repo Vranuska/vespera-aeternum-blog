@@ -12,9 +12,9 @@
 - [x] Remover o hero fotográfico de tela inteira e manter a prancha apenas como imagem pequena e emoldurada.
 - [x] Manter outros manuscritos em linhas de leitura, sem grade de cards protagonista.
 - [x] Integrar a Constelação de memórias como seção navegável do portal, depois do manuscrito em destaque e da lista de leitura.
-- [x] Separar ordem editorial do Volume I (16 capítulos) da cronologia do universo.
-- [x] Cópia offline com 48 manuscritos, sem IDs duplicados.
-- [x] Cópia offline do índice editorial: 16 capítulos, 16 itens cronológicos e 32 obras fora da cronologia.
+- [x] Separar ordem editorial do Volume I (17 capítulos) da cronologia do universo.
+- [x] Cópia offline com 49 manuscritos, sem IDs duplicados.
+- [x] Cópia offline do índice editorial: 17 capítulos, 17 itens cronológicos e 32 obras fora da cronologia.
 - [x] Coleção Arquivo das Eras, gênero e temas de A maré não assina recibos disponíveis nos filtros da Bibliotheca.
 - [x] Acesso direto da navegação lateral à Constelação e à coleção Arquivo das Eras.
 - [x] Navegação temporal por ano, mês e dia; datas de semana ou mês preservam sua precisão sem receber dias inventados.
