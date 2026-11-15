@@ -143,6 +143,14 @@
         "universe_time": "2–4 de fevereiro de 1944 · Rui recebe a resposta de Adelaide por intermédio de Beatriz e decide manter a correspondência sem prometer o regresso",
         "pov": "terceira pessoa limitada — Rui Moura",
         "place": "Lisboa · Alcântara"
+      },
+      {
+        "number": 18,
+        "entry_id": "2026-11-15-a-visita-que-coube-no-patio",
+        "title": "A visita que coube no pátio",
+        "universe_time": "3 de dezembro de 1891 · Estevão recebe a carta de Leonor, leva Bento a Arroios e visita a irmã sem resolver toda a distância entre ambos",
+        "pov": "terceira pessoa limitada — Estevão Ferreira",
+        "place": "Lisboa · Arroios · pátio e cozinha de Leonor Ferreira"
       }
     ]
   },
@@ -176,6 +184,14 @@
       "label": "Última semana de novembro de 1891 · Leonor repara o fogão e escreve ao irmão",
       "precision": "week",
       "after": "2026-10-22-o-recibo-que-nao-tinha-data"
+    },
+    {
+      "entry_id": "2026-11-15-a-visita-que-coube-no-patio",
+      "title": "A visita que coube no pátio",
+      "time": "1891-12-03",
+      "label": "3 de dezembro de 1891 · Estevão recebe a carta de Leonor e visita a irmã com Bento; a conversa não equivale a reconciliação completa",
+      "precision": "day",
+      "after": "2026-10-28-o-lugar-onde-a-agua-ferve"
     },
     {
       "entry_id": "2026-11-03-a-balanca-de-dois-pratos",
@@ -490,7 +506,8 @@
       "livros avaliados pelo peso, margens manuscritas e exemplares que acompanham um leitor entre oficinas e livrarias",
       "mapas incompletos, passagens sem saída confirmada e a diferença entre limite e ausência",
       "recibos de carga e mapas incompletos: registros que atestam uma parcela dos acontecimentos sem pretender conter a verdade inteira",
-      "endereços conferidos, cartas recebidas sem exigência de regresso e a diferença entre responder e reconciliar"
+      "endereços conferidos, cartas recebidas sem exigência de regresso e a diferença entre responder e reconciliar",
+      "cozinhas aquecidas, tigelas oferecidas e visitas que não exigem uma confissão completa"
     ],
     "open_threads": [
       {
@@ -588,10 +605,11 @@
         "id": "leonor-e-estevao",
         "seeded_in": [
           "2026-10-28-o-lugar-onde-a-agua-ferve",
-          "2026-10-22-o-recibo-que-nao-tinha-data"
+          "2026-10-22-o-recibo-que-nao-tinha-data",
+          "2026-11-15-a-visita-que-coube-no-patio"
         ],
-        "note": "Leonor Ferreira, irmã de Estevão, compra um fogão de ferro incompleto, consegue uma porta de dona Quitéria, recebe ajuda de Joaquim e António, e escreve ao irmão oferecendo sopa e abrigo. A carta é enviada; seu recebimento ainda não é mostrado. O conto fecha o conflito do fogão, não atribuir poder ao objeto.",
-        "planned_use": "Reencontro familiar pode oferecer contraponto ao arco documental de Estevão; não forçar participação de Leonor na origem do sino."
+        "note": "Leonor Ferreira, irmã de Estevão, compra um fogão de ferro incompleto, consegue uma porta de dona Quitéria, recebe ajuda de Joaquim e António e escreve ao irmão oferecendo sopa e abrigo. Em 3 de dezembro de 1891, Estevão recebe a carta, leva Bento a Arroios e visita a irmã. Conta apenas que assinou uma declaração falsa e depois escreveu outra corrigindo-a; Leonor não exige detalhes nem oferece absolvição. A visita reabre a possibilidade de contato, mas não é um regresso definitivo. A porta do fogão permanece um objeto doméstico comum, sem natureza sobrenatural.",
+        "planned_use": "Se o arco voltar, partir de uma necessidade concreta entre os irmãos ou de uma nova correspondência. Não converter a sopa em perdão automático, não fazer da visita uma reconciliação completa e não usar Leonor como chave para a trama do sino."
       },
       {
         "id": "beatriz-adelaide-rui",
@@ -665,7 +683,7 @@
         "fora"
       ],
       "behavior": "Pontos interativos por era; inscrições reveladas por cursor ou foco; páginas de cada ano agrupadas por mês; acesso alternativo por botões para toque e teclado. O índice tradicional de todos os diários permanece disponível.",
-      "status": "integrado no leitor estático sem alterar entries.json nem a ordem editorial."
+      "status": "integrado no leitor estático; a cronologia reúne os registros por era e mês, sem substituir o catálogo de leitura nem a ordem editorial independente."
     },
     "pending_sections": [],
     "implemented_sections": [
@@ -742,6 +760,9 @@
         "Referências atlas/lugar/* resolvidas pelo mapeamento canônico para marcadores navegáveis, incluindo a ligação recíproca entre a Biblioteca dos Registros Velados e os Jardins da Primeira Manhã.",
         "Prancha do Pasaje de la Calandria em assets/atlas/pasaje-calandria.svg: reconstituição ilustrativa do corredor e do pátio a partir do manuscrito; não representa o que existe além da porta."
       ]
-    }
+    },
+    "reading_order_chapters": 18,
+    "chronology_items": 18,
+    "unplaced_items": 32
   }
 }
