@@ -97,7 +97,9 @@ describe("Arquivo e ordem editorial", () => {
   });
   it("usa cópia fiel de segurança em erro remoto", async () => {
     const works = await loadWorks(async () => { throw new Error("offline"); });
-    expect(works).toHaveLength(48);
+    expect(works).toHaveLength(editorial.universe_chronology.length + editorial.unplaced_archive.length);
+    const indexedIds = [...editorial.universe_chronology, ...editorial.unplaced_archive].map((item) => item.entry_id);
+    expect(works.map((work) => work.id).sort()).toEqual(indexedIds.sort());
     const chapterIds = editorial.editorial_reading_order.chapters.map((chapter) => chapter.entry_id);
     expect(chapterIds.every((id) => works.some((work) => work.id === id))).toBe(true);
     expect(works[0]?.id).toBe("2026-11-10-a-mare-nao-assina-recibos");
