@@ -45,9 +45,14 @@ describe("Atlas — cosmologia do Entre", () => {
     expect(pasaje.laws).toContain(
       "A porta do fundo deve permanecer fechada até que outro manuscrito estabeleça as condições de acesso.",
     );
+
+    const otaru = enrichAtlasPlace("mortais", findPlace("mortais", "otaru")!);
+    expect(otaru.image?.src).toBe("https://raw.githubusercontent.com/Vranuska/vespera-aeternum/main/assets/atlas/otaru-porto-1921.svg");
+    expect(otaru.image?.alt).toContain("barcaça");
+    expect(otaru.history?.some((item) => item.includes("novembro de 1921"))).toBe(true);
   });
 
-  it("apresenta as oito pranchas canônicas, incluindo a reconstituição do Pasaje", () => {
+  it("apresenta as nove pranchas canônicas, incluindo Otaru e a reconstituição do Pasaje", () => {
     const illustrated = [
       ["mortais", "lago"],
       ["mortais", "aldeia"],
@@ -57,6 +62,7 @@ describe("Atlas — cosmologia do Entre", () => {
       ["infernos", "taberna"],
       ["infernos", "corte-cinzas"],
       ["mortais", "pasaje-calandria"],
+      ["mortais", "otaru"],
     ] as const;
     for (const [mapId, placeId] of illustrated) {
       expect(enrichAtlasPlace(mapId, findPlace(mapId, placeId)!).image?.src)
@@ -74,7 +80,7 @@ describe("Atlas — cosmologia do Entre", () => {
       .filter((route) => route.startsWith("conto:"))
       .map((route) => route.slice("conto:".length));
     expect(references.every((id) => ids.has(id))).toBe(true);
-    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(8);
+    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(9);
   });
 
   it("não cartografa Mage: The Ascension como plano ou território", () => {
