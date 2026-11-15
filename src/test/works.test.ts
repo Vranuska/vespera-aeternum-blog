@@ -103,7 +103,8 @@ describe("Arquivo e ordem editorial", () => {
     const chapterIds = editorial.editorial_reading_order.chapters.map((chapter) => chapter.entry_id);
     expect(chapterIds.every((id) => works.some((work) => work.id === id))).toBe(true);
     expect(works[0]?.id).toBe("2026-11-15-o-endereco-no-verso");
-    expect(works[1]?.id).toBe("2026-11-10-a-mare-nao-assina-recibos");
+    expect(works[1]?.id).toBe("2026-11-15-a-visita-que-coube-no-patio");
+    expect(works[2]?.id).toBe("2026-11-10-a-mare-nao-assina-recibos");
     const unplacedIds = editorial.unplaced_archive.map((item) => item.entry_id);
     expect(unplacedIds).toContain("2026-11-10-a-mare-nao-assina-recibos");
     expect(unplacedIds.every((id) => works.some((work) => work.id === id))).toBe(true);
