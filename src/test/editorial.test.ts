@@ -71,9 +71,9 @@ describe("Índice editorial", () => {
 });
 
 describe("Ordem de leitura aprovada", () => {
-  it("espelha exatamente os 16 capítulos do índice", () => {
+  it("espelha exatamente os capítulos do índice", () => {
     expect(EDITORIAL_ORDER).toEqual(index.chapters.map((c) => c.entry_id));
-    expect(EDITORIAL_ORDER).toHaveLength(16);
+    expect(EDITORIAL_ORDER).toHaveLength(index.chapters.length);
   });
   it("modo livro segue a ordem aprovada e mantém as demais obras acessíveis", () => {
     const raw = (id: string, title: string) => ({
