@@ -40,10 +40,18 @@
 - [x] Verificação TypeScript sem erros no workspace Lovable em 10/11/2026.
 - [x] Conferência visual em desktop e celular: manuscrito em destaque e sem rolagem horizontal; navegação da Constelação com elementos focáveis.
 - [x] Remover a entrada SSR customizada (`src/server.ts`) e a configuração explícita `server.entry`; o portal volta a usar a entrada embutida do TanStack Start, que já trata contexto de requisição e erros de SSR.
-- [ ] Revalidar a suíte após as alterações de publicação e navegação temporal, e confirmar o prerender.
-- [ ] Confirmar que o prerender conclui com a entrada padrão do TanStack Start e que o deploy do GitHub Pages publica o artefato React.
-- [ ] Alterar a fonte do GitHub Pages em Settings → Pages → Build and deployment → Source para `GitHub Actions`. A execução de sistema 43210164860 ainda executou `Build with Jekyll` a partir de `main`, portanto o endereço público continua usando a publicação por branch, não o artefato React deste workflow.
+- [x] Revalidar a suíte após as alterações de publicação e navegação temporal: 47 testes aprovados em 8 arquivos no workflow 43709184834; prerender concluído.
+- [x] Confirmar prerender, upload e conclusão do deploy React no workflow 43709184834; a confirmação do conteúdo servido permanece separada.
+- [ ] Alterar a fonte do GitHub Pages em Settings → Pages → Build and deployment → Source para `GitHub Actions`. A execução dinâmica 43709184621, de 15/11/2026, ainda executou `Build with Jekyll` a partir de `main`; o deploy React do workflow não elimina essa publicação concorrente.
 - [ ] Reconciliar o commit informado pelo projeto Lovable com o histórico de `main`; o SHA reportado pelo projeto não foi encontrado no repositório conectado.
-- [ ] Publicar a versão validada e confirmar separadamente a resposta HTTP/visual do endereço público.
+- [ ] Confirmar separadamente por HTTP e inspeção visual que o endereço público está servindo o artefato React; a tentativa de acesso neste ambiente não retornou uma página legível.
 - [ ] Completar fichas de personagens humanos do Ciclo das Inacabadas sem inventar biografia ou habilidades.
 - [ ] Etapa 3: editor administrativo de gêneros e mapas, dependente de autenticação/Cloud.
+
+
+## Correção do pipeline — 15/11/2026
+- [x] Sincronizar o snapshot editorial offline byte a byte com o índice canônico e atualizar expectativas obsoletas de 16 capítulos/48 obras.
+- [x] Corrigir a expectativa da lista diária para a obra publicada em 15/11/2026.
+- [x] Validar 47 testes, snapshots, Bestiário, Atlas, prerender e deploy React no workflow 43709184834.
+- [x] Tornar o nome do artefato único por execução e tentativa para evitar colisões em reexecuções.
+- [ ] Alterar a origem do Pages para GitHub Actions e conferir a página pública por HTTP e visualmente; o workflow dinâmico ainda executa Jekyll.
