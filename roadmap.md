@@ -54,4 +54,5 @@
 - [x] Corrigir a expectativa da lista diária para a obra publicada em 15/11/2026.
 - [x] Validar 47 testes, snapshots, Bestiário, Atlas, prerender e deploy React no workflow 43709184834.
 - [x] Tornar o nome do artefato único por execução e tentativa para evitar colisões em reexecuções.
-- [ ] Alterar a origem do Pages para GitHub Actions e conferir a página pública por HTTP e visualmente; o workflow dinâmico ainda executa Jekyll.
+- [x] Incluir O endereço no verso no catálogo da Bibliotheca e acrescentar o tema “distância” aos filtros; tentativa 2 do workflow 43709184834 repetiu 47 testes e o deploy React.
+- [ ] Alterar a origem do Pages para GitHub Actions e conferir a página pública por HTTP e visualmente. O Pages dinâmico executou Jekyll às 11:34:09Z; o deploy React da tentativa 2 terminou depois, às 11:36:24Z, sendo o último deploy confirmado, mas a fonte ainda é de branch e futuras atualizações podem voltar a publicar Jekyll.
