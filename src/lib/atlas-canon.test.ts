@@ -11,6 +11,7 @@ describe("atlasPlaceLocation", () => {
     ["taberna-infernal", { mapa: "infernos", local: "taberna" }],
     ["corte-das-cinzas", { mapa: "infernos", local: "corte-cinzas" }],
     ["pasaje-de-la-calandria", { mapa: "mortais", local: "pasaje-calandria" }],
+    ["otaru-porto-de-otaru", { mapa: "mortais", local: "otaru" }],
   ])("resolve %s para o marcador correto", (id, expected) => {
     expect(atlasPlaceLocation(id)).toEqual(expected);
   });
