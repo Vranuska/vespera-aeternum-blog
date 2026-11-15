@@ -93,6 +93,7 @@ export const THEMES = [
   "trabalho portuário",
   "partida",
   "registro",
+  "distância",
 ] as const;
 
 export type WorkMeta = {
@@ -137,7 +138,7 @@ export const WORK_META: Record<string, WorkMeta> = {
   "aldeia-o-arcanjo-que-chegou-tarde-para-um-milagre-v1": { genres: ["conto", "memória"], collection: M, themes: ["amor", "fé", "amizade"], characters: ["vespera", "ithariel", "padre-tomas", "dona-beatriz", "mateus"] },
   "ithariel-a-primeira-vez-que-me-chamou-de-insuportavel-v1": { genres: ["memória", "conto"], collection: M, themes: ["amor"], characters: ["vespera", "ithariel"] },
 
-  // Volume I — metadados dos 16 manuscritos; só personagens com ficha canônica recebem slug.
+  // Volume I — metadados dos 17 manuscritos; só personagens com ficha canônica recebem slug.
   "2026-10-21-o-inventario-das-coisas-que-ainda-funcionam": { genres: ["conto"], collection: "Ciclo das Inacabadas", themes: ["memória e esquecimento","promessas","disfarces e identidade"], characters: [] },
   "2026-10-22-o-recibo-que-nao-tinha-data": { genres: ["conto"], collection: "Ciclo das Inacabadas", themes: ["memória e esquecimento","promessas","disfarces e identidade"], characters: [] },
   "2026-10-23-a-prova-de-impressao": { genres: ["conto"], collection: "Ciclo das Inacabadas", themes: ["memória e esquecimento","promessas","justiça"], characters: [] },
@@ -154,4 +155,5 @@ export const WORK_META: Record<string, WorkMeta> = {
   "2026-11-02-as-notas-que-ficaram-de-fora": { genres: ["conto","ficção histórica","romance-mosaico"], collection: "Ciclo das Inacabadas", themes: ["música","tipografia","escassez de papel","maternidade","ofício","imperfeição","recital"], characters: [] },
   "2026-11-03-a-balanca-de-dois-pratos": { genres: ["conto","ficção histórica","romance-mosaico"], collection: "Ciclo das Inacabadas", themes: ["livros de poesia","encadernação","memória material","trabalho","escolhas económicas","intertextualidade literária"], characters: [] },
   "2026-11-09-a-rua-que-cabia-na-margem": { genres: ["conto","romance-mosaico"], collection: "Ciclo das Inacabadas", themes: ["cartografia","testemunho","memória","ausência","justiça"], characters: ["vespera"] },
+  "2026-11-15-o-endereco-no-verso": { genres: ["conto","romance-mosaico"], collection: "Ciclo das Inacabadas", themes: ["correspondência","autonomia","família","trabalho","distância"], characters: [] },
 };
