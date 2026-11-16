@@ -163,7 +163,7 @@ export function buildEraDays(entries: EraEntry[]) {
   const days: EraDay[] = [];
   const partial: EraEntry[] = [];
   for (const entry of entries) {
-    const match = entry.time?.match(/^\\d{4}-\\d{2}-(\\d{2})$/);
+    const match = entry.time?.match(/^\d{4}-\d{2}-(\d{2})$/);
     if (!match) {
       partial.push(entry);
       continue;
