@@ -5,6 +5,7 @@ import { Ornament } from "./Ornament";
 import { Monogram } from "./Monogram";
 
 const NAV = [
+  { to: "/arquivo-das-eras", label: "Arquivo das Eras" },
   { to: "/biblioteca", label: "Bibliotheca Noctis" },
   { to: "/diarios", label: "Os Diários" },
   { to: "/bestiario", label: "Bestiário" },
