@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { parseEditorial, buildEras, loadEditorial, OUTSIDE } from "@/lib/editorial";
+import { parseEditorial, buildEras, buildEraDays, loadEditorial, OUTSIDE } from "@/lib/editorial";
 import { EDITORIAL_ORDER } from "@/data/reading-order";
 import { bookWorks, normalize, readerNavigation } from "@/lib/works";
 import fallback from "@/data/editorial-fallback.json";
@@ -45,6 +45,18 @@ describe("Índice editorial", () => {
     const e1943 = eras.find((e) => e.key === "1943")!;
     expect(e1943.months.map((m) => m.label)).toEqual(["novembro de 1943", "dezembro de 1943"]);
     expect(eras.find((e) => e.key === "1891")!.months[0]!.entries).toHaveLength(3);
+  });
+  it("abre dias exatos e preserva registros cuja data só é conhecida por mês", () => {
+    const { eras } = buildEras(index, allIds);
+    const january = eras.find((era) => era.key === "1944")!.months.find((month) => month.key === "01")!;
+    const exact = buildEraDays(january.entries);
+    expect(exact.days.map((day) => day.key)).toEqual(["12", "14", "21", "25", "29"]);
+    expect(exact.partial).toEqual([]);
+
+    const november = eras.find((era) => era.key === "1891")!.months[0]!;
+    const partial = buildEraDays(november.entries);
+    expect(partial.days).toEqual([]);
+    expect(partial.partial).toHaveLength(3);
   });
   it("fora da cronologia contém só unplaced_archive", () => {
     const { eras } = buildEras(index, allIds);
