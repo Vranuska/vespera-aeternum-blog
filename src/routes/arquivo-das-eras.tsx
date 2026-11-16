@@ -16,7 +16,7 @@ const FORMS = [
   { genre: "fragmento", label: "Fragmentos", note: "Páginas que chegaram sem a obrigação de explicar tudo." },
   { genre: "confissão", label: "Confissões", note: "Aquilo que a narradora admite, ainda que com ressalvas." },
   { genre: "diálogo", label: "Diálogos", note: "Conversas preservadas pelo que disseram e pelo que deixaram de dizer." },
-  { genre: "romance-mosaico", label: "Romance-mosaico", note: "Obras autónomas que, lidas em conjunto, revelam relações e consequências." },
+  { genre: "romance-mosaico", label: "Romance-mosaico", note: "Obras autônomas que, lidas em conjunto, revelam relações e consequências." },
 ] as const;
 
 export const Route = createFileRoute("/arquivo-das-eras")({
