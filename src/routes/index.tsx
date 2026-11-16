@@ -32,7 +32,7 @@ const SIDE: SideLink[] = [
   { label: "Diários", to: "/diarios" },
   { label: "Ordem de leitura", to: "/diarios", search: { modo: "livro" } },
   { label: "Constelação", to: "/", href: "#constelacao" },
-  { label: "Arquivo das Eras", to: "/biblioteca", search: { colecao: "Arquivo das Eras" } },
+  { label: "Arquivo das Eras", to: "/arquivo-das-eras" },
   { label: "Contos", to: "/biblioteca", search: { generos: ["conto"] } },
   { label: "Crônicas", to: "/biblioteca", search: { generos: ["crônica"] } },
   { label: "Poemas", to: "/biblioteca", search: { generos: ["poema"] } },
