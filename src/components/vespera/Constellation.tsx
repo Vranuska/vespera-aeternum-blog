@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Monogram } from "./Monogram";
-import { buildEras, OUTSIDE, type EditorialIndex } from "@/lib/editorial";
+import { buildEraDays, buildEras, OUTSIDE, type EditorialIndex } from "@/lib/editorial";
 import type { Work } from "@/lib/works";
 
 const PHRASE = "Tudo aquilo que foi esquecido ainda existe em algum lugar de mim";
@@ -18,9 +18,15 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
   );
   const [selected, setSelected] = useState<string | null>(null);
   const [selectedMonth, setSelectedMonth] = useState<string | null>(null);
+  const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const selectEra = (key: string | null) => {
     setSelected(key);
     setSelectedMonth(null);
+    setSelectedDay(null);
+  };
+  const selectMonth = (key: string | null) => {
+    setSelectedMonth(key);
+    setSelectedDay(null);
   };
   useEffect(() => {
     if (missing.length)
@@ -28,6 +34,11 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
   }, [missing]);
   const era = eras.find((e) => e.key === selected);
   const month = era?.months.find((m) => m.key === selectedMonth);
+  const dayGroups = useMemo(
+    () => (month ? buildEraDays(month.entries) : { days: [], partial: [] }),
+    [month],
+  );
+  const selectedDayGroup = dayGroups.days.find((day) => day.key === selectedDay);
   const count = (k: string) =>
     eras.find((e) => e.key === k)?.months.reduce((n, m) => n + m.entries.length, 0) ?? 0;
 
@@ -202,7 +213,7 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
                     <button
                       key={m.key}
                       type="button"
-                      onClick={() => setSelectedMonth(m.key === selectedMonth ? null : m.key)}
+                      onClick={() => selectMonth(m.key === selectedMonth ? null : m.key)}
                       aria-pressed={selectedMonth === m.key}
                       className={`label-archive min-h-11 border px-3 py-2 transition-colors focus-visible:outline-2 focus-visible:outline-gold ${selectedMonth === m.key ? "border-gold bg-wine text-parchment" : "border-border text-rose hover:text-parchment"}`}
                     >
@@ -213,35 +224,75 @@ export function Constellation({ index, works }: { index: EditorialIndex; works: 
                 {month ? (
                   <div className="mt-5">
                     <p className="label-archive border-b border-border pb-2 text-gold">{month.label}</p>
-                    <ul className="mt-2">
-                      {month.entries.map((en) => {
-                        const day = en.time?.match(/^\d{4}-\d{2}-(\d{2})$/)?.[1];
-                        const precisionLabel = day
-                          ? `Dia ${day}`
-                          : en.precision === "week"
-                            ? "Semana"
-                            : en.precision === "month"
-                              ? "Mês"
-                              : "Data parcial";
-                        return (
-                          <li key={en.id} className="border-b border-border/50 py-3">
-                            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                              <span className="label-archive text-gold">{precisionLabel}</span>
-                              <Link
-                                to="/diarios/$id"
-                                params={{ id: en.id }}
-                                className="font-display text-lg text-parchment hover:text-rose"
-                              >
-                                {en.title}
-                              </Link>
-                            </div>
-                            <p className="mt-1 text-sm italic text-sage">{en.label}</p>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ) : (
+                    {dayGroups.days.length > 0 && (
+                      <section className="mt-4" aria-labelledby="constelacao-dias">
+                        <p id="constelacao-dias" className="label-archive text-sage">Dias preservados</p>
+                        <div role="group" aria-label={`Dias de ${month.label}`} className="mt-3 flex flex-wrap gap-2">
+                          {dayGroups.days.map((day) => (
+                            <button
+                              key={day.key}
+                              type="button"
+                              onClick={() => setSelectedDay(day.key === selectedDay ? null : day.key)}
+                              aria-pressed={selectedDay === day.key}
+                              aria-label={`${month.label}, ${day.label}, ${day.entries.length} registros`}
+                              className={`label-archive min-h-11 border px-3 py-2 transition-colors focus-visible:outline-2 focus-visible:outline-gold ${selectedDay === day.key ? "border-gold bg-wine text-parchment" : "border-border text-rose hover:text-parchment"}`}
+                            >
+                              {day.label} <span className="text-sage">({day.entries.length})</span>
+                            </button>
+                          ))}
+                        </div>
+                        {selectedDayGroup ? (
+                          <ul id="constelacao-dia" className="mt-3">
+                            {selectedDayGroup.entries.map((en) => (
+                              <li key={en.id} className="border-b border-border/50 py-3">
+                                <Link
+                                  to="/diarios/$id"
+                                  params={{ id: en.id }}
+                                  className="font-display text-lg text-parchment hover:text-rose"
+                                >
+                                  {en.title}
+                                </Link>
+                                <p className="mt-1 text-sm italic text-sage">{en.label}</p>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="mt-3 font-display text-lg italic text-sage">
+                            Escolha um dia para abrir os manuscritos que pertencem a ele.
+                          </p>
+                        )}
+                      </section>
+                    )}
+                    {dayGroups.partial.length > 0 && (
+                      <section className="mt-6">
+                        <p className="label-archive text-sage">Registros sem dia preciso</p>
+                        <ul className="mt-2">
+                          {dayGroups.partial.map((en) => {
+                            const precisionLabel = en.precision === "week"
+                              ? "Semana"
+                              : en.precision === "month"
+                                ? "Mês"
+                                : "Data parcial";
+                            return (
+                              <li key={en.id} className="border-b border-border/50 py-3">
+                                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                                  <span className="label-archive text-gold">{precisionLabel}</span>
+                                  <Link
+                                    to="/diarios/$id"
+                                    params={{ id: en.id }}
+                                    className="font-display text-lg text-parchment hover:text-rose"
+                                  >
+                                    {en.title}
+                                  </Link>
+                                </div>
+                                <p className="mt-1 text-sm italic text-sage">{en.label}</p>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </section>
+                    )}
+                  </div>                ) : (
                   <p className="mt-4 font-display text-lg italic text-sage">
                     O mês ainda não foi escolhido.
                   </p>
