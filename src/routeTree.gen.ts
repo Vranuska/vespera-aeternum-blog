@@ -63,8 +63,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
   '/arquivo-das-eras': typeof ArquivoDasErasRoute
-  '/arquivo-das-eras': typeof ArquivoDasErasRoute
-  '/arquivo-das-eras': typeof ArquivoDasErasRoute
   '/biblioteca': typeof BibliotecaRoute
   '/bestiario/$slug': typeof BestiarioSlugRoute
   '/diarios/$id': typeof DiariosIdRoute
@@ -74,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
+  '/arquivo-das-eras': typeof ArquivoDasErasRoute
   '/biblioteca': typeof BibliotecaRoute
   '/bestiario/$slug': typeof BestiarioSlugRoute
   '/diarios/$id': typeof DiariosIdRoute
@@ -84,6 +83,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
+  '/arquivo-das-eras': typeof ArquivoDasErasRoute
   '/biblioteca': typeof BibliotecaRoute
   '/bestiario/$slug': typeof BestiarioSlugRoute
   '/diarios/$id': typeof DiariosIdRoute
@@ -96,8 +96,6 @@ export interface FileRouteTypes {
     | '/'
     | '/atlas'
     | '/arquivo-das-eras'
-    | '/arquivo-das-eras'
-    | '/arquivo-das-eras'
     | '/biblioteca'
     | '/bestiario/$slug'
     | '/diarios/$id'
@@ -107,6 +105,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/atlas'
+    | '/arquivo-das-eras'
     | '/biblioteca'
     | '/bestiario/$slug'
     | '/diarios/$id'
@@ -116,6 +115,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/atlas'
+    | '/arquivo-das-eras'
     | '/biblioteca'
     | '/bestiario/$slug'
     | '/diarios/$id'
