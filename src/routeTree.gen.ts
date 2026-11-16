@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ArquivoDasErasRouteImport } from './routes/arquivo-das-eras'
 import { Route as AtlasRouteImport } from './routes/atlas'
 import { Route as BibliotecaRouteImport } from './routes/biblioteca'
 import { Route as BestiarioIndexRouteImport } from './routes/bestiario.index'
@@ -20,6 +21,11 @@ import { Route as DiariosIdRouteImport } from './routes/diarios.$id'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArquivoDasErasRoute = ArquivoDasErasRouteImport.update({
+  id: '/arquivo-das-eras',
+  path: '/arquivo-das-eras',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AtlasRoute = AtlasRouteImport.update({
@@ -56,6 +62,9 @@ const DiariosIdRoute = DiariosIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atlas': typeof AtlasRoute
+  '/arquivo-das-eras': typeof ArquivoDasErasRoute
+  '/arquivo-das-eras': typeof ArquivoDasErasRoute
+  '/arquivo-das-eras': typeof ArquivoDasErasRoute
   '/biblioteca': typeof BibliotecaRoute
   '/bestiario/$slug': typeof BestiarioSlugRoute
   '/diarios/$id': typeof DiariosIdRoute
@@ -86,6 +95,9 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/atlas'
+    | '/arquivo-das-eras'
+    | '/arquivo-das-eras'
+    | '/arquivo-das-eras'
     | '/biblioteca'
     | '/bestiario/$slug'
     | '/diarios/$id'
@@ -113,6 +125,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArquivoDasErasRoute: typeof ArquivoDasErasRoute
   AtlasRoute: typeof AtlasRoute
   BibliotecaRoute: typeof BibliotecaRoute
   BestiarioSlugRoute: typeof BestiarioSlugRoute
@@ -128,6 +141,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arquivo-das-eras': {
+      id: '/arquivo-das-eras'
+      path: '/arquivo-das-eras'
+      fullPath: '/arquivo-das-eras'
+      preLoaderRoute: typeof ArquivoDasErasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/atlas': {
@@ -177,6 +197,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArquivoDasErasRoute: ArquivoDasErasRoute,
   AtlasRoute: AtlasRoute,
   BibliotecaRoute: BibliotecaRoute,
   BestiarioSlugRoute: BestiarioSlugRoute,
