@@ -155,3 +155,23 @@ export function buildEras(index: EditorialIndex, knownIds: Set<string>) {
     });
   return { eras, missing };
 }
+
+/** Separates exact calendar days from records whose source only gives a week or month. */
+export type EraDay = { key: string; label: string; entries: EraEntry[] };
+
+export function buildEraDays(entries: EraEntry[]) {
+  const days: EraDay[] = [];
+  const partial: EraEntry[] = [];
+  for (const entry of entries) {
+    const match = entry.time?.match(/^\\d{4}-\\d{2}-(\\d{2})$/);
+    if (!match) {
+      partial.push(entry);
+      continue;
+    }
+    const key = match[1]!;
+    let day = days.find((item) => item.key === key);
+    if (!day) days.push((day = { key, label: `Dia ${key}`, entries: [] }));
+    day.entries.push(entry);
+  }
+  return { days, partial };
+}
