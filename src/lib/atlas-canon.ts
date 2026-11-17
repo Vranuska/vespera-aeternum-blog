@@ -25,7 +25,7 @@ export function atlasPlaceLocation(canonicalId: string): { mapa: string; local: 
 }
 
 type CanonPlace = {
-  id: string; name: string; image?: string; image_alt?: string; status_label?: string; subregion?: string;
+  id: string; name: string; image?: string; image_alt?: string; image_caption?: string; status_label?: string; subregion?: string;
   history?: string[]; laws?: string[]; inhabitants?: string[]; source_entry_ids?: string[];
   connections: { label: string; route: string }[];
 };
@@ -56,7 +56,9 @@ export function enrichAtlasPlace(mapId: string, place: Place): Place {
     ? {
         src: assetUrl(source.image),
         alt: source.image_alt ?? source.name,
-        caption: [source.status_label, source.subregion].filter(Boolean).join(" · "),
+        caption: source.image_caption
+          ? [source.image_caption, source.subregion].filter(Boolean).join(" · ")
+          : [source.status_label, source.subregion].filter(Boolean).join(" · "),
       }
     : undefined);
 
