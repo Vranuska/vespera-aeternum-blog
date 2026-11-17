@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-15",
+  "updated_at": "2026-11-17",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -634,8 +634,8 @@
         "seeded_in": [
           "2026-10-31-a-tinta-do-lado-de-fora"
         ],
-        "note": "Rui, 15 anos, mora em quarto alugado em Alcântara com dona Ercília, trabalha com Augusto Calado e pinta o letreiro de Palmira Sequeira, sapateira que substitui a tabuleta do pai Joaquim. A nova tabuleta fica na fachada, a antiga permanece guardada com Palmira. Rui deposita uma carta a Beatriz, com a morada completa.",
-        "planned_use": "Palmira deve ter vida profissional própria; o ofício de Rui não deve virar instrumento mágico. A entrega da carta é aberta, assim como a relação com Adelaide."
+        "note": "Rui, 15 anos, mora em quarto alugado em Alcântara com dona Ercília, trabalha com Augusto Calado e pinta o letreiro de Palmira Sequeira, sapateira que substitui a tabuleta do pai Joaquim. A nova tabuleta fica na fachada, a antiga permanece guardada com Palmira. Rui deposita uma carta a Beatriz, com a morada completa. A oficina de Augusto Calado ocupa o rés do chão de um prédio em Alcântara; a rua e o número não foram informados. O Atlas a registra como lugar testemunhado, sem coordenadas.",
+        "planned_use": "Palmira deve ter vida profissional própria; o ofício de Rui não deve virar instrumento mágico. A entrega da carta é aberta, assim como a relação com Adelaide. A oficina pode reaparecer como espaço de trabalho e aprendizagem; não lhe atribuir endereço exato, escala geográfica ou função sobrenatural."
       },
       {
         "id": "helena-inacio",
@@ -708,8 +708,8 @@
       {
         "name": "Atlas React · pranchas e referências cruzadas",
         "status": "integrado no código em 14/11/2026; os oito lugares canônicos possuem imagem ou reconstituição identificada.",
-        "reason": "O painel React usa as imagens e os registros canônicos dos oito lugares de atlas.json, incluindo história, leis, habitantes, obras-fonte e referências navegáveis. O Pasaje de la Calandria recebeu uma reconstituição ilustrativa baseada no manuscrito; a porta permanece fechada e não se atribui natureza ao espaço além dela. Sonhar e Umbra continuam sem mapas internos.",
-        "completed_at": "2026-11-14"
+        "reason": "O painel React usa imagens e registros canônicos dos dez lugares de atlas.json, incluindo o Pasaje de la Calandria e a oficina de Augusto Calado em Alcântara; história, limites, habitantes, obras-fonte e referências são navegáveis.",
+        "completed_at": "2026-11-17"
       }
     ],
     "routes": {
@@ -752,14 +752,33 @@
     "react_atlas": {
       "route": "src/routes/atlas.tsx",
       "source": "atlas.json → src/data/atlas-fallback.json → src/lib/atlas-canon.ts + src/data/atlas.ts → src/routes/atlas.tsx",
-      "status": "O painel React usa os registros canônicos de atlas.json para imagens, história, leis, habitantes e referências cruzadas. O Pasaje de la Calandria recebeu prancha ilustrativa identificada como reconstituição; a geometria continua simbólica e a porta do fundo, a saída e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação.",
+      "status": "O painel React usa os registros canônicos de atlas.json para imagens, história, leis, habitantes e referências cruzadas. Dez lugares possuem prancha ou reconstituição identificada. A oficina de Augusto Calado acrescenta Alcântara, Lisboa, sem inventar rua, número ou coordenadas.",
       "place_id": "pasaje-calandria",
       "linked_entry": "2026-11-09-a-rua-que-cabia-na-margem",
       "cartographic_status": "provisório; a porta do fundo e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação",
       "features": [
         "Referências atlas/lugar/* resolvidas pelo mapeamento canônico para marcadores navegáveis, incluindo a ligação recíproca entre a Biblioteca dos Registros Velados e os Jardins da Primeira Manhã.",
-        "Prancha do Pasaje de la Calandria em assets/atlas/pasaje-calandria.svg: reconstituição ilustrativa do corredor e do pátio a partir do manuscrito; não representa o que existe além da porta."
-      ]
+        "Prancha do Pasaje de la Calandria em assets/atlas/pasaje-calandria.svg: reconstituição ilustrativa do corredor e do pátio a partir do manuscrito; não representa o que existe além da porta.",
+        "Oficina de Augusto Calado em Alcântara integrada como décimo lugar canônico, com prancha reconstituída, limites de localização e ligações aos dois manuscritos de Rui."
+      ],
+      "place_ids": [
+        "casa-de-pedra-do-lago",
+        "aldeia-de-padre-tomas",
+        "biblioteca-dos-registros-velados",
+        "jardins-da-primeira-manha",
+        "palacio-das-setecentas-janelas",
+        "taberna-infernal",
+        "corte-das-cinzas",
+        "pasaje-de-la-calandria",
+        "otaru-porto-de-otaru",
+        "oficina-augusto-calado"
+      ],
+      "additional_place_id": "oficina-augusto-calado",
+      "additional_linked_entries": [
+        "2026-10-31-a-tinta-do-lado-de-fora",
+        "2026-11-15-o-endereco-no-verso"
+      ],
+      "additional_cartographic_status": "Lugar documentado em Alcântara; rua e número desconhecidos, posição simbólica e sem relação sobrenatural estabelecida."
     },
     "reading_order_chapters": 18,
     "chronology_items": 18,
