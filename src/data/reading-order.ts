@@ -22,4 +22,5 @@ export const EDITORIAL_ORDER: readonly string[] = [
   "2026-11-09-a-rua-que-cabia-na-margem",
   "2026-11-15-o-endereco-no-verso",
   "2026-11-15-a-visita-que-coube-no-patio",
+  "2026-11-17-o-lugar-de-uma-folha",
 ];
