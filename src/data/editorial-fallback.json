@@ -151,6 +151,14 @@
         "universe_time": "3 de dezembro de 1891 · Estevão recebe a carta de Leonor, leva Bento a Arroios e visita a irmã sem resolver toda a distância entre ambos",
         "pov": "terceira pessoa limitada — Estevão Ferreira",
         "place": "Lisboa · Arroios · pátio e cozinha de Leonor Ferreira"
+      },
+      {
+        "number": 19,
+        "entry_id": "2026-11-17-o-lugar-de-uma-folha",
+        "title": "O lugar de uma folha",
+        "universe_time": "20 de dezembro de 1943 · Nuno registra a custódia da segunda prova sem afirmar o destino do sino",
+        "pov": "terceira pessoa limitada — Nuno",
+        "place": "Lisboa · tipografia de Lídia Faria"
       }
     ]
   },
@@ -237,6 +245,14 @@
       "label": "10–13 de dezembro de 1943 · Lídia imprime programas após a chegada do sino",
       "precision": "day",
       "after": "2026-10-30-o-bolso-de-dentro"
+    },
+    {
+      "entry_id": "2026-11-17-o-lugar-de-uma-folha",
+      "title": "O lugar de uma folha",
+      "time": "1943-12-20",
+      "label": "20 de dezembro de 1943 · Nuno guarda a segunda prova sob sua chave e registra o limite do próprio testemunho",
+      "precision": "day",
+      "after": "2026-11-02-as-notas-que-ficaram-de-fora"
     },
     {
       "entry_id": "2026-10-27-a-mulher-que-guardou-o-negativo",
@@ -507,7 +523,8 @@
       "mapas incompletos, passagens sem saída confirmada e a diferença entre limite e ausência",
       "recibos de carga e mapas incompletos: registros que atestam uma parcela dos acontecimentos sem pretender conter a verdade inteira",
       "endereços conferidos, cartas recebidas sem exigência de regresso e a diferença entre responder e reconciliar",
-      "cozinhas aquecidas, tigelas oferecidas e visitas que não exigem uma confissão completa"
+      "cozinhas aquecidas, tigelas oferecidas e visitas que não exigem uma confissão completa",
+      "chaves, gavetas e custódia: a diferença entre guardar e esconder"
     ],
     "open_threads": [
       {
@@ -569,10 +586,11 @@
         "key": "nuno-proof",
         "seeded_in": [
           "2026-10-23-a-prova-de-impressao",
-          "2026-10-30-o-bolso-de-dentro"
+          "2026-10-30-o-bolso-de-dentro",
+          "2026-11-17-o-lugar-de-uma-folha"
         ],
-        "note": "Nuno leva a segunda prova do sino para casa em 18/11/1943, mostra-a a Celeste e decide mantê-la consigo; ela teme a repercussão para a família. Não é revelado onde ele a guardará definitivamente.",
-        "reveal_plan": "Retomar a custódia da segunda prova num momento em que Nuno possa agir por conta própria, sem transformar Celeste em depositária involuntária."
+        "note": "Nuno levou a segunda prova do sino para casa em 18/11/1943, mostrou-a a Celeste e decidiu mantê-la consigo. Em 20/12/1943, registra o que presenciou e guarda a folha numa gaveta da tipografia de Lídia, sob chave que controla. Lídia recebe apenas uma cópia da nota de custódia; Celeste não recebe a prova nem é chamada a assinar. A origem e o destino do bronze continuam desconhecidos.",
+        "reveal_plan": "Preservar a separação das três vias e os limites do testemunho. O próximo avanço deve desenvolver o circuito do sino ou uma consequência concreta da custódia, sem revelar tudo num único capítulo."
       },
       {
         "key": "palmira-boots",
@@ -624,10 +642,11 @@
       {
         "id": "nuno-celeste",
         "seeded_in": [
-          "2026-10-30-o-bolso-de-dentro"
+          "2026-10-30-o-bolso-de-dentro",
+          "2026-11-17-o-lugar-de-uma-folha"
         ],
-        "note": "Celeste Dias, mãe de Nuno, costura em Lisboa; após uma disputa por cartões de abastecimento encontrados no forro de um casaco, Nuno imprime etiquetas para registrar os serviços. Ela conhece a existência da prova do sino, mas não a guarda.",
-        "planned_use": "Preservar Celeste como pessoa autônoma e o conflito entre segurança familiar e responsabilidade profissional, sem atribuir caráter mágico às etiquetas ou ao casaco."
+        "note": "Celeste Dias, mãe de Nuno, costura em Lisboa. Depois da disputa por cartões de abastecimento encontrados no forro de um casaco, Nuno imprime etiquetas para registrar os serviços. Ela conhece a existência da segunda prova do sino, mas não a guarda. Em 20/12/1943, Nuno escolhe uma gaveta na tipografia de Lídia e mantém a chave; Celeste não recebe a folha nem é chamada a assinar.",
+        "planned_use": "Preservar Celeste como pessoa autônoma e o conflito entre segurança familiar e responsabilidade profissional. Não a transformar em depositária involuntária; não atribuir caráter mágico às etiquetas, à gaveta ou ao cadeado."
       },
       {
         "id": "rui-palmira-letreiros",
@@ -668,7 +687,7 @@
     "data_file": "entries.json",
     "visual_page": "index.html#diarios",
     "archive_copy": "arquivo/ciclo-das-inacabadas/a-balanca-de-dois-pratos-v1.md",
-    "note": "Os 16 capítulos do Volume I integram o leitor visual por meio de entries.json e da ordem editorial/cronologia. A página principal carrega entries.json dinamicamente; a constelação usa universe_chronology como mapa independente e preserva a leitura convencional.",
+    "note": "Os 19 capítulos do Volume I integram o leitor visual por meio de entries.json e da ordem editorial/cronologia. A página principal carrega entries.json dinamicamente; a constelação usa universe_chronology como mapa independente e preserva a leitura convencional.",
     "portal": {
       "route": "index.html#constelacao",
       "source": "editorial/indice-romance-mosaico.json → universe_chronology",
@@ -745,8 +764,8 @@
         "Navegação temporal por ano, mês e dia, preservando a precisão original dos registros e mantendo obras sem cronologia em seção separada.",
         "Manuscrito em destaque e lista de outros manuscritos antecedem a Constelação, conforme a composição Reforged aprovada."
       ],
-      "reading_order_chapters": 16,
-      "chronology_items": 16,
+      "reading_order_chapters": 19,
+      "chronology_items": 19,
       "unplaced_items": 32
     },
     "react_atlas": {
@@ -780,8 +799,8 @@
       ],
       "additional_cartographic_status": "Lugar documentado em Alcântara; rua e número desconhecidos, posição simbólica e sem relação sobrenatural estabelecida."
     },
-    "reading_order_chapters": 18,
-    "chronology_items": 18,
+    "reading_order_chapters": 19,
+    "chronology_items": 19,
     "unplaced_items": 32
   }
 }
