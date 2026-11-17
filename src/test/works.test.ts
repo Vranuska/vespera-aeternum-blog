@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { normalize, parseEntries, bookWorks, loadWorks, ownedImage, readerNavigation, relatedWorks, manuscriptAttribution } from "@/lib/works";
 import editorial from "@/data/editorial-fallback.json";
+import fallbackEntries from "@/data/entries-fallback.json";
 import { COLLECTIONS, GENRES, THEMES } from "@/data/catalog";
 
 const raw = (id: string, title: string) => ({ id, title, date: "Sem data", paragraphs: ["Texto original sem alterações."], characters: [] });
@@ -94,6 +95,13 @@ describe("Arquivo e ordem editorial", () => {
   it("rejeita estrutura inválida e IDs duplicados", () => {
     expect(() => parseEntries([{ id: "x" }])).toThrow();
     expect(() => parseEntries([raw("x", "A"), raw("x", "B")])).toThrow();
+  });
+  it("publica a revisão v4 de A maré não assina recibos no arquivo de segurança", () => {
+    const mare = normalize(parseEntries(fallbackEntries)).find((work) => work.id === "2026-11-10-a-mare-nao-assina-recibos");
+    expect(mare?.paragraphs.some((paragraph) => paragraph.includes("Desconto contestado."))).toBe(true);
+    expect(mare?.paragraphs.some((paragraph) => paragraph.includes("Assim já não embarca."))).toBe(true);
+    expect(mare?.paragraphs.at(-1)).toBe("A bota continuava à entrada, limpa por dentro.");
+    expect(mare?.paragraphs.some((paragraph) => paragraph.includes("Há coisas que o porto pesa"))).toBe(false);
   });
   it("usa cópia fiel de segurança em erro remoto", async () => {
     const works = await loadWorks(async () => { throw new Error("offline"); });
