@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-15",
+  "updated_at": "2026-11-17",
   "title": "Atlas dos Domínios",
   "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
   "map_image": {
@@ -359,7 +359,8 @@
         "2026-11-09-a-rua-que-cabia-na-margem"
       ],
       "image": "assets/atlas/pasaje-calandria.svg",
-      "image_alt": "Reconstituição ilustrativa do corredor de entrada pelo número 48, do pátio com árvore e da porta baixa que permanece fechada ao fundo."
+      "image_alt": "Reconstituição ilustrativa do corredor de entrada pelo número 48, do pátio com árvore e da porta baixa que permanece fechada ao fundo.",
+      "image_caption": "Reconstituição ilustrativa do corredor e do pátio descritos no manuscrito; não representa o espaço além da porta fechada."
     },
     {
       "id": "otaru-porto-de-otaru",
@@ -393,6 +394,47 @@
       ],
       "source_entry_ids": [
         "2026-11-10-a-mare-nao-assina-recibos"
+      ]
+    },
+    {
+      "id": "oficina-augusto-calado",
+      "realm_id": "terra",
+      "name": "Oficina de Augusto Calado",
+      "subregion": "Alcântara, Lisboa · rua e número não identificados",
+      "status": "documentado",
+      "status_label": "Lugar testemunhado",
+      "image": "assets/atlas/oficina-augusto-calado.svg",
+      "image_alt": "Interior reconstituído da oficina de pintura de letreiros de Augusto Calado, com tábuas, pincéis, frascos de tinta, moldes de letras e a tabuleta de Palmira Sequeira sobre cavaletes.",
+      "image_caption": "Reconstituição ilustrativa a partir dos manuscritos; a disposição dos objetos e a aparência do imóvel não são documentais.",
+      "history": [
+        "Em janeiro de 1944, a oficina de Augusto Calado ocupava o rés do chão de um prédio em Alcântara. A rua e o número não são informados.",
+        "O espaço continha tábuas encostadas à parede, pincéis mergulhados em frascos, letras de cartão usadas como moldes e uma régua comprida com a ponta partida. Calado pintava tabuletas para mercearias, números de porta, anúncios de aluguer e placas de aviso.",
+        "Rui Moura, de quinze anos, aprende ali a pintar letreiros. Em 21–22 de janeiro de 1944, trabalha na nova tabuleta de Palmira Sequeira, recebe pelo serviço e envia a Beatriz a primeira carta com seu endereço.",
+        "Em 2–4 de fevereiro de 1944, depois de receber a resposta de Adelaide, Rui volta à oficina e conversa brevemente com Calado. O trabalho continua; o lugar não se transforma em refúgio nem em promessa de regresso."
+      ],
+      "laws": [
+        "A localização conhecida limita-se a Alcântara, Lisboa. A rua, o número da porta e as coordenadas não foram registrados.",
+        "A oficina e a sapataria de Palmira Sequeira são estabelecimentos distintos; a tabuleta foi pintada na oficina e instalada na fachada da sapataria.",
+        "A posição no mapa é esquemática. Não representa distância, orientação ou percurso entre a oficina, o quarto de Rui e a sapataria.",
+        "A prancha é uma reconstituição visual; não constitui registro fotográfico nem levantamento do imóvel."
+      ],
+      "inhabitants": [
+        "Augusto Calado — pintor de letreiros e responsável pela oficina.",
+        "Rui Moura — aprendiz de quinze anos, em janeiro de 1944."
+      ],
+      "connections": [
+        {
+          "label": "A tinta do lado de fora",
+          "route": "conto:2026-10-31-a-tinta-do-lado-de-fora"
+        },
+        {
+          "label": "O endereço no verso",
+          "route": "conto:2026-11-15-o-endereco-no-verso"
+        }
+      ],
+      "source_entry_ids": [
+        "2026-10-31-a-tinta-do-lado-de-fora",
+        "2026-11-15-o-endereco-no-verso"
       ]
     }
   ]
