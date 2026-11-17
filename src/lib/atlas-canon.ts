@@ -13,6 +13,7 @@ const CANONICAL_IDS: Record<string, string> = {
   "infernos:corte-cinzas": "corte-das-cinzas",
   "mortais:pasaje-calandria": "pasaje-de-la-calandria",
   "mortais:otaru": "otaru-porto-de-otaru",
+  "mortais:oficina-calado": "oficina-augusto-calado",
 };
 
 /** Resolve uma referência canônica de lugar para o marcador navegável no mapa React. */

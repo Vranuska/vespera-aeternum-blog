@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { MAPS, ROOT_MAP, findPlace } from "@/data/atlas";
-import { enrichAtlasPlace } from "@/lib/atlas-canon";
+import { atlasPlaceLocation, enrichAtlasPlace } from "@/lib/atlas-canon";
 import canonicalAtlas from "@/data/atlas-fallback.json";
 import entries from "@/data/entries-fallback.json";
 
@@ -50,9 +50,23 @@ describe("Atlas — cosmologia do Entre", () => {
     expect(otaru.image?.src).toBe("https://raw.githubusercontent.com/Vranuska/vespera-aeternum/main/assets/atlas/otaru-porto-1921.svg");
     expect(otaru.image?.alt).toContain("barcaça");
     expect(otaru.history?.some((item) => item.includes("novembro de 1921"))).toBe(true);
+
+    const oficina = enrichAtlasPlace("mortais", findPlace("mortais", "oficina-calado")!);
+    expect(oficina.image?.src).toBe("https://raw.githubusercontent.com/Vranuska/vespera-aeternum/main/assets/atlas/oficina-augusto-calado.svg");
+    expect(oficina.image?.caption).toContain("Reconstituição ilustrativa");
+    expect(oficina.image?.caption).toContain("Alcântara, Lisboa");
+    expect(oficina.history).toContain("Em janeiro de 1944, a oficina de Augusto Calado ocupava o rés do chão de um prédio em Alcântara. A rua e o número não são informados.");
+    expect(oficina.laws).toContain("A oficina e a sapataria de Palmira Sequeira são estabelecimentos distintos; a tabuleta foi pintada na oficina e instalada na fachada da sapataria.");
+    expect(oficina.references?.map((item) => item.route)).toEqual(
+      expect.arrayContaining([
+        "conto:2026-10-31-a-tinta-do-lado-de-fora",
+        "conto:2026-11-15-o-endereco-no-verso",
+      ]),
+    );
+    expect(atlasPlaceLocation("oficina-augusto-calado")).toEqual({ mapa: "mortais", local: "oficina-calado" });
   });
 
-  it("apresenta as nove pranchas canônicas, incluindo Otaru e a reconstituição do Pasaje", () => {
+  it("apresenta as dez pranchas canônicas, incluindo Otaru, o Pasaje e a oficina de Alcântara", () => {
     const illustrated = [
       ["mortais", "lago"],
       ["mortais", "aldeia"],
@@ -63,6 +77,7 @@ describe("Atlas — cosmologia do Entre", () => {
       ["infernos", "corte-cinzas"],
       ["mortais", "pasaje-calandria"],
       ["mortais", "otaru"],
+      ["mortais", "oficina-calado"],
     ] as const;
     for (const [mapId, placeId] of illustrated) {
       expect(enrichAtlasPlace(mapId, findPlace(mapId, placeId)!).image?.src)
@@ -80,7 +95,7 @@ describe("Atlas — cosmologia do Entre", () => {
       .filter((route) => route.startsWith("conto:"))
       .map((route) => route.slice("conto:".length));
     expect(references.every((id) => ids.has(id))).toBe(true);
-    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(9);
+    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(10);
   });
 
   it("não cartografa Mage: The Ascension como plano ou território", () => {

@@ -18,7 +18,7 @@ export type Status = "confirmado" | "provisório";
 export type Kind =
   | "plano" | "casa" | "salão" | "jardim" | "palácio" | "biblioteca" | "tribunal"
   | "mar" | "corte" | "taberna" | "aldeia" | "cidade" | "lago" | "estação" | "igreja"
-  | "torre" | "ponte" | "estrela" | "quarto" | "portal" | "passagem";
+  | "torre" | "ponte" | "estrela" | "quarto" | "portal" | "passagem" | "oficina";
 
 export type Place = {
   id: string;
@@ -188,6 +188,9 @@ export const MAPS: Record<string, AtlasMap> = {
         works: ["2026-11-09-a-rua-que-cabia-na-margem"],
         secrets: ["Vespera foi vista junto à porta e advertiu Micaela a não confundir o limite conhecido com o vazio.", "Nenhuma relação com a Umbra ou o Sonhar está estabelecida."]
       },
+      { id: "oficina-calado", name: "Oficina de Augusto Calado", kind: "oficina", x: 565, y: 350, status: "confirmado",
+        description: "Oficina de pintura de letreiros no rés do chão de um prédio em Alcântara, Lisboa. A rua e o número não são conhecidos; a posição no mapa é esquemática.",
+        works: ["2026-10-31-a-tinta-do-lado-de-fora", "2026-11-15-o-endereco-no-verso"] },
       { id: "lago", name: "O lago de Eithne", kind: "lago", x: 200, y: 170, status: "confirmado",
         description: "Uma casa de pedra numa margem, a casa de uma família na outra. Cebolas que sobrevivem ao frio.",
         characters: ["eithne"], works: ["bestiario-eithne-v1"] },
