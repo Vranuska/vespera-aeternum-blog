@@ -96,11 +96,12 @@ describe("Arquivo e ordem editorial", () => {
     expect(() => parseEntries([{ id: "x" }])).toThrow();
     expect(() => parseEntries([raw("x", "A"), raw("x", "B")])).toThrow();
   });
-  it("publica a revisão v4 de A maré não assina recibos no arquivo de segurança", () => {
+  it("publica a revisão v5 de A maré não assina recibos no arquivo de segurança", () => {
     const mare = normalize(parseEntries(fallbackEntries)).find((work) => work.id === "2026-11-10-a-mare-nao-assina-recibos");
     expect(mare?.paragraphs.some((paragraph) => paragraph.includes("Desconto contestado."))).toBe(true);
     expect(mare?.paragraphs.some((paragraph) => paragraph.includes("Assim já não embarca."))).toBe(true);
     expect(mare?.paragraphs.at(-1)).toBe("A bota continuava à entrada, limpa por dentro.");
+    expect(mare?.series).toEqual({ id: "caderno-das-travessias", title: "Caderno das Travessias", position: 1 });
     expect(mare?.paragraphs.some((paragraph) => paragraph.includes("Há coisas que o porto pesa"))).toBe(false);
   });
   it("usa cópia fiel de segurança em erro remoto", async () => {
@@ -110,14 +111,22 @@ describe("Arquivo e ordem editorial", () => {
     expect(works.map((work) => work.id).sort()).toEqual(indexedIds.sort());
     const chapterIds = editorial.editorial_reading_order.chapters.map((chapter) => chapter.entry_id);
     expect(chapterIds.every((id) => works.some((work) => work.id === id))).toBe(true);
-    expect(works[0]?.id).toBe("2026-11-17-o-lugar-de-uma-folha");
-    expect(works[1]?.id).toBe("2026-11-15-o-endereco-no-verso");
-    expect(works[2]?.id).toBe("2026-11-15-a-visita-que-coube-no-patio");
-    expect(works[3]?.id).toBe("2026-11-10-a-mare-nao-assina-recibos");
+    expect(works[0]?.id).toBe("2026-11-18-o-primeiro-quarto-em-terra");
+    expect(works[1]?.id).toBe("2026-11-18-carta-de-nao-a-sota");
+    expect(works[2]?.id).toBe("2026-11-17-o-lugar-de-uma-folha");
+    expect(works[3]?.id).toBe("2026-11-15-o-endereco-no-verso");
+    expect(works[4]?.id).toBe("2026-11-15-a-visita-que-coube-no-patio");
+    expect(works[5]?.id).toBe("2026-11-10-a-mare-nao-assina-recibos");
     const unplacedIds = editorial.unplaced_archive.map((item) => item.entry_id);
-    expect(unplacedIds).toContain("2026-11-10-a-mare-nao-assina-recibos");
+    expect(unplacedIds).not.toContain("2026-11-10-a-mare-nao-assina-recibos");
     expect(unplacedIds.every((id) => works.some((work) => work.id === id))).toBe(true);
     expect(works.every(w => w.source === "fallback")).toBe(true);
+    const travelOrder = bookWorks(works).filter(w => w.series?.id === "caderno-das-travessias").map(w => w.id);
+    expect(travelOrder).toEqual([
+      "2026-11-10-a-mare-nao-assina-recibos",
+      "2026-11-18-o-primeiro-quarto-em-terra",
+      "2026-11-18-carta-de-nao-a-sota",
+    ]);
   });
   it("não sobrepõe arquivo remoto válido com cópia local", async () => {
     const works = await loadWorks(async () => new Response(JSON.stringify([raw("novo", "Novo")])));
