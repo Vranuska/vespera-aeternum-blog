@@ -150,8 +150,8 @@ export function buildEras(index: EditorialIndex, knownIds: Set<string>) {
   if (outside.length)
     eras.push({
       key: OUTSIDE,
-      label: "Fora da cronologia",
-      months: [{ key: OUTSIDE, label: "Arquivo não posicionado", entries: outside }],
+      label: "Sem posição cronológica",
+      months: [{ key: OUTSIDE, label: "Sem data de universo estabelecida", entries: outside }],
     });
   return { eras, missing };
 }
