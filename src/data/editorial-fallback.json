@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17",
+  "updated_at": "2026-11-18",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -210,6 +210,29 @@
       "after": "2026-10-28-o-lugar-onde-a-agua-ferve"
     },
     {
+      "entry_id": "2026-11-10-a-mare-nao-assina-recibos",
+      "title": "A maré não assina recibos",
+      "time": "1921-11",
+      "label": "Novembro–dezembro de 1921 · Nao trabalha no porto de Otaru, contesta a quitação parcial e vê Sōta partir; a carta dele chega de Hakodate em dezembro",
+      "precision": "month"
+    },
+    {
+      "entry_id": "2026-11-18-carta-de-nao-a-sota",
+      "title": "Carta de Nao a Sōta",
+      "time": "1922-01-05",
+      "label": "5 de janeiro de 1922 · Nao escreve de Otaru após realizar a prova de escrituração; a suspensão no cais continua sem resposta",
+      "precision": "day",
+      "after": "2026-11-10-a-mare-nao-assina-recibos"
+    },
+    {
+      "entry_id": "2026-11-18-o-primeiro-quarto-em-terra",
+      "title": "O primeiro quarto em terra",
+      "time": "1922-01-12",
+      "label": "12 de janeiro de 1922 · Sōta recebe a carta em Hakodate, aluga um quarto por duas semanas e envia um endereço sem prometer regresso",
+      "precision": "day",
+      "after": "2026-11-18-carta-de-nao-a-sota"
+    },
+    {
       "entry_id": "2026-10-25-o-homem-que-nunca-tirava-as-luvas",
       "title": "O homem que nunca tirava as luvas",
       "time": "1926-11-18",
@@ -295,19 +318,19 @@
       "after": "2026-10-31-a-carta-que-chegou-sem-pedir-licenca"
     },
     {
-      "entry_id": "2026-11-09-a-rua-que-cabia-na-margem",
-      "title": "A rua que cabia na margem",
-      "time": "1997-09-16",
-      "label": "16 de setembro de 1997 · Micaela registra a existência parcial do Pasaje de la Calandria, em Buenos Aires",
-      "precision": "day"
-    },
-    {
       "entry_id": "2026-11-15-o-endereco-no-verso",
       "title": "O endereço no verso",
       "time": "1944-02",
       "label": "2–4 de fevereiro de 1944 · Rui recebe a resposta de Adelaide e envia uma nova carta a Beatriz",
       "precision": "week",
       "after": "2026-10-31-a-carta-que-chegou-sem-pedir-licenca"
+    },
+    {
+      "entry_id": "2026-11-09-a-rua-que-cabia-na-margem",
+      "title": "A rua que cabia na margem",
+      "time": "1997-09-16",
+      "label": "16 de setembro de 1997 · Micaela registra a existência parcial do Pasaje de la Calandria, em Buenos Aires",
+      "precision": "day"
     }
   ],
   "unplaced_archive": [
@@ -496,12 +519,6 @@
       "title": "A saída que não era minha",
       "publication_label": "21 de outubro de 2026",
       "universe_chronology": "indeterminada / não posicionada neste volume"
-    },
-    {
-      "entry_id": "2026-11-10-a-mare-nao-assina-recibos",
-      "title": "A maré não assina recibos",
-      "publication_label": "10 de novembro de 2026 · Otaru, Hokkaido, Japão",
-      "universe_chronology": "1921-11 · narrativa autônoma; ainda não posicionada no Volume I"
     }
   ],
   "continuity_notes": {
@@ -524,7 +541,8 @@
       "recibos de carga e mapas incompletos: registros que atestam uma parcela dos acontecimentos sem pretender conter a verdade inteira",
       "endereços conferidos, cartas recebidas sem exigência de regresso e a diferença entre responder e reconciliar",
       "cozinhas aquecidas, tigelas oferecidas e visitas que não exigem uma confissão completa",
-      "chaves, gavetas e custódia: a diferença entre guardar e esconder"
+      "chaves, gavetas e custódia: a diferença entre guardar e esconder",
+      "quartos temporários, camas imóveis e endereços que permitem receber uma carta sem prometer permanência"
     ],
     "open_threads": [
       {
@@ -616,6 +634,16 @@
         ],
         "note": "O Pasaje de la Calandria, em Barracas, Buenos Aires, aparece em plantas de 1934, 1948 e 1956. Micaela Funes confirma parte do corredor com Elena Roldán; a porta do fundo permanece fechada e o prolongamento não foi verificado. Vespera aparece junto à porta. Não classificar o espaço como Umbra ou Sonhar sem novo manuscrito que estabeleça essa relação.",
         "reveal_plan": "Retomar Micaela, Elena ou outro visitante em perspectiva própria; desenvolver a fronteira lentamente, sem transformar a porta num atalho explicativo nem cartografar o outro lado antes de haver evidência."
+      },
+      {
+        "key": "nao-sota-address",
+        "seeded_in": [
+          "2026-11-10-a-mare-nao-assina-recibos",
+          "2026-11-18-carta-de-nao-a-sota",
+          "2026-11-18-o-primeiro-quarto-em-terra"
+        ],
+        "note": "Nao fez a prova de escrituração em 2 de janeiro de 1922, mas o resultado não saiu até a carta de 5 de janeiro. A suspensão no porto de Otaru continua sem resposta. Sōta tem um endereço temporário em Hakodate, válido enquanto pagar a hospedaria; a próxima viagem e o paradeiro do pai permanecem desconhecidos.",
+        "reveal_plan": "Retomar uma consequência concreta da prova ou da correspondência. Não usar o endereço como promessa de retorno nem resolver a suspensão por conveniência."
       }
     ],
     "secondary_arcs": [
@@ -680,6 +708,33 @@
         ],
         "note": "Micaela registra uma passagem cujo traçado não pode confirmar; Nao registra o estado de uma amarração e recusa uma quitação falsa. São vidas, épocas e lugares independentes. A ligação é documental e temática, não uma relação causal nem prova de que as personagens se conheçam.",
         "planned_use": "Manter as duas obras como narrativas autônomas ligadas pelo limite dos registros. Só aproximar personagens ou objetos se um manuscrito futuro justificar essa relação."
+      },
+      {
+        "id": "nao-sota-travessias",
+        "seeded_in": [
+          "2026-11-10-a-mare-nao-assina-recibos",
+          "2026-11-18-o-primeiro-quarto-em-terra",
+          "2026-11-18-carta-de-nao-a-sota"
+        ],
+        "note": "Nao Sakamoto e Sōta, irmãos em Otaru, atravessam a separação sem transformar a partida numa promessa de regresso. Em novembro de 1921, Nao contesta o recibo parcial após o acidente da barcaça seis e Sōta parte no Kōei. Em dezembro, a carta dele chega de Hakodate. Em 5 de janeiro de 1922, Nao escreve depois de fazer a prova de escrituração; a suspensão no cais continua sem resposta. Em 12 de janeiro, Sōta recebe a carta em Hakodate, paga duas semanas numa hospedaria não identificada e envia um endereço temporário. A ligação com Micaela Funes e o Pasaje de la Calandria permanece temática e documental, nunca causal nem interpessoal.",
+        "editorial_sequence": [
+          {
+            "position": 1,
+            "entry_id": "2026-11-10-a-mare-nao-assina-recibos",
+            "reason": "A partida e a contestação abrem o fio."
+          },
+          {
+            "position": 2,
+            "entry_id": "2026-11-18-o-primeiro-quarto-em-terra",
+            "reason": "O ponto de vista de Sōta mostra a consequência concreta da carta recebida."
+          },
+          {
+            "position": 3,
+            "entry_id": "2026-11-18-carta-de-nao-a-sota",
+            "reason": "O documento posterior à narrativa revela a perspectiva completa de Nao."
+          }
+        ],
+        "planned_use": "O próximo avanço pode acompanhar o resultado da prova de Nao ou a próxima escala de Sōta. Não decidir ainda o resultado do exame, o destino da suspensão ou o paradeiro do pai; não converter o endereço temporário em regresso, não fixar o cais ou a hospedaria e não transformar a ausência do pai em fenômeno sobrenatural."
       }
     ]
   },
@@ -695,6 +750,8 @@
         "1886",
         "1891",
         "1898",
+        "1921",
+        "1922",
         "1926",
         "1943",
         "1944",
@@ -702,7 +759,7 @@
         "fora"
       ],
       "behavior": "Pontos interativos por era; inscrições reveladas por cursor ou foco; páginas de cada ano agrupadas por mês; acesso alternativo por botões para toque e teclado. O índice tradicional de todos os diários permanece disponível.",
-      "status": "integrado no leitor estático; a cronologia reúne os registros por era e mês, sem substituir o catálogo de leitura nem a ordem editorial independente."
+      "status": "Integrado no leitor estático e React; a cronologia do Arquivo das Eras inclui os registros datados de 1921–1922, enquanto o Volume I conserva sua ordem editorial própria."
     },
     "pending_sections": [],
     "implemented_sections": [
@@ -714,9 +771,9 @@
       },
       {
         "name": "Atlas",
-        "status": "integrado no leitor estático em 2026-11-08",
-        "reason": "Atlas navegável com domínios, lugares, imagens, história, leis, habitantes e conexões; Sonhar e Umbra permanecem deliberadamente sem cartografia.",
-        "completed_at": "2026-11-08"
+        "status": "integrado no leitor estático e React em 2026-11-18",
+        "reason": "Atlas navegável com imagens, história, leis, habitantes e conexões; onze lugares canônicos, incluindo a zona portuária de Otaru, a oficina de Augusto Calado e o porto de Hakodate. Cais, hospedarias e coordenadas não são inventados.",
+        "completed_at": "2026-11-18"
       },
       {
         "name": "Bestiário React · dossiês canônicos",
@@ -751,7 +808,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 14/11/2026, o código de src/routes/index.tsx preserva a composição Reforged: o manuscrito em destaque e a lista de outros manuscritos antecedem a Constelação. A Constelação é a navegação temporal do arquivo (era → mês → registro), sem substituir a leitura convencional; a ordem editorial do Volume I permanece independente da cronologia. O workflow React concluiu validação dos snapshots, testes, prerender e deploy do artefato. Entretanto, o workflow dinâmico de GitHub Pages também executou Build with Jekyll a partir da branch main; portanto, a publicação ativa pode não corresponder ao artefato React. A inspeção HTTP e visual independente permanece pendente. A fonte de Pages precisa ser confirmada e, se ainda estiver em Deploy from a branch, alterada para GitHub Actions.",
+      "status": "Em 18/11/2026, o portal mantém a composição Reforged, com manuscrito e lista de outros manuscritos antes da Constelação. A cronologia do Arquivo das Eras inclui agora 22 registros datados, de 1886 a 1997, e mantém 31 obras sem posição cronológica; o Volume I permanece com 19 capítulos. O Caderno das Travessias tem sequência editorial própria, independente da cronologia, sem ser promovido a capítulo do Volume I.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
@@ -762,23 +819,26 @@
         "Dossiê canônico de Eithne integrado ao portal React: prancha principal, galeria, biografia, aptidões, limites, cronologia, citações e relações; menções não são promovidas a fichas sem material suficiente.",
         "ordem de publicação nos diários, separada da cronologia do universo",
         "Navegação temporal por ano, mês e dia, preservando a precisão original dos registros e mantendo obras sem cronologia em seção separada.",
-        "Manuscrito em destaque e lista de outros manuscritos antecedem a Constelação, conforme a composição Reforged aprovada."
+        "Manuscrito em destaque e lista de outros manuscritos antecedem a Constelação, conforme a composição Reforged aprovada.",
+        "Caderno das Travessias: A maré não assina recibos → O primeiro quarto em terra → Carta de Nao a Sōta; a ordem editorial põe a narrativa antes do documento, enquanto a cronologia conserva 5 e 12 de janeiro de 1922.",
+        "A seção antes chamada «Fora da cronologia» passa a «Sem posição cronológica»; obras com data conhecida, como A maré, entram na era correspondente sem receber capítulo do Volume I."
       ],
       "reading_order_chapters": 19,
-      "chronology_items": 19,
-      "unplaced_items": 32
+      "chronology_items": 22,
+      "unplaced_items": 31
     },
     "react_atlas": {
       "route": "src/routes/atlas.tsx",
       "source": "atlas.json → src/data/atlas-fallback.json → src/lib/atlas-canon.ts + src/data/atlas.ts → src/routes/atlas.tsx",
-      "status": "O painel React usa os registros canônicos de atlas.json para imagens, história, leis, habitantes e referências cruzadas. Dez lugares possuem prancha ou reconstituição identificada. A oficina de Augusto Calado acrescenta Alcântara, Lisboa, sem inventar rua, número ou coordenadas.",
+      "status": "O painel React usa os registros canônicos de atlas.json para imagens, história, leis, habitantes e referências cruzadas. Onze lugares possuem prancha ou reconstituição identificada, incluindo o porto de Hakodate; o cais e a hospedaria da narrativa permanecem sem localização exata.",
       "place_id": "pasaje-calandria",
       "linked_entry": "2026-11-09-a-rua-que-cabia-na-margem",
       "cartographic_status": "provisório; a porta do fundo e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação",
       "features": [
         "Referências atlas/lugar/* resolvidas pelo mapeamento canônico para marcadores navegáveis, incluindo a ligação recíproca entre a Biblioteca dos Registros Velados e os Jardins da Primeira Manhã.",
         "Prancha do Pasaje de la Calandria em assets/atlas/pasaje-calandria.svg: reconstituição ilustrativa do corredor e do pátio a partir do manuscrito; não representa o que existe além da porta.",
-        "Oficina de Augusto Calado em Alcântara integrada como décimo lugar canônico, com prancha reconstituída, limites de localização e ligações aos dois manuscritos de Rui."
+        "Oficina de Augusto Calado em Alcântara integrada como décimo lugar canônico, com prancha reconstituída, limites de localização e ligações aos dois manuscritos de Rui.",
+        "Porto de Hakodate em assets/atlas/hakodate-porto-1922.svg: reconstituição vetorial de uma zona portuária, sem identificar cais ou edifício; fontes oficiais registram a ligação ferroviária por ferry com Aomori desde 1908 e a expansão da pesca do mar do norte na década de 1920."
       ],
       "place_ids": [
         "casa-de-pedra-do-lago",
@@ -790,17 +850,18 @@
         "corte-das-cinzas",
         "pasaje-de-la-calandria",
         "otaru-porto-de-otaru",
-        "oficina-augusto-calado"
+        "oficina-augusto-calado",
+        "hakodate-porto-de-hakodate"
       ],
-      "additional_place_id": "oficina-augusto-calado",
+      "additional_place_id": "hakodate-porto-de-hakodate",
       "additional_linked_entries": [
-        "2026-10-31-a-tinta-do-lado-de-fora",
-        "2026-11-15-o-endereco-no-verso"
+        "2026-11-18-o-primeiro-quarto-em-terra",
+        "2026-11-18-carta-de-nao-a-sota"
       ],
-      "additional_cartographic_status": "Lugar documentado em Alcântara; rua e número desconhecidos, posição simbólica e sem relação sobrenatural estabelecida."
+      "additional_cartographic_status": "Porto histórico documentado em Hakodate; a narrativa não identifica o cais, a hospedaria nem coordenadas. A ligação Aomori–Hakodate é contexto histórico, não rota atribuída a Sōta."
     },
     "reading_order_chapters": 19,
-    "chronology_items": 19,
-    "unplaced_items": 32
+    "chronology_items": 22,
+    "unplaced_items": 31
   }
 }
