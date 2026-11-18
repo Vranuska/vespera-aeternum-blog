@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-17",
+  "updated_at": "2026-11-18",
   "title": "Atlas dos Domínios",
   "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
   "map_image": {
@@ -435,6 +435,59 @@
       "source_entry_ids": [
         "2026-10-31-a-tinta-do-lado-de-fora",
         "2026-11-15-o-endereco-no-verso"
+      ]
+    },
+    {
+      "id": "hakodate-porto-de-hakodate",
+      "realm_id": "terra",
+      "name": "Porto de Hakodate",
+      "status": "documentado",
+      "status_label": "Porto histórico documentado; cais e hospedaria da narrativa não identificados",
+      "subregion": "Hakodate, Hokkaido, Japão · baía e zona portuária; ponto de desembarque não identificado",
+      "image": "assets/atlas/hakodate-porto-1922.svg",
+      "image_alt": "Reconstituição ilustrativa do porto de Hakodate em 1922, com baía, encosta urbana, ferry ferroviário e embarcações de carga e pesca; nenhum cais específico é representado.",
+      "image_caption": "Reconstituição ilustrativa, não fotografia nem planta histórica. A ligação de ferry ferroviário com Aomori operava desde 1908; o manuscrito não identifica o cais utilizado por Sōta.",
+      "history": [
+        "Hakodate abriu como porto de comércio internacional em 1859, ao lado de Yokohama e Nagasaki.",
+        "Em 1908 entrou em serviço a ligação de ferry ferroviário entre Aomori e Hakodate, tornando a cidade uma porta de entrada para Hokkaido.",
+        "Na década de 1920, a pesca do mar do norte começou a expandir-se, e Hakodate prosperou como ponto de saída para frotas pesqueiras.",
+        "12 de janeiro de 1922 — Sōta recebe uma carta de Nao em Hakodate e aluga um quarto temporário perto do porto. A narrativa não identifica o cais nem a hospedaria."
+      ],
+      "laws": [
+        "O marcador localiza o porto de Hakodate em escala de cidade; não representa um cais, armazém ou edifício específico.",
+        "A existência da ligação de ferry ferroviário Aomori–Hakodate é contexto histórico; o manuscrito não afirma que Sōta tenha viajado nela.",
+        "A hospedaria de Sōta é ficcional e não recebe endereço nem coordenadas."
+      ],
+      "inhabitants": [
+        "Sōta — passagem em janeiro de 1922; não há registro de residência permanente.",
+        "Tripulantes, agentes e trabalhadores portuários não identificados no manuscrito."
+      ],
+      "source_entry_ids": [
+        "2026-11-18-o-primeiro-quarto-em-terra"
+      ],
+      "connections": [
+        {
+          "label": "O primeiro quarto em terra",
+          "route": "conto:2026-11-18-o-primeiro-quarto-em-terra"
+        },
+        {
+          "label": "Carta de Nao a Sōta",
+          "route": "conto:2026-11-18-carta-de-nao-a-sota"
+        },
+        {
+          "label": "A maré não assina recibos",
+          "route": "conto:2026-11-10-a-mare-nao-assina-recibos"
+        }
+      ],
+      "historical_sources": [
+        {
+          "label": "Hakodate City — Information on Port of Hakodate",
+          "url": "https://www.city.hakodate.hokkaido.jp/docs/2019020800086/"
+        },
+        {
+          "label": "Travel Hakodate — History",
+          "url": "https://www.hakodate.travel/en/about/history/"
+        }
       ]
     }
   ]
