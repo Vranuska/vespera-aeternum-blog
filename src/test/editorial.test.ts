@@ -11,11 +11,12 @@ const allIds = new Set([
 ]);
 
 describe("Índice editorial", () => {
-  it("mantém A maré autônoma fora do Volume I e documenta o elo temático com A rua", () => {
+  it("mantém A maré autônoma fora do Volume I e com data de universo própria", () => {
     const mare = "2026-11-10-a-mare-nao-assina-recibos";
     const rua = "2026-11-09-a-rua-que-cabia-na-margem";
     expect(index.chapters.some((chapter) => chapter.entry_id === mare)).toBe(false);
-    expect(index.unplaced.some((entry) => entry.entry_id === mare)).toBe(true);
+    expect(index.chronology.find((entry) => entry.entry_id === mare)?.time).toBe("1921-11");
+    expect(index.unplaced.some((entry) => entry.entry_id === mare)).toBe(false);
     const arc = fallback.continuity_notes.secondary_arcs.find((item) => item.id === "registros-na-margem");
     expect(arc?.seeded_in).toEqual([rua, mare]);
   });
@@ -36,6 +37,8 @@ describe("Índice editorial", () => {
       "1886",
       "1891",
       "1898",
+      "1921",
+      "1922",
       "1926",
       "1943",
       "1944",
@@ -62,8 +65,20 @@ describe("Índice editorial", () => {
     const { eras } = buildEras(index, allIds);
     const outside = eras.find((e) => e.key === OUTSIDE)!.months[0]!.entries.map((e) => e.id);
     expect(outside).toEqual(index.unplaced.map((u) => u.entry_id));
-    expect(outside).toHaveLength(32);
-    expect(outside).toContain("2026-11-10-a-mare-nao-assina-recibos");
+    expect(outside).toHaveLength(33);
+    expect(outside).toContain("2026-11-20-as-estrelas-do-lado-de-dentro");
+    expect(outside).toContain("2026-11-20-folha-de-prova-de-eva");
+    expect(outside).not.toContain("2026-11-10-a-mare-nao-assina-recibos");
+  });
+  it("mantém o Caderno de Eva como arco secundário sem data de universo inventada", () => {
+    const story = "2026-11-20-as-estrelas-do-lado-de-dentro";
+    const document = "2026-11-20-folha-de-prova-de-eva";
+    expect(index.chapters.some((chapter) => [story, document].includes(chapter.entry_id))).toBe(false);
+    expect(index.chronology.some((entry) => [story, document].includes(entry.entry_id))).toBe(false);
+    expect(index.unplaced.map((entry) => entry.entry_id)).toEqual(expect.arrayContaining([story, document]));
+    const arc = fallback.continuity_notes.secondary_arcs.find((item) => item.id === "azrakhel-e-eva");
+    expect(arc?.editorial_sequence.map((item) => item.entry_id)).toEqual([story, document]);
+    expect(arc?.seeded_in).toContain("azrakhel-o-demonio-que-veio-me-matar-v1");
   });
   it("ignora IDs ausentes em entries.json e os reporta", () => {
     const known = new Set([...allIds].filter((id) => id !== "2026-10-26-a-costura-invisivel"));
