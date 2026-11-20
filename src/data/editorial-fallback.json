@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18",
+  "updated_at": "2026-11-20",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -519,6 +519,18 @@
       "title": "A saída que não era minha",
       "publication_label": "21 de outubro de 2026",
       "universe_chronology": "indeterminada / não posicionada neste volume"
+    },
+    {
+      "entry_id": "2026-11-20-as-estrelas-do-lado-de-dentro",
+      "title": "As estrelas do lado de dentro",
+      "publication_label": "20 de novembro de 2026 · memória anterior ao desaparecimento de Eva; posição no tempo do universo não estabelecida",
+      "universe_chronology": "indeterminada / não posicionada neste volume"
+    },
+    {
+      "entry_id": "2026-11-20-folha-de-prova-de-eva",
+      "title": "Folha de prova de um par para Eva",
+      "publication_label": "20 de novembro de 2026 · documento ficcional; data de universo não identificada",
+      "universe_chronology": "indeterminada / não posicionada neste volume"
     }
   ],
   "continuity_notes": {
@@ -542,7 +554,8 @@
       "endereços conferidos, cartas recebidas sem exigência de regresso e a diferença entre responder e reconciliar",
       "cozinhas aquecidas, tigelas oferecidas e visitas que não exigem uma confissão completa",
       "chaves, gavetas e custódia: a diferença entre guardar e esconder",
-      "quartos temporários, camas imóveis e endereços que permitem receber uma carta sem prometer permanência"
+      "quartos temporários, camas imóveis e endereços que permitem receber uma carta sem prometer permanência",
+      "estrelas prateadas bordadas no lado de dentro; objetos escolhidos por quem os usa, não para serem vistos por terceiros"
     ],
     "open_threads": [
       {
@@ -644,6 +657,16 @@
         ],
         "note": "Nao fez a prova de escrituração em 2 de janeiro de 1922, mas o resultado não saiu até a carta de 5 de janeiro. A suspensão no porto de Otaru continua sem resposta. Sōta tem um endereço temporário em Hakodate, válido enquanto pagar a hospedaria; a próxima viagem e o paradeiro do pai permanecem desconhecidos.",
         "reveal_plan": "Retomar uma consequência concreta da prova ou da correspondência. Não usar o endereço como promessa de retorno nem resolver a suspensão por conveniência."
+      },
+      {
+        "key": "eva-footwear",
+        "seeded_in": [
+          "2026-11-20-as-estrelas-do-lado-de-dentro",
+          "2026-11-20-folha-de-prova-de-eva",
+          "azrakhel-o-demonio-que-veio-me-matar-v1"
+        ],
+        "note": "A memória anterior registra um par de sapatos escolhido por Eva, com estrelas prateadas no interior. No relato posterior, Vespera encontra um sapatinho bordado com estrelas, no singular. A possível identidade material entre o par e o objeto encontrado não foi confirmada; a folha de prova não traz data, oficina, pé, orientação da abertura ou destino posterior.",
+        "reveal_plan": "Não afirmar que se trata do mesmo objeto até que um manuscrito estabeleça a cadeia de custódia. Não atribuir poder ao bordado nem converter a escolha íntima de Eva em pista sobrenatural automática."
       }
     ],
     "secondary_arcs": [
@@ -735,6 +758,28 @@
           }
         ],
         "planned_use": "O próximo avanço pode acompanhar o resultado da prova de Nao ou a próxima escala de Sōta. Não decidir ainda o resultado do exame, o destino da suspensão ou o paradeiro do pai; não converter o endereço temporário em regresso, não fixar o cais ou a hospedaria e não transformar a ausência do pai em fenômeno sobrenatural."
+      },
+      {
+        "id": "azrakhel-e-eva",
+        "seeded_in": [
+          "azrakhel-o-demonio-que-veio-me-matar-v1",
+          "2026-11-20-as-estrelas-do-lado-de-dentro",
+          "2026-11-20-folha-de-prova-de-eva"
+        ],
+        "note": "Azrakhel chega ao Salão das Audiências para matar Vespera, retorna três horas depois para pedir desculpas e afirma que tenta salvar Eva do esquecimento. Uma memória anterior conserva a ida dos dois a uma oficina de calçado: Eva escolhe um par escuro, com abertura para uma pequena garra e estrelas prateadas bordadas por dentro; Azrakhel paga e aceita que ela decida. A folha de prova ficcional registra a perspectiva da artesã, não uma descoberta histórica. O manuscrito original chama Eva de filha de Azrakhel, mas o reflexo de Vespera afirma o contrário. A identidade da mulher de vestido cinza, a promessa anterior de Vespera e o paradeiro de Eva permanecem desconhecidos. Não se estabelece que o sapato da oficina seja o mesmo objeto encontrado no Salão.",
+        "editorial_sequence": [
+          {
+            "position": 1,
+            "entry_id": "2026-11-20-as-estrelas-do-lado-de-dentro",
+            "reason": "Memória anterior ao desaparecimento; acompanha Eva e Azrakhel numa situação cotidiana e abre uma perspectiva que o relato posterior não contém."
+          },
+          {
+            "position": 2,
+            "entry_id": "2026-11-20-folha-de-prova-de-eva",
+            "reason": "Documento complementar registra o trabalho da artesã e limita o que o episódio permite concluir."
+          }
+        ],
+        "planned_use": "Preservar a autonomia de Eva e a contradição sobre o parentesco. Não explicar a mulher de vestido cinza, a promessa, o gato Majestade ou o destino da menina por conveniência. Só retomar o calçado se a relação material entre o par encomendado e o sapatinho encontrado no Salão ganhar evidência narrativa; nenhuma propriedade sobrenatural foi estabelecida."
       }
     ]
   },
@@ -766,8 +811,8 @@
       {
         "name": "Bestiário",
         "status": "integrado no leitor estático em 2026-11-08",
-        "reason": "Ficha canônica de Eithne, galeria vetorial, cronologia, aptidões, limites e ligações com o manuscrito.",
-        "completed_at": "2026-11-08"
+        "reason": "Dossiês canônicos de Eithne e Azrakhel; o segundo foi aberto a partir das aparições, memórias e documentos preservados, com aptidões testemunhadas, limites, cronologia, citações e galeria própria.",
+        "completed_at": "2026-11-20"
       },
       {
         "name": "Atlas",
@@ -801,7 +846,7 @@
       "atlas.json"
     ],
     "remaining_catalog_work": [
-      "Abrir fichas completas para Ithariel, Aurelian, Azrakhel e Malpherion quando houver desenvolvimento biográfico suficiente.",
+      "Abrir fichas completas para Ithariel, Aurelian e Malpherion quando houver desenvolvimento biográfico suficiente.",
       "Expandir a cartografia do Entre, do Sonhar e de Umbra somente a partir de manuscritos que estabeleçam suas características.",
       "Acrescentar imagens e conexões para novos lugares sem converter menções isoladas em geografia definitiva."
     ],
@@ -821,11 +866,12 @@
         "Navegação temporal por ano, mês e dia, preservando a precisão original dos registros e mantendo obras sem cronologia em seção separada.",
         "Manuscrito em destaque e lista de outros manuscritos antecedem a Constelação, conforme a composição Reforged aprovada.",
         "Caderno das Travessias: A maré não assina recibos → O primeiro quarto em terra → Carta de Nao a Sōta; a ordem editorial põe a narrativa antes do documento, enquanto a cronologia conserva 5 e 12 de janeiro de 1922.",
-        "A seção antes chamada «Fora da cronologia» passa a «Sem posição cronológica»; obras com data conhecida, como A maré, entram na era correspondente sem receber capítulo do Volume I."
+        "A seção antes chamada «Fora da cronologia» passa a «Sem posição cronológica»; obras com data conhecida, como A maré, entram na era correspondente sem receber capítulo do Volume I.",
+        "Caderno de Eva permanece como arco secundário, fora dos 19 capítulos do Volume I e sem data de universo estabelecida; sua sequência editorial separa a memória narrativa da folha de prova."
       ],
       "reading_order_chapters": 19,
       "chronology_items": 22,
-      "unplaced_items": 31
+      "unplaced_items": 33
     },
     "react_atlas": {
       "route": "src/routes/atlas.tsx",
@@ -862,6 +908,6 @@
     },
     "reading_order_chapters": 19,
     "chronology_items": 22,
-    "unplaced_items": 31
+    "unplaced_items": 33
   }
 }
