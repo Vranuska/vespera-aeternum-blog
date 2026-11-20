@@ -96,7 +96,7 @@ describe("Atlas — cosmologia do Entre", () => {
       .filter((route) => route.startsWith("conto:"))
       .map((route) => route.slice("conto:".length));
     expect(references.every((id) => ids.has(id))).toBe(true);
-    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(10);
+    expect(canonicalAtlas.places.filter((place) => place.image)).toHaveLength(11);
   });
 
   it("não cartografa Mage: The Ascension como plano ou território", () => {
