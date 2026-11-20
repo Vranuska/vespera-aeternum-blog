@@ -66,7 +66,7 @@ describe("Atlas — cosmologia do Entre", () => {
     expect(atlasPlaceLocation("oficina-augusto-calado")).toEqual({ mapa: "mortais", local: "oficina-calado" });
   });
 
-  it("apresenta as dez pranchas canônicas, incluindo Otaru, o Pasaje e a oficina de Alcântara", () => {
+  it("apresenta as onze pranchas canônicas, incluindo Otaru, Hakodate, o Pasaje e a oficina de Alcântara", () => {
     const illustrated = [
       ["mortais", "lago"],
       ["mortais", "aldeia"],
@@ -78,6 +78,7 @@ describe("Atlas — cosmologia do Entre", () => {
       ["mortais", "pasaje-calandria"],
       ["mortais", "otaru"],
       ["mortais", "oficina-calado"],
+      ["mortais", "hakodate"],
     ] as const;
     for (const [mapId, placeId] of illustrated) {
       expect(enrichAtlasPlace(mapId, findPlace(mapId, placeId)!).image?.src)
