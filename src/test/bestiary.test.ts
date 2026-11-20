@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { bestiaryAsset, bestiaryRecordById } from "@/lib/bestiary";
+import { characterBySlug } from "@/data/characters";
 import canonical from "@/data/bestiary-fallback.json";
 
 describe("Dossiês canônicos do Bestiário", () => {
@@ -30,6 +31,14 @@ describe("Dossiês canônicos do Bestiário", () => {
     expect(azrakhel?.known_limits.some((item) => item.includes("Nenhum manuscrito estabelece controle do fogo"))).toBe(true);
     expect(azrakhel?.connections.find((item) => item.name === "Eva")?.detail).toContain("reflexo de Vespera");
     expect(canonical.mentions.some((item) => item.name === "Azrakhel")).toBe(false);
+  });
+
+  it("mantém o cartão de Azrakhel fiel à contradição sobre Eva", () => {
+    const azrakhel = characterBySlug("azrakhel");
+    expect(azrakhel?.presentation[1]).toContain("o reflexo de Vespera conteste esse parentesco");
+    expect(azrakhel?.presentation[1]).toContain("escolha os próprios sapatos");
+    expect(azrakhel?.traits).toContain("Aceita ceder espaço a Eva quando ela pede");
+    expect(azrakhel?.traits).not.toContain("Incendeia sobremesas sem querer");
   });
 
   it("não transforma personagens apenas mencionados em fichas completas", () => {
