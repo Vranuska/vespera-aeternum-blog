@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-08",
+  "updated_at": "2026-11-20",
   "title": "O Bestiário",
   "introduction": "Um inventário de presenças, não de monstros. Cada ficha separa o que foi testemunhado, o que foi dito por terceiros e aquilo que ainda não sabemos.",
   "editorial_principle": "Nenhuma habilidade, origem ou regra será acrescentada apenas para preencher uma ficha. O silêncio dos manuscritos também faz parte do arquivo.",
@@ -139,6 +139,140 @@
           "detail": "Não conhece Eithne, mas repete involuntariamente um gesto associado a ela."
         }
       ]
+    },
+    {
+      "id": "azrakhel",
+      "name": "Azrakhel",
+      "epithet": "Devastador de Reinos, Senhor das Mil Agonias",
+      "kind": "Demônio · subdivisão não registrada",
+      "classification": "Demônio; os títulos que anuncia não têm confirmação independente de posição, corte ou domínio.",
+      "status": "canon",
+      "status_label": "Ficha canônica · Dossiê ampliado em 20 de novembro de 2026",
+      "summary": "Azrakhel chega ao Salão das Audiências como uma ameaça e regressa três horas depois, descalço e com lírios brancos, para pedir desculpas. Os manuscritos mostram um demônio capaz de intimidação e afeição, mas não confirmam os títulos grandiosos que anuncia nem esclarecem sua posição no Inferno. Sua relação com Eva permanece documentalmente contraditória: ele a chama de filha; o reflexo de Vespera afirma que ela não é.",
+      "first_record": {
+        "title": "O demônio que veio me matar e ficou para o jantar",
+        "entry_id": "azrakhel-o-demonio-que-veio-me-matar-v1",
+        "manuscript": "arquivo/azrakhel/o-demonio-que-veio-me-matar-e-ficou-para-o-jantar-v1.md"
+      },
+      "main_image": {
+        "src": "assets/bestiario/azrakhel-retrato.svg",
+        "alt": "Reconstituição simbólica de Azrakhel: figura demoníaca alta, de chifres negros, armadura de ossos, capa de sombra e olhos semelhantes a carvões.",
+        "caption": "Azrakhel, conforme a descrição de Vespera. Retrato ilustrativo de arquivo, não imagem testemunhal."
+      },
+      "biography": [
+        "Azrakhel é apresentado nos manuscritos como um demônio. Ao entrar no Salão das Audiências, mede quase três metros e traz chifres negros, armadura de ossos e uma capa feita de alguma espécie de sombra viva. Seus olhos são comparados a carvões recém-retirados de uma fornalha. Apresenta-se com títulos grandiosos, entre eles «Devastador de Reinos» e «Senhor das Mil Agonias»; nenhum registro independente confirma sua posição, jurisdição ou autoridade.",
+        "Uma memória anterior ao desaparecimento de Eva conserva um episódio menos público. Azrakhel acompanha a menina a uma oficina de calçado sem identificação, onde ela escolhe um par de sapatos baixos, sem fivela rígida, com abertura para acomodar uma pequena garra. Eva pede estrelas prateadas bordadas na parte interna. Azrakhel aceita que ela decida e paga o preço combinado. O episódio confirma a presença e o cuidado que ele demonstra; não resolve a contradição sobre o parentesco.",
+        "Em outra ocasião, Azrakhel entra no Salão das Audiências para matar Vespera. Afirma ter recebido a promessa de que a morte da Dama do Entre devolveria Eva. Vespera interrompe o golpe e transforma sua espada numa colher. Três horas depois, ele retorna sem armadura e sem espada, descalço, levando lírios brancos e apresentando desculpas. Não se conhece quem lhe sugeriu as flores.",
+        "Durante o jantar, conta histórias obscenas sobre anjos, discute arquitetura infernal e critica a música celestial. As peras preparadas por Vespera queimam, explodem e, no terceiro caso, recitam blasfêmias numa língua não identificada. O manuscrito não explica o acontecimento; ele não basta para atribuir a Azrakhel domínio sobre fogo, alimentos ou idiomas.",
+        "Azrakhel chama Eva de filha e conta que ela nasceu frágil, sem chifres nem fogo, e que os curandeiros não lhe davam um século de vida. Diz que servos, irmãos e a mãe da menina começaram a esquecê-la. No entanto, o reflexo de Vespera afirma expressamente: «Eva não é filha de Azrakhel». O arquivo preserva ambas as declarações sem escolher uma como verdade definitiva.",
+        "Num fragmento doméstico, Vespera recorda ter conhecido a avó de Azrakhel: uma mulher que negociava enxofre por metro cúbico, apreciava tecidos e lhe ofereceu um tapete persa. O avô é referido apenas pelo nome Beltrão. Não se estabelece qual ramo familiar os liga a Azrakhel, nem se atribuem outros nomes ou feitos a essas pessoas.",
+        "A mulher de vestido cinza que encaminha Azrakhel contra Vespera não é identificada. Ele descreve um rosto que parecia mudar quando tentava recordá-lo. Depois do encontro com os lírios, Azrakhel promete oferecer qualquer coisa caso Eva seja encontrada. O paradeiro da menina, a natureza da promessa anterior de Vespera e o destino do sapato preservado no salão continuam sem resolução."
+      ],
+      "abilities": [
+        {
+          "title": "Empunhadura e uso de arma branca",
+          "description": "É visto empunhando uma espada e lançando um golpe contra Vespera. O episódio comprova o manejo da arma, mas não demonstra treinamento específico, superioridade física sobrenatural ou capacidade de vencer a Dama do Entre; o golpe é interrompido por ela."
+        }
+      ],
+      "known_limits": [
+        "Os títulos «Devastador de Reinos» e «Senhor das Mil Agonias» são autodeclarações; não há confirmação de posto, corte, círculo ou domínio.",
+        "Nenhum manuscrito estabelece controle do fogo. A combustão e a explosão das peras permanecem acontecimentos sem explicação.",
+        "A espada transformada em colher é uma ação de Vespera, não uma habilidade de Azrakhel.",
+        "A relação biológica ou metafísica entre Azrakhel e Eva não está confirmada: ele a chama de filha, enquanto o reflexo de Vespera o contradiz.",
+        "A identidade, a origem e o objetivo completo da mulher de vestido cinza não foram estabelecidos.",
+        "A reação de Azrakhel ao gato Majestade não tem explicação conhecida.",
+        "A identidade da pessoa que sugeriu os lírios brancos não foi preservada na memória.",
+        "Não há localização, residência, círculo infernal, linhagem demônica ou data absoluta de nascimento confirmados.",
+        "As estrelas bordadas nos sapatos são um detalhe escolhido por Eva. Nenhuma propriedade sobrenatural do calçado foi demonstrada."
+      ],
+      "chronology": [
+        {
+          "moment": "A prova dos sapatos",
+          "date": "Antes do desaparecimento de Eva; data não identificada",
+          "place": "Oficina de calçado sem nome",
+          "detail": "Azrakhel acompanha Eva. Ela escolhe o modelo e o bordado interno; ele paga o valor combinado. O registro não informa o local nem a data."
+        },
+        {
+          "moment": "A tentativa de ataque",
+          "date": "Data incerta",
+          "place": "Salão das Audiências",
+          "detail": "Azrakhel tenta matar Vespera, alegando que assim Eva retornaria. A espada é transformada numa colher."
+        },
+        {
+          "moment": "A segunda chegada",
+          "date": "Três horas após a tentativa de ataque; data incerta",
+          "place": "Salão das Audiências",
+          "detail": "Azrakhel regressa descalço com lírios brancos e pede desculpas."
+        },
+        {
+          "moment": "O jantar e a promessa",
+          "date": "Na noite da segunda chegada",
+          "place": "Salão das Audiências",
+          "detail": "Azrakhel conta o que sabe sobre Eva, encontra o sapato e promete oferecer qualquer coisa se ela for encontrada. O espelho contradiz o parentesco declarado."
+        }
+      ],
+      "gallery": [
+        {
+          "src": "assets/bestiario/azrakhel-entrada.svg",
+          "alt": "Azrakhel aparece descalço à porta do Salão das Audiências, segurando um buquê de lírios brancos.",
+          "caption": "A segunda chegada",
+          "date": "Três horas após a primeira visita; data incerta",
+          "place": "Salão das Audiências",
+          "note": "Reconstituição ilustrativa da cena narrada por Vespera. A imagem não identifica quem sugeriu as flores."
+        },
+        {
+          "src": "assets/bestiario/azrakhel-eva-prova.svg",
+          "alt": "Azrakhel espera enquanto Eva prova um sapato escuro com estrelas prateadas bordadas na parte interna.",
+          "caption": "As estrelas do lado de dentro",
+          "date": "Antes do desaparecimento de Eva; data não identificada",
+          "place": "Oficina de calçado sem nome",
+          "note": "Cena reconstituída a partir do novo manuscrito. A oficina, o domínio e a localização permanecem desconhecidos."
+        }
+      ],
+      "quotations": [
+        {
+          "text": "— Minha filha está morrendo — disse, finalmente.",
+          "context": "Azrakhel apresenta a Vespera sua versão do vínculo com Eva; o parentesco permanece em disputa."
+        },
+        {
+          "text": "— Faça o que ela pedir — disse.",
+          "context": "Na oficina, Azrakhel aceita que Eva escolha os próprios sapatos."
+        },
+        {
+          "text": "— Se a encontrar, darei qualquer coisa.",
+          "context": "Promessa feita a Vespera depois do jantar; não é uma descrição de poder ou contrato formal."
+        }
+      ],
+      "connections": [
+        {
+          "name": "Eva",
+          "detail": "Azrakhel a chama de filha e procura impedir seu desaparecimento. O reflexo de Vespera afirma que ela não é filha dele; a contradição permanece aberta."
+        },
+        {
+          "name": "Vespera",
+          "detail": "Primeiro alvo de sua tentativa de ataque; depois, anfitriã do jantar a que ele retorna para pedir desculpas. Ele lhe promete qualquer coisa caso Eva seja encontrada."
+        },
+        {
+          "name": "A mulher de vestido cinza",
+          "detail": "Pessoa não identificada que lhe promete o retorno de Eva se ele matar Vespera. Sua aparência é instável na lembrança de Azrakhel; nome e intenção final desconhecidos."
+        },
+        {
+          "name": "A avó de Azrakhel",
+          "detail": "Conhecida por Vespera, negociava enxofre e apreciava tecidos. Ofereceu a Vespera um tapete persa. Nome e ramo familiar não registrados."
+        },
+        {
+          "name": "Beltrão",
+          "detail": "Nome pelo qual Vespera recorda o avô de Azrakhel. Não há outros dados genealógicos."
+        },
+        {
+          "name": "A sapateira",
+          "detail": "Artesã sem nome que confeccionou os sapatos escolhidos por Eva. Azrakhel pagou o valor combinado; a oficina não foi localizada."
+        },
+        {
+          "name": "Majestade",
+          "detail": "Gato de Vespera diante do qual Azrakhel recua durante a primeira visita. A reação não é explicada."
+        }
+      ]
     }
   ],
   "mentions": [
@@ -153,12 +287,6 @@
       "classification": "Serafim",
       "status": "Menção em manuscrito; ficha própria ainda não aberta",
       "entry_id": "recuperado-sobre-a-primeira-vez-que-fui-expulsa-do-ceu-v2"
-    },
-    {
-      "name": "Azrakhel",
-      "classification": "Demônio · Devastador de Reinos",
-      "status": "Menção em manuscrito; ficha própria ainda não aberta",
-      "entry_id": "azrakhel-o-demonio-que-veio-me-matar-v1"
     },
     {
       "name": "Malpherion",
