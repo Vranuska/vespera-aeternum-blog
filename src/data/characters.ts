@@ -164,7 +164,7 @@ export const CHARACTERS: Character[] = [
     pattern: /azrakhel/i,
     presentation: [
       "Chegou com quase três metros, armadura de ossos, capa de sombra viva — e lama nas botas. Veio para matar Vespera; três horas depois voltou descalço, com um buquê de lírios brancos e um pedido formal de desculpas.",
-      "Por trás dos títulos havia um pai com medo: uma filha que o mundo inteiro estava esquecendo, e que só ele ainda lembrava.",
+      "Por trás dos títulos havia alguém com medo: uma menina que ele chama de filha está desaparecendo, embora o reflexo de Vespera conteste esse parentesco. Uma lembrança anterior mostra Azrakhel acompanhando Eva a uma oficina e cedendo espaço para que ela escolha os próprios sapatos.",
     ],
     confirmed: [
       { text: "Tentou matar Vespera porque uma mulher de vestido cinza lhe disse que assim a filha retornaria.", work: W.azrakhel },
@@ -172,7 +172,7 @@ export const CHARACTERS: Character[] = [
       { text: "Recordou, pelo nome inscrito num sapatinho, a filha Eva.", work: W.azrakhel },
       { text: "Vespera conheceu sua avó e seu avô, que se chamava Beltrão.", work: W.tapete },
     ],
-    traits: ["Entradas impressionantes", "Incendeia sobremesas sem querer", "Conhece histórias obscenas sobre anjos", "Despreza a música celestial"],
+    traits: ["Entradas impressionantes", "Aceita ceder espaço a Eva quando ela pede", "Conhece histórias obscenas sobre anjos", "Despreza a música celestial"],
     relations: [
       { slug: "eva", name: "Eva", text: "Chamada de sua filha — o reflexo afirma que não é." },
       { slug: "vespera", name: "Vespera", text: "De inimiga a anfitriã; ele lhe prometeu “qualquer coisa”." },
