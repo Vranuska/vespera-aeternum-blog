@@ -247,6 +247,7 @@ export const CHARACTERS: Character[] = [
       { text: "Vespera guardou seu sapato vermelho na escrivaninha.", work: W.espelho },
       { text: "Retornou adulta; ela e a filha voaram sobre o jardim.", work: W.sapato2 },
       { text: "Aos seis anos, atravessou o portão verde e visitou a Feira de São Joaquim, em Salvador; não informou o nome.", work: W.feira },
+      { text: "Uma nota ficcional da banca registra a compra de um caderno e um lápis sem anotar seu nome.", work: W.feiraNota },
     ],
     traits: ["Curiosidade sem medo", "Sabe que certos presentes não se exigem"],
     relations: [{ slug: "vespera", name: "Vespera", text: "Quem lhe deu asas — e quem chorou no segundo voo." }],
