@@ -31,6 +31,7 @@ export const COLLECTIONS = [
   "Fragmentos da Casa",
   "Ciclo das Inacabadas",
   "Arquivo das Eras",
+  "A primeira saída",
 ] as const;
 
 export const THEMES = [
@@ -156,4 +157,8 @@ export const WORK_META: Record<string, WorkMeta> = {
   "2026-11-03-a-balanca-de-dois-pratos": { genres: ["conto","ficção histórica","romance-mosaico"], collection: "Ciclo das Inacabadas", themes: ["livros de poesia","encadernação","memória material","trabalho","escolhas económicas","intertextualidade literária"], characters: [] },
   "2026-11-09-a-rua-que-cabia-na-margem": { genres: ["conto","romance-mosaico"], collection: "Ciclo das Inacabadas", themes: ["cartografia","testemunho","memória","ausência","justiça"], characters: ["vespera"] },
   "2026-11-15-o-endereco-no-verso": { genres: ["conto","romance-mosaico"], collection: "Ciclo das Inacabadas", themes: ["correspondência","autonomia","família","trabalho","distância"], characters: [] },
+
+  "2026-11-23-a-feira-nao-perguntou-meu-nome": { genres: ["conto", "ficção histórica", "romance-mosaico"], collection: "A primeira saída", themes: ["infância", "autonomia", "identidade", "memória e esquecimento"], characters: ["a-menina-do-sapato-vermelho", "vespera", "o-irmao"], series: { id: "primeira-saida", title: "A primeira saída", position: 1 }, author: "A menina do sapato vermelho" },
+  "2026-11-23-nota-da-banca-de-papelaria": { genres: ["fragmento", "ficção literária", "romance-mosaico"], collection: "A primeira saída", themes: ["documentos", "testemunho", "infância", "identidade", "memória material"], characters: ["a-menina-do-sapato-vermelho"], series: { id: "primeira-saida", title: "A primeira saída", position: 2 } },
+
 };

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-18",
+  "updated_at": "2026-11-23",
   "title": "Atlas dos Domínios",
   "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
   "map_image": {
@@ -487,6 +487,71 @@
         {
           "label": "Travel Hakodate — History",
           "url": "https://www.hakodate.travel/en/about/history/"
+        }
+      ]
+    },
+    {
+      "id": "jardim-das-coisas-esquecidas",
+      "name": "Jardim das Coisas Esquecidas",
+      "realm_id": "entre",
+      "status": "documentado",
+      "status_label": "Lugar descrito; posição interna esquemática no mapa do Entre",
+      "subregion": "O Entre · posição interna e limites do jardim não determinados",
+      "history": [
+        "Vespera mantém um jardim onde crescem flores que jamais existiram, árvores cujas raízes se alimentam de promessas não cumpridas e ervas daninhas feitas dos nomes de filhos que nunca nasceram. Os mortos insistem em chamá-lo de paraíso.",
+        "Uma menina de cerca de seis anos apareceu sob uma romãzeira negra segurando um pequeno sapato vermelho. Vespera lhe concedeu duas asas não permanentes por uma tarde; as flores abriram fora de estação.",
+        "A menina pediu um portão que não soubesse seu nome. Vespera e o irmão construíram-no sem magia, com dobradiças, pregos, madeira, fechadura de latão e tinta verde. Na primeira ocasião em que o abriu, a menina escolheu não atravessar.",
+        "Em 1996, a menina atravessou o portão e chegou à Feira de São Joaquim, em Salvador. A visita é um acontecimento ficcional; o manuscrito não identifica o caminho, a entrada da feira ou a banca.",
+        "Décadas depois, a menina voltou adulta ao jardim, acompanhada da filha. O dia e o ano dessa visita não foram estabelecidos."
+      ],
+      "laws": [
+        "O marcador entre:jardim ocupa uma posição simbólica no mapa do Entre. Não representa coordenadas, distância, escala ou uma cartografia completa do domínio.",
+        "O portão verde foi construído sem magia. O relato registra uma travessia específica; não estabelece uma regra geral para as portas do jardim.",
+        "A passagem até a Feira de São Joaquim não confirma portal estável, endereço de saída, destino permanente ou rota reproduzível.",
+        "A visita de 1996 e a nota da banca são ficcionais. As fontes históricas documentam o mercado real, não a presença da personagem."
+      ],
+      "inhabitants": [
+        "Vespera — mantém o jardim; sua natureza e responsabilidade no Entre são registradas separadamente na ficha do domínio.",
+        "A menina do sapato vermelho — mortal; recebeu duas asas temporárias, pediu o portão e atravessou-o em 1996. Voltou adulta décadas depois, com a filha.",
+        "O irmão de Vespera — ajudou a construir o portão; nome e natureza permanecem não revelados."
+      ],
+      "source_entry_ids": [
+        "2026-10-14-1142",
+        "2026-10-21-a-saida-que-nao-era-minha",
+        "2026-11-23-a-feira-nao-perguntou-meu-nome",
+        "2026-11-23-nota-da-banca-de-papelaria",
+        "recuperado-a-segunda-vida-do-sapato-vermelho"
+      ],
+      "connections": [
+        {
+          "label": "O sapato vermelho",
+          "route": "conto:2026-10-14-1142"
+        },
+        {
+          "label": "A saída que não era minha",
+          "route": "conto:2026-10-21-a-saida-que-nao-era-minha"
+        },
+        {
+          "label": "A feira não perguntou meu nome",
+          "route": "conto:2026-11-23-a-feira-nao-perguntou-meu-nome"
+        },
+        {
+          "label": "Nota da banca de papelaria",
+          "route": "conto:2026-11-23-nota-da-banca-de-papelaria"
+        },
+        {
+          "label": "A segunda vida do sapato vermelho",
+          "route": "conto:recuperado-a-segunda-vida-do-sapato-vermelho"
+        }
+      ],
+      "historical_sources": [
+        {
+          "label": "Governo da Bahia — história da Feira de São Joaquim e transferência após o incêndio de 1964",
+          "url": "https://www.ba.gov.br/turismo/noticia/2024-07/3705/segunda-etapa-da-requalificacao-da-feira-de-sao-joaquim-e-autorizada-pelo"
+        },
+        {
+          "label": "Correio 24 Horas — história da Feira de São Joaquim e registro fotográfico de 1995",
+          "url": "https://www.correio24horas.com.br/entre/feira-com-historia-comercio-em-sao-joaquim-comecou-com-pescadores-no-seculo-19-0520"
         }
       ]
     }
