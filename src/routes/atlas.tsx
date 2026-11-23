@@ -144,6 +144,17 @@ function PlacePanel({ place, near, title, onClose, onEnter, onPick }: { place: P
           </ul>
         </Section>
       ) : null}
+      {place.historicalSources?.length ? (
+        <Section t="Fontes históricas">
+          <ul className="space-y-2">
+            {place.historicalSources.map((source) => (
+              <li key={source.url}>
+                <a href={source.url} target="_blank" rel="noopener noreferrer" className="label-archive text-rose underline underline-offset-4 hover:text-parchment">{source.label}</a>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
       {near.length ? <Section t="Conexões no mapa"><div className="flex flex-wrap gap-2">{near.map((p) => <button key={p.id} onClick={() => onPick(p)} className="label-archive border border-border px-2 py-1 text-gold">{p.name}</button>)}</div></Section> : null}
       {place.secrets?.length ? <Section t="Segredos e rumores">{place.secrets.map((s) => <p key={s} className="italic text-rose">{s}</p>)}</Section> : null}
     </div>

@@ -42,6 +42,7 @@ describe("Índice editorial", () => {
       "1926",
       "1943",
       "1944",
+      "1996",
       "1997",
       OUTSIDE,
     ]);
@@ -79,6 +80,17 @@ describe("Índice editorial", () => {
     const arc = fallback.continuity_notes.secondary_arcs.find((item) => item.id === "azrakhel-e-eva");
     expect(arc?.editorial_sequence.map((item) => item.entry_id)).toEqual([story, document]);
     expect(arc?.seeded_in).toContain("azrakhel-o-demonio-que-veio-me-matar-v1");
+  });
+  it("mantém A primeira saída como arco secundário com cronologia e ordem próprias", () => {
+    const story = "2026-11-23-a-feira-nao-perguntou-meu-nome";
+    const document = "2026-11-23-nota-da-banca-de-papelaria";
+    expect(index.chapters.some((chapter) => [story, document].includes(chapter.entry_id))).toBe(false);
+    expect(index.chronology.find((entry) => entry.entry_id === story)?.time).toBe("1996");
+    expect(index.chronology.find((entry) => entry.entry_id === document)?.time).toBe("1996");
+    expect(index.unplaced.map((entry) => entry.entry_id)).not.toContain(story);
+    expect(index.unplaced.map((entry) => entry.entry_id)).not.toContain(document);
+    const arc = fallback.continuity_notes.secondary_arcs.find((item) => item.id === "menina-do-sapato-vermelho");
+    expect(arc?.editorial_sequence.map((item) => item.entry_id)).toEqual([story, document]);
   });
   it("ignora IDs ausentes em entries.json e os reporta", () => {
     const known = new Set([...allIds].filter((id) => id !== "2026-10-26-a-costura-invisivel"));

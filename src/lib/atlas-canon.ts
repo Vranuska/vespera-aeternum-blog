@@ -15,6 +15,7 @@ const CANONICAL_IDS: Record<string, string> = {
   "mortais:otaru": "otaru-porto-de-otaru",
   "mortais:hakodate": "hakodate-porto-de-hakodate",
   "mortais:oficina-calado": "oficina-augusto-calado",
+  "entre:jardim": "jardim-das-coisas-esquecidas",
 };
 
 /** Resolve uma referência canônica de lugar para o marcador navegável no mapa React. */
@@ -28,6 +29,7 @@ export function atlasPlaceLocation(canonicalId: string): { mapa: string; local: 
 type CanonPlace = {
   id: string; name: string; image?: string; image_alt?: string; image_caption?: string; status_label?: string; subregion?: string;
   history?: string[]; laws?: string[]; inhabitants?: string[]; source_entry_ids?: string[];
+  historical_sources?: { label: string; url: string }[];
   connections: { label: string; route: string }[];
 };
 
@@ -70,6 +72,7 @@ export function enrichAtlasPlace(mapId: string, place: Place): Place {
     ...optional("laws", mergeUnique(place.laws, source.laws)),
     ...optional("inhabitants", mergeUnique(place.inhabitants, source.inhabitants)),
     ...optional("works", mergeUnique(place.works, source.source_entry_ids)),
+    ...(source.historical_sources?.length ? { historicalSources: source.historical_sources } : {}),
     references: source.connections.map((connection) => ({
       label: connection.label,
       route: connection.route,

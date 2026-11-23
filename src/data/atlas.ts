@@ -29,6 +29,7 @@ export type Place = {
   status: Status;
   description: string;
   image?: { src: string; alt: string; caption?: string };
+  historicalSources?: { label: string; url: string }[];
   history?: string[];
   laws?: string[];
   inhabitants?: string[];
@@ -91,8 +92,8 @@ export const MAPS: Record<string, AtlasMap> = {
         secrets: ["Há uma última porta que, se aberta, guarda algo que a própria Vespera não está preparada para reconhecer."] },
       { id: "jardim", name: "O jardim das coisas esquecidas", kind: "jardim", x: 720, y: 220, status: "confirmado",
         description: "Flores que jamais existiram, árvores alimentadas por promessas não cumpridas e ervas daninhas feitas dos nomes de filhos que nunca nasceram. Os mortos o chamam de paraíso.",
-        history: ["Uma menina voou ali por uma tarde inteira; décadas depois voltou com a filha."],
-        characters: ["a-menina-do-sapato-vermelho"], works: ["2026-10-14-1142", "recuperado-a-segunda-vida-do-sapato-vermelho"],
+        history: ["Uma menina voou ali por uma tarde inteira; décadas depois voltou com a filha.", "Em 1996, a menina atravessou o portão verde e visitou a Feira de São Joaquim; o caminho e a banca não foram identificados."],
+        characters: ["a-menina-do-sapato-vermelho"], works: ["2026-10-14-1142", "2026-10-21-a-saida-que-nao-era-minha", "2026-11-23-a-feira-nao-perguntou-meu-nome", "2026-11-23-nota-da-banca-de-papelaria", "recuperado-a-segunda-vida-do-sapato-vermelho"],
         secrets: ["Numa caixa de madeira, dois sapatos: um vermelho, outro bordado de estrelas."] },
       { id: "primeira-casa", name: "A primeira casa", kind: "casa", x: 250, y: 500, status: "provisório",
         description: "Portas de marfim, janelas de cristal, rosas para perfumar um cemitério. Os textos não dizem se fica no Entre.",
