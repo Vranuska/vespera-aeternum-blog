@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-25",
   "title": "Atlas dos Domínios",
   "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
   "map_image": {
@@ -552,6 +552,52 @@
         {
           "label": "Correio 24 Horas — história da Feira de São Joaquim e registro fotográfico de 1995",
           "url": "https://www.correio24horas.com.br/entre/feira-com-historia-comercio-em-sao-joaquim-comecou-com-pescadores-no-seculo-19-0520"
+        }
+      ]
+    },
+    {
+      "id": "cidade-velha-de-lamu",
+      "name": "Cidade Velha de Lamu",
+      "realm_id": "terra",
+      "status": "documentado",
+      "status_label": "Lugar histórico documentado · episódio ficcional sem endereço identificado",
+      "subregion": "Ilha de Lamu, Quênia · oficina e sala de leitura sem endereço identificado",
+      "history": [
+        "A Cidade Velha de Lamu fica na Ilha de Lamu, junto à costa do Quênia, cerca de 350 km ao norte de Mombasa. A UNESCO a descreve como o mais antigo e mais bem preservado assentamento suaíli da África Oriental, habitado continuamente por mais de 700 anos.",
+        "A forma urbana tradicional inclui ruas estreitas e sinuosas, pátios interiores, varandas e portas de madeira entalhada. As construções tradicionais usam pedra coralina e madeira de mangue.",
+        "A Cidade Velha foi inscrita na Lista do Patrimônio Mundial da UNESCO em 2001."
+      ],
+      "laws": [
+        "O marcador no painel do Mundo dos Mortais é esquemático. Não representa coordenadas geográficas, distância, escala cartográfica ou rota.",
+        "A oficina de Salim e a sala de leitura de Hawa são ficcionais. Nenhuma rua, número, casa ou endereço foi identificado.",
+        "Os onze minutos são uma convenção humana de funcionamento da sala. Não constituem uma regra sobrenatural, alteração da cronologia, portal ou manipulação do tempo.",
+        "A presença de Vespera é relatada por Amina. O ciclo não estabelece intervenção sobrenatural nem amplia as regras do Entre."
+      ],
+      "inhabitants": [
+        "Amina — reparadora de relógios; no episódio ficcional de 1998, conclui sua primeira reparação assinada em nome próprio.",
+        "Salim — relojoeiro e supervisor de Amina no episódio ficcional; oficina e biografia não identificadas além do manuscrito.",
+        "Hawa — mantém uma pequena sala de leitura doméstica ficcional; seu endereço e história anterior não são conhecidos.",
+        "Zahra — trabalha com costura e frequenta a sala de Hawa no episódio; não há biografia adicional estabelecida.",
+        "Vespera — visitante segundo o testemunho de Amina; nenhuma intervenção no relógio é atribuída a ela."
+      ],
+      "source_entry_ids": [
+        "2026-11-25-a-sala-dos-onze-minutos",
+        "2026-11-25-caderno-de-marcha"
+      ],
+      "connections": [
+        {
+          "label": "A sala dos onze minutos",
+          "route": "conto:2026-11-25-a-sala-dos-onze-minutos"
+        },
+        {
+          "label": "Caderno de marcha da oficina",
+          "route": "conto:2026-11-25-caderno-de-marcha"
+        }
+      ],
+      "historical_sources": [
+        {
+          "label": "UNESCO World Heritage Centre — Lamu Old Town",
+          "url": "https://whc.unesco.org/en/list/1055/"
         }
       ]
     }
