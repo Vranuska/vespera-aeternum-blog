@@ -874,7 +874,7 @@
     "data_file": "entries.json",
     "visual_page": "index.html#diarios",
     "archive_copy": "arquivo/ciclo-das-inacabadas/a-balanca-de-dois-pratos-v1.md",
-    "note": "Os 19 capítulos do Volume I integram o leitor visual por meio de entries.json e da ordem editorial/cronologia. A página principal carrega entries.json dinamicamente; a constelação usa universe_chronology como mapa independente e preserva a leitura convencional.",
+    "note": "Os 19 capítulos do Volume I integram o leitor visual por meio de entries.json e da ordem editorial/cronologia. A página principal carrega entries.json dinamicamente; a constelação usa universe_chronology como mapa independente e preserva a leitura convencional. A rotina Pages ainda dispara uma execução Jekyll dinâmica após commits no repositório. O workflow React espera o término dessa execução antes de publicar seu artefato; a mudança da origem Pages para GitHub Actions permanece pendente de configuração administrativa.",
     "portal": {
       "route": "index.html#constelacao",
       "source": "editorial/indice-romance-mosaico.json → universe_chronology",
