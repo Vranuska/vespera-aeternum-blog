@@ -31,7 +31,7 @@ describe("atlasPlaceLocation", () => {
     const place = enrichAtlasPlace("mortais", marker);
     expect(place.works).toEqual(["2026-11-25-a-sala-dos-onze-minutos", "2026-11-25-caderno-de-marcha"]);
     expect(place.historicalSources?.some((source) => source.url === "https://whc.unesco.org/en/list/1055/")).toBe(true);
-    expect(place.laws?.some((law) => law.includes("não representa coordenadas geográficas"))).toBe(true);
+    expect(place.laws?.some((law) => /não representa coordenadas geográficas/i.test(law))).toBe(true);
     expect(atlasPlaceLocation("cidade-velha-de-lamu")).toEqual({ mapa: "mortais", local: "lamu" });
   });
 
