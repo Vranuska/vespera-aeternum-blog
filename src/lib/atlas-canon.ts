@@ -14,6 +14,7 @@ const CANONICAL_IDS: Record<string, string> = {
   "mortais:pasaje-calandria": "pasaje-de-la-calandria",
   "mortais:otaru": "otaru-porto-de-otaru",
   "mortais:hakodate": "hakodate-porto-de-hakodate",
+  "mortais:lamu": "cidade-velha-de-lamu",
   "mortais:oficina-calado": "oficina-augusto-calado",
   "entre:jardim": "jardim-das-coisas-esquecidas",
 };
