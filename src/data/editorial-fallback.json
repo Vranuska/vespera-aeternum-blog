@@ -887,11 +887,13 @@
         "1926",
         "1943",
         "1944",
+        "1996",
         "1997",
+        "1998",
         "fora"
       ],
       "behavior": "Pontos interativos por era; inscrições reveladas por cursor ou foco; páginas de cada ano agrupadas por mês; acesso alternativo por botões para toque e teclado. O índice tradicional de todos os diários permanece disponível.",
-      "status": "Integrado no leitor estático e React; a cronologia do Arquivo das Eras inclui os registros datados de 1921–1922, enquanto o Volume I conserva sua ordem editorial própria."
+      "status": "A Constelação reúne as eras documentadas de 1886 a 1998; os ciclos independentes de 1996 e 1998 permanecem fora dos 19 capítulos do Volume I."
     },
     "pending_sections": [],
     "implemented_sections": [
@@ -956,7 +958,8 @@
         "A seção antes chamada «Fora da cronologia» passa a «Sem posição cronológica»; obras com data conhecida, como A maré, entram na era correspondente sem receber capítulo do Volume I.",
         "Caderno de Eva permanece como arco secundário, fora dos 19 capítulos do Volume I e sem data de universo estabelecida; sua sequência editorial separa a memória narrativa da folha de prova.",
         "A primeira saída: A feira não perguntou meu nome → Nota da banca de papelaria; sequência editorial independente do Volume I, com ambas as peças situadas em 1996 na cronologia.",
-        "Intervalos de Lamu: A sala dos onze minutos → Caderno de marcha da oficina; sequência independente do Volume I, em 1998, ligada ao Atlas da Cidade Velha de Lamu."
+        "Intervalos de Lamu: A sala dos onze minutos → Caderno de marcha da oficina; sequência independente do Volume I, em 1998, ligada ao Atlas da Cidade Velha de Lamu.",
+        "A era de 1998 recebe Intervalos de Lamu sem alterar a ordem editorial do Volume I."
       ],
       "reading_order_chapters": 19,
       "chronology_items": 26,
