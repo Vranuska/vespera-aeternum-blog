@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-23",
+  "updated_at": "2026-11-25",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -346,6 +346,21 @@
       "time": "1997-09-16",
       "label": "16 de setembro de 1997 · Micaela registra a existência parcial do Pasaje de la Calandria, em Buenos Aires",
       "precision": "day"
+    },
+    {
+      "entry_id": "2026-11-25-a-sala-dos-onze-minutos",
+      "title": "A sala dos onze minutos",
+      "time": "1998",
+      "label": "1998 · Amina repara o relógio da sala de leitura de Hawa e mantém o intervalo deliberado de onze minutos; primeira reparação assinada em seu nome",
+      "precision": "year"
+    },
+    {
+      "entry_id": "2026-11-25-caderno-de-marcha",
+      "title": "Caderno de marcha da oficina",
+      "time": "1998",
+      "label": "1998 · caderno de oficina registra a regulagem solicitada por Hawa, a supervisão de Salim e a assinatura de Amina",
+      "precision": "year",
+      "after": "2026-11-25-a-sala-dos-onze-minutos"
     }
   ],
   "unplaced_archive": [
@@ -571,7 +586,8 @@
       "chaves, gavetas e custódia: a diferença entre guardar e esconder",
       "quartos temporários, camas imóveis e endereços que permitem receber uma carta sem prometer permanência",
       "estrelas prateadas bordadas no lado de dentro; objetos escolhidos por quem os usa, não para serem vistos por terceiros",
-      "portões construídos sem magia, anonimato e o direito de atravessar sem ser acompanhado"
+      "portões construídos sem magia, anonimato e o direito de atravessar sem ser acompanhado",
+      "relógios ajustados por convenção humana, intervalos concedidos e a diferença entre a hora do mostrador e o horário de uma sala"
     ],
     "open_threads": [
       {
@@ -830,6 +846,27 @@
             "reason": "Nota ficcional da banca oferece uma perspectiva externa e delimita o que o registro permite afirmar."
           }
         ]
+      },
+      {
+        "id": "intervalos-de-lamu",
+        "seeded_in": [
+          "2026-11-25-a-sala-dos-onze-minutos",
+          "2026-11-25-caderno-de-marcha"
+        ],
+        "note": "Em 1998, Amina conclui sua primeira reparação assinada em nome próprio na oficina de Salim. O relógio da sala de leitura de Hawa permanece onze minutos atrás por convenção explícita, não por defeito de marcha ou intervenção sobrenatural. Uma visitante chamada Vespera é registrada apenas pelo testemunho de Amina.",
+        "editorial_sequence": [
+          {
+            "position": 1,
+            "entry_id": "2026-11-25-a-sala-dos-onze-minutos",
+            "reason": "A narrativa de Amina mostra o pedido de Hawa, a instalação do relógio e a consequência profissional da primeira reparação assinada."
+          },
+          {
+            "position": 2,
+            "entry_id": "2026-11-25-caderno-de-marcha",
+            "reason": "O caderno de oficina acrescenta o registro técnico, a instrução de regulagem e os limites da anotação sobre a visitante."
+          }
+        ],
+        "planned_use": "Retomar Amina ou a sala apenas se surgir uma escolha profissional ou comunitária concreta. Não transformar os onze minutos em lei sobrenatural, não fixar endereço e não presumir que Vespera interveio no mecanismo."
       }
     ]
   },
@@ -903,7 +940,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 23/11/2026, o portal mantém a composição editorial registrada na branch main: índice lateral, monograma, manuscrito em destaque, imagem secundária emoldurada, lista de manuscritos e Constelação depois da leitura. O arquivo reúne 24 registros cronológicos, de 1886 a 1997, 33 obras sem posição cronológica e 19 capítulos aprovados. A primeira saída é uma sequência independente, fora dos 19 capítulos, mas situada em 1996 na cronologia.",
+      "status": "Em 25/11/2026, o portal conserva a composição editorial aprovada: índice lateral, monograma, manuscrito em destaque, imagem secundária emoldurada, lista de manuscritos e Constelação depois da leitura. O arquivo reúne 26 registros cronológicos, de 1886 a 1998, 33 obras sem posição cronológica e 19 capítulos aprovados. A primeira saída (1996) e Intervalos de Lamu (1998) são sequências independentes, fora do Volume I, preservadas na cronologia.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
@@ -918,16 +955,17 @@
         "Caderno das Travessias: A maré não assina recibos → O primeiro quarto em terra → Carta de Nao a Sōta; a ordem editorial põe a narrativa antes do documento, enquanto a cronologia conserva 5 e 12 de janeiro de 1922.",
         "A seção antes chamada «Fora da cronologia» passa a «Sem posição cronológica»; obras com data conhecida, como A maré, entram na era correspondente sem receber capítulo do Volume I.",
         "Caderno de Eva permanece como arco secundário, fora dos 19 capítulos do Volume I e sem data de universo estabelecida; sua sequência editorial separa a memória narrativa da folha de prova.",
-        "A primeira saída: A feira não perguntou meu nome → Nota da banca de papelaria; sequência editorial independente do Volume I, com ambas as peças situadas em 1996 na cronologia."
+        "A primeira saída: A feira não perguntou meu nome → Nota da banca de papelaria; sequência editorial independente do Volume I, com ambas as peças situadas em 1996 na cronologia.",
+        "Intervalos de Lamu: A sala dos onze minutos → Caderno de marcha da oficina; sequência independente do Volume I, em 1998, ligada ao Atlas da Cidade Velha de Lamu."
       ],
       "reading_order_chapters": 19,
-      "chronology_items": 24,
+      "chronology_items": 26,
       "unplaced_items": 33
     },
     "react_atlas": {
       "route": "src/routes/atlas.tsx",
       "source": "atlas.json → src/data/atlas-fallback.json → src/lib/atlas-canon.ts + src/data/atlas.ts → src/routes/atlas.tsx",
-      "status": "O painel React integra 12 lugares canônicos. O Jardim das Coisas Esquecidas foi acrescentado ao Atlas e ligado ao marcador já existente entre:jardim; a posição permanece simbólica e nenhuma coordenada nova foi criada. A visita à Feira de São Joaquim é ficcional e não estabelece portal permanente.",
+      "status": "O painel React integra 13 lugares canônicos. A Cidade Velha de Lamu foi acrescentada como lugar histórico documentado, com marcador esquemático no Mundo dos Mortais; a oficina e a sala de leitura do ciclo permanecem fictícias e sem endereço. Nenhuma coordenada geográfica ou rota foi criada.",
       "place_id": "pasaje-calandria",
       "linked_entry": "2026-11-09-a-rua-que-cabia-na-margem",
       "cartographic_status": "provisório; a porta do fundo e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação",
@@ -936,7 +974,8 @@
         "Prancha do Pasaje de la Calandria em assets/atlas/pasaje-calandria.svg: reconstituição ilustrativa do corredor e do pátio a partir do manuscrito; não representa o que existe além da porta.",
         "Oficina de Augusto Calado em Alcântara integrada como décimo lugar canônico, com prancha reconstituída, limites de localização e ligações aos dois manuscritos de Rui.",
         "Porto de Hakodate em assets/atlas/hakodate-porto-1922.svg: reconstituição vetorial de uma zona portuária, sem identificar cais ou edifício; fontes oficiais registram a ligação ferroviária por ferry com Aomori desde 1908 e a expansão da pesca do mar do norte na década de 1920.",
-        "Jardim das Coisas Esquecidas integrado como décimo segundo lugar canônico, mapeado ao marcador preexistente entre:jardim; histórico, limites, habitantes, obras e fontes históricas são exibidos sem inventar coordenadas."
+        "Jardim das Coisas Esquecidas integrado como décimo segundo lugar canônico, mapeado ao marcador preexistente entre:jardim; histórico, limites, habitantes, obras e fontes históricas são exibidos sem inventar coordenadas.",
+        "Cidade Velha de Lamu integrada como décimo terceiro lugar canônico, ligada aos dois manuscritos de Intervalos de Lamu; a posição no painel é esquemática e não corresponde a coordenadas geográficas."
       ],
       "place_ids": [
         "casa-de-pedra-do-lago",
@@ -950,7 +989,8 @@
         "otaru-porto-de-otaru",
         "oficina-augusto-calado",
         "hakodate-porto-de-hakodate",
-        "jardim-das-coisas-esquecidas"
+        "jardim-das-coisas-esquecidas",
+        "cidade-velha-de-lamu"
       ],
       "additional_place_id": "jardim-das-coisas-esquecidas",
       "additional_linked_entries": [
@@ -959,10 +999,16 @@
         "2026-10-21-a-saida-que-nao-era-minha",
         "2026-10-14-1142"
       ],
-      "additional_cartographic_status": "O marcador entre:jardim já existia e conserva sua posição esquemática. O registro canônico documenta o jardim e uma travessia ficcional de 1996; não mapeia o caminho até Salvador nem transforma o portão em portal estável."
+      "additional_cartographic_status": "O marcador entre:jardim já existia e conserva sua posição esquemática. O registro canônico documenta o jardim e uma travessia ficcional de 1996; não mapeia o caminho até Salvador nem transforma o portão em portal estável.",
+      "latest_place_id": "cidade-velha-de-lamu",
+      "latest_linked_entries": [
+        "2026-11-25-a-sala-dos-onze-minutos",
+        "2026-11-25-caderno-de-marcha"
+      ],
+      "latest_cartographic_status": "Lugar histórico documentado; o episódio de 1998 é ficcional, a oficina e a sala não têm endereço identificado e o marcador não representa latitude, longitude, distância ou rota."
     },
     "reading_order_chapters": 19,
-    "chronology_items": 24,
+    "chronology_items": 26,
     "unplaced_items": 33
   }
 }
