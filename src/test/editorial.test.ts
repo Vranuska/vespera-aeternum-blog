@@ -44,6 +44,7 @@ describe("Índice editorial", () => {
       "1944",
       "1996",
       "1997",
+      "1998",
       OUTSIDE,
     ]);
     const e1943 = eras.find((e) => e.key === "1943")!;
