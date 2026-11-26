@@ -41,6 +41,9 @@ const W = {
   sapato2: "recuperado-a-segunda-vida-do-sapato-vermelho",
   feira: "2026-11-23-a-feira-nao-perguntou-meu-nome",
   feiraNota: "2026-11-23-nota-da-banca-de-papelaria",
+  calandria: "2026-11-09-a-rua-que-cabia-na-margem",
+  elenaCall: "2026-11-26-depois-do-terceiro-toque",
+  elenaMessage: "2026-11-26-transcricao-da-primeira-mensagem",
   desculpas: "recuperado-o-espelho-pediu-desculpas",
   escolha: "recuperado-a-escolha-de-contar-minha-historia",
   tapete: "recuperado-o-tapete-e-a-avo-de-azrakhel",
@@ -448,6 +451,39 @@ export const CHARACTERS: Character[] = [
     mysteries: [],
     quotes: [{ text: "— Uma colher, meu filho. O senhor é que parece confuso.", work: W.colher }],
   },
-];
+  {
+    slug: "elena-roldan",
+    name: "Elena Roldán",
+    epithet: "A antiga telefonista",
+    nature: "não declarada",
+    pattern: /Elena Rold[aá]n/i,
+    presentation: ["Trabalhou trinta e um anos como telefonista e mora junto ao Pasaje de la Calandria, em Barracas. O arquivo não estabelece sua idade, família ou endereço completo."],
+    confirmed: [
+      { text: "Trabalhou como telefonista durante trinta e um anos.", work: W.calandria },
+      { text: "Em 4 de outubro de 1997, instala um contestador com a ajuda de Nélida e aceita o convite para um almoço com antigas colegas.", work: W.elenaCall },
+    ],
+    traits: [],
+    relations: [{ slug: "nelida", name: "Nélida", text: "Antiga colega do serviço telefônico; visita Elena e a convida para um almoço." }],
+    interpretations: [],
+    mysteries: ["Idade, família, nome de outras colegas e trajetória posterior não estabelecidos."],
+    quotes: [{ text: "— Amanhã. Às duas. Eu vou.", work: W.elenaCall }],
+  },
+  {
+    slug: "nelida",
+    name: "Nélida",
+    epithet: "A antiga colega de turno",
+    nature: "não declarada",
+    pattern: /\bNélida\b/i,
+    presentation: ["Antiga colega de Elena Roldán no serviço telefônico. Em 4 de outubro de 1997, ajuda a instalar um contestador e deixa uma mensagem convidando Elena para um almoço. O arquivo não registra sobrenome, idade, residência ou história posterior."],
+    confirmed: [
+      { text: "Deixou uma mensagem gravada no contestador de Elena, convidando-a para almoçar com outras três antigas colegas.", work: W.elenaMessage },
+    ],
+    traits: [],
+    relations: [{ slug: "elena-roldan", name: "Elena Roldán", text: "Antiga colega do serviço telefônico; é quem recebe a visita e o convite." }],
+    interpretations: [],
+    mysteries: ["Sobrenome, idade, endereço, identidade das outras colegas e continuidade da relação não estabelecidos."],
+    quotes: [{ text: "Não precisa levar nada. Se não quiser, me avise. Mas eu gostaria que fosse.", work: W.elenaMessage }],
+  },
+]; 
 
 export const characterBySlug = (s: string) => CHARACTERS.find((c) => c.slug === s);

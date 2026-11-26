@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "title": "Atlas dos Domínios",
   "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
   "map_image": {
@@ -337,26 +337,39 @@
       "history": [
         "O Pasaje de la Calandria aparece em plantas de 1934, 1948 e 1956, desaparecendo dos levantamentos posteriores.",
         "Micaela Funes confirmou, com o testemunho de Elena Roldán, a existência de um corredor interno que preserva parte do antigo percurso. A passagem perdeu o uso público quando um dos terrenos foi incorporado a um depósito.",
-        "Uma porta no fundo do pátio permanece fechada. Micaela não confirmou o que existe além dela; Vespera foi vista junto à entrada, sem revelar a natureza do espaço."
+        "Uma porta no fundo do pátio permanece fechada. Micaela não confirmou o que existe além dela; Vespera foi vista junto à entrada, sem revelar a natureza do espaço.",
+        "Em 4 de outubro de 1997, Elena recebe em casa Nélida, antiga colega do serviço telefônico. As duas instalam um contestador automático de segunda mão; Nélida deixa uma mensagem convidando Elena para almoçar no dia seguinte com outras três antigas colegas. Elena aceita por telefone. O café é lembrado apenas como lugar de encontro depois do turno; nome e endereço não são registrados."
       ],
       "laws": [
         "O corredor físico e seu uso histórico foram testemunhados; o traçado completo não está confirmado.",
         "A porta do fundo deve permanecer fechada até que outro manuscrito estabeleça as condições de acesso.",
-        "Não classificar o espaço além da porta como Umbra, Sonhar ou Entre por inferência."
+        "Não classificar o espaço além da porta como Umbra, Sonhar ou Entre por inferência.",
+        "O contestador, a fita e o convite são elementos domésticos. Não oferecem evidência sobre a porta do fundo, a estrela da planta de 1948 ou qualquer ligação com outro plano."
       ],
       "inhabitants": [
         "Elena Roldán, antiga telefonista e moradora junto ao corredor.",
         "Micaela Funes, cartógrafa que registrou o traçado parcial.",
-        "Vespera, vista junto à porta do fundo."
+        "Vespera, vista junto à porta do fundo.",
+        "Nélida — antiga colega de Elena; visita a residência em 4 de outubro de 1997. Sobrenome e residência não documentados."
       ],
       "connections": [
         {
           "label": "A rua que cabia na margem",
           "route": "conto:2026-11-09-a-rua-que-cabia-na-margem"
+        },
+        {
+          "label": "Depois do terceiro toque",
+          "route": "conto:2026-11-26-depois-do-terceiro-toque"
+        },
+        {
+          "label": "Transcrição da primeira mensagem guardada",
+          "route": "conto:2026-11-26-transcricao-da-primeira-mensagem"
         }
       ],
       "source_entry_ids": [
-        "2026-11-09-a-rua-que-cabia-na-margem"
+        "2026-11-09-a-rua-que-cabia-na-margem",
+        "2026-11-26-depois-do-terceiro-toque",
+        "2026-11-26-transcricao-da-primeira-mensagem"
       ],
       "image": "assets/atlas/pasaje-calandria.svg",
       "image_alt": "Reconstituição ilustrativa do corredor de entrada pelo número 48, do pátio com árvore e da porta baixa que permanece fechada ao fundo.",

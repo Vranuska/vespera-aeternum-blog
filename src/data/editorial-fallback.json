@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-25",
+  "updated_at": "2026-11-26",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -348,6 +348,21 @@
       "precision": "day"
     },
     {
+      "entry_id": "2026-11-26-depois-do-terceiro-toque",
+      "title": "Depois do terceiro toque",
+      "time": "1997-10-04",
+      "label": "4 de outubro de 1997 · Elena recebe a visita de Nélida, antiga colega do serviço telefônico, instala um contestador e aceita o convite para um almoço em Barracas",
+      "precision": "day"
+    },
+    {
+      "entry_id": "2026-11-26-transcricao-da-primeira-mensagem",
+      "title": "Transcrição da primeira mensagem guardada",
+      "time": "1997-10-04",
+      "label": "4 de outubro de 1997 · transcrição da mensagem que Nélida deixou no contestador de Elena",
+      "precision": "day",
+      "after": "2026-11-26-depois-do-terceiro-toque"
+    },
+    {
       "entry_id": "2026-11-25-a-sala-dos-onze-minutos",
       "title": "A sala dos onze minutos",
       "time": "1998",
@@ -677,7 +692,7 @@
         "seeded_in": [
           "2026-11-09-a-rua-que-cabia-na-margem"
         ],
-        "note": "O Pasaje de la Calandria, em Barracas, Buenos Aires, aparece em plantas de 1934, 1948 e 1956. Micaela Funes confirma parte do corredor com Elena Roldán; a porta do fundo permanece fechada e o prolongamento não foi verificado. Vespera aparece junto à porta. Não classificar o espaço como Umbra ou Sonhar sem novo manuscrito que estabeleça essa relação.",
+        "note": "O Pasaje de la Calandria, em Barracas, Buenos Aires, aparece em plantas de 1934, 1948 e 1956. Micaela Funes confirma parte do corredor com Elena Roldán; a porta do fundo permanece fechada e o prolongamento não foi verificado. Vespera aparece junto à porta. Não classificar o espaço como Umbra ou Sonhar sem novo manuscrito que estabeleça essa relação. Em 4 de outubro de 1997, Elena continua na residência e recebe a visita de Nélida, antiga colega; a mensagem gravada e o convite para almoço ampliam sua vida social, sem fornecer qualquer evidência sobre a porta, a estrela ou o prolongamento da passagem.",
         "reveal_plan": "Retomar Micaela, Elena ou outro visitante em perspectiva própria; desenvolver a fronteira lentamente, sem transformar a porta num atalho explicativo nem cartografar o outro lado antes de haver evidência."
       },
       {
@@ -762,8 +777,8 @@
         "seeded_in": [
           "2026-11-09-a-rua-que-cabia-na-margem"
         ],
-        "note": "Micaela Funes trabalha no arquivo cartográfico de Barracas. Elena Roldán, antiga telefonista, vive junto ao Pasaje de la Calandria e conserva a memória do uso da passagem. A relação entre ambas começa com a verificação de um traçado antigo; a confiança ainda é recente.",
-        "planned_use": "Uma futura aparição deve partir de uma necessidade própria de Micaela ou Elena, não apenas da vontade de reabrir a porta."
+        "note": "Micaela Funes trabalha no arquivo cartográfico de Barracas. Elena Roldán, antiga telefonista, vive junto ao Pasaje de la Calandria e conserva a memória do uso da passagem. A relação entre ambas começa com a verificação de um traçado antigo; a confiança ainda é recente. Em 4 de outubro de 1997, a casa de Elena recebe Nélida, antiga colega do serviço telefônico; a cópia do mapa deixada por Micaela continua guardada na residência. A nova sequência não altera a custódia da chave nem o estado da porta.",
+        "planned_use": "Retomar a vida profissional e social das duas mulheres apenas quando houver consequência concreta. A sequência de Elena com Nélida não autoriza abrir a porta, explicar a estrela ou atribuir ao mapa um uso sobrenatural."
       },
       {
         "id": "registros-na-margem",
@@ -867,6 +882,28 @@
           }
         ],
         "planned_use": "Retomar Amina ou a sala apenas se surgir uma escolha profissional ou comunitária concreta. Não transformar os onze minutos em lei sobrenatural, não fixar endereço e não presumir que Vespera interveio no mecanismo."
+      },
+      {
+        "id": "elena-nelida",
+        "seeded_in": [
+          "2026-11-09-a-rua-que-cabia-na-margem",
+          "2026-11-26-depois-do-terceiro-toque",
+          "2026-11-26-transcricao-da-primeira-mensagem"
+        ],
+        "note": "Elena Roldán trabalhou trinta e um anos como telefonista e mora junto ao Pasaje de la Calandria. Em 4 de outubro de 1997, Nélida, antiga colega sem sobrenome ou biografia estabelecidos, visita a residência e ajuda a instalar um contestador de segunda mão. Uma mensagem gravada convida Elena para um almoço no dia seguinte, às duas, no café onde paravam depois do turno; Nélida diz ter falado com outras três colegas. Elena aceita por telefone. O café, as outras mulheres e o que aconteceu depois não são identificados.",
+        "editorial_sequence": [
+          {
+            "position": 1,
+            "entry_id": "2026-11-26-depois-do-terceiro-toque",
+            "reason": "A narrativa acompanha Elena para além da porta e dá consequência à sua vida profissional, social e doméstica."
+          },
+          {
+            "position": 2,
+            "entry_id": "2026-11-26-transcricao-da-primeira-mensagem",
+            "reason": "A transcrição preserva a voz de Nélida e delimita o conteúdo e os limites da prova."
+          }
+        ],
+        "planned_use": "Uma continuação deve nascer do almoço ou de uma necessidade própria de Elena e Nélida. Não presumir que o almoço ocorreu, não inventar os nomes das outras colegas ou o café e não transformar a fita ou o contestador em objeto sobrenatural. A porta do Pasaje continua fechada."
       }
     ]
   },
@@ -942,7 +979,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 25/11/2026, o portal conserva a composição editorial aprovada: índice lateral, monograma, manuscrito em destaque, imagem secundária emoldurada, lista de manuscritos e Constelação depois da leitura. O arquivo reúne 26 registros cronológicos, de 1886 a 1998, 33 obras sem posição cronológica e 19 capítulos aprovados. A primeira saída (1996) e Intervalos de Lamu (1998) são sequências independentes, fora do Volume I, preservadas na cronologia.",
+      "status": "Em 26/11/2026, o portal mantém a composição editorial aprovada. O arquivo reúne 28 registros cronológicos, de 1886 a 1998, 33 obras sem posição cronológica e 19 capítulos aprovados. Vozes de Barracas (1997) é uma sequência lateral do fio Micaela–Elena, fora do Volume I; a ordem editorial continua separada da cronologia.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
@@ -959,7 +996,8 @@
         "Caderno de Eva permanece como arco secundário, fora dos 19 capítulos do Volume I e sem data de universo estabelecida; sua sequência editorial separa a memória narrativa da folha de prova.",
         "A primeira saída: A feira não perguntou meu nome → Nota da banca de papelaria; sequência editorial independente do Volume I, com ambas as peças situadas em 1996 na cronologia.",
         "Intervalos de Lamu: A sala dos onze minutos → Caderno de marcha da oficina; sequência independente do Volume I, em 1998, ligada ao Atlas da Cidade Velha de Lamu.",
-        "A era de 1998 recebe Intervalos de Lamu sem alterar a ordem editorial do Volume I."
+        "A era de 1998 recebe Intervalos de Lamu sem alterar a ordem editorial do Volume I.",
+        "Vozes de Barracas: Depois do terceiro toque → Transcrição da primeira mensagem guardada; sequência lateral de Elena Roldán e Nélida em 4 de outubro de 1997, ligada a A rua que cabia na margem e fora dos 19 capítulos do Volume I."
       ],
       "reading_order_chapters": 19,
       "chronology_items": 26,
@@ -968,7 +1006,7 @@
     "react_atlas": {
       "route": "src/routes/atlas.tsx",
       "source": "atlas.json → src/data/atlas-fallback.json → src/lib/atlas-canon.ts + src/data/atlas.ts → src/routes/atlas.tsx",
-      "status": "O painel React integra 13 lugares canônicos. A Cidade Velha de Lamu foi acrescentada como lugar histórico documentado, com marcador esquemático no Mundo dos Mortais; a oficina e a sala de leitura do ciclo permanecem fictícias e sem endereço. Nenhuma coordenada geográfica ou rota foi criada.",
+      "status": "O Atlas React integra 13 lugares canônicos. A ficha do Pasaje de la Calandria foi enriquecida com o episódio doméstico de Elena em 4 de outubro de 1997 e com a visita de Nélida; o lugar, o marcador esquemático, a porta fechada e a ausência de coordenadas permanecem inalterados.",
       "place_id": "pasaje-calandria",
       "linked_entry": "2026-11-09-a-rua-que-cabia-na-margem",
       "cartographic_status": "provisório; a porta do fundo e qualquer ligação com Umbra ou Sonhar permanecem sem confirmação",
@@ -978,7 +1016,8 @@
         "Oficina de Augusto Calado em Alcântara integrada como décimo lugar canônico, com prancha reconstituída, limites de localização e ligações aos dois manuscritos de Rui.",
         "Porto de Hakodate em assets/atlas/hakodate-porto-1922.svg: reconstituição vetorial de uma zona portuária, sem identificar cais ou edifício; fontes oficiais registram a ligação ferroviária por ferry com Aomori desde 1908 e a expansão da pesca do mar do norte na década de 1920.",
         "Jardim das Coisas Esquecidas integrado como décimo segundo lugar canônico, mapeado ao marcador preexistente entre:jardim; histórico, limites, habitantes, obras e fontes históricas são exibidos sem inventar coordenadas.",
-        "Cidade Velha de Lamu integrada como décimo terceiro lugar canônico, ligada aos dois manuscritos de Intervalos de Lamu; a posição no painel é esquemática e não corresponde a coordenadas geográficas."
+        "Cidade Velha de Lamu integrada como décimo terceiro lugar canônico, ligada aos dois manuscritos de Intervalos de Lamu; a posição no painel é esquemática e não corresponde a coordenadas geográficas.",
+        "Pasaje de la Calandria: ficha atualizada com a residência de Elena, o contestador doméstico e a mensagem de Nélida em 4/10/1997. A gravação não acrescenta rota, coordenada nem evidência sobre o espaço além da porta."
       ],
       "place_ids": [
         "casa-de-pedra-do-lago",
