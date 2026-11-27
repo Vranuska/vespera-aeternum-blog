@@ -34,10 +34,10 @@ describe("Arquivo e ordem editorial", () => {
       { ...raw("memoria", "Memória"), characters: ["vespera"] },
       { ...raw("autora", "Autora"), author: "Vespera" },
     ]);
-    expect(manuscriptAttribution(works[2]!)).toEqual({ type: "author", name: "Vespera Aeternum" });
-    expect(manuscriptAttribution(works[3]!)).toEqual({ type: "none" });
-    expect(manuscriptAttribution(works[4]!)).toEqual({ type: "vespera" });
-    expect(manuscriptAttribution(works[5]!)).toEqual({ type: "vespera" });
+    expect(manuscriptAttribution(works[0]!)).toEqual({ type: "author", name: "Vespera Aeternum" });
+    expect(manuscriptAttribution(works[1]!)).toEqual({ type: "none" });
+    expect(manuscriptAttribution(works[2]!)).toEqual({ type: "vespera" });
+    expect(manuscriptAttribution(works[3]!)).toEqual({ type: "vespera" });
   });
   it("expõe a coleção Arquivo das Eras nos filtros da Bibliotheca", () => {
     expect(GENRES).toContain("arquivo-das-eras");
