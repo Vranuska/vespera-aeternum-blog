@@ -63,7 +63,7 @@ describe("Arquivo e ordem editorial", () => {
   it("ordena somente posições explícitas de séries e mantém contos autônomos", () => {
     const works = normalize([{ ...raw("dois", "A"), series: { id: "s", title: "Série", position: 2 } }, { ...raw("um", "Z"), series: { id: "s", title: "Série", position: 1 } }, { ...raw("solo", "Solo"), standalone: true }]);
     expect(bookWorks(works).map(w => w.id)).toEqual(["um", "dois", "solo"]);
-    expect(works[4]?.standalone).toBe(true);
+    expect(works[2]?.standalone).toBe(true);
   });
   it("navega anterior/próximo pelo índice de livro sem inventar metadados antigos", () => {
     const works = normalize([raw("z", "Zulu"), raw("m", "Meio"), raw("a", "Alfa")]);
@@ -166,7 +166,7 @@ describe("Arquivo e ordem editorial", () => {
   it("não sobrepõe arquivo remoto válido com cópia local", async () => {
     const works = await loadWorks(async () => new Response(JSON.stringify([raw("novo", "Novo")])));
     expect(works.map(w => w.id)).toEqual(["novo"]);
-    expect(works[2]?.source).toBe("github");
+    expect(works[0]?.source).toBe("github");
   });
   it("aceita apenas imagens próprias de origem permitida", () => {
     expect(ownedImage({ src: "https://third-party.test/photo.jpg", alt: "Foto", rights: "author-owned" })).toBeUndefined();
