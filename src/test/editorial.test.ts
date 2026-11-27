@@ -67,7 +67,7 @@ describe("Índice editorial", () => {
     const { eras } = buildEras(index, allIds);
     const outside = eras.find((e) => e.key === OUTSIDE)!.months[0]!.entries.map((e) => e.id);
     expect(outside).toEqual(index.unplaced.map((u) => u.entry_id));
-    expect(outside).toHaveLength(33);
+    expect(outside).toHaveLength(35);
     expect(outside).toContain("2026-11-20-as-estrelas-do-lado-de-dentro");
     expect(outside).toContain("2026-11-20-folha-de-prova-de-eva");
     expect(outside).not.toContain("2026-11-10-a-mare-nao-assina-recibos");
@@ -92,6 +92,16 @@ describe("Índice editorial", () => {
     expect(index.unplaced.map((entry) => entry.entry_id)).not.toContain(document);
     const arc = fallback.continuity_notes.secondary_arcs.find((item) => item.id === "menina-do-sapato-vermelho");
     expect(arc?.editorial_sequence.map((item) => item.entry_id)).toEqual([story, document]);
+  });
+  it("mantém o testemunho de Eithne e sua correção fora da cronologia e do Volume I", () => {
+    const story = "2026-11-27-o-som-que-ficou-na-margem";
+    const document = "2026-11-27-correcao-a-margem";
+    expect(index.chapters.some((chapter) => [story, document].includes(chapter.entry_id))).toBe(false);
+    expect(index.chronology.some((entry) => [story, document].includes(entry.entry_id))).toBe(false);
+    expect(index.unplaced.map((entry) => entry.entry_id)).toEqual(expect.arrayContaining([story, document]));
+    const arc = fallback.continuity_notes.secondary_arcs.find((item) => item.id === "eithne-family-traveler");
+    expect(arc?.editorial_sequence.map((item) => item.entry_id)).toEqual([story, document]);
+    expect(arc?.seeded_in).toContain("bestiario-eithne-v1");
   });
   it("ignora IDs ausentes em entries.json e os reporta", () => {
     const known = new Set([...allIds].filter((id) => id !== "2026-10-26-a-costura-invisivel"));

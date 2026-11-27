@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-20",
+  "updated_at": "2026-11-27",
   "title": "O Bestiário",
   "introduction": "Um inventário de presenças, não de monstros. Cada ficha separa o que foi testemunhado, o que foi dito por terceiros e aquilo que ainda não sabemos.",
   "editorial_principle": "Nenhuma habilidade, origem ou regra será acrescentada apenas para preencher uma ficha. O silêncio dos manuscritos também faz parte do arquivo.",
@@ -13,7 +13,7 @@
       "classification": "Presença feérica vinculada a uma linhagem, a um lugar e a promessas antigas",
       "status": "canon",
       "status_label": "Ficha canônica · Livro Primeiro",
-      "summary": "Eithne não provocava a morte nem a anunciava como sentença. Seu lamento chegava antes da partida daqueles cuja vida acompanhava. Durante décadas, uma família inteira ouviu — e temeu — a voz da mulher que jamais fora convidada a atravessar sua porta.",
+      "summary": "Eithne não provocava a morte nem a anunciava como sentença. Seu lamento chegava antes da partida daqueles cuja vida acompanhava. Um testemunho posterior, de autoria e data não identificadas, conserva a lembrança de uma das crianças da família, sem confirmar a identidade da voz nem sua causa.",
       "first_record": {
         "title": "A mulher que chorava antes dos mortos",
         "entry_id": "bestiario-eithne-v1",
@@ -29,7 +29,8 @@
         "Morava numa casa de pedra à beira de um lago. Cultivava cebolas que considerava ruins e remendava as próprias roupas. Do outro lado da água vivia uma família de sete pessoas: um pescador, uma mulher que fazia pão, quatro filhos e uma avó que escondia moedas debaixo do colchão.",
         "Eithne observava aquela família sem ser parente ou amiga. Ao longo de quarenta e dois anos, Vespera acompanhou seus lamentos. Eithne chorava por pessoas, por uma criança, por um homem que morreria longe de casa e, certa vez, durante três noites, por um cavalo de quem gostava.",
         "Quando o último ramo daquela família partiu, Eithne permaneceu sem a linhagem que acompanhava. Disse estar perdendo a voz. Passaram-se cento e treze dias sem lamento. No inverno seguinte, desapareceu sem grito, tempestade ou despedida.",
-        "Muito depois, Vespera encontrou um descendente daquela família plantando cebolas perto do lago. Ele não conhecia Eithne nem sabia por que sentia vontade de cultivar exatamente aquelas plantas."
+        "Muito depois, Vespera encontrou um descendente daquela família plantando cebolas perto do lago. Ele não conhecia Eithne nem sabia por que sentia vontade de cultivar exatamente aquelas plantas.",
+        "Um dos quatro filhos atravessou o mar. Uma folha sem data, atribuída a essa pessoa, conserva a lembrança do som ouvido na margem enquanto a avó ainda vivia. O autor não conhecia o nome da mulher da casa de pedra, não a viu e não afirma que ela tenha causado a morte. Registra apenas a sequência que conseguiu distinguir: o som, a saída do pai com uma tocha, as pegadas na lama e a morte ao amanhecer."
       ],
       "abilities": [
         {
@@ -49,7 +50,8 @@
         "Seu lamento não causava a morte. Eithne negou expressamente que seu grito matasse.",
         "Não há registro de que pudesse impedir, adiar ou reverter uma morte.",
         "A perda da linhagem acompanhada foi seguida por cento e treze dias de silêncio e pela perda da voz; o manuscrito não afirma que todas as banshees obedeçam à mesma regra.",
-        "Origem, idade exata, nome da linhagem e localização geográfica do lago permanecem desconhecidos."
+        "Origem, idade exata, nome da linhagem e localização geográfica do lago permanecem desconhecidos.",
+        "A folha atribuída a uma das quatro crianças não demonstra que o lamento tenha acompanhado a pessoa ou atravessado o mar. O ruído metálico ouvido durante a viagem é identificado como uma caneca contra uma bacia, não como a voz de Eithne."
       ],
       "chronology": [
         {
@@ -123,6 +125,10 @@
         {
           "text": "Evidentemente. Você acha que apenas os mortais têm medo?",
           "context": "Eithne admite que o próprio desaparecimento a assusta."
+        },
+        {
+          "text": "Não sei o nome da mulher.",
+          "context": "Última linha da folha sem data atribuída a uma das quatro crianças; a frase não identifica Eithne nem confirma que o autor a tenha visto."
         }
       ],
       "connections": [
@@ -137,6 +143,10 @@
         {
           "name": "O descendente que planta cebolas",
           "detail": "Não conhece Eithne, mas repete involuntariamente um gesto associado a ela."
+        },
+        {
+          "name": "Uma das quatro crianças que atravessou o mar",
+          "detail": "A pessoa conservou a lembrança do som ouvido antes da morte da avó, mas não conhecia o nome da mulher da casa de pedra. A folha não preserva data, embarcação, rota ou destino e não afirma que o lamento tenha atravessado o mar."
         }
       ]
     },

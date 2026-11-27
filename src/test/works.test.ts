@@ -34,10 +34,10 @@ describe("Arquivo e ordem editorial", () => {
       { ...raw("memoria", "Memória"), characters: ["vespera"] },
       { ...raw("autora", "Autora"), author: "Vespera" },
     ]);
-    expect(manuscriptAttribution(works[0]!)).toEqual({ type: "author", name: "Vespera Aeternum" });
-    expect(manuscriptAttribution(works[1]!)).toEqual({ type: "none" });
-    expect(manuscriptAttribution(works[2]!)).toEqual({ type: "vespera" });
-    expect(manuscriptAttribution(works[3]!)).toEqual({ type: "vespera" });
+    expect(manuscriptAttribution(works[2]!)).toEqual({ type: "author", name: "Vespera Aeternum" });
+    expect(manuscriptAttribution(works[3]!)).toEqual({ type: "none" });
+    expect(manuscriptAttribution(works[4]!)).toEqual({ type: "vespera" });
+    expect(manuscriptAttribution(works[5]!)).toEqual({ type: "vespera" });
   });
   it("expõe a coleção Arquivo das Eras nos filtros da Bibliotheca", () => {
     expect(GENRES).toContain("arquivo-das-eras");
@@ -63,7 +63,7 @@ describe("Arquivo e ordem editorial", () => {
   it("ordena somente posições explícitas de séries e mantém contos autônomos", () => {
     const works = normalize([{ ...raw("dois", "A"), series: { id: "s", title: "Série", position: 2 } }, { ...raw("um", "Z"), series: { id: "s", title: "Série", position: 1 } }, { ...raw("solo", "Solo"), standalone: true }]);
     expect(bookWorks(works).map(w => w.id)).toEqual(["um", "dois", "solo"]);
-    expect(works[2]?.standalone).toBe(true);
+    expect(works[4]?.standalone).toBe(true);
   });
   it("navega anterior/próximo pelo índice de livro sem inventar metadados antigos", () => {
     const works = normalize([raw("z", "Zulu"), raw("m", "Meio"), raw("a", "Alfa")]);
@@ -111,40 +111,47 @@ describe("Arquivo e ordem editorial", () => {
     expect(works.map((work) => work.id).sort()).toEqual(indexedIds.sort());
     const chapterIds = editorial.editorial_reading_order.chapters.map((chapter) => chapter.entry_id);
     expect(chapterIds.every((id) => works.some((work) => work.id === id))).toBe(true);
-    expect(works[2]?.id).toBe("2026-11-25-a-sala-dos-onze-minutos");
-    expect(works[3]?.id).toBe("2026-11-25-caderno-de-marcha");
-    expect(works[2]?.characters).toEqual(["vespera"]);
-    expect(works[3]?.characters).toEqual(["vespera"]);
-    expect(manuscriptAttribution(works[2]!)).toEqual({ type: "author", name: "Amina" });
-    expect(manuscriptAttribution(works[3]!)).toEqual({ type: "author", name: "Amina" });
+    expect(works[0]?.id).toBe("2026-11-27-o-som-que-ficou-na-margem");
+    expect(works[1]?.id).toBe("2026-11-27-correcao-a-margem");
+    expect(works[0]?.characters).toEqual(["eithne"]);
+    expect(works[1]?.characters).toEqual(["eithne"]);
+    expect(manuscriptAttribution(works[0]!)).toEqual({ type: "author", name: "Uma das quatro crianças" });
+    expect(relatedWorks(works, "2026-11-27-o-som-que-ficou-na-margem").some((work) => work.id === "2026-11-27-correcao-a-margem")).toBe(true);
+    expect(relatedWorks(works, "2026-11-27-correcao-a-margem").some((work) => work.id === "bestiario-eithne-v1")).toBe(true);
+    expect(works[4]?.id).toBe("2026-11-25-a-sala-dos-onze-minutos");
+    expect(works[5]?.id).toBe("2026-11-25-caderno-de-marcha");
+    expect(works[4]?.characters).toEqual(["vespera"]);
+    expect(works[5]?.characters).toEqual(["vespera"]);
+    expect(manuscriptAttribution(works[4]!)).toEqual({ type: "author", name: "Amina" });
+    expect(manuscriptAttribution(works[5]!)).toEqual({ type: "author", name: "Amina" });
     expect(relatedWorks(works, "2026-11-25-a-sala-dos-onze-minutos").some((work) => work.id === "2026-11-25-caderno-de-marcha")).toBe(true);
-    expect(works[0]?.id).toBe("2026-11-26-depois-do-terceiro-toque");
-    expect(works[1]?.id).toBe("2026-11-26-transcricao-da-primeira-mensagem");
-    expect(works[0]?.characters).toEqual(["elena-roldan", "nelida"]);
-    expect(works[1]?.characters).toEqual(["elena-roldan", "nelida"]);
-    expect(manuscriptAttribution(works[0]!)).toEqual({ type: "author", name: "Vespera Aeternum" });
-    expect(manuscriptAttribution(works[1]!)).toEqual({ type: "author", name: "Elena Roldán" });
+    expect(works[2]?.id).toBe("2026-11-26-depois-do-terceiro-toque");
+    expect(works[3]?.id).toBe("2026-11-26-transcricao-da-primeira-mensagem");
+    expect(works[2]?.characters).toEqual(["elena-roldan", "nelida"]);
+    expect(works[3]?.characters).toEqual(["elena-roldan", "nelida"]);
+    expect(manuscriptAttribution(works[2]!)).toEqual({ type: "author", name: "Vespera Aeternum" });
+    expect(manuscriptAttribution(works[3]!)).toEqual({ type: "author", name: "Elena Roldán" });
     expect(relatedWorks(works, "2026-11-26-depois-do-terceiro-toque").some((work) => work.id === "2026-11-26-transcricao-da-primeira-mensagem")).toBe(true);
     expect(relatedWorks(works, "2026-11-26-transcricao-da-primeira-mensagem").some((work) => work.id === "2026-11-09-a-rua-que-cabia-na-margem")).toBe(true);
-    expect(works[4]?.id).toBe("2026-11-23-a-feira-nao-perguntou-meu-nome");
-    expect(works[5]?.id).toBe("2026-11-23-nota-da-banca-de-papelaria");
-    expect(works[4]?.characters).toEqual(["a-menina-do-sapato-vermelho", "vespera", "o-irmao"]);
-    expect(works[5]?.characters).toEqual(["a-menina-do-sapato-vermelho"]);
-    expect(manuscriptAttribution(works[4]!)).toEqual({ type: "author", name: "A menina do sapato vermelho" });
-    expect(manuscriptAttribution(works[5]!)).toEqual({ type: "none" });
-    expect(relatedWorks(works, "2026-11-23-a-feira-nao-perguntou-meu-nome").some((work) => work.id === "2026-11-23-nota-da-banca-de-papelaria")).toBe(true);
-    expect(works[6]?.id).toBe("2026-11-20-as-estrelas-do-lado-de-dentro");
-    expect(works[7]?.id).toBe("2026-11-20-folha-de-prova-de-eva");
-    expect(works[6]?.characters).toEqual(["azrakhel", "eva"]);
-    expect(works[7]?.characters).toEqual(["azrakhel", "eva"]);
-    expect(manuscriptAttribution(works[6]!)).toEqual({ type: "none" });
+    expect(works[6]?.id).toBe("2026-11-23-a-feira-nao-perguntou-meu-nome");
+    expect(works[7]?.id).toBe("2026-11-23-nota-da-banca-de-papelaria");
+    expect(works[6]?.characters).toEqual(["a-menina-do-sapato-vermelho", "vespera", "o-irmao"]);
+    expect(works[7]?.characters).toEqual(["a-menina-do-sapato-vermelho"]);
+    expect(manuscriptAttribution(works[6]!)).toEqual({ type: "author", name: "A menina do sapato vermelho" });
     expect(manuscriptAttribution(works[7]!)).toEqual({ type: "none" });
-    expect(works[8]?.id).toBe("2026-11-18-o-primeiro-quarto-em-terra");
-    expect(works[9]?.id).toBe("2026-11-18-carta-de-nao-a-sota");
-    expect(works[10]?.id).toBe("2026-11-17-o-lugar-de-uma-folha");
-    expect(works[11]?.id).toBe("2026-11-15-o-endereco-no-verso");
-    expect(works[12]?.id).toBe("2026-11-15-a-visita-que-coube-no-patio");
-    expect(works[13]?.id).toBe("2026-11-10-a-mare-nao-assina-recibos");
+    expect(relatedWorks(works, "2026-11-23-a-feira-nao-perguntou-meu-nome").some((work) => work.id === "2026-11-23-nota-da-banca-de-papelaria")).toBe(true);
+    expect(works[8]?.id).toBe("2026-11-20-as-estrelas-do-lado-de-dentro");
+    expect(works[9]?.id).toBe("2026-11-20-folha-de-prova-de-eva");
+    expect(works[8]?.characters).toEqual(["azrakhel", "eva"]);
+    expect(works[9]?.characters).toEqual(["azrakhel", "eva"]);
+    expect(manuscriptAttribution(works[8]!)).toEqual({ type: "none" });
+    expect(manuscriptAttribution(works[9]!)).toEqual({ type: "none" });
+    expect(works[10]?.id).toBe("2026-11-18-o-primeiro-quarto-em-terra");
+    expect(works[11]?.id).toBe("2026-11-18-carta-de-nao-a-sota");
+    expect(works[12]?.id).toBe("2026-11-17-o-lugar-de-uma-folha");
+    expect(works[13]?.id).toBe("2026-11-15-o-endereco-no-verso");
+    expect(works[14]?.id).toBe("2026-11-15-a-visita-que-coube-no-patio");
+    expect(works[15]?.id).toBe("2026-11-10-a-mare-nao-assina-recibos");
     const unplacedIds = editorial.unplaced_archive.map((item) => item.entry_id);
     expect(unplacedIds).not.toContain("2026-11-10-a-mare-nao-assina-recibos");
     expect(unplacedIds.every((id) => works.some((work) => work.id === id))).toBe(true);
@@ -159,7 +166,7 @@ describe("Arquivo e ordem editorial", () => {
   it("não sobrepõe arquivo remoto válido com cópia local", async () => {
     const works = await loadWorks(async () => new Response(JSON.stringify([raw("novo", "Novo")])));
     expect(works.map(w => w.id)).toEqual(["novo"]);
-    expect(works[0]?.source).toBe("github");
+    expect(works[2]?.source).toBe("github");
   });
   it("aceita apenas imagens próprias de origem permitida", () => {
     expect(ownedImage({ src: "https://third-party.test/photo.jpg", alt: "Foto", rights: "author-owned" })).toBeUndefined();

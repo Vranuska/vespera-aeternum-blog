@@ -9,13 +9,15 @@ describe("Dossiês canônicos do Bestiário", () => {
     expect(eithne).toBeDefined();
     expect(eithne?.status).toBe("canon");
     expect(eithne?.main_image.src).toBe("assets/bestiario/eithne-retrato.svg");
-    expect(eithne?.biography).toHaveLength(5);
+    expect(eithne?.biography).toHaveLength(6);
     expect(eithne?.abilities).toHaveLength(3);
     expect(eithne?.known_limits.length).toBeGreaterThan(0);
     expect(eithne?.chronology).toHaveLength(6);
     expect(eithne?.gallery).toHaveLength(2);
-    expect(eithne?.quotations).toHaveLength(4);
-    expect(eithne?.connections).toHaveLength(3);
+    expect(eithne?.quotations).toHaveLength(5);
+    expect(eithne?.connections).toHaveLength(4);
+    expect(eithne?.known_limits.some((item) => item.includes("não demonstra que o lamento tenha acompanhado"))).toBe(true);
+    expect(eithne?.connections.some((item) => item.name.includes("quatro crianças"))).toBe(true);
   });
 
   it("abre o dossiê de Azrakhel com aparições documentadas e sem poderes presumidos", () => {

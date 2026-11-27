@@ -163,4 +163,6 @@ export const WORK_META: Record<string, WorkMeta> = {
   "2026-11-23-a-feira-nao-perguntou-meu-nome": { genres: ["conto", "ficção histórica", "romance-mosaico"], collection: "A primeira saída", themes: ["infância", "autonomia", "identidade", "memória e esquecimento"], characters: ["a-menina-do-sapato-vermelho", "vespera", "o-irmao"], series: { id: "primeira-saida", title: "A primeira saída", position: 1 }, author: "A menina do sapato vermelho" },
   "2026-11-23-nota-da-banca-de-papelaria": { genres: ["fragmento", "ficção literária", "romance-mosaico"], collection: "A primeira saída", themes: ["documentos", "testemunho", "infância", "identidade", "memória material"], characters: ["a-menina-do-sapato-vermelho"], series: { id: "primeira-saida", title: "A primeira saída", position: 2 } },
 
+  "2026-11-27-o-som-que-ficou-na-margem": { genres: ["conto","memória","romance-mosaico"], collection: "O Bestiário · Livro Primeiro", themes: ["família","voz","memória","distância","testemunho"], characters: ["eithne"] },
+  "2026-11-27-correcao-a-margem": { genres: ["documento","fragmento"], collection: "O Bestiário · Livro Primeiro", themes: ["documentos","testemunho","voz","distância","memória material"], characters: ["eithne"] },
 };

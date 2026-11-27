@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -576,6 +576,18 @@
       "title": "Folha de prova de um par para Eva",
       "publication_label": "20 de novembro de 2026 · documento ficcional; data de universo não identificada",
       "universe_chronology": "indeterminada / não posicionada neste volume"
+    },
+    {
+      "entry_id": "2026-11-27-o-som-que-ficou-na-margem",
+      "title": "O som que ficou na margem",
+      "publication_label": "27 de novembro de 2026 · relato sem data de universo",
+      "universe_chronology": "indeterminada / não posicionada neste volume"
+    },
+    {
+      "entry_id": "2026-11-27-correcao-a-margem",
+      "title": "Correção à margem",
+      "publication_label": "27 de novembro de 2026 · folha sem data de universo",
+      "universe_chronology": "indeterminada / não posicionada neste volume"
     }
   ],
   "continuity_notes": {
@@ -602,7 +614,8 @@
       "quartos temporários, camas imóveis e endereços que permitem receber uma carta sem prometer permanência",
       "estrelas prateadas bordadas no lado de dentro; objetos escolhidos por quem os usa, não para serem vistos por terceiros",
       "portões construídos sem magia, anonimato e o direito de atravessar sem ser acompanhado",
-      "relógios ajustados por convenção humana, intervalos concedidos e a diferença entre a hora do mostrador e o horário de uma sala"
+      "relógios ajustados por convenção humana, intervalos concedidos e a diferença entre a hora do mostrador e o horário de uma sala",
+      "sons lembrados sem continuidade causal: a diferença entre ouvir um lamento, recordar seu timbre e conhecer sua origem"
     ],
     "open_threads": [
       {
@@ -724,6 +737,16 @@
         ],
         "note": "A menina do sapato vermelho, mortal, pediu uma porta que não soubesse seu nome e, em 1996, atravessou o portão verde até a Feira de São Joaquim. A nota ficcional da banca registra a compra de um caderno e um lápis, mas não o nome da criança nem o caminho de volta. O jardim permanece no mapa do Entre em posição simbólica; a rota não está cartografada.",
         "reveal_plan": "Não transformar o portão em portal fixo, não estabelecer uma geografia completa do jardim e não confundir anonimato com apagamento da identidade. A visita adulta com a filha continua sem data de universo; qualquer nova travessia deve decorrer de escolha da menina, não de uma regra automática."
+      },
+      {
+        "key": "eithne-family-traveler",
+        "seeded_in": [
+          "bestiario-eithne-v1",
+          "2026-11-27-o-som-que-ficou-na-margem",
+          "2026-11-27-correcao-a-margem"
+        ],
+        "note": "Uma das quatro crianças da família do outro lado do lago atravessou o mar. Um relato e uma folha de caderno sem data preservam a lembrança do som ouvido antes da morte da avó e corrigem a causalidade atribuída pelo pai. O autor não conhecia o nome da mulher, não a viu e não identifica a fonte do lamento. Nome, identidade, data, embarcação, rota e destino permanecem desconhecidos; a folha não comprova que o som tenha acompanhado a travessia.",
+        "reveal_plan": "Retomar apenas por consequência concreta da preservação ou por um testemunho independente. Não identificar o autor, nomear a mulher, fixar a travessia nem transformar o ruído metálico da embarcação em manifestação sobrenatural."
       }
     ],
     "secondary_arcs": [
@@ -904,6 +927,28 @@
           }
         ],
         "planned_use": "Uma continuação deve nascer do almoço ou de uma necessidade própria de Elena e Nélida. Não presumir que o almoço ocorreu, não inventar os nomes das outras colegas ou o café e não transformar a fita ou o contestador em objeto sobrenatural. A porta do Pasaje continua fechada."
+      },
+      {
+        "id": "eithne-family-traveler",
+        "seeded_in": [
+          "bestiario-eithne-v1",
+          "2026-11-27-o-som-que-ficou-na-margem",
+          "2026-11-27-correcao-a-margem"
+        ],
+        "note": "Um dos quatro filhos da família que vivia do outro lado do lago atravessou o mar. A pessoa conserva a lembrança do lamento ouvido quando a avó ainda estava viva e da busca do pai com uma tocha. O relato distingue os acontecimentos da explicação atribuída ao pai; a folha não identifica a fonte do som, a pessoa que deixou as pegadas nem a mulher da casa de pedra. Não há nome, data, embarcação, rota ou destino preservados.",
+        "editorial_sequence": [
+          {
+            "position": 1,
+            "entry_id": "2026-11-27-o-som-que-ficou-na-margem",
+            "reason": "A narrativa acompanha a memória de uma das crianças durante uma travessia sem data, mostrando como a lembrança resiste sem adquirir uma explicação que o narrador não possui."
+          },
+          {
+            "position": 2,
+            "entry_id": "2026-11-27-correcao-a-margem",
+            "reason": "A folha de caderno corrige a versão causal repetida pela família e discrimina observação, relato alheio e lacuna."
+          }
+        ],
+        "planned_use": "Se o fio retornar, fazê-lo por meio de outro testemunho ou de uma consequência documental concreta. Não atribuir nome ao viajante, não presumir destino ou parentesco além dos quatro filhos, não dizer que Eithne foi ouvida depois da margem e não ampliar suas aptidões."
       }
     ]
   },
@@ -979,7 +1024,7 @@
     "react_portal": {
       "route": "src/routes/index.tsx",
       "source": "editorial/indice-romance-mosaico.json → src/lib/editorial.ts → src/components/vespera/Constellation.tsx",
-      "status": "Em 26/11/2026, o portal mantém a composição editorial aprovada. O arquivo reúne 28 registros cronológicos, de 1886 a 1998, 33 obras sem posição cronológica e 19 capítulos aprovados. Vozes de Barracas (1997) é uma sequência lateral do fio Micaela–Elena, fora do Volume I; a ordem editorial continua separada da cronologia.",
+      "status": "Em 27/11/2026, o portal mantém a composição Reforged aprovada. O arquivo reúne 28 registros cronológicos, 35 obras sem posição cronológica e 19 capítulos aprovados. A continuação do testemunho de Eithne, O som que ficou na margem → Correção à margem, é um arco lateral sem data de universo, integrado ao Bestiário e fora do Volume I.",
       "features": [
         "hero Reforged preservado",
         "anéis lentos e frase central",
@@ -997,7 +1042,8 @@
         "A primeira saída: A feira não perguntou meu nome → Nota da banca de papelaria; sequência editorial independente do Volume I, com ambas as peças situadas em 1996 na cronologia.",
         "Intervalos de Lamu: A sala dos onze minutos → Caderno de marcha da oficina; sequência independente do Volume I, em 1998, ligada ao Atlas da Cidade Velha de Lamu.",
         "A era de 1998 recebe Intervalos de Lamu sem alterar a ordem editorial do Volume I.",
-        "Vozes de Barracas: Depois do terceiro toque → Transcrição da primeira mensagem guardada; sequência lateral de Elena Roldán e Nélida em 4 de outubro de 1997, ligada a A rua que cabia na margem e fora dos 19 capítulos do Volume I."
+        "Vozes de Barracas: Depois do terceiro toque → Transcrição da primeira mensagem guardada; sequência lateral de Elena Roldán e Nélida em 4 de outubro de 1997, ligada a A rua que cabia na margem e fora dos 19 capítulos do Volume I.",
+        "Continuação do testemunho de Eithne: O som que ficou na margem → Correção à margem. A narrativa e a folha ficam sem posição cronológica, não acrescentam aptidões ao Bestiário e não afirmam que o lamento tenha atravessado o mar."
       ],
       "reading_order_chapters": 19,
       "chronology_items": 26,
@@ -1050,7 +1096,7 @@
       "latest_cartographic_status": "Lugar histórico documentado; o episódio de 1998 é ficcional, a oficina e a sala não têm endereço identificado e o marcador não representa latitude, longitude, distância ou rota."
     },
     "reading_order_chapters": 19,
-    "chronology_items": 26,
-    "unplaced_items": 33
+    "chronology_items": 28,
+    "unplaced_items": 35
   }
 }
