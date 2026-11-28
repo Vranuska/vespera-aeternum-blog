@@ -49,6 +49,24 @@ describe("atlasPlaceLocation", () => {
     expect(atlasPlaceLocation("cidade-velha-de-lamu")).toEqual({ mapa: "mortais", local: "lamu" });
   });
 
+  it("documenta Otaru com fontes públicas e mantém os limites da ficha", () => {
+    const marker = MAPS.mortais.places.find((place) => place.id === "otaru")!;
+    const place = enrichAtlasPlace("mortais", marker);
+    expect(place.works).toEqual([
+      "2026-11-10-a-mare-nao-assina-recibos",
+      "2026-11-28-a-letra-de-hideo",
+      "2026-11-28-folha-de-treino-de-hideo",
+    ]);
+    expect(place.historicalSources?.map((source) => source.url)).toEqual(
+      expect.arrayContaining([
+        "https://www.city.otaru.lg.jp/docs/2020120700886/",
+        "https://www.mlit.go.jp/tagengo-db/en/R5-00045.html",
+      ]),
+    );
+    expect(place.history?.some((item) => /1914/.test(item) && /1923/.test(item))).toBe(true);
+    expect(place.laws?.some((law) => /não representa coordenadas/i.test(law))).toBe(true);
+  });
+
   it("não inventa um marcador para lugares sem mapeamento", () => {
     expect(atlasPlaceLocation("lugar-ainda-nao-cartografado")).toBeUndefined();
   });
