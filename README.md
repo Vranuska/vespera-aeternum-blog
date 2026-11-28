@@ -27,3 +27,8 @@ npm run dev
 - TypeScript
 - React
 - Tailwind CSS
+
+
+## Caderno das Travessias — atualização de 28 de novembro de 2026
+
+O arquivo canônico agora contém 65 obras. *A letra de Hideo* e *Folha de treino de Hideo* formam as posições editoriais 4 e 5 do Caderno das Travessias e acrescentam dois registros à cronologia de 23 de janeiro de 1922. O Volume I permanece com 19 capítulos. Os fallbacks de entradas, índice e Atlas foram sincronizados com os arquivos canônicos; o marcador de Otaru foi aprofundado sem criar outro ponto no mapa. A composição Reforged da página inicial e os arquivos visuais não foram alterados neste ciclo.
