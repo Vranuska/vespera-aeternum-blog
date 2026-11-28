@@ -165,4 +165,8 @@ export const WORK_META: Record<string, WorkMeta> = {
 
   "2026-11-27-o-som-que-ficou-na-margem": { genres: ["conto","memória","romance-mosaico"], collection: "O Bestiário · Livro Primeiro", themes: ["família","voz","memória","distância","testemunho"], characters: ["eithne"] },
   "2026-11-27-correcao-a-margem": { genres: ["documento","fragmento"], collection: "O Bestiário · Livro Primeiro", themes: ["documentos","testemunho","voz","distância","memória material"], characters: ["eithne"] },
+
+  "2026-11-28-a-letra-de-hideo": { genres: ["conto", "arquivo-das-eras"], collection: "Arquivo das Eras", themes: ["trabalho portuário", "família", "registro", "distância"], characters: ["Nao Sakamoto", "Hideo", "mulher de Hideo", "filha de Hideo"], series: { id: "caderno-das-travessias", title: "Caderno das Travessias", position: 4 }, author: "Vespera Aeternum" },
+  "2026-11-28-folha-de-treino-de-hideo": { genres: ["documento", "fragmento"], collection: "Arquivo das Eras", themes: ["documentos", "testemunho", "família", "ofício", "memória material"], characters: ["Nao Sakamoto", "Hideo", "mulher de Hideo", "filha de Hideo"], series: { id: "caderno-das-travessias", title: "Caderno das Travessias", position: 5 }, author: "Hideo" },
+
 };
