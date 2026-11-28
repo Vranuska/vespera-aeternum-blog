@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-27",
+  "updated_at": "2026-11-28",
   "project": "Vespera Aeternum",
   "purpose": "Índice editorial não destrutivo: a ordem do romance-mosaico não coincide necessariamente com a cronologia do universo.",
   "editorial_reading_order": {
@@ -231,6 +231,22 @@
       "label": "12 de janeiro de 1922 · Sōta recebe a carta em Hakodate, aluga um quarto por duas semanas e envia um endereço sem prometer regresso",
       "precision": "day",
       "after": "2026-11-18-carta-de-nao-a-sota"
+    },
+    {
+      "entry_id": "2026-11-28-a-letra-de-hideo",
+      "title": "A letra de Hideo",
+      "time": "1922-01-23",
+      "label": "23 de janeiro de 1922 · Nao começa uma experiência temporária de copista e acompanha Hideo numa nova tentativa de escrever o nome da filha",
+      "precision": "day",
+      "after": "2026-11-18-o-primeiro-quarto-em-terra"
+    },
+    {
+      "entry_id": "2026-11-28-folha-de-treino-de-hideo",
+      "title": "Folha de treino de Hideo",
+      "time": "1922-01-23",
+      "label": "23 de janeiro de 1922 · folha de treino deixada por Hideo com Nao ao fim do exercício",
+      "precision": "day",
+      "after": "2026-11-28-a-letra-de-hideo"
     },
     {
       "entry_id": "2026-10-25-o-homem-que-nunca-tirava-as-luvas",
@@ -615,7 +631,8 @@
       "estrelas prateadas bordadas no lado de dentro; objetos escolhidos por quem os usa, não para serem vistos por terceiros",
       "portões construídos sem magia, anonimato e o direito de atravessar sem ser acompanhado",
       "relógios ajustados por convenção humana, intervalos concedidos e a diferença entre a hora do mostrador e o horário de uma sala",
-      "sons lembrados sem continuidade causal: a diferença entre ouvir um lamento, recordar seu timbre e conhecer sua origem"
+      "sons lembrados sem continuidade causal: a diferença entre ouvir um lamento, recordar seu timbre e conhecer sua origem",
+      "A letra aprendida sem ser escrita pela mão de outra pessoa: orientação, autoria e limites do testemunho."
     ],
     "open_threads": [
       {
@@ -715,8 +732,8 @@
           "2026-11-18-carta-de-nao-a-sota",
           "2026-11-18-o-primeiro-quarto-em-terra"
         ],
-        "note": "Nao fez a prova de escrituração em 2 de janeiro de 1922, mas o resultado não saiu até a carta de 5 de janeiro. A suspensão no porto de Otaru continua sem resposta. Sōta tem um endereço temporário em Hakodate, válido enquanto pagar a hospedaria; a próxima viagem e o paradeiro do pai permanecem desconhecidos.",
-        "reveal_plan": "Retomar uma consequência concreta da prova ou da correspondência. Não usar o endereço como promessa de retorno nem resolver a suspensão por conveniência."
+        "note": "Nao fez a prova de escrituração em 2 de janeiro de 1922, mas o resultado não saiu até a carta de 5 de janeiro. A suspensão no porto de Otaru continua sem resposta. Sōta tem um endereço temporário em Hakodate, válido enquanto pagar a hospedaria; a próxima viagem e o paradeiro do pai permanecem desconhecidos. Em 23 de janeiro de 1922, Nao inicia uma experiência de duas semanas como copista num escritório de carga não identificado; o trabalho não encerra a suspensão anterior nem substitui o resultado ainda desconhecido da prova.",
+        "reveal_plan": "Retomar uma consequência concreta da prova, da suspensão, da correspondência ou do trabalho temporário. Não usar o endereço de Sōta como promessa de retorno, não converter a experiência de copista em carreira permanente e não resolver a investigação por conveniência."
       },
       {
         "key": "eva-footwear",
@@ -747,6 +764,16 @@
         ],
         "note": "Uma das quatro crianças da família do outro lado do lago atravessou o mar. Um relato e uma folha de caderno sem data preservam a lembrança do som ouvido antes da morte da avó e corrigem a causalidade atribuída pelo pai. O autor não conhecia o nome da mulher, não a viu e não identifica a fonte do lamento. Nome, identidade, data, embarcação, rota e destino permanecem desconhecidos; a folha não comprova que o som tenha acompanhado a travessia.",
         "reveal_plan": "Retomar apenas por consequência concreta da preservação ou por um testemunho independente. Não identificar o autor, nomear a mulher, fixar a travessia nem transformar o ruído metálico da embarcação em manifestação sobrenatural."
+      },
+      {
+        "key": "hideo-writing",
+        "seeded_in": [
+          "2026-11-28-a-letra-de-hideo",
+          "2026-11-28-folha-de-treino-de-hideo",
+          "2026-11-10-a-mare-nao-assina-recibos"
+        ],
+        "note": "Hideo conserva a intenção de escrever por conta própria o nome da filha. Em 23 de janeiro de 1922, sua mulher fornece um modelo e Nao orienta apenas uma mudança de direção do traço; a última tentativa é de Hideo. O nome, a idade e a escolaridade da menina permanecem desconhecidos; não há prova de que ela tenha visto a folha.",
+        "reveal_plan": "Retomar somente se a escrita tiver consequência concreta para Hideo ou para a família. Não inventar o nome, a idade, a escolaridade ou uma reação da menina; não transformar a folha em certificado de alfabetização."
       }
     ],
     "secondary_arcs": [
@@ -1043,11 +1070,12 @@
         "Intervalos de Lamu: A sala dos onze minutos → Caderno de marcha da oficina; sequência independente do Volume I, em 1998, ligada ao Atlas da Cidade Velha de Lamu.",
         "A era de 1998 recebe Intervalos de Lamu sem alterar a ordem editorial do Volume I.",
         "Vozes de Barracas: Depois do terceiro toque → Transcrição da primeira mensagem guardada; sequência lateral de Elena Roldán e Nélida em 4 de outubro de 1997, ligada a A rua que cabia na margem e fora dos 19 capítulos do Volume I.",
-        "Continuação do testemunho de Eithne: O som que ficou na margem → Correção à margem. A narrativa e a folha ficam sem posição cronológica, não acrescentam aptidões ao Bestiário e não afirmam que o lamento tenha atravessado o mar."
+        "Continuação do testemunho de Eithne: O som que ficou na margem → Correção à margem. A narrativa e a folha ficam sem posição cronológica, não acrescentam aptidões ao Bestiário e não afirmam que o lamento tenha atravessado o mar.",
+        "Caderno das Travessias: A letra de Hideo → Folha de treino de Hideo; 23 de janeiro de 1922, Otaru. A nova narrativa ocupa a quarta posição editorial da série e o documento a quinta; ambos entram na cronologia do universo, mas permanecem fora dos 19 capítulos aprovados do Volume I."
       ],
       "reading_order_chapters": 19,
-      "chronology_items": 26,
-      "unplaced_items": 33
+      "chronology_items": 30,
+      "unplaced_items": 35
     },
     "react_atlas": {
       "route": "src/routes/atlas.tsx",
@@ -1063,7 +1091,8 @@
         "Porto de Hakodate em assets/atlas/hakodate-porto-1922.svg: reconstituição vetorial de uma zona portuária, sem identificar cais ou edifício; fontes oficiais registram a ligação ferroviária por ferry com Aomori desde 1908 e a expansão da pesca do mar do norte na década de 1920.",
         "Jardim das Coisas Esquecidas integrado como décimo segundo lugar canônico, mapeado ao marcador preexistente entre:jardim; histórico, limites, habitantes, obras e fontes históricas são exibidos sem inventar coordenadas.",
         "Cidade Velha de Lamu integrada como décimo terceiro lugar canônico, ligada aos dois manuscritos de Intervalos de Lamu; a posição no painel é esquemática e não corresponde a coordenadas geográficas.",
-        "Pasaje de la Calandria: ficha atualizada com a residência de Elena, o contestador doméstico e a mensagem de Nélida em 4/10/1997. A gravação não acrescenta rota, coordenada nem evidência sobre o espaço além da porta."
+        "Pasaje de la Calandria: ficha atualizada com a residência de Elena, o contestador doméstico e a mensagem de Nélida em 4/10/1997. A gravação não acrescenta rota, coordenada nem evidência sobre o espaço além da porta.",
+        "Zona portuária de Otaru: a ficha existente passa a registrar a experiência temporária de Nao como copista e a folha de treino de Hideo em 23/01/1922. O marcador continua aproximado; escritório, cais e armazém exatos permanecem não identificados."
       ],
       "place_ids": [
         "casa-de-pedra-do-lago",
@@ -1090,8 +1119,8 @@
       "additional_cartographic_status": "O marcador entre:jardim já existia e conserva sua posição esquemática. O registro canônico documenta o jardim e uma travessia ficcional de 1996; não mapeia o caminho até Salvador nem transforma o portão em portal estável.",
       "latest_place_id": "cidade-velha-de-lamu",
       "latest_linked_entries": [
-        "2026-11-25-a-sala-dos-onze-minutos",
-        "2026-11-25-caderno-de-marcha"
+        "2026-11-28-a-letra-de-hideo",
+        "2026-11-28-folha-de-treino-de-hideo"
       ],
       "latest_cartographic_status": "Lugar histórico documentado; o episódio de 1998 é ficcional, a oficina e a sala não têm endereço identificado e o marcador não representa latitude, longitude, distância ou rota."
     },
