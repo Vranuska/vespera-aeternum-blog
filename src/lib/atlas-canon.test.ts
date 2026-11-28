@@ -64,7 +64,7 @@ describe("atlasPlaceLocation", () => {
       ]),
     );
     expect(place.history?.some((item) => /1914/.test(item) && /1923/.test(item))).toBe(true);
-    expect(place.laws?.some((law) => /não representa coordenadas/i.test(law))).toBe(true);
+    expect(place.laws?.some((law) => /posição no mapa permanece simbólica/i.test(law))).toBe(true);
   });
 
   it("não inventa um marcador para lugares sem mapeamento", () => {
