@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-28",
   "title": "Atlas dos Domínios",
   "introduction": "Um mapa de lugares lembrados, visitados ou apenas mencionados. As fronteiras não são inventadas para preencher o papel: quando o manuscrito não descreve uma região, o Atlas registra a lacuna.",
   "map_image": {
@@ -387,7 +387,9 @@
       "history": [
         "Em novembro de 1921, a narrativa acompanha Nao Sakamoto, funcionária de armazém, entre o cais, os armazéns e uma barcaça de carga. O texto nomeia Otaru, mas não identifica o cais, o armazém ou o ponto exato da amarração.",
         "No início do século XX, Otaru era um importante porto comercial do norte do Japão. Parte das mercadorias era transferida entre navios ancorados na baía e os armazéns da margem por meio de barcaças.",
-        "Em 1921, as obras de aterro que deram origem ao canal ainda estavam em andamento. O projeto iniciado em 1914 foi concluído em 1923 e criou uma via de água de aproximadamente quarenta metros de largura, oferecendo espaço adicional de atracação às barcaças."
+        "Em 1921, as obras de aterro que deram origem ao canal ainda estavam em andamento. O projeto iniciado em 1914 foi concluído em 1923 e criou uma via de água de aproximadamente quarenta metros de largura, oferecendo espaço adicional de atracação às barcaças.",
+        "Em 23 de janeiro de 1922, Nao Sakamoto inicia uma experiência de duas semanas como copista num pequeno escritório de carga próximo à zona portuária, sem endereço ou nome empresarial identificados. Hideo, colega do cais, pratica numa folha nova a escrita do nome da filha, usando um modelo escrito pela mulher e uma única marca de orientação feita por Nao.",
+        "A folha de treino é deixada temporariamente com Nao. O documento não identifica a menina nem comprova que ela tenha visto o papel; a experiência de trabalho de Nao não resolve sua suspensão anterior ou o resultado de sua prova."
       ],
       "laws": [
         "Nenhuma lei sobrenatural, passagem entre domínios ou ocorrência extraordinária é estabelecida para este lugar.",
@@ -403,10 +405,20 @@
         {
           "label": "A maré não assina recibos",
           "route": "conto:2026-11-10-a-mare-nao-assina-recibos"
+        },
+        {
+          "label": "A letra de Hideo",
+          "route": "conto:2026-11-28-a-letra-de-hideo"
+        },
+        {
+          "label": "Folha de treino de Hideo",
+          "route": "documento:2026-11-28-folha-de-treino-de-hideo"
         }
       ],
       "source_entry_ids": [
-        "2026-11-10-a-mare-nao-assina-recibos"
+        "2026-11-10-a-mare-nao-assina-recibos",
+        "2026-11-28-a-letra-de-hideo",
+        "2026-11-28-folha-de-treino-de-hideo"
       ]
     },
     {
