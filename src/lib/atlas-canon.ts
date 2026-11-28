@@ -27,6 +27,14 @@ export function atlasPlaceLocation(canonicalId: string): { mapa: string; local: 
   return mapa && local ? { mapa, local } : undefined;
 }
 
+/** Resolve archive references that open a manuscript or document in the reader. */
+export function atlasDiaryEntryId(route: string): string | undefined {
+  const prefix = ["conto:", "documento:"].find((value) => route.startsWith(value));
+  if (!prefix) return undefined;
+  const id = route.slice(prefix.length).trim();
+  return id || undefined;
+}
+
 type CanonPlace = {
   id: string; name: string; image?: string; image_alt?: string; image_caption?: string; status_label?: string; subregion?: string;
   history?: string[]; laws?: string[]; inhabitants?: string[]; source_entry_ids?: string[];

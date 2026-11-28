@@ -1,6 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { atlasPlaceLocation, enrichAtlasPlace } from "./atlas-canon";
+import { atlasDiaryEntryId, atlasPlaceLocation, enrichAtlasPlace } from "./atlas-canon";
 import { MAPS } from "@/data/atlas";
+
+describe("atlasDiaryEntryId", () => {
+  it.each([
+    ["conto:2026-11-28-a-letra-de-hideo", "2026-11-28-a-letra-de-hideo"],
+    ["documento:2026-11-28-folha-de-treino-de-hideo", "2026-11-28-folha-de-treino-de-hideo"],
+  ])("resolve %s para o leitor de manuscritos", (route, id) => {
+    expect(atlasDiaryEntryId(route)).toBe(id);
+  });
+
+  it("não reinterpreta referências de outras seções", () => {
+    expect(atlasDiaryEntryId("bestiario/eithne")).toBeUndefined();
+    expect(atlasDiaryEntryId("atlas/entre")).toBeUndefined();
+  });
+});
 
 describe("atlasPlaceLocation", () => {
   it.each([

@@ -5,7 +5,7 @@ import { worksQuery } from "@/lib/works";
 import { MAPS, ROOT_MAP, type Place } from "@/data/atlas";
 import { characterBySlug } from "@/data/characters";
 import { AtlasCanvas, PlaceGlyph } from "@/components/vespera/AtlasCanvas";
-import { atlasPlaceLocation, enrichAtlasPlace } from "@/lib/atlas-canon";
+import { atlasDiaryEntryId, atlasPlaceLocation, enrichAtlasPlace } from "@/lib/atlas-canon";
 
 type Search = { mapa?: string | undefined; local?: string | undefined };
 
@@ -169,8 +169,9 @@ function AtlasReferenceLink({ reference }: { reference: AtlasReferenceItem }) {
   const className = "label-archive text-rose underline underline-offset-4 hover:text-parchment";
   const route = reference.route;
 
-  if (route.startsWith("conto:")) {
-    return <Link to="/diarios/$id" params={{ id: route.slice("conto:".length) }} className={className}>{reference.label}</Link>;
+  const diaryId = atlasDiaryEntryId(route);
+  if (diaryId) {
+    return <Link to="/diarios/$id" params={{ id: diaryId }} className={className}>{reference.label}</Link>;
   }
   if (route.startsWith("bestiario/")) {
     return <Link to="/bestiario/$slug" params={{ slug: route.slice("bestiario/".length) }} className={className}>{reference.label}</Link>;
